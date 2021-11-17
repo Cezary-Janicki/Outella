@@ -12,7 +12,7 @@
     text-align: center;
 }
 .footer{
-    /* Flexbox ================= ADD MOBILE PHONE FOOTER! */
+    /* Flexbox  */
     display:flex;
     justify-content: space-around;
     flex-wrap:nowrap;
@@ -23,17 +23,32 @@
     margin: 3vh 0 0 0;
 }
 .columns{
+    /* Flexbox */
     flex-direction: row;
+    /* General CSS */
+
 }
 .row{
+    /* Flexbox */
     flex-direction: column;
+    /* General CSS */
+
 }
 .navbar{
-
-}
-.navbarRow{
-
+    /* Flexbox */
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:nowrap;
+    /* General CSS */
 }
 .navbarColumn{
-    
+    /* Flexbox */
+    flex-direction: row;
+    /* General CSS */
+}
+.navbarRow{
+   /* Flexbox */
+   flex-direction: column;
+   /* General CSS */
+
 }
