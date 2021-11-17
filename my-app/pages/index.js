@@ -37,10 +37,18 @@ export default function Home() {
       </div>
 
       </div>
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+
+      <p className={styles.description}>
+          "Zdjęcia przykładowe"
+      </p>
+
+        <div className={styles.grid}>
+        <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
+        </div>
+
+      <p className={styles.description}>
+          "Ikony typów sukien"
+      </p>
 
         <div className={styles.grid}>
         <div className={styles.gridBox}><div className={styles.gridImg}><a href="../public/leon1.jpg"></a></div>
@@ -49,9 +57,11 @@ export default function Home() {
         <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
         <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
         </div>
+
         <p className={styles.description}>
           Bestsellery
-          </p>
+        </p>
+
         <div className={styles.grid}>
         <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
         <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
