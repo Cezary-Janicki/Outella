@@ -22,12 +22,32 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-         
+        <a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a>
+        <a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a>
         </div>
       </main>
 
       <footer className={styles.footer}>
-       
+       <div class= "columns">
+       <div class= "rows"><p>Header 1</p></div>
+        <div class= "rows"><p>Row 1.1</p></div>
+        <div class= "rows"><p>Row 1.2</p></div>
+        <div class= "rows"><p>Row 1.3</p></div>
+       </div>
+
+       <div class= "columns">
+       <div class= "rows"><p>Header 2</p></div>
+        <div class= "rows"><p>Row 2.1</p></div>
+        <div class= "rows"><p>Row 2.2</p></div>
+        <div class= "rows"><p>Row 2.3</p></div>
+       </div>
+
+       <div class= "columns">
+       <div class= "rows"><p>Header 3</p></div>
+        <div class= "rows"><p>Row 3.1</p></div>
+        <div class= "rows"><p>Row 3.2</p></div>
+        <div class= "rows"><p>Row 3.3</p></div>
+       </div>
       </footer>
     </div>
   )
