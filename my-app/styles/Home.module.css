@@ -1,7 +1,6 @@
 .main{
     /* display:flex; */
 
-    background-color: rgba(255, 127, 80, 0.26);
 }
 .description{
     justify-content:center;
@@ -11,6 +10,9 @@
     height: 75px;
     text-align: center;
 }
+
+/* ============================ F O O T E R ============================ */
+
 .footer{
     /* Flexbox  */
     display:flex;
@@ -34,10 +36,11 @@
     /* General CSS */
 
 }
+/* ============================ N A V B A R ============================ */
 .navbar{
     /* Flexbox */
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap:nowrap;
     /* General CSS */
 }
@@ -50,5 +53,29 @@
    /* Flexbox */
    flex-direction: column;
    /* General CSS */
+   margin:3vh 6vw 3vh 6vw;
+}
 
+/* ============================ G R I D ============================ */
+
+.grid{
+    /* Flexbox */
+    display:flex;
+    flex-direction: row;
+    /* General CSS */
+
+ 
+}
+.gridBox{
+    /* Flexbox */
+
+    /* General CSS */
+    height:50vh;
+    padding: 1rem;
+    border: 3px solid red;
+    margin: 1.5vh 1vw 1.5vh 1vw ;
+}
+.gridImg{
+    height:auto;
+    width:100%;
 }
