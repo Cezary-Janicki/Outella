@@ -12,5 +12,19 @@
     text-align: center;
 }
 .footer{
+    /* Flexbox ================= ADD MOBILE PHONE FOOTER! */
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:nowrap;
+    /* General CSS */
     height:25px;
+    border: solid violet;
+    border-width: 1px 0 0 0 ;  
+    margin: 3vh 0 0 0;
+}
+.columns{
+    flex-direction: row;
+}
+.row{
+    flex-direction: column;
 }

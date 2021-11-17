@@ -30,23 +30,23 @@ export default function Home() {
       <footer className={styles.footer}>
        <div class= "columns">
        <div class= "rows"><p>Header 1</p></div>
-        <div class= "rows"><p>Row 1.1</p></div>
-        <div class= "rows"><p>Row 1.2</p></div>
-        <div class= "rows"><p>Row 1.3</p></div>
+        <div class= "rows"><p>Row 1.1 aaaaaaaaaaaaaaa</p></div>
+        <div class= "rows"><p>Row 1.2 aaaaaaaaaaaaaaa</p></div>
+        <div class= "rows"><p>Row 1.3 aaaaaaaaaaaaaaa</p></div>
        </div>
 
        <div class= "columns">
        <div class= "rows"><p>Header 2</p></div>
-        <div class= "rows"><p>Row 2.1</p></div>
-        <div class= "rows"><p>Row 2.2</p></div>
-        <div class= "rows"><p>Row 2.3</p></div>
+        <div class= "rows"><p>Row 2.1 aaaaaaaaaaaaaaa</p></div>
+        <div class= "rows"><p>Row 2.2 aaaaaaaaaaaaaaa</p></div>
+        <div class= "rows"><p>Row 2.3 aaaaaaaaaaaaaaa</p></div>
        </div>
 
        <div class= "columns">
        <div class= "rows"><p>Header 3</p></div>
-        <div class= "rows"><p>Row 3.1</p></div>
-        <div class= "rows"><p>Row 3.2</p></div>
-        <div class= "rows"><p>Row 3.3</p></div>
+        <div class= "rows"><p>Row 3.1 aaaaaaaaaaaaaaa</p></div>
+        <div class= "rows"><p>Row 3.2 aaaaaaaaaaaaaaa</p></div>
+        <div class= "rows"><p>Row 3.3 aaaaaaaaaaaaaaa</p></div>
        </div>
       </footer>
     </div>
