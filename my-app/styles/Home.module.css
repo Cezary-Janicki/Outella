@@ -5,6 +5,10 @@
 }
 .description{
     text-align: center;
+    height:200%;
+    width:100%;
+    background-color: rgba(214, 245, 201, .5);
+
 }
 .title{
     color:red;
@@ -20,7 +24,9 @@
     justify-content: space-around;
     flex-wrap:nowrap;
     /* General CSS */
-    height:25px;
+    height:150%;
+    width:100%;
+    background-color: rgba(170, 50, 220, .1);
     border: solid violet;
     border-width: 1px 0 0 0 ;  
     margin: 3vh 0 0 0;
@@ -29,13 +35,11 @@
     /* Flexbox */
     flex-direction: row;
     /* General CSS */
-
 }
 .row{
     /* Flexbox */
     flex-direction: column;
     /* General CSS */
-
 }
 /* ============================ N A V B A R ============================ */
 .navbar{
@@ -43,13 +47,16 @@
     display:flex;
     justify-content: center;
     flex-wrap:nowrap;
+    height:100%;
+    width:100%;
+    background-color: rgba(170, 50, 220, .1);
     /* General CSS */
-    border:ridge rgba(170, 50, 220, .6);
     border-width: 3mm 0 3mm 0 ;
 }
 .navbarColumn{
     /* Flexbox */
     flex-direction: row;
+
     /* General CSS */
 }
 .navbarRow{
