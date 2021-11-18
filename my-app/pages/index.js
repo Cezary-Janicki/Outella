@@ -44,7 +44,15 @@ export default function Home() {
       </p>
 
         <div className={styles.grid}>                                               {/*==================== M A I N _ P H O T O S ====================>*/}
-        <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
+        <div className={styles.gridBox}>
+          <Image
+          alt="Next.js logo"
+          src="/horizontal/leon2.jpg"
+          // layout= 'fill'
+          width={1200}
+          height={400}
+          />
+          <a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
         </div>
 
       <p className={styles.description}>
