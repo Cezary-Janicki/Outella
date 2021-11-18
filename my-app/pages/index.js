@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-
-
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import leon from "../public/horizontal/leon2.jpg";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -13,98 +12,192 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>                                              {/*==================== T I T L E ====================>*/}
+        <h1 className={styles.title}>
+          {" "}
+          {/*==================== T I T L E ====================>*/}
           <a>Outella</a>
         </h1>
-      <div className={styles.navbar}>                                              {/*==================== N A V B A R====================>*/}
-      <div className={styles.navbarRow}><p>Lorem  </p>
-      <div className={styles.navbarColumn}><p> </p></div>
-      </div>
-
-      <div className={styles.navbarRow}><p>ipsum  </p>
-      <div className={styles.navbarColumn}><p> </p></div>
-      </div>
-
-      <div className={styles.navbarRow}><p>dolor  </p>
-      <div className={styles.navbarColumn}><p> </p></div>
-      </div>
-
-      <div className={styles.navbarRow}><p>sit  </p>
-      <div className={styles.navbarColumn}><p> </p></div>
-      </div>
-
-      <div className={styles.navbarRow}><p>amet </p>
-      <div className={styles.navbarColumn}><p> </p></div>
-      </div>
-
-      </div>
-
-      <p className={styles.description}>
-          "Zdjęcia przykładowe"
-      </p>
-
-        <div className={styles.grid}>                                               {/*==================== M A I N _ P H O T O S ====================>*/}
-        <div className={styles.gridBox}>
-          <Image
-          alt="Next.js logo"
-          src="/horizontal/leon2.jpg"
-          // layout= 'fill'
-          width={1200}
-          height={400}
-          />
-          <a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
+        <div className={styles.navbar}>
+          {" "}
+          {/*==================== N A V B A R====================>*/}
+          <div className={styles.navbarRow}>
+            <p>Lorem </p>
+            <div className={styles.navbarColumn}>
+              <p> </p>
+            </div>
+          </div>
+          <div className={styles.navbarRow}>
+            <p>ipsum </p>
+            <div className={styles.navbarColumn}>
+              <p> </p>
+            </div>
+          </div>
+          <div className={styles.navbarRow}>
+            <p>dolor </p>
+            <div className={styles.navbarColumn}>
+              <p> </p>
+            </div>
+          </div>
+          <div className={styles.navbarRow}>
+            <p>sit </p>
+            <div className={styles.navbarColumn}>
+              <p> </p>
+            </div>
+          </div>
+          <div className={styles.navbarRow}>
+            <p>amet </p>
+            <div className={styles.navbarColumn}>
+              <p> </p>
+            </div>
+          </div>
         </div>
 
-      <p className={styles.description}>
-          "Ikony typów sukien"
-      </p>
+        <p className={styles.description}>"Zdjęcia przykładowe"</p>
 
-        <div className={styles.grid}>                                               {/*==================== D R E S S E S _ T Y P E S ====================>*/}
-        <div className={styles.gridBox}><div className={styles.gridImg}><a href="../public/leon1.jpg"></a></div>
-        <a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
-        <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
-        <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
-        <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
+        <div className={styles.grid}>
+          {" "}
+          {/*==================== M A I N _ P H O T O S ====================>*/}
+          <div className={styles.gridBox}>
+            <div className={styles.imageWrapper}>
+              <Image alt="Next.js logo" src={leon} layout="responsive" />
+            </div>
+            <a>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
+              mollis lectus nec massa commodo auctor. Quisque mollis risus in
+              eros gravida.{" "}
+            </a>
+          </div>
         </div>
 
-        <p className={styles.description}>
-          Bestsellery
-        </p>
+        <p className={styles.description}>"Ikony typów sukien"</p>
 
-        <div className={styles.grid}>                                               {/*==================== B E S T S E L L E R S ====================>*/}
-        <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
-        <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
-        <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
+        <div className={styles.grid}>
+          {" "}
+          {/*==================== D R E S S E S _ T Y P E S ====================>*/}
+          <div className={styles.gridBox}>
+            <div className={styles.gridImg}>
+              <a href="../public/leon1.jpg"></a>
+            </div>
+            <a>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
+              mollis lectus nec massa commodo auctor. Quisque mollis risus in
+              eros gravida.{" "}
+            </a>
+          </div>
+          <div className={styles.gridBox}>
+            <a>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
+              mollis lectus nec massa commodo auctor. Quisque mollis risus in
+              eros gravida.{" "}
+            </a>
+          </div>
+          <div className={styles.gridBox}>
+            <a>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
+              mollis lectus nec massa commodo auctor. Quisque mollis risus in
+              eros gravida.{" "}
+            </a>
+          </div>
+          <div className={styles.gridBox}>
+            <a>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
+              mollis lectus nec massa commodo auctor. Quisque mollis risus in
+              eros gravida.{" "}
+            </a>
+          </div>
         </div>
 
+        <p className={styles.description}>Bestsellery</p>
 
-        
+        <div className={styles.grid}>
+          {" "}
+          {/*==================== B E S T S E L L E R S ====================>*/}
+          <div className={styles.gridBox}>
+            <a>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
+              mollis lectus nec massa commodo auctor. Quisque mollis risus in
+              eros gravida.{" "}
+            </a>
+          </div>
+          <div className={styles.gridBox}>
+            <a>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
+              mollis lectus nec massa commodo auctor. Quisque mollis risus in
+              eros gravida.{" "}
+            </a>
+          </div>
+          <div className={styles.gridBox}>
+            <a>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
+              mollis lectus nec massa commodo auctor. Quisque mollis risus in
+              eros gravida.{" "}
+            </a>
+          </div>
+        </div>
       </main>
 
-
-
-      <footer className={styles.footer}>                                            {/*==================== F O O T E R  ====================>*/}
-       <div className={styles.columns}>
-       <div className={styles.rows}><p>Header 1</p></div>
-        <div className={styles.rows}><p>Row 1.1 aaaaaaaaaaaaaaa</p></div>
-        <div className={styles.rows}><p>Row 1.2 aaaaaaaaaaaaaaa</p></div>
-        <div className={styles.rows}><p>Row 1.3 aaaaaaaaaaaaaaa</p></div>
-       </div>
-
-       <div className={styles.columns}>
-       <div className={styles.rows}><p>Header 2</p></div>
-        <div className={styles.rows}><p>Row 2.1 aaaaaaaaaaaaaaa</p></div>
-        <div className={styles.rows}><p>Row 2.2 aaaaaaaaaaaaaaa</p></div>
-        <div className={styles.rows}><p>Row 2.3 aaaaaaaaaaaaaaa</p></div>
-       </div>
-
-       <div className={styles.columns}>
-       <div className={styles.rows}><p>Header 3</p></div>
-       <div className={styles.rows}><p>Row 3.1 aaaaaaaaaaaaaaa</p></div>
-       <div className={styles.rows}><p>Row 3.2 aaaaaaaaaaaaaaa</p></div>
-       <div className={styles.rows}><p>Row 3.3 aaaaaaaaaaaaaaa</p></div>
-       </div>
+      <footer className={styles.footer}>
+        {" "}
+        {/*==================== F O O T E R  ====================>*/}
+        <div className={styles.columns}>
+          <div className={styles.rows}>
+            <p>Header 1</p>
+          </div>
+          <div className={styles.rows}>
+            <p>Row 1.1 aaaaaaaaaaaaaaa</p>
+          </div>
+          <div className={styles.rows}>
+            <p>Row 1.2 aaaaaaaaaaaaaaa</p>
+          </div>
+          <div className={styles.rows}>
+            <p>Row 1.3 aaaaaaaaaaaaaaa</p>
+          </div>
+        </div>
+        <div className={styles.columns}>
+          <div className={styles.rows}>
+            <p>Header 2</p>
+          </div>
+          <div className={styles.rows}>
+            <p>Row 2.1 aaaaaaaaaaaaaaa</p>
+          </div>
+          <div className={styles.rows}>
+            <p>Row 2.2 aaaaaaaaaaaaaaa</p>
+          </div>
+          <div className={styles.rows}>
+            <p>Row 2.3 aaaaaaaaaaaaaaa</p>
+          </div>
+        </div>
+        <div className={styles.columns}>
+          <div className={styles.rows}>
+            <p>Header 3</p>
+          </div>
+          <div className={styles.rows}>
+            <p>Row 3.1 aaaaaaaaaaaaaaa</p>
+          </div>
+          <div className={styles.rows}>
+            <p>Row 3.2 aaaaaaaaaaaaaaa</p>
+          </div>
+          <div className={styles.rows}>
+            <p>Row 3.3 aaaaaaaaaaaaaaa</p>
+          </div>
+        </div>
       </footer>
     </div>
-  )
+  );
 }
