@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -12,10 +13,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <h1 className={styles.title}>                                              {/*==================== T I T L E ====================>*/}
           <a>Outella</a>
         </h1>
-      <div className={styles.navbar}>
+      <div className={styles.navbar}>                                              {/*==================== N A V B A R====================>*/}
       <div className={styles.navbarRow}><p>Lorem  </p>
       <div className={styles.navbarColumn}><p> </p></div>
       </div>
@@ -42,7 +43,7 @@ export default function Home() {
           "Zdjęcia przykładowe"
       </p>
 
-        <div className={styles.grid}>
+        <div className={styles.grid}>                                               {/*==================== M A I N _ P H O T O S ====================>*/}
         <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
         </div>
 
@@ -50,7 +51,7 @@ export default function Home() {
           "Ikony typów sukien"
       </p>
 
-        <div className={styles.grid}>
+        <div className={styles.grid}>                                               {/*==================== D R E S S E S _ T Y P E S ====================>*/}
         <div className={styles.gridBox}><div className={styles.gridImg}><a href="../public/leon1.jpg"></a></div>
         <a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
         <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
@@ -62,7 +63,7 @@ export default function Home() {
           Bestsellery
         </p>
 
-        <div className={styles.grid}>
+        <div className={styles.grid}>                                               {/*==================== B E S T S E L L E R S ====================>*/}
         <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
         <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
         <div className={styles.gridBox}><a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer mollis lectus nec massa commodo auctor. Quisque mollis risus in eros gravida. </a></div>
@@ -74,7 +75,7 @@ export default function Home() {
 
 
 
-      <footer className={styles.footer}>
+      <footer className={styles.footer}>                                            {/*==================== F O O T E R  ====================>*/}
        <div className={styles.columns}>
        <div className={styles.rows}><p>Header 1</p></div>
         <div className={styles.rows}><p>Row 1.1 aaaaaaaaaaaaaaa</p></div>
