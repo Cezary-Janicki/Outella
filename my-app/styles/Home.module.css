@@ -77,16 +77,14 @@
 
   /* General CSS */
   width: 100%;
+  /* max-width:1200px; */
   height: 50vh;
   padding: 1rem;
   border: 3px solid red;
   margin: 1.5vh 1vw 1.5vh 1vw;
 }
-.gridImg {
-  height: auto;
-  width: 100%;
-}
+
 .imageWrapper {
-  width: 20em;
+  height:100%;
   position: block;
 }

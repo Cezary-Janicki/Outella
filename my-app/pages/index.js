@@ -1,7 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import leon from "../public/horizontal/leon2.jpg";
+import leon2 from "../public/horizontal/leon2.jpg";
+import leon3 from "../public/horizontal/leon3.jpg";
+import leon4 from "../public/horizontal/leon4.jpg";
+import leon5 from "../public/horizontal/leon5.jpg";
+import leonVer1 from "../public/vertical/leon1.jpg"
+import leonVer2 from "../public/vertical/leon2.jpg"
+import leonVer3 from "../public/vertical/leon3.jpg"
+import leonVer4 from "../public/vertical/leon4.jpg"
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -59,15 +67,8 @@ export default function Home() {
           {/*==================== M A I N _ P H O T O S ====================>*/}
           <div className={styles.gridBox}>
             <div className={styles.imageWrapper}>
-              <Image alt="Next.js logo" src={leon} layout="responsive" />
+              <Image alt="Next.js logo" src={leon2} layout="responsive" />
             </div>
-            <a>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
-              mollis lectus nec massa commodo auctor. Quisque mollis risus in
-              eros gravida.{" "}
-            </a>
           </div>
         </div>
 
@@ -77,43 +78,25 @@ export default function Home() {
           {" "}
           {/*==================== D R E S S E S _ T Y P E S ====================>*/}
           <div className={styles.gridBox}>
-            <div className={styles.gridImg}>
-              <a href="../public/leon1.jpg"></a>
+            <div className={styles.imageWrapper}>
+              <Image alt="Next.js logo" src={leonVer1} layout="responsive"/>
             </div>
-            <a>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
-              mollis lectus nec massa commodo auctor. Quisque mollis risus in
-              eros gravida.{" "}
-            </a>
+            
           </div>
           <div className={styles.gridBox}>
-            <a>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
-              mollis lectus nec massa commodo auctor. Quisque mollis risus in
-              eros gravida.{" "}
-            </a>
+            <div className={styles.imageWrapper}>
+              <Image alt="Cute cat" src={leonVer2} layout="responsive"/>
+            </div>
           </div>
           <div className={styles.gridBox}>
-            <a>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
-              mollis lectus nec massa commodo auctor. Quisque mollis risus in
-              eros gravida.{" "}
-            </a>
+            <div className={styles.imageWrapper}>
+              <Image alt="Fluffy cat" src={leonVer3} layout="responsive"/>
+              </div>
           </div>
           <div className={styles.gridBox}>
-            <a>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
-              mollis lectus nec massa commodo auctor. Quisque mollis risus in
-              eros gravida.{" "}
-            </a>
+            <div className={styles.imageWrapper}>
+              <Image alt="Mad cat" src={leonVer4} layout="responsive"/>
+            </div>
           </div>
         </div>
 
@@ -123,31 +106,19 @@ export default function Home() {
           {" "}
           {/*==================== B E S T S E L L E R S ====================>*/}
           <div className={styles.gridBox}>
-            <a>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
-              mollis lectus nec massa commodo auctor. Quisque mollis risus in
-              eros gravida.{" "}
-            </a>
+            <div className={styles.imageWrapper}>
+                <Image alt="Mad cat" src={leon3} layout="responsive"/>
+            </div>
           </div>
           <div className={styles.gridBox}>
-            <a>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
-              mollis lectus nec massa commodo auctor. Quisque mollis risus in
-              eros gravida.{" "}
-            </a>
+            <div className={styles.imageWrapper}>
+              <Image alt="Leon the cat" src={leon4} layout="responsive"/>
+              </div>
           </div>
           <div className={styles.gridBox}>
-            <a>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              malesuada leo tortor, vitae hendrerit sapien ultrices non. Integer
-              mollis lectus nec massa commodo auctor. Quisque mollis risus in
-              eros gravida.{" "}
-            </a>
+            <div className={styles.imageWrapper}>
+              <Image alt="Leon" src={leon5} layout="responsive"/>
+              </div>
           </div>
         </div>
       </main>
