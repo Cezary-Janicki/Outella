@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import NavBar from "../components/navbar";
 import leon2 from "../public/horizontal/leon2.jpg";
 import leon3 from "../public/horizontal/leon3.jpg";
 import leon4 from "../public/horizontal/leon4.jpg";
@@ -25,40 +26,8 @@ export default function Home() {
           {/*==================== T I T L E ====================>*/}
           <a>Outella</a>
         </h1>
-        <div className={styles.navbar}>
-          {" "}
-          {/*==================== N A V B A R====================>*/}
-          <div className={styles.navbarRow}>
-            <p>Lorem </p>
-            <div className={styles.navbarColumn}>
-              <p> </p>
-            </div>
-          </div>
-          <div className={styles.navbarRow}>
-            <p>ipsum </p>
-            <div className={styles.navbarColumn}>
-              <p> </p>
-            </div>
-          </div>
-          <div className={styles.navbarRow}>
-            <p>dolor </p>
-            <div className={styles.navbarColumn}>
-              <p> </p>
-            </div>
-          </div>
-          <div className={styles.navbarRow}>
-            <p>sit </p>
-            <div className={styles.navbarColumn}>
-              <p> </p>
-            </div>
-          </div>
-          <div className={styles.navbarRow}>
-            <p>amet </p>
-            <div className={styles.navbarColumn}>
-              <p> </p>
-            </div>
-          </div>
-        </div>
+
+        <NavBar />
 
         <p className={styles.description}>"Zdjęcia przykładowe"</p>
 
