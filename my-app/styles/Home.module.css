@@ -86,5 +86,7 @@
 
 .imageWrapper {
   height:100%;
-  position: block;
+  width:100%;
+  position: relative;
+  object-fit: fill;
 }

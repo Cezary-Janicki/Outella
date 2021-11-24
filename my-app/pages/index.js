@@ -67,7 +67,12 @@ export default function Home() {
           {/*==================== M A I N _ P H O T O S ====================>*/}
           <div className={styles.gridBox}>
             <div className={styles.imageWrapper}>
-              <Image alt="Next.js logo" src={leon2} layout="responsive" />
+              <Image 
+              alt="Next.js logo" 
+              src={leon2} 
+              layout="fill"
+              objectFit="fill"
+               />
             </div>
           </div>
         </div>
