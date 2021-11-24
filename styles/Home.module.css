@@ -14,32 +14,6 @@
   text-align: center;
 }
 
-/* ============================ F O O T E R ============================ */
-
-.footer {
-  /* Flexbox  */
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: nowrap;
-  /* General CSS */
-  height: 150%;
-  width: 100%;
-  background-color: rgba(170, 50, 220, 0.1);
-  border: solid violet;
-  border-width: 1px 0 0 0;
-  margin: 3vh 0 0 0;
-}
-.columns {
-  /* Flexbox */
-  flex-direction: row;
-  /* General CSS */
-}
-.row {
-  /* Flexbox */
-  flex-direction: column;
-  /* General CSS */
-}
-
 /* ============================ G R I D ============================ */
 
 .grid {

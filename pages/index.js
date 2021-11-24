@@ -2,14 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import NavBar from "../components/navbar";
-import leon2 from "../public/horizontal/leon2.jpg";
-import leon3 from "../public/horizontal/leon3.jpg";
-import leon4 from "../public/horizontal/leon4.jpg";
-import leon5 from "../public/horizontal/leon5.jpg";
-import leonVer1 from "../public/vertical/leon1.jpg";
-import leonVer2 from "../public/vertical/leon2.jpg";
-import leonVer3 from "../public/vertical/leon3.jpg";
-import leonVer4 from "../public/vertical/leon4.jpg";
+import Footer from "../components/footer";
+import Main_Photos from "../components/main_photos";
+import Dresses_Types from "../components/dresses_types"
+import Bestsellers from "../components/bestsellers"
+
+
 
 export default function Home() {
   return (
@@ -31,147 +29,18 @@ export default function Home() {
 
         <p className={styles.description}>"Zdjęcia przykładowe"</p>
 
-        <div className={styles.grid}>
-          {" "}
-          {/*==================== M A I N _ P H O T O S ====================>*/}
-          <div className={styles.gridBox}>
-            <div className={styles.imageWrapper}>
-              <Image
-                alt="Next.js logo"
-                src={leon2}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-          </div>
-        </div>
+        <Main_Photos />
 
         <p className={styles.description}>"Ikony typów sukien"</p>
 
-        <div className={styles.grid}>
-          {" "}
-          {/*==================== D R E S S E S _ T Y P E S ====================>*/}
-          <div className={styles.gridBox}>
-            <div className={styles.imageWrapper}>
-              <Image
-                alt="Next.js logo"
-                src={leonVer1}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-          </div>
-          <div className={styles.gridBox}>
-            <div className={styles.imageWrapper}>
-              <Image
-                alt="Cute cat"
-                src={leonVer2}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-          </div>
-          <div className={styles.gridBox}>
-            <div className={styles.imageWrapper}>
-              <Image
-                alt="Fluffy cat"
-                src={leonVer3}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-          </div>
-          <div className={styles.gridBox}>
-            <div className={styles.imageWrapper}>
-              <Image
-                alt="Mad cat"
-                src={leonVer4}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-          </div>
-        </div>
+        <Dresses_Types />
 
         <p className={styles.description}>Bestsellery</p>
 
-        <div className={styles.grid}>
-          {" "}
-          {/*==================== B E S T S E L L E R S ====================>*/}
-          <div className={styles.gridBox}>
-            <div className={styles.imageWrapper}>
-              <Image
-                alt="Mad cat"
-                src={leon3}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-          </div>
-          <div className={styles.gridBox}>
-            <div className={styles.imageWrapper}>
-              <Image
-                alt="Leon the cat"
-                src={leon4}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-          </div>
-          <div className={styles.gridBox}>
-            <div className={styles.imageWrapper}>
-              <Image alt="Leon" src={leon5} layout="fill" objectFit="contain" />
-            </div>
-          </div>
-        </div>
+        <Bestsellers />
       </main>
 
-      <footer className={styles.footer}>
-        {" "}
-        {/*==================== F O O T E R  ====================>*/}
-        <div className={styles.columns}>
-          <div className={styles.rows}>
-            <p>Header 1</p>
-          </div>
-          <div className={styles.rows}>
-            <p>Row 1.1 aaaaaaaaaaaaaaa</p>
-          </div>
-          <div className={styles.rows}>
-            <p>Row 1.2 aaaaaaaaaaaaaaa</p>
-          </div>
-          <div className={styles.rows}>
-            <p>Row 1.3 aaaaaaaaaaaaaaa</p>
-          </div>
-        </div>
-        <div className={styles.columns}>
-          <div className={styles.rows}>
-            <p>Header 2</p>
-          </div>
-          <div className={styles.rows}>
-            <p>Row 2.1 aaaaaaaaaaaaaaa</p>
-          </div>
-          <div className={styles.rows}>
-            <p>Row 2.2 aaaaaaaaaaaaaaa</p>
-          </div>
-          <div className={styles.rows}>
-            <p>Row 2.3 aaaaaaaaaaaaaaa</p>
-          </div>
-        </div>
-        <div className={styles.columns}>
-          <div className={styles.rows}>
-            <p>Header 3</p>
-          </div>
-          <div className={styles.rows}>
-            <p>Row 3.1 aaaaaaaaaaaaaaa</p>
-          </div>
-          <div className={styles.rows}>
-            <p>Row 3.2 aaaaaaaaaaaaaaa</p>
-          </div>
-          <div className={styles.rows}>
-            <p>Row 3.3 aaaaaaaaaaaaaaa</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
-  );
+  )
 }
