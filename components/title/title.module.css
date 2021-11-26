@@ -1,0 +1,11 @@
+.description {
+  text-align: center;
+  height: 200%;
+  width: 100%;
+  background-color: rgba(214, 245, 201, 0.5);
+}
+.title {
+  color: red;
+  height: 75px;
+  text-align: center;
+}

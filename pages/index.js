@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 //Page components
+import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import Main_Photos from "../components/main_photos";
@@ -22,11 +23,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          {" "}
-          {/*==================== T I T L E ====================>*/}
-          <a>Outella</a>
-        </h1>
+        <Title />
 
         <NavBar />
        
