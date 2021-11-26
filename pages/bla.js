@@ -21,9 +21,7 @@ export default function bla() {
       </Head>
 
       <main className={styles.main}>
-        <Link href="/">
         <Title />
-        </Link>
 
         <NavBar />
        
