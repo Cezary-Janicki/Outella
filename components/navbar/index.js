@@ -15,25 +15,33 @@ export default function NavBar() {
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <p>ipsum </p>
+        <Link href="./ipsum">
+        <p><a>ipsum </a></p>
+        </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <p>dolor </p>
+        <Link href="./dolor">
+        <p><a>dolor</a></p>
+        </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <p>sit </p>
+        <Link href="./sit">
+        <p><a>sit</a></p>
+        </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <p>amet </p>
+        <Link href="./amet">
+        <p><a> amet</a></p>
+        </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
         </div>
