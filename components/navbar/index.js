@@ -1,4 +1,5 @@
 import styles from "./navbar.module.css";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
@@ -6,7 +7,9 @@ export default function NavBar() {
       {" "}
       {/*==================== N A V B A R====================>*/}
       <div className={styles.navbarRow}>
-        <p>Lorem </p>
+        <Link href="./lorem">
+        <p><a>Lorem </a></p> 
+        </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
         </div>
