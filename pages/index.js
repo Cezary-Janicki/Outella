@@ -27,8 +27,8 @@ export default function Home() {
 
         <NavBar />
        
-        <Link href="./bla">
-        <p className={styles.description}>"Zdjęcia przykładowe"</p>
+        <Link  href="./bla">
+        <a><p className={styles.description}>"Zdjęcia przykładowe"</p></a>
         </Link>
 
         <Main_Photos />
