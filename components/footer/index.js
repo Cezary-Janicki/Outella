@@ -1,4 +1,5 @@
-import styles from "./footer.module.css"
+import styles from "./footer.module.css" 
+import Link from "next/link"
 
 export default function footer(){
 return(
@@ -10,7 +11,9 @@ return(
             <p>Header 1</p>
           </div>
           <div className={styles.rows}>
+            <Link href="./footer/header1/row1/index.js">
             <p>Row 1.1 aaaaaaaaaaaaaaa</p>
+            </Link>
           </div>
           <div className={styles.rows}>
             <p>Row 1.2 aaaaaaaaaaaaaaa</p>
