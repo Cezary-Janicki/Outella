@@ -2,7 +2,7 @@
 import Head from "next/head"
 import Link from "next/link"
 
-import styles from "./row1.module.css"
+import styles from "./row3.module.css"
 // import styles from "../../../../styles/Home.module.css"
 
 //Page components
