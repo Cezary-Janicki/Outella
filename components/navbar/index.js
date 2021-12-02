@@ -7,7 +7,8 @@ export default function NavBar() {
       {" "}
       {/*==================== N A V B A R====================>*/}
       <div className={styles.navbarRow}>
-        <Link href="./lorem">
+       
+        <Link href="http://localhost:3000/lorem">
         <p><a>Lorem </a></p> 
         </Link>
         <div className={styles.navbarColumn}>
