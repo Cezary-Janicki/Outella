@@ -13,7 +13,7 @@ import Main_Photos from "../../../../components/main_photos";
 import Dresses_Types from "../../../../components/dresses_types"
 import Bestsellers from "../../../../components/bestsellers"
 
-export default function header1row2(){
+export default function header2row2(){
     return(
         <div className={styles.container}>
         
@@ -27,7 +27,7 @@ export default function header1row2(){
         <Title />
         <NavBar />
 
-        <h1> Header 1, row 2 </h1>       
+        <h1> Header 2, row 2 </h1>       
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet elementum libero. Nunc id ante urna. Vestibulum ullamcorper nisi vel augue volutpat ultrices. Donec mollis luctus commodo. Nullam pharetra tempus ex, vel pretium lorem posuere ut. Proin efficitur sed augue nec efficitur. Ut vel euismod turpis, at iaculis eros. Pellentesque faucibus vehicula ultricies. Nunc vitae dapibus augue. Curabitur a accumsan ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam vitae ullamcorper nisi. Quisque luctus enim et suscipit mattis. Cras aliquet fringilla nibh at consectetur.</p>
         <p> Nam ex risus, venenatis at mi sed, convallis pellentesque lacus. Fusce malesuada ipsum tristique pellentesque lacinia. Cras vel posuere libero. Sed finibus velit vitae justo viverra dapibus. Mauris pulvinar, leo id euismod faucibus, nibh lacus facilisis justo, vitae dignissim diam augue posuere elit. Fusce lectus leo, convallis a est nec, tempor rutrum turpis. Fusce tempus aliquet tellus. Pellentesque lobortis ipsum in odio faucibus, eu ultricies mauris dictum. Vivamus at ullamcorper dolor. </p>
         <p> Pellentesque sagittis finibus nunc, sed faucibus turpis bibendum sit amet. Ut hendrerit ligula non quam posuere semper. Phasellus eget massa ornare, bibendum metus vitae, vehicula lectus. Aenean pretium odio libero, sed fringilla neque lobortis nec. Etiam vitae erat tellus. Aliquam erat volutpat. Vestibulum egestas libero ut neque euismod suscipit. Morbi egestas vulputate leo, nec porttitor magna tristique at. Nam aliquet, diam eu pulvinar luctus, mi risus vulputate purus, a convallis mi orci nec enim. Sed risus nunc, iaculis ac felis at, rhoncus tincidunt justo. </p>

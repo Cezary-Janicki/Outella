@@ -31,13 +31,19 @@ return(
             <p>Header 2</p>
           </div>
           <div className={styles.rows}>
+            <Link href="/footer/header2/row1">
             <p>Row 2.1 aaaaaaaaaaaaaaa</p>
+            </Link>
           </div>
           <div className={styles.rows}>
+            <Link href="/footer/header2/row2">
             <p>Row 2.2 aaaaaaaaaaaaaaa</p>
+            </Link>
           </div>
           <div className={styles.rows}>
+            <Link href="/footer/header2/row3">
             <p>Row 2.3 aaaaaaaaaaaaaaa</p>
+            </Link>
           </div>
         </div>
         <div className={styles.columns}>
@@ -45,13 +51,19 @@ return(
             <p>Header 3</p>
           </div>
           <div className={styles.rows}>
+            <Link href="/footer/header3/row1">
             <p>Row 3.1 aaaaaaaaaaaaaaa</p>
+            </Link>
           </div>
           <div className={styles.rows}>
+            <Link href="/footer/header3/row2">
             <p>Row 3.2 aaaaaaaaaaaaaaa</p>
+            </Link>
           </div>
           <div className={styles.rows}>
+            <Link href="/footer/header3/row3">
             <p>Row 3.3 aaaaaaaaaaaaaaa</p>
+            </Link>
           </div>
         </div>
       </footer>

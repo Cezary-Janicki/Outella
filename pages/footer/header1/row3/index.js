@@ -13,7 +13,7 @@ import Main_Photos from "../../../../components/main_photos";
 import Dresses_Types from "../../../../components/dresses_types"
 import Bestsellers from "../../../../components/bestsellers"
 
-export default function header1row1(){
+export default function header1row3(){
     return(
         <div className={styles.container}>
         
