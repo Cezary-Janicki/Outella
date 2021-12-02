@@ -16,10 +16,14 @@ return(
             </Link>
           </div>
           <div className={styles.rows}>
+            <Link href="./footer/header1/row2">
             <p>Row 1.2 aaaaaaaaaaaaaaa</p>
+            </Link>
           </div>
           <div className={styles.rows}>
+            <Link href="./footer/header1/row3">
             <p>Row 1.3 aaaaaaaaaaaaaaa</p>
+            </Link>
           </div>
         </div>
         <div className={styles.columns}>
