@@ -40,3 +40,7 @@
   position: relative;
   object-fit: fill;
 }
+.wrapper{
+display:flex;
+flex: 1 0 10%;
+}

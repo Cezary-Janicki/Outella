@@ -1,12 +1,11 @@
 .sidebar {
     /* General CSS */
-    padding: 15px;
+    padding: 25px;
     background-color: blueviolet;
     /* Sticky and positioning */
-    position:-webkit-sticky;
-    position: sticky;
-    top:200px;
-
-    width: 25%;
-    height: 25vh;
+    /* position:-webkit-sticky; */
+    position: relative;
+    top:10px;
+    width: 15%;
+    height: 100%;
 }

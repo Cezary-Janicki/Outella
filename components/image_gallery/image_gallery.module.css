@@ -21,9 +21,10 @@
     display:flex;
     flex-wrap:wrap; 
     justify-content: space-around;
+    
+
 }
 
 .imageWrapper{
     margin:10px;
-    /* width:60%; */
 }
