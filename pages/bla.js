@@ -11,6 +11,7 @@ import Main_Photos from "../components/main_photos";
 import Dresses_Types from "../components/dresses_types"
 import Bestsellers from "../components/bestsellers"
 import Image_Gallery from "../components/image_gallery"
+import gallery_sidebar from "../components/gallery_sidebar";
 
 export default function bla() {
   return (
@@ -26,6 +27,7 @@ export default function bla() {
 
         <NavBar />
 
+        <gallery_sidebar />
         <Image_Gallery />
        
        
