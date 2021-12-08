@@ -1,12 +1,19 @@
 /* ============================ G E N E R A L ============================ */
 
 .main {
+  font-size: 17px;
+  /* margin: 0vh 10vw 0vh 10vw; */
+  width:70%;
+  margin-left:auto;
+  margin-right:auto;
 }
 .description {
   text-align: center;
   height: 200%;
   width: 100%;
-  background-color: rgba(214, 245, 201, 0.5);
+  font-size:25px;
+  font-weight: bold;
+  /* background-color: rgba(214, 245, 201, 0.5); */
 }
 .title {
   color: red;

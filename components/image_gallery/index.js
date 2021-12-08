@@ -7,6 +7,7 @@ export default function Image_Gallery(){
     return(
     <div className={styles.grid}>
 
+        <Link href="/products/dress1">
         <div className={styles.imageWrapper}>
             <div className={styles.image}><Image
             alt="Dress"
@@ -19,6 +20,7 @@ export default function Image_Gallery(){
             </div>
             
         </div>
+        </Link>
 
 
         <div className={styles.imageWrapper}>

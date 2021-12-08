@@ -5,19 +5,24 @@
   flex-wrap: nowrap;
   height: 100%;
   width: 100%;
-  background-color: rgba(170, 50, 220, 0.1);
+  /* background-color: rgba(170, 50, 220, 0.1); */
   /* General CSS */
   border-width: 3mm 0 3mm 0;
+  font-family: 'Playfair Display', serif;
 }
+
+
 .navbarColumn {
   /* Flexbox */
   flex-direction: row;
 
   /* General CSS */
 }
+
+
 .navbarRow {
   /* Flexbox */
   flex-direction: column;
   /* General CSS */
-  margin: 3vh 6vw 3vh 6vw;
+  margin: 3vh 3vw 3vh 3vw;
 }
