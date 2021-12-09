@@ -3,6 +3,7 @@ import Link from "next/link"
 
 export default function footer(){
 return(
+<div className={styles.wrapper}>
 <footer className={styles.footer}>
     
         {/*==================== F O O T E R  ====================>*/}
@@ -67,5 +68,6 @@ return(
           </div>
         </div>
       </footer>
+      </div> 
 )
 }

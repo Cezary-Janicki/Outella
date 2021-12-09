@@ -1,10 +1,8 @@
-
-
 *{
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+
 }
 html,body.div,img{
-    margin:0;
     padding:0;
     border:0;
     font-size:100%;
@@ -13,16 +11,19 @@ html,body.div,img{
 
 }
 .container{
+    /* General CSS */
+    margin:0px -8px -8px -8px ;
+    /* Flexbox */
     display:flex;
     flex-wrap:wrap; 
     justify-content: space-around;
 }
-.item{
-    margin:10px;
 
-}
 body{
     line-height: 1;
+    margin: 10px 0 0 0 ;
+    min-height: 100vh;
+
 }
 a{
 outline:none;
@@ -41,7 +42,6 @@ background: #BAE498;
 
 a:hover{
 border-bottom: 1px solid;
-/* background: #CDFEAA; */
 }
 
 a:active{

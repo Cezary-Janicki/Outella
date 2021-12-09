@@ -1,7 +1,7 @@
 .wrapper{
-  /* display:flex; */
-  /* flex-direction: column-reverse; */
 
+  background-color: rgba(170, 50, 220, 0.1);
+  background-size: cover;
 }
 
 .footer {
@@ -10,22 +10,26 @@
     justify-content: space-around;
     flex-wrap: nowrap;
     
-    /* General CSS */
-    /* height: 100%; */
-    /* width: 100%; */
-    background-color: rgba(170, 50, 220, 0.1);
-    /* background-size: cover; */
+    /* align-content: flex-end; */
 
+    /* General CSS */
+    height:auto;
+    width:auto;
     margin: 3vh 0 0 0;
+
   }
   .columns {
     /* Flexbox */
     flex-direction: row;
+    
     /* General CSS */
   }
   .row {
     /* Flexbox */
     flex-direction: column;
+    align-content: space-between;
+    
     /* General CSS */
+    
   }
   
