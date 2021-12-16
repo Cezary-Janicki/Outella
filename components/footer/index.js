@@ -13,17 +13,17 @@ return(
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header1/row1">
-            <p>Row 1.1 aaaaaaaaaaaaaaa</p>
+            <p><a>Row 1.1 aaaaaaaaaaaaaaa</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header1/row2">
-            <p>Row 1.2 aaaaaaaaaaaaaaa</p>
+            <p><a>Row 1.2 aaaaaaaaaaaaaaa</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header1/row3">
-            <p>Row 1.3 aaaaaaaaaaaaaaa</p>
+            <p><a>Row 1.3 aaaaaaaaaaaaaaa</a></p>
             </Link>
           </div>
         </div>
@@ -33,17 +33,17 @@ return(
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header2/row1">
-            <p>Row 2.1 aaaaaaaaaaaaaaa</p>
+            <p><a>Row 2.1 aaaaaaaaaaaaaaa</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header2/row2">
-            <p>Row 2.2 aaaaaaaaaaaaaaa</p>
+            <p><a>Row 2.2 aaaaaaaaaaaaaaa</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header2/row3">
-            <p>Row 2.3 aaaaaaaaaaaaaaa</p>
+            <p><a>Row 2.3 aaaaaaaaaaaaaaa</a></p>
             </Link>
           </div>
         </div>
@@ -53,17 +53,17 @@ return(
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header3/row1">
-            <p>Row 3.1 aaaaaaaaaaaaaaa</p>
+            <p><a>Row 3.1 aaaaaaaaaaaaaaa</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header3/row2">
-            <p>Row 3.2 aaaaaaaaaaaaaaa</p>
+            <p><a>Row 3.2 aaaaaaaaaaaaaaa</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header3/row3">
-            <p>Row 3.3 aaaaaaaaaaaaaaa</p>
+            <p><a>Row 3.3 aaaaaaaaaaaaaaa</a></p>
             </Link>
           </div>
         </div>
