@@ -1,7 +1,7 @@
 //React components
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
+import styles from "./bla.module.css";
 
 //Page components
 import Title from "../components/title";
