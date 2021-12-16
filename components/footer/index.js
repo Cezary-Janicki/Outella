@@ -9,21 +9,41 @@ return(
         {/*==================== F O O T E R  ====================>*/}
         <div className={styles.columns}>
           <div className={styles.rows}>
-            <p>Header 1</p>
+            <p>Informacje</p>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header1/row1">
-            <p><a>Row 1.1 aaaaaaaaaaaaaaa</a></p>
+            <p><a>O firmie</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header1/row2">
-            <p><a>Row 1.2 aaaaaaaaaaaaaaa</a></p>
+            <p><a>Regulamin</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header1/row3">
-            <p><a>Row 1.3 aaaaaaaaaaaaaaa</a></p>
+            <p><a>Polityka prywatności</a></p>
+            </Link>
+          </div>
+          <div className={styles.rows}>
+            <Link href="/footer/header1/row4">
+            <p><a>Dostawa</a></p>
+            </Link>
+          </div>
+          <div className={styles.rows}>
+            <Link href="/footer/header1/row5">
+            <p><a>Płatności</a></p>
+            </Link>
+          </div>
+          <div className={styles.rows}>
+            <Link href="/footer/header1/row6">
+            <p><a>Kontakt</a></p>
+            </Link>
+          </div>
+          <div className={styles.rows}>
+            <Link href="/footer/header1/row7">
+            <p><a>Polityka zwrotów</a></p>
             </Link>
           </div>
         </div>
@@ -67,6 +87,8 @@ return(
             </Link>
           </div>
         </div>
+
+        
       </footer>
       </div> 
 )
