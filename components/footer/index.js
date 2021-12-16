@@ -49,42 +49,47 @@ return(
         </div>
         <div className={styles.columns}>
           <div className={styles.rows}>
-            <h2>Header 2</h2>
+            <h2>Zakupy</h2>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header2/row1">
-            <p><a>Row 2.1 aaaaaaaaaaaaaaa</a></p>
+            <p><a>Typ sukienki 1</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header2/row2">
-            <p><a>Row 2.2 aaaaaaaaaaaaaaa</a></p>
+            <p><a>Typ sukienki 2</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header2/row3">
-            <p><a>Row 2.3 aaaaaaaaaaaaaaa</a></p>
+            <p><a>Typ sukienki 3</a></p>
             </Link>
           </div>
         </div>
         <div className={styles.columns}>
           <div className={styles.rows}>
-            <h2>Header 3</h2>
+            <h2>Dane Firmy</h2>
           </div>
           <div className={styles.rows}>
-            <Link href="/footer/header3/row1">
+            {/* <Link href="/footer/header3/row1">
             <p><a>Row 3.1 aaaaaaaaaaaaaaa</a></p>
-            </Link>
+            </Link> */}
+            <p>Cezary Janicki</p>
+            <p>Outella</p>
+            <p>Email: Cezary.D.Janicki@gmail.com</p>
+            <p>NIP:7792517402</p>
+            <p>REGON:386684150</p>
           </div>
           <div className={styles.rows}>
-            <Link href="/footer/header3/row2">
+            {/* <Link href="/footer/header3/row2">
             <p><a>Row 3.2 aaaaaaaaaaaaaaa</a></p>
-            </Link>
+            </Link> */}
           </div>
           <div className={styles.rows}>
-            <Link href="/footer/header3/row3">
+            {/* <Link href="/footer/header3/row3">
             <p><a>Row 3.3 aaaaaaaaaaaaaaa</a></p>
-            </Link>
+            </Link> */}
           </div>
         </div>
 
