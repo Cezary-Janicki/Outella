@@ -9,7 +9,7 @@ return(
         {/*==================== F O O T E R  ====================>*/}
         <div className={styles.columns}>
           <div className={styles.rows}>
-            <p>Informacje</p>
+            <h2>Informacje</h2>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header1/row1">
@@ -49,7 +49,7 @@ return(
         </div>
         <div className={styles.columns}>
           <div className={styles.rows}>
-            <p>Header 2</p>
+            <h2>Header 2</h2>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header2/row1">
@@ -69,7 +69,7 @@ return(
         </div>
         <div className={styles.columns}>
           <div className={styles.rows}>
-            <p>Header 3</p>
+            <h2>Header 3</h2>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header3/row1">
