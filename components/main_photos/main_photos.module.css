@@ -21,4 +21,12 @@
     height: 100%;
     object-fit: contain;
     position: relative;
+    
   }
+
+.image1:hover{
+}
+.image2:hover{
+opacity:0;
+transition: ease-in 0.5s;
+}
