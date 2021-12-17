@@ -13,7 +13,7 @@ export default function Main_Photos(){
                 alt="Next.js logo"
                 src={leon2}
                 layout="fill"
-                objectFit="contain"
+                objectFit="cover"
               />
             </div>
           </div>

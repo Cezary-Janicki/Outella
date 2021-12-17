@@ -23,13 +23,15 @@ export default function Home() {
         <Title />
 
         <NavBar />
-       
+      </main>
+
         <Link  href="./bla">
         <p className={styles.description}><a>Zdjęcia przykładowe</a></p>
         </Link>
 
         <Main_Photos />
-
+        
+      <main className={styles.main}>
         <p className={styles.description}>Ikony typów sukien</p>
 
         <Dresses_Types />

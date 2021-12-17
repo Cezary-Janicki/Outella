@@ -10,11 +10,10 @@
   
     /* General CSS */
     width: 100%;
-    /* max-width:1200px; */
-    height: 50vh;
+    height: 65vh;
     padding: 1rem;
-    border: 3px solid red;
-    margin: 1.5vh 1vw 1.5vh 1vw;
+    padding:0px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
   }
   
   .imageWrapper {
