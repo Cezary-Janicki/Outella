@@ -1,10 +1,18 @@
 .wrapper{
-
-  background-color: rgba(170, 50, 220, 0.1);
+  /* background: content-box radial-gradient(crimson, skyblue);   */
+  /* background: content-box linear-gradient((90deg, rgba(255,255,255,1) 0%, rgba(170,50,220,1) 50%, rgba(255,255,255,1) 100%)); */
+  
+  background: radial-gradient(circle, rgba(170,50,220,0.71) 0%, rgba(255,255,255,1) 80%); 
   background-size: cover;
 }
+.background{
+  height:2px;
+  width:100vw;
+  color:rgba(255,255,255,1);
 
+}
 .footer {
+
     /* Flexbox  */
     display: flex;
     justify-content: space-around;
