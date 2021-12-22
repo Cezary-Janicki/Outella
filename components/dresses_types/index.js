@@ -19,7 +19,7 @@ export default function Dresses_Types(){
               alt="Next.js logo"
               src={leonVer1}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
             />
             </Link>
           </div>
@@ -31,7 +31,7 @@ export default function Dresses_Types(){
               alt="Cute cat"
               src={leonVer2}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
             />
             </Link>
           </div>
@@ -43,7 +43,7 @@ export default function Dresses_Types(){
               alt="Fluffy cat"
               src={leonVer3}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
             />
             </Link>
           </div>
@@ -55,7 +55,7 @@ export default function Dresses_Types(){
               alt="Mad cat"
               src={leonVer4}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
             />
             </Link>
           </div>
