@@ -63,7 +63,7 @@ color: #265301;
 
 a:focus{
 color: #437A16;
-background: #BAE498;
+/* background: #BAE498; */
 }
 
 a:hover{
@@ -71,7 +71,7 @@ border-bottom: 1px solid;
 }
 
 a:active{
-background: #265301;
-color: #CDFEAA;
+/* background: #265301; */
+/* color: #CDFEAA; */
 }
 
