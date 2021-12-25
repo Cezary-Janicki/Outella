@@ -9,7 +9,7 @@ export default function NavBar() {
       <div className={styles.navbarRow}>
        
         <Link href="/lorem">
-        <p><a>Lorem </a></p> 
+        <p><a>Typ sukienki 1 </a></p> 
         </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
@@ -17,7 +17,7 @@ export default function NavBar() {
       </div>
       <div className={styles.navbarRow}>
         <Link href="/ipsum">
-        <p><a>ipsum </a></p>
+        <p><a>Typ sukienki 2 </a></p>
         </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
@@ -25,7 +25,7 @@ export default function NavBar() {
       </div>
       <div className={styles.navbarRow}>
         <Link href="/dolor">
-        <p><a>dolor</a></p>
+        <p><a>Typ sukienki 3</a></p>
         </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
@@ -33,7 +33,7 @@ export default function NavBar() {
       </div>
       <div className={styles.navbarRow}>
         <Link href="/sit">
-        <p><a>sit</a></p>
+        <p><a>Typ sukienki 4</a></p>
         </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
@@ -41,7 +41,7 @@ export default function NavBar() {
       </div>
       <div className={styles.navbarRow}>
         <Link href="/amet">
-        <p><a> amet</a></p>
+        <p><a> Typ sukienki 5</a></p>
         </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
