@@ -57,8 +57,10 @@ text-decoration: none;
 padding: 2px 1px 0px;
 }
 
+
 a:link{
-color: #265301;
+/* color: #265301; */
+cursor:pointer;
 }
 
 a:focus{
@@ -68,10 +70,12 @@ color: #437A16;
 
 a:hover{
 border-bottom: 1px solid;
+cursor:pointer;     
 }
 
 a:active{
 /* background: #265301; */
 /* color: #CDFEAA; */
+
 }
 

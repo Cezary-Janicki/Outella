@@ -7,6 +7,8 @@ import leon5 from "../../public/horizontal/leon5.jpg";
 
 export default function Bestsellers(){
     return(
+      <div className={styles.main}>
+      <div className={styles.background}>
         <div className={styles.grid}>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
@@ -38,6 +40,7 @@ export default function Bestsellers(){
           </div>
         </div>
       </div>
-
+      </div>
+      </div>
     )
 }

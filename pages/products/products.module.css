@@ -1,9 +1,12 @@
+.main{
+    width:90vw;
+}
 .sidebar{
-flex:6;
+flex:7;
 }
 .main_content{
     
-flex:4;
+flex:3;
 padding:0px 0px 50px 0px;
 /* margin:0px 0px 0px 0px;  */
 }
