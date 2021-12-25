@@ -1,6 +1,6 @@
 //React components
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
+import styles from "./lorem.module.css";
 
 //Page components
 import Head from "../../../components/head"

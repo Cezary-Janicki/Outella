@@ -8,7 +8,7 @@ export default function NavBar() {
       {/*==================== N A V B A R====================>*/}
       <div className={styles.navbarRow}>
        
-        <Link href="/lorem">
+        <Link href="products/Typ1/lorem">
         <p><a>Typ sukienki 1 </a></p> 
         </Link>
         <div className={styles.navbarColumn}>
@@ -16,7 +16,7 @@ export default function NavBar() {
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <Link href="/ipsum">
+        <Link href="products/Typ2/ipsum">
         <p><a>Typ sukienki 2 </a></p>
         </Link>
         <div className={styles.navbarColumn}>
@@ -24,7 +24,7 @@ export default function NavBar() {
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <Link href="/dolor">
+        <Link href="products/Typ3/dolor">
         <p><a>Typ sukienki 3</a></p>
         </Link>
         <div className={styles.navbarColumn}>
@@ -32,7 +32,7 @@ export default function NavBar() {
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <Link href="/sit">
+        <Link href="products/Typ4/sit">
         <p><a>Typ sukienki 4</a></p>
         </Link>
         <div className={styles.navbarColumn}>
@@ -40,7 +40,7 @@ export default function NavBar() {
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <Link href="/amet">
+        <Link href="products/Typ5/amet">
         <p><a> Typ sukienki 5</a></p>
         </Link>
         <div className={styles.navbarColumn}>
