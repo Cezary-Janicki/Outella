@@ -18,11 +18,14 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head />
-      
-      <main className={styles.main}>
-        <Title />
+      <Title />
 
         <NavBar />
+      
+      <main className={styles.main}>
+        {/* <Title />
+
+        <NavBar /> */}
       </main>
 
         <Link  href="./bla">

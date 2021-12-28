@@ -1,10 +1,10 @@
 .navbar {
   /* Flexbox */
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: nowrap;
   height: 100%;
-  width: 70vw;
+  width:100%;
   /* background-color: rgba(170, 50, 220, 0.1); */
   /* General CSS */
   border-width: 3mm 0 3mm 0;
@@ -15,7 +15,7 @@
 .navbarColumn {
   /* Flexbox */
   flex-direction: row;
-
+  /* justify-content:center; */
   /* General CSS */
 }
 
@@ -24,5 +24,5 @@
   /* Flexbox */
   flex-direction: column;
   /* General CSS */
-  margin: 3vh 3vw 3vh 3vw;
+  margin: 2vh 2vw 2vh 0vw;
 }

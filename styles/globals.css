@@ -8,6 +8,9 @@
     color:rgba(0, 0, 0, 0.836);
 
 }
+h1{
+    font-weight: bold ;
+}
 main{
     font-size: 15px;
     /* margin: 0vh 10vw 0vh 10vw; */
