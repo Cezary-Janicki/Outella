@@ -67,6 +67,11 @@ return(
             <p><a>Typ sukienki 3</a></p>
             </Link>
           </div>
+          <div className={styles.rows}>
+            <Link href="/footer/header2/row4">
+            <p><a>Typ sukienki 4</a></p>
+            </Link>
+          </div>
         </div>
         <div className={styles.columns}>
           <div className={styles.rows}>

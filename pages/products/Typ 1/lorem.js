@@ -3,13 +3,13 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 //Page components
-import Head from "../components/head"
-import Title from "../components/title";
-import NavBar from "../components/navbar";
-import Footer from "../components/footer";
-import Main_Photos from "../components/main_photos";
-import Dresses_Types from "../components/dresses_types"
-import Bestsellers from "../components/bestsellers"
+import Head from "../../../components/head"
+import Title from "../../../components/title";
+import NavBar from "../../../components/navbar";
+import Footer from "../../../components/footer";
+import Main_Photos from "../../../components/main_photos";
+import Dresses_Types from "../../../components/dresses_types"
+import Bestsellers from "../../../components/bestsellers"
 
 export default function bla() {
   return (

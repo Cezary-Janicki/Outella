@@ -7,6 +7,8 @@ import leon5 from "../../public/horizontal/leon5.jpg";
 
 export default function Bestsellers(){
     return(
+      <div className={styles.main}>
+      <div className={styles.background}>
         <div className={styles.grid}>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
@@ -14,7 +16,7 @@ export default function Bestsellers(){
               alt="Mad cat"
               src={leon3}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
             />
           </div>
         </div>
@@ -24,16 +26,21 @@ export default function Bestsellers(){
               alt="Leon the cat"
               src={leon4}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
             />
           </div>
         </div>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
-            <Image alt="Leon" src={leon5} layout="fill" objectFit="contain" />
+            <Image 
+              alt="Leon" 
+              src={leon5} 
+              layout="fill" 
+              objectFit="cover" />
           </div>
         </div>
       </div>
-
+      </div>
+      </div>
     )
 }
