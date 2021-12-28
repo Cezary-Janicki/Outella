@@ -17,11 +17,12 @@ export default function header1row5(){
         <div className={styles.container}>
         
         <Head />
+        <Title />
+        <NavBar />
 
 
         <main className={styles.main}>
-        <Title />
-        <NavBar />
+ 
         <h1>Płatności</h1>
         <p>Celem dokonania zamówienia oraz płatności należy się kontaktować z nami poprzez kanały dostępne w stronie Kontakt</p>
         <p>Istnieją dwie możliwości zapłacenia za zamówienie: płatnośc z góry przelewem na numer konta, oraz płatnośc przy odbiorze (pobranie) wraz z przedpłatą za wysyłkę.</p>

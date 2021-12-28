@@ -15,11 +15,10 @@ export default function bla() {
   return (
     <div className={styles.container}>
       <Head />
+      <Title />
+      <NavBar />
 
       <main className={styles.main}>
-        <Title />
-
-        <NavBar />
         <h1> Typ sukienki 2 </h1>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet elementum libero. Nunc id ante urna. Vestibulum ullamcorper nisi vel augue volutpat ultrices. Donec mollis luctus commodo. Nullam pharetra tempus ex, vel pretium lorem posuere ut. Proin efficitur sed augue nec efficitur. Ut vel euismod turpis, at iaculis eros. Pellentesque faucibus vehicula ultricies. Nunc vitae dapibus augue. Curabitur a accumsan ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam vitae ullamcorper nisi. Quisque luctus enim et suscipit mattis. Cras aliquet fringilla nibh at consectetur.</p>
         <p> Nam ex risus, venenatis at mi sed, convallis pellentesque lacus. Fusce malesuada ipsum tristique pellentesque lacinia. Cras vel posuere libero. Sed finibus velit vitae justo viverra dapibus. Mauris pulvinar, leo id euismod faucibus, nibh lacus facilisis justo, vitae dignissim diam augue posuere elit. Fusce lectus leo, convallis a est nec, tempor rutrum turpis. Fusce tempus aliquet tellus. Pellentesque lobortis ipsum in odio faucibus, eu ultricies mauris dictum. Vivamus at ullamcorper dolor. </p>

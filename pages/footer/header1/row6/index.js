@@ -18,11 +18,12 @@ export default function header1row6(){
         <div className={styles.container}>
         
         <Head />
+        <Title />
+        <NavBar />
 
 
         <main className={styles.main}>
-        <Title />
-        <NavBar />
+
 
         <h1> Kontakt </h1>       
         <h2>Outella</h2>

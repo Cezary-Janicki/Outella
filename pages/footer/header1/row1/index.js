@@ -18,11 +18,12 @@ export default function header1row1(){
         <div className={styles.container}>
         
         <Head />
+        <Title />
+        <NavBar />
 
 
         <main className={styles.main}>
-        <Title />
-        <NavBar />
+
 
         <h1> Outella - użyawna odzież z klasą</h1>       
         <p>Działalność na rynku odzieżowym rozpoczęliśmy w roku 2019. Naszą misją od początku było dostarczanie modnej odzieży damskiej w przystępnych cenach - tak, by każda kobieta mogła znaleźć w ofercie stroje, dzięki którym poczuje się pięknie i komfortowo. Bogaty asortyment, unikatowe, różnorodne fasony oraz wysoki standard obsługi sprawiły, że w przeciągu kilku lat działalności zdobyliśmy tysiące wiernych fanów - i to nie tylko w Polsce. Początkowo naszym głównym kanałem sprzedaży był Facebook. Rosnąca ilość zamówień oraz chęć wyjścia naprzeciw oczekiwaniom klientów skłoniły nas do stworzenia sklepu internetowego.</p>

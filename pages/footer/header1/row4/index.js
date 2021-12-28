@@ -18,11 +18,11 @@ export default function header1row4(){
         <div className={styles.container}>
         
         <Head />
+        <Title />
+        <NavBar />
 
 
         <main className={styles.main}>
-        <Title />
-        <NavBar />
 
         <h1> Dostawa </h1>       
         <p> Wysyłka zamówień jest realizowana poprzez następującymi środkami: </p>

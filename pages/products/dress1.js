@@ -18,12 +18,10 @@ export default function bla() {
   return (
     <div className={styles.container}>
       <Head />
-
-
+      <Title />
+      <NavBar />
       <main className={styles.main}>
-        <Title />
 
-        <NavBar />
         <div className={styles.product_area}>
         <div className={styles.sidebar}>
         <Product_Page_Gallery />
