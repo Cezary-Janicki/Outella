@@ -53,23 +53,28 @@ return(
             <h2>Zakupy</h2>
           </div>
           <div className={styles.rows}>
-            <Link href="/footer/header2/row1">
+            <Link href="/products/Typ1/lorem">
             <p><a>Typ sukienki 1</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
-            <Link href="/footer/header2/row2">
+            <Link href="/products/Typ2/ipsum">
             <p><a>Typ sukienki 2</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
-            <Link href="/footer/header2/row3">
+            <Link href="/products/Typ3/dolor">
             <p><a>Typ sukienki 3</a></p>
             </Link>
           </div>
           <div className={styles.rows}>
-            <Link href="/footer/header2/row4">
+            <Link href="/products/Typ4/sit">
             <p><a>Typ sukienki 4</a></p>
+            </Link>
+          </div>
+          <div className={styles.rows}>
+            <Link href="/products/Typ5/amet">
+            <p><a>Typ sukienki 5</a></p>
             </Link>
           </div>
         </div>
