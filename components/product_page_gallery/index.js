@@ -11,7 +11,8 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon7}
-            layout="fill"
+            width={610}
+            height={810}
             
             // sizes="320 640 750"
             /></div>  
@@ -21,7 +22,8 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon7}
-            layout="fill"
+            width={610}
+            height={810}
             // sizes="320 640 750"
             /></div>  
         </div>
@@ -33,7 +35,8 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon7}
-            layout="fill"
+            width={610}
+            height={810}
             // sizes="320 640 750"
             /></div>  
         </div>
@@ -44,7 +47,8 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon7}
-            layout="fill"
+            width={610}
+            height={810}
             // sizes="320 640 750"
             /></div>  
         </div>
@@ -55,7 +59,8 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon7}
-            layout="fill"
+            width={610}
+            height={810}
             // sizes="320 640 750"
             /></div>  
         </div>
@@ -66,7 +71,8 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon7}
-            layout="fill"
+            width={610}
+            height={810}
             // sizes="320 640 750"
             /></div>  
         </div>
@@ -77,7 +83,8 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon7}
-            layout="fill"
+            width={610}
+            height={810}
             // sizes="320 640 750"
             /></div>  
         </div>
