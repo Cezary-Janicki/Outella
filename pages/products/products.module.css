@@ -11,11 +11,16 @@ flex:3;
 padding:0px 0px 0px 0px;
 margin:-30px 0px 0px 30px; 
 }
-.product_area{
-display:flex;
-padding:0px 50px 0px 0px;
 
+.product_area{
+padding:0px 50px 0px 0px;
 }
+@media screen and (min-width:600px){
+    .product_area{
+        display:flex;
+    }
+}
+
 .container{
 line-height: 1.5;
 margin:auto;

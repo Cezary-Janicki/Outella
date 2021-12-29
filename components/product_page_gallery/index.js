@@ -32,7 +32,6 @@ export default function Product_Page_Gallery(){
 
 
 
-
         <div className={styles.imageWrapper}>
             <div className={styles.image}><Image
             alt="Dress"
