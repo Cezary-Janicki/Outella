@@ -6,6 +6,11 @@
 
     
 }
+.column {
+    flex: 25%;
+    max-width: 50%;
+    padding: 0 4px;
+  }
 
 .imageWrapper{
     /* padding:0px 0px 0px 0px;
@@ -26,5 +31,6 @@
     height:100%;
     position:relative;
     object-fit:contain;
+    
 
 }

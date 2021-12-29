@@ -13,15 +13,12 @@ import leon8 from "../../public/vertical/leon8.jpg"
 export default function Product_Page_Gallery(){
     return(
     <div className={styles.grid}>
-        
+    <div className={styles.column}>
         <div className={styles.imageWrapper}>
             <div className={styles.image}><Image
             alt="Dress"
             src={leon1}
-            width={610}
-            height={810}
-            
-            // sizes="320 640 750"
+            layout="intrinsic"
             /></div>  
         </div>
 
@@ -29,9 +26,7 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon2}
-            width={610}
-            height={810}
-            // sizes="320 640 750"
+            layout="intrinsic"
             /></div>  
         </div>
 
@@ -42,9 +37,7 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon3}
-            width={610}
-            height={810}
-            // sizes="320 640 750"
+            layout="intrinsic"
             /></div>  
         </div>
 
@@ -54,21 +47,18 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon4}
-            width={610}
-            height={810}
-            // sizes="320 640 750"
+            layout="intrinsic"
             /></div>  
         </div>
-
+    </div>
+    <div className={styles.column}>
 
 
         <div className={styles.imageWrapper}>
             <div className={styles.image}><Image
             alt="Dress"
             src={leon5}
-            width={610}
-            height={810}
-            // sizes="320 640 750"
+            layout="intrinsic"
             /></div>  
         </div>
 
@@ -78,9 +68,7 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon6}
-            width={610}
-            height={810}
-            // sizes="320 640 750"
+            layout="intrinsic"
             /></div>  
         </div>
 
@@ -90,9 +78,7 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon7}
-            width={610}
-            height={810}
-            // sizes="320 640 750"
+            layout="intrinsic"
             /></div>  
         </div>
 
@@ -100,12 +86,11 @@ export default function Product_Page_Gallery(){
             <div className={styles.image}><Image
             alt="Dress"
             src={leon8}
-            width={610}
-            height={810}
-            // sizes="320 640 750"
+            layout="intrinsic"
             /></div>  
         </div>       
-       
+        </div>
+
 
 
     </div>
