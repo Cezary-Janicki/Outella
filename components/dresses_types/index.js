@@ -6,6 +6,8 @@ import leonVer1 from "../../public/vertical/leon1.jpg";
 import leonVer2 from "../../public/vertical/leon2.jpg";
 import leonVer3 from "../../public/vertical/leon3.jpg";
 import leonVer4 from "../../public/vertical/leon4.jpg";
+import leonVer5 from "../../public/vertical/leon5.jpg";
+
 
 export default function Dresses_Types(){
     return(
@@ -14,7 +16,7 @@ export default function Dresses_Types(){
         {/*==================== D R E S S E S _ T Y P E S ====================>*/}
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
-            <Link href="footer/header2/row1">
+            <Link href="products/Typ1/lorem">
             <Image
               alt="Next.js logo"
               src={leonVer1}
@@ -26,7 +28,7 @@ export default function Dresses_Types(){
         </div>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
-            <Link href="footer/header2/row2">
+            <Link href="products/Typ2/ipsum">
             <Image
               alt="Cute cat"
               src={leonVer2}
@@ -38,7 +40,7 @@ export default function Dresses_Types(){
         </div>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
-            <Link href="footer/header2/row3">
+            <Link href="products/Typ3/dolor">
             <Image
               alt="Fluffy cat"
               src={leonVer3}
@@ -50,7 +52,7 @@ export default function Dresses_Types(){
         </div>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
-            <Link href="footer/header2/row4">
+            <Link href="products/Typ4/sit">
             <Image
               alt="Mad cat"
               src={leonVer4}
@@ -60,6 +62,19 @@ export default function Dresses_Types(){
             </Link>
           </div>
         </div>
+        <div className={styles.gridBox}>
+          <div className={styles.imageWrapper}>
+            <Link href="products/Typ5/amet">
+            <Image
+              alt="Mad cat"
+              src={leonVer5}
+              layout="fill"
+              objectFit="cover"
+            />
+            </Link>
+          </div>
+        </div>
+
       </div>
 
     )
