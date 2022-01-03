@@ -11,6 +11,7 @@ import Footer from "../../../../components/footer";
 import Main_Photos from "../../../../components/main_photos";
 import Dresses_Types from "../../../../components/dresses_types"
 import Bestsellers from "../../../../components/bestsellers"
+import Slider_Gallery from "../../../../components/slider_gallery";
 
 export default function header1row5(){
     return(
@@ -26,6 +27,9 @@ export default function header1row5(){
         <h1>Płatności</h1>
         <p>Celem dokonania zamówienia oraz płatności należy się kontaktować z nami poprzez kanały dostępne w stronie Kontakt</p>
         <p>Istnieją dwie możliwości zapłacenia za zamówienie: płatnośc z góry przelewem na numer konta, oraz płatnośc przy odbiorze (pobranie) wraz z przedpłatą za wysyłkę.</p>
+        
+        <Slider_Gallery />
+        
         </main>
         <Footer />
 
