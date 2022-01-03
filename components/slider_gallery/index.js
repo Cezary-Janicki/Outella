@@ -3,14 +3,11 @@ import Link from "next/link"
 import Image from "next/image"
 
 
-import leon1 from "../../public/vertical/leon1.jpg"
-import leon2 from "../../public/vertical/leon2.jpg"
-import leon3 from "../../public/vertical/leon3.jpg"
-import leon4 from "../../public/vertical/leon4.jpg"
-import leon5 from "../../public/vertical/leon5.jpg"
-import leon6 from "../../public/vertical/leon6.jpg"
-import leon7 from "../../public/vertical/leon7.jpg"
-import leon8 from "../../public/vertical/leon8.jpg"
+import leon1 from "../../public/horizontal/leon1.jpg"
+import leon2 from "../../public/horizontal/leon2.jpg"
+import leon3 from "../../public/horizontal/leon3.jpg"
+import leon4 from "../../public/horizontal/leon4.jpg"
+import leon5 from "../../public/horizontal/leon5.jpg"
 
 export default function Slider_Gallery(){
     return(
@@ -47,12 +44,19 @@ export default function Slider_Gallery(){
             /></div>
         </div>
 
-
+        <div className={styles.slider_button_wrapper}>
             <Link href="#slide-1"><div className={styles.slider_button} /></Link>
             <Link href="#slide-2"><div className={styles.slider_button} /></Link>
             <Link href="#slide-3"><div className={styles.slider_button} /></Link>
             <Link href="#slide-4"><div className={styles.slider_button} /></Link>
             <Link href="#slide-5"><div className={styles.slider_button} /></Link>
+        </div>
+        <div className={styles.navigation_buttons}>
+            <div className={styles.right_arrow} />
+            <div className={styles.left_arrow} />
+        </div>
+
+        
      </div>
     )
 }

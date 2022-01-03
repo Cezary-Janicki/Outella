@@ -11,6 +11,7 @@ import Footer from "../components/footer";
 import Main_Photos from "../components/main_photos";
 import Dresses_Types from "../components/dresses_types"
 import Bestsellers from "../components/bestsellers"
+import Slider_Gallery from "../components/slider_gallery";
 
 
 //Main function
@@ -31,8 +32,8 @@ export default function Home() {
         <Link  href="./bla">
         <p className={styles.description}><a>Zdjęcia przykładowe</a></p>
         </Link>
-
-        <Main_Photos />
+        <Slider_Gallery />
+        {/* <Main_Photos /> */}
         
       <main className={styles.main}>
         <p className={styles.description}>Ikony typów sukien</p>
