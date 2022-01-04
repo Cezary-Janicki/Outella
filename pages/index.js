@@ -32,8 +32,8 @@ export default function Home() {
         <Link  href="./bla">
         <p className={styles.description}><a>Zdjęcia przykładowe</a></p>
         </Link>
-        <Slider_Gallery />
-        {/* <Main_Photos /> */}
+        {/* <Slider_Gallery /> */}
+        <Main_Photos />
         
       <main className={styles.main}>
         <p className={styles.description}>Ikony typów sukien</p>
