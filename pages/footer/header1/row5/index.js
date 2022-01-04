@@ -28,7 +28,7 @@ export default function header1row5(){
         <p>Celem dokonania zamówienia oraz płatności należy się kontaktować z nami poprzez kanały dostępne w stronie Kontakt</p>
         <p>Istnieją dwie możliwości zapłacenia za zamówienie: płatnośc z góry przelewem na numer konta, oraz płatnośc przy odbiorze (pobranie) wraz z przedpłatą za wysyłkę.</p>
         
-        <Slider_Gallery />
+        {/* <Slider_Gallery /> */}
         
         </main>
         <Footer />
