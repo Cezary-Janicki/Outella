@@ -1,7 +1,6 @@
 //React components
 import Link from "next/link";
 import styles from "./ipsum.module.css";
-
 //Page components
 import Head from "../../../components/head"
 import Title from "../../../components/title";
