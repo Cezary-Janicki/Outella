@@ -1,0 +1,72 @@
+
+.navigation{
+}
+.navigationButtons{
+    display:flex;
+    justify-content: space-between;
+    transform:translateY(-500px);
+
+}
+.button{
+    /* Flexbox */
+    /* General css */
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    font-size:4vw;
+    color:rgba(0,0,0,0);
+    /* Transitions */
+    transition:ease-out;
+    transition-duration: 250ms;
+    transition-delay:1000ms;
+    
+
+}
+
+.main:hover .button{
+    transition:ease-in;
+    transition-duration: 250ms;
+    transition-delay:500ms;
+    color:rgba(230, 200, 250, 1);
+
+} 
+
+
+.dotGroup{
+    /* Flexbox */
+    display:flex;
+    width:100%;
+    justify-content: center;
+    overflow-y: hidden;
+  
+
+}
+.dot{
+    /* General CSS */
+    background: rgb(156, 62, 196);
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:none;
+    margin:0px 10px 0px 0px;
+
+
+}
+.dot:enabled{
+    transition:ease-out;
+    transition-duration: 400ms;
+    transition-delay:100ms;
+    background: rgba(230, 200, 250, 0.50);
+}
+.dot:hover{
+    transition:ease-in;
+    transition-duration: 300ms;
+    transition-delay:200ms;
+    border: 1px solid rgb(156, 62, 196);
+}
+
+/* .dot:active{
+    background: red;
+} */
