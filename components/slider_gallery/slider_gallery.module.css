@@ -1,11 +1,24 @@
+.timeBar{
+}
+.timeBar div{
+    height:5px;
+    background: linear-gradient(to bottom, rgb(132, 0, 255),rgb(52, 0, 73));
+    width:20%;
+}
+
+
+.slider{
+
+}
 
 .navigation{
+
 }
 .navigationButtons{
     display:flex;
     justify-content: space-between;
-    transform:translateY(-500px);
-
+    /* transform:translateY(-500px); */
+    height:0;                  
 }
 .button{
     /* Flexbox */
@@ -39,19 +52,36 @@
     width:100%;
     justify-content: center;
     overflow-y: hidden;
+    margin:2vh 0px 0px 0px;
   
 
+}
+@media screen and (max-width:599px) {
+    .dot{
+    display:none;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:899px) {
+    .dot{
+        width:20px;
+        height:20px;
+        margin:0px 20px 0px 20px;
+    }
+}
+@media screen and (min-width:900px){
+    .dot{
+        width:20px;
+        height:20px;
+        margin:0px 10px 0px 0px;
+
+    }
 }
 .dot{
     /* General CSS */
     background: rgb(156, 62, 196);
-
-    width: 20px;
-    height: 20px;
     border-radius: 50%;
     border:none;
-    margin:0px 10px 0px 0px;
-
 
 }
 .dot:enabled{

@@ -26,6 +26,7 @@ export default function Slider_Gallery({image1}){
         isPlaying={true}
         
         >
+            
             <Slider>
               <Slide index={0} className={styles.slider}><Link href="../../../"><Image
                               alt="Next.js logo"
@@ -47,13 +48,16 @@ export default function Slider_Gallery({image1}){
             <div className={styles.navigation}>
             <div className={styles.navigationButtons}>
                 <ButtonBack className={styles.button}>⮜</ButtonBack>
-                <ButtonNext className={styles.button}>⮞</ButtonNext> </div>
+                <ButtonNext className={styles.button}>⮞</ButtonNext> </div>  </div>
+            <div className={styles.timeBar}>
+                <div></div>
+            </div>
                 <div className={styles.dotGroup}>
                     <Dot slide={0} className={styles.dot}/>
                     <Dot slide={1} className={styles.dot}/>
                     <Dot slide={2} className={styles.dot}/>
                 </div>
-            </div>
+           
         </CarouselProvider>
         </div>
     )
@@ -63,5 +67,7 @@ export default function Slider_Gallery({image1}){
 // -arrows need to light up when clicked
 // -time bar to next transition needs to be added
 // -make the gallery responsive
-// -dots should be smaller on mobile(maybe diffrent solution ,divided horizontal unclickable bar?)
-// -images on mobile are unswipeable
+// -dots should be smaller on mobile(maybe diffrent solution ,divided horizontal unclickable bar?) &&& DONE &&&
+// -images on mobile are unswipeable &&& DONE &&&
+// -dots should be properly aligned &&& DONE &&&
+// -arrows should be properly aligned (flexbox??)

@@ -26,7 +26,7 @@
     margin: 3vh 0 0 0;
 
   }
-@media screen and (min-width:600px){
+@media screen and (min-width:750px){
     .footer{
         display:flex;
     }
@@ -38,7 +38,7 @@
     
     /* General CSS */
   }
-  @media screen and (max-width:599px){
+  @media screen and (max-width:749px){
     .columns{
     padding:10px 10px 10px 10px;
     margin:10px 0px 30px 10px;
