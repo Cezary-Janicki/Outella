@@ -8,6 +8,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 
 
+
 import leon1 from "../../public/horizontal/leon1.jpg"
 import leon2 from "../../public/horizontal/leon2.jpg"
 import leon3 from "../../public/horizontal/leon3.jpg"
@@ -57,7 +58,7 @@ export default function Slider_Gallery({image1}){
                     <Dot slide={1} className={styles.dot}/>
                     <Dot slide={2} className={styles.dot}/>
                 </div>
-           
+               
         </CarouselProvider>
         </div>
     )
