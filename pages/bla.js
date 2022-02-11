@@ -43,7 +43,10 @@ export default function Home({ allPostsData }) {
         <ul>
           {allPostsData.map(({id,date,title})=>(
             <li key={id}>
-              {title} <br />
+              <Link href={`/posts/${id}`} >
+              <a>{title}</a>
+              </Link>
+              <br />
               {id} <br />
               {date} <br />
             </li>
