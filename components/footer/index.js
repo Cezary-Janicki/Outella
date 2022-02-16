@@ -2,21 +2,35 @@ import styles from "./footer.module.css"
 import Link from "next/link"
 import { getSortedPostsData } from "../../lib/posts"
 
-export async function getStaticProps(){
-  const allPostsData=getSortedPostsData()
-  return{
-    props:{
+
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
       allPostsData
     }
   }
 }
-export function footer(){
+
+
+export default function footer({allPostsData}) {
 return(
 <div className={styles.wrapper}>
 <div className={styles.background}>
 <footer className={styles.footer}>
-
-
+<ul className={styles.list}>
+          {allPostsData.map(({ id, row, title }) => (
+            <li className={styles.listItem} key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {row}
+            </li>
+          ))}
+        </ul>
+        
 {/*     
         <div className={styles.columns}>
           <div className={styles.rows}>
