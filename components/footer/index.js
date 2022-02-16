@@ -19,7 +19,7 @@ return(
 <div className={styles.wrapper}>
 <div className={styles.background}>
 <footer className={styles.footer}>
-<ul className={styles.list}>
+{/* <ul className={styles.list}>
           {allPostsData.map(({ id, row, title }) => (
             <li className={styles.listItem} key={id}>
               {title}
@@ -29,8 +29,8 @@ return(
               {row}
             </li>
           ))}
-        </ul>
-        
+        </ul> */}
+
 {/*     
         <div className={styles.columns}>
           <div className={styles.rows}>
