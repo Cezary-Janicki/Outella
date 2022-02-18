@@ -23,7 +23,8 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.1",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "webpack": "^5.69.1"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
