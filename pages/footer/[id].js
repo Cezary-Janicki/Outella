@@ -1,7 +1,7 @@
 //React components
 import Link from "next/link"
 
-import styles from "./header1/row1.module.css"
+import styles from "./header1/row1/row1.module.css"
 // import styles from "../../../../styles/Home.module.css"
 
 //Page components
