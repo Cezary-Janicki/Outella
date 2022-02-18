@@ -11,7 +11,7 @@ import Footer from "../components/footer";
 import Main_Photos from "../components/main_photos";
 import Dresses_Types from "../components/dresses_types"
 import Bestsellers from "../components/bestsellers"
-import Slider_Gallery from "../components/slider_gallery";
+// import Slider_Gallery from "../components/slider_gallery";
 
 
 //Main function
