@@ -1,19 +1,44 @@
 import styles from "./footer.module.css" 
 import Link from "next/link"
+import { getSortedPostsData } from "../../lib/posts"
 
-export default function footer(){
+
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
+
+
+export default function footer({allPostsData}) {
 return(
 <div className={styles.wrapper}>
 <div className={styles.background}>
 <footer className={styles.footer}>
-    
-        {/*==================== F O O T E R  ====================>*/}
+{/* <ul className={styles.list}>
+          {allPostsData.map(({ id, row, title }) => (
+            <li className={styles.listItem} key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {row}
+            </li>
+          ))}
+        </ul> */}
+
+{/*     
         <div className={styles.columns}>
           <div className={styles.rows}>
             <h2>Informacje</h2>
           </div>
           <div className={styles.rows}>
             <Link href="/footer/header1/row1">
+          
             <p><a>O firmie</a></p>
             </Link>
           </div>
@@ -83,9 +108,6 @@ return(
             <h2>Dane Firmy</h2>
           </div>
           <div className={styles.rows}>
-            {/* <Link href="/footer/header3/row1">
-            <p><a>Row 3.1 aaaaaaaaaaaaaaa</a></p>
-            </Link> */}
             <p>Cezary Janicki</p>
             <p>Outella</p>
             <p>Email: Cezary.D.Janicki@gmail.com</p>
@@ -93,18 +115,12 @@ return(
             <p>REGON:386684150</p>
           </div>
           <div className={styles.rows}>
-            {/* <Link href="/footer/header3/row2">
-            <p><a>Row 3.2 aaaaaaaaaaaaaaa</a></p>
-            </Link> */}
           </div>
           <div className={styles.rows}>
-            {/* <Link href="/footer/header3/row3">
-            <p><a>Row 3.3 aaaaaaaaaaaaaaa</a></p>
-            </Link> */}
           </div>
         </div>
 
-        
+         */}
       </footer>
       </div>
       </div> 

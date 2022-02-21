@@ -3,26 +3,14 @@ import Link from "next/link"
 import react from "react"
 import * as FaIcons from "react-icons/fa"
 
-export default function Hamburger_Menu({posts}){
+export default function Hamburger_Menu(){
     return(
-        <div className={styles.components}>
-            <ul>
-                <li>
-                    <Link href="#">
-                        <a>Home</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href="#">
-                        <a>About us</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href="#">
-                        <a>Blog post</a>
-                    </Link>
-                </li>
-            </ul>
+        <div className={styles.navbar}>
+            <Link href="#">
+                <div className={styles.menuBars}>
+                <FaIcons.FaBars />
+                </div>
+            </Link>
         </div>
     )
 }
