@@ -19,6 +19,15 @@ return(
 <div className={styles.wrapper}>
 <div className={styles.background}>
 <footer className={styles.footer}>
+<h2>Blog</h2>
+ <ul className={styles.list}>
+   {allPostsData.map(({id, row, title })=>(
+     <li className={styles.listItem} key={id}>
+       {title} <br />
+       {row} <br />
+     </li>
+   ))}
+ </ul>
 {/* <ul className={styles.list}>
           {allPostsData.map(({ id, row, title }) => (
             <li className={styles.listItem} key={id}>
