@@ -32,10 +32,11 @@ export default function Home({allPostsData}) {
 
       <main className={styles.main}>
         <Title />
-
         <NavBar />
-        <ul className={styles.list}>                                {/*All of the data are properly passed into the map function but fail to showup/load on the website*/}                    
-          {allPostsData.map=(({id,title,date})=>{                   {/*paragraphs, console logs and callin the values mapped does nothing,maybe the map function is broken?*/}
+                                         {/*All of the data are properly passed into the map function but fail to showup/load on the website*/}                                                                         
+                                         {/*paragraphs, console logs and callin the values mapped does nothing,maybe the map function is broken?*/}
+        <ul className={styles.list}>                                                  
+          {allPostsData.map=(({id,title,date})=>{                   
             {console.log(allPostsData)}
             {console.log(title)}
              return(<li className={styles.listItem} key={id}>
