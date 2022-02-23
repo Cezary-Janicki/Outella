@@ -34,19 +34,35 @@ export default function Home({allPostsData}) {
         <Title />
 
         <NavBar />
-        <ul className={styles.list}>
-          {allPostsData.map=(({id,title,date})=>{
+        <ul className={styles.list}>                                {/*All of the data are properly passed into the map function but fail to showup/load on the website*/}                    
+          {allPostsData.map=(({id,title,date})=>{                   {/*paragraphs, console logs and callin the values mapped does nothing,maybe the map function is broken?*/}
+            {console.log(allPostsData)}
+            {console.log(title)}
              return(<li className={styles.listItem} key={id}>
-              {console.log(title)}
+              {console.log(title)}             
               {title}
               {date} <br />
               <a>inside map</a>
-              </li>)
+              </li>);
               })}
-        <a>test outside map</a>
+        <p>test outside map</p>
         </ul>
 
-        {/* <div className={styles.wrapper}>
+        <p>
+   
+          Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
+          facilisis vulputate. Nam est tortor, varius non semper id, efficitur
+          vitae risus. In hac habitasse platea dictumst. Vestibulum nec mauris
+          vel tortor fermentum ullamcorper.
+        </p>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+
+   {/* <div className={styles.wrapper}>
           <Gallery_Sidebar />
           <Image_Gallery />
 
@@ -99,21 +115,3 @@ export default function Home({allPostsData}) {
           vel ultrices auctor, elit diam posuere lectus, vitae maximus mauris
           diam iaculis nisl. Suspendisse quis dolor et ligula tempus porttitor.{" "}
         </p> */}
-        <p>
-          {" "}
-          Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
-          facilisis vulputate. Nam est tortor, varius non semper id, efficitur
-          vitae risus. In hac habitasse platea dictumst. Vestibulum nec mauris
-          vel tortor fermentum ullamcorper. Fusce rutrum metus nulla, eget
-          viverra augue interdum vitae. Vivamus a dictum enim. Nam laoreet nulla
-          fermentum hendrerit lobortis. Quisque luctus sit amet orci non
-          tincidunt. Nam et ex libero. Proin arcu metus, consequat ultrices
-          fringilla id, suscipit at sem. Aliquam aliquet neque ipsum, eu
-          lobortis odio euismod at. Phasellus non sagittis arcu, non pretium
-          nisl. Integer ullamcorper ligula ornare viverra mattis.{" "}
-        </p>
-      </main>
-      <Footer />
-    </div>
-  )
-}
