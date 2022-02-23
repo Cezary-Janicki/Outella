@@ -16,7 +16,7 @@ export async function getStaticProps() {
 
 export default function footer({allPostsData}) {
 return(
-<div className={styles.wrapper}>
+<div className={styles.wrapper}> {/*if i place console log here for allPostsData it shows up undefined*/}
 <div className={styles.background}>
 <footer className={styles.footer}>
 <h2>Blog</h2>
