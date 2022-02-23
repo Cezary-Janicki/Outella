@@ -1,6 +1,6 @@
 //React components
 import Head from "next/head";
-import Link from "next/link";
+// import Link from "next/link";
 import styles from "./bla.module.css";
 
 //Page components
@@ -19,7 +19,9 @@ export async function getStaticProps(){
     }
   }
 }
-export default function bla({allPostsData}) {
+
+export default function Home({allPostsData}) {
+ 
   return (
     <div className={styles.container}>
       <Head>
@@ -33,13 +35,17 @@ export default function bla({allPostsData}) {
 
         <NavBar />
         <ul className={styles.list}>
-          {allPostsData.map=(({id,row,title})=>(
-            <li className={styles.listItem} key={id}>
-              {title} <br />
-              {row} <br />
-            </li>
-          ))}
+          {allPostsData.map=(({id,title,date})=>{
+             return(<li className={styles.listItem} key={id}>
+              {console.log(title)}
+              {title}
+              {date} <br />
+              <a>inside map</a>
+              </li>)
+              })}
+        <a>test outside map</a>
         </ul>
+
         {/* <div className={styles.wrapper}>
           <Gallery_Sidebar />
           <Image_Gallery />
@@ -109,5 +115,5 @@ export default function bla({allPostsData}) {
       </main>
       <Footer />
     </div>
-  );
+  )
 }

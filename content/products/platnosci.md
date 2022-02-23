@@ -1,6 +1,6 @@
 ---
 title: 'Płatności'
-row: '5'
+date: '2020-02-01'
 ---
 #Płatności
  
