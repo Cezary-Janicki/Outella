@@ -11,17 +11,16 @@ import Image_Gallery from "../components/image_gallery";
 import Gallery_Sidebar from "../components/gallery_sidebar";
 import { getSortedProductsData } from "../lib/products";
 
-export async function getStaticProps(){
-  const allPostsData=getSortedProductsData()
-  return{
-    props:{
-      allPostsData
-    }
-  }
+export async function getStaticProps() {
+  const allPostsData = getSortedProductsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 }
 
-export default function Home({allPostsData}) {
- 
+export default function Home({ allPostsData }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -33,24 +32,33 @@ export default function Home({allPostsData}) {
       <main className={styles.main}>
         <Title />
         <NavBar />
-                                         {/*All of the data are properly passed into the map function but fail to showup/load on the website*/}                                                                         
-                                         {/*paragraphs, console logs and callin the values mapped does nothing,maybe the map function is broken?*/}
-        <ul className={styles.list}>                                                  
-          {allPostsData.map=(({id,title,date})=>{                   
-            {console.log(allPostsData)}
-            {console.log(title)}
-             return(<li className={styles.listItem} key={id}>
-              {console.log(title)}             
-              {title}
-              {date} <br />
-              <a>inside map</a>
-              </li>);
-              })}
-        <p>test outside map</p>
+        {/*All of the data are properly passed into the map function but fail to showup/load on the website*/}
+        {/*paragraphs, console logs and callin the values mapped does nothing,maybe the map function is broken?*/}
+        <ul className={styles.list}>
+          {/* {
+            (allPostsData.map = ({ id, title, date }) => {
+              <li className={styles.listItem} key={id}>
+                {console.log(title)}
+                {title}
+                {date} <br />
+                <a>inside map</a>
+              </li>;
+            })
+          }*/}
+          {/* {console.log(allPostsData)} */}
+          <div>
+            {allPostsData.map((d, index) => (
+              <div key={index} className={styles.mapa}>
+                {console.log(d)}
+                {d.date}
+                {d.title}
+              </div>
+            ))}
+          </div>
+          <p>test outside map</p>
         </ul>
 
         <p>
-   
           Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
           facilisis vulputate. Nam est tortor, varius non semper id, efficitur
           vitae risus. In hac habitasse platea dictumst. Vestibulum nec mauris
@@ -59,11 +67,11 @@ export default function Home({allPostsData}) {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-
-   {/* <div className={styles.wrapper}>
+{
+  /* <div className={styles.wrapper}>
           <Gallery_Sidebar />
           <Image_Gallery />
 
@@ -115,4 +123,5 @@ export default function Home({allPostsData}) {
           lobortis urna quis orci suscipit dapibus. Phasellus vehicula, lectus
           vel ultrices auctor, elit diam posuere lectus, vitae maximus mauris
           diam iaculis nisl. Suspendisse quis dolor et ligula tempus porttitor.{" "}
-        </p> */}
+        </p> */
+}

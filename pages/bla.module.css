@@ -1,8 +1,12 @@
 /* ============================ G E N E R A L ============================ */
 
 .main {
+  width: 90%;
+}
 
-  width:90%;
+.mapa {
+  background-color: yellowgreen;
+  min-height: 5em;
 }
 .description {
   text-align: center;
@@ -17,10 +21,10 @@
   height: 75px;
   text-align: center;
 }
-.list{
+.list {
   font-size: x-large;
 }
-.listItem{
+.listItem {
   font-size: x-large;
 }
 /* ============================ G R I D ============================ */
