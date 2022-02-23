@@ -11,13 +11,6 @@ import NavBar from "../../components/navbar";
 import Footer from "../../components/footer";
 import { getAllPostsIds,getPostData } from "../../lib/posts";
 
-export async function getStaticPaths(){
-    const paths=getAllPostsIds()
-    return{
-        paths,
-        fallback:false
-    }
-}
 
 export async function getStaticProps({params}){
     const postData = await getPostData(params.id)
@@ -27,6 +20,15 @@ export async function getStaticProps({params}){
         }
     }
 }
+
+export async function getStaticPaths(){
+    const paths=getAllPostsIds()
+    return{
+        paths,
+        fallback:false
+    }
+}
+
 export default function header1row1({postData}){
     return(
         <div className={styles.container}>
