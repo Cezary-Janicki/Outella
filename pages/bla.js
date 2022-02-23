@@ -9,10 +9,10 @@ import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import Image_Gallery from "../components/image_gallery";
 import Gallery_Sidebar from "../components/gallery_sidebar";
-import { getSortedPostsData } from "../lib/posts";
+import { getSortedProductsData } from "../lib/products";
 
 export async function getStaticProps(){
-  const allPostsData=getSortedPostsData()
+  const allPostsData=getSortedProductsData()
   return{
     props:{
       allPostsData
