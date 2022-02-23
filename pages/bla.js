@@ -7,13 +7,19 @@ import styles from "./bla.module.css";
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
-import Main_Photos from "../components/main_photos";
-import Dresses_Types from "../components/dresses_types";
-import Bestsellers from "../components/bestsellers";
 import Image_Gallery from "../components/image_gallery";
 import Gallery_Sidebar from "../components/gallery_sidebar";
+import { getSortedPostsData } from "../lib/posts";
 
-export default function bla() {
+export async function getStaticProps(){
+  const allPostsData=getSortedPostsData()
+  return{
+    props:{
+      allPostsData
+    }
+  }
+}
+export default function bla({allPostsData}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -26,9 +32,18 @@ export default function bla() {
         <Title />
 
         <NavBar />
-        <div className={styles.wrapper}>
+        <ul className={styles.list}>
+          {allPostsData.map=(({id,row,title})=>(
+            <li className={styles.listItem} key={id}>
+              {title} <br />
+              {row} <br />
+            </li>
+          ))}
+        </ul>
+        {/* <div className={styles.wrapper}>
           <Gallery_Sidebar />
           <Image_Gallery />
+
         </div>
 
         <p>
@@ -77,7 +92,7 @@ export default function bla() {
           lobortis urna quis orci suscipit dapibus. Phasellus vehicula, lectus
           vel ultrices auctor, elit diam posuere lectus, vitae maximus mauris
           diam iaculis nisl. Suspendisse quis dolor et ligula tempus porttitor.{" "}
-        </p>
+        </p> */}
         <p>
           {" "}
           Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
