@@ -13,7 +13,7 @@ import Head from "../../../../components/head";
 import Title from "../../../../components/title";
 import NavBar from "../../../../components/navbar";
 import Footer from "../../../../components/footer";
-import Hamburger_Menu from "../../../../components/hamburger"
+// import Hamburger_Menu from "../../../../components/hamburger"
 
 
 
@@ -31,14 +31,14 @@ export default function header1row6(){
         <p>Księdza Jerzego Popiełuszki 5/6, 64-920 Piła</p>
         <p>Instagram</p>
         <p>Facebook</p>
-        <div className={styles.ham}>
+        {/* <div className={styles.ham}>
             <Router>
             <Hamburger_Menu />
                 <Switch>
                     <Route path='/' />
                 </Switch>
             </Router>
-        </div>
+        </div> */}
         </main>
         <Footer />
 
