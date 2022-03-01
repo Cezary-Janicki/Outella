@@ -45,7 +45,6 @@ export default function Home({ allPostsData }) {
               </div>
             ))}
           </div>
-          <p>test outside map</p>
         </ul>
 
         <p>

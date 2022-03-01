@@ -5,51 +5,60 @@ import { getSortedPostsData } from "../../lib/posts";
 
 
 
-// export async function getStaticProps() {
-//   // const allPostsData = getSortedProductsData();
-//   const allPostsData =getSortedPostsData();
-//   return {
-//     props: {
-//       allPostsData
-//     }
-//   }
-// }
+export async function getStaticProps() {
+  // const allPostsData = getSortedProductsData();
+  const allPostsData =getSortedPostsData();
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
 
-var allPostsData = [{ title: 'Dostawa', date: '4' },
-{ title: 'O firmie', date: '1' },
-{ title: 'Kontakt', date: '6' },
-{ title: 'Płatności', date: '5' },
-{ title: 'Polityka Prywatności', date: '3' },
-{ title: 'Regulamin sklepu internetowego', date: '2' },
-{ title: 'Zwroty', date: '7' }]
-console.log( allPostsData )
 
-export default function footer({ allPostsData }) {
+var foo=[
+  { id: 'informacje', title: 'O firmie', date: '1' },
+  { id: 'regulamin', title: 'Regulamin sklepu internetowego', date: '2'},
+  { id: 'polityka', title: 'Polityka Prywatności', date: '3' },
+  { id: 'dostawa', title: 'Dostawa', date: '4' },
+  { id: 'platnosci', title: 'Płatności', date: '5' },
+  { id: 'kontakt', title: 'Kontakt', date: '6' },
+  { id: 'zwroty', title: 'Zwroty', date: '7' }
+]
+
+export default function footer({ xxx }) {
 return(
   <div>
 
 <div className={styles.wrapper}> {/*if i place console log here for allPostsData it shows up undefined*/}
-{console.log(allPostsData)}
+{console.log()}      {/* If i pass a string or list its displayed correctly*/}
 <div className={styles.background}>
 <footer className={styles.footer}>
-<h2>Blog</h2>
 <ul className={styles.list}>
- {/* <div>
-   {allPostsData.map((d, index)=>(
+
+ <section>
+   <h2>Informacje</h2>
+   {foo.map((d, index)=>(
      <div key={index} className={styles.mapa}>
-     <a>{d.date}</a>
-     <Link href={`/posts/${d.id}`}>
+     <Link href={`/posts/${d.id}`} className={styles.rows}>
      {d.title}
      </Link>
      </div>
    ))}
- </div> */}
-   <p>test outside map</p>
+ </section>
   
  </ul>
- <p>test outside map</p>
 
-{/*     
+ <div className={styles.rows}>
+            <h2>Dane firmy</h2>
+            <p>Cezary Janicki</p>
+            <p>Outella</p>
+            <p>Email: Cezary.D.Janicki@gmail.com</p>
+            <p>NIP:7792517402</p>
+            <p>REGON:386684150</p>
+</div>
+
+    
         <div className={styles.columns}>
           <div className={styles.rows}>
             <h2>Informacje</h2>
@@ -138,7 +147,7 @@ return(
           </div>
         </div>
 
-         */}
+        
       </footer>
       </div>
       </div> 
