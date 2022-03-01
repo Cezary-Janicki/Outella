@@ -1,44 +1,53 @@
 import styles from "./footer.module.css" 
 import Link from "next/link"
-import { getSortedPostsData } from "../../lib/posts"
+import  { getSortedProductsData } from "../../lib/products"
+import { getSortedPostsData } from "../../lib/posts";
 
 
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData
-    }
-  }
-}
+// export async function getStaticProps() {
+//   // const allPostsData = getSortedProductsData();
+//   const allPostsData =getSortedPostsData();
+//   return {
+//     props: {
+//       allPostsData
+//     }
+//   }
+// }
 
+var allPostsData = [{ title: 'Dostawa', date: '4' },
+{ title: 'O firmie', date: '1' },
+{ title: 'Kontakt', date: '6' },
+{ title: 'Płatności', date: '5' },
+{ title: 'Polityka Prywatności', date: '3' },
+{ title: 'Regulamin sklepu internetowego', date: '2' },
+{ title: 'Zwroty', date: '7' }]
+console.log( allPostsData )
 
-export default function footer({allPostsData}) {
+export default function footer({ allPostsData }) {
 return(
+  <div>
+
 <div className={styles.wrapper}> {/*if i place console log here for allPostsData it shows up undefined*/}
+{console.log(allPostsData)}
 <div className={styles.background}>
 <footer className={styles.footer}>
 <h2>Blog</h2>
- {/* <ul className={styles.list}>
-   {allPostsData.map(({id, row, title })=>(
-     <li className={styles.listItem} key={id}>
-       {title} <br />
-       {row} <br />
-     </li>
+<ul className={styles.list}>
+ {/* <div>
+   {allPostsData.map((d, index)=>(
+     <div key={index} className={styles.mapa}>
+     <a>{d.date}</a>
+     <Link href={`/posts/${d.id}`}>
+     {d.title}
+     </Link>
+     </div>
    ))}
- </ul> */}
-{/* <ul className={styles.list}>
-          {allPostsData.map(({ id, row, title }) => (
-            <li className={styles.listItem} key={id}>
-              {title}
-              <br />
-              {id}
-              <br />
-              {row}
-            </li>
-          ))}
-        </ul> */}
+ </div> */}
+   <p>test outside map</p>
+  
+ </ul>
+ <p>test outside map</p>
 
 {/*     
         <div className={styles.columns}>
@@ -133,5 +142,7 @@ return(
       </footer>
       </div>
       </div> 
+      </div>
 )
 }
+

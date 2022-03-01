@@ -23,7 +23,7 @@ export default function header1row6(){
         <Head />
         <Title />
         <NavBar />
-
+{/* 
         <main className={styles.main}>
         <h1> Kontakt </h1>       
         <h2>Outella</h2>
@@ -31,16 +31,16 @@ export default function header1row6(){
         <p>Księdza Jerzego Popiełuszki 5/6, 64-920 Piła</p>
         <p>Instagram</p>
         <p>Facebook</p>
-        {/* <div className={styles.ham}>
+         <div className={styles.ham}>
             <Router>
             <Hamburger_Menu />
                 <Switch>
                     <Route path='/' />
                 </Switch>
             </Router>
-        </div> */}
+        </div> 
         </main>
-        <Footer />
+        <Footer /> */}
 
 
         </div>

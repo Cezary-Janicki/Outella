@@ -1,23 +1,23 @@
 //React components
 import Head from "next/head";
-// import Link from "next/link";
+import Link from "next/link";
 import styles from "./bla.module.css";
 
 //Page components
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
-import Image_Gallery from "../components/image_gallery";
-import Gallery_Sidebar from "../components/gallery_sidebar";
-import { getSortedProductsData } from "../lib/products";
+// import { getSortedProductsData } from "../lib/products.js";
+import { getSortedPostsData } from "../lib/posts";
 
 export async function getStaticProps() {
-  const allPostsData = getSortedProductsData();
+  // const allPostsData = getSortedProductsData();
+  const allPostsData= getSortedPostsData();
   return {
     props: {
-      allPostsData,
-    },
-  };
+      allPostsData
+    }
+  }
 }
 
 export default function Home({ allPostsData }) {
@@ -32,26 +32,16 @@ export default function Home({ allPostsData }) {
       <main className={styles.main}>
         <Title />
         <NavBar />
-        {/*All of the data are properly passed into the map function but fail to showup/load on the website*/}
-        {/*paragraphs, console logs and callin the values mapped does nothing,maybe the map function is broken?*/}
         <ul className={styles.list}>
-          {/* {
-            (allPostsData.map = ({ id, title, date }) => {
-              <li className={styles.listItem} key={id}>
-                {console.log(title)}
-                {title}
-                {date} <br />
-                <a>inside map</a>
-              </li>;
-            })
-          }*/}
-          {/* {console.log(allPostsData)} */}
           <div>
             {allPostsData.map((d, index) => (
               <div key={index} className={styles.mapa}>
-                {console.log(d)}
-                {d.date}
+               <div>
+                <a>{d.date} </a>
+                <Link href={`/posts/${d.id}`}>
                 {d.title}
+                </Link>
+                </div>
               </div>
             ))}
           </div>

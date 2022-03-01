@@ -33,18 +33,11 @@ export default function Post({postData}){
         <NavBar />
 
         <main className={styles.main}>
-        <h1> Kontakt </h1>       
-        <h2>Outella</h2>
-        <p>Cezary Janicki</p>
-        <p>Księdza Jerzego Popiełuszki 5/6, 64-920 Piła</p>
-        <p>Instagram</p>
-        <p>Facebook</p>
-        {postData.title} <br />
+        {/* {postData.title} <br />
         {postData.id} <br />
-        {postData.date} <br />
+        {postData.date} <br /> */}
         <div dangerouslySetInnerHTML={{__html: postData.contentHtml}} />
         </main>
-        {/* <Hamburger_Menu /> */}
         <Footer />
 
 

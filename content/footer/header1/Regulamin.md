@@ -1,7 +1,8 @@
 ---
 title: 'Regulamin sklepu internetowego'
-row: '2'
+date: '2'
 ---
+# Regulamin sklepu internetowego
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
 

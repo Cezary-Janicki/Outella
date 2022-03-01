@@ -1,8 +1,8 @@
 ---
-title: 'Płatności'
-date: '2020-02-01'
+title: 'SAPłatności'
+date: '2019-02-01'
 ---
-#Płatności
+# Płatności
  
 Celem dokonania zamówienia oraz płatności należy się kontaktować z nami poprzez kanały dostępne w stronie Kontakt
 
