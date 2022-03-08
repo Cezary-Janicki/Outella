@@ -2,17 +2,19 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./bla.module.css";
+import Image from "next/image"
 
 //Page components
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
+import leon7 from "../public/vertical/leon7.jpg"
+import Image_Gallery from "../components/image_gallery";
 import { getSortedProductsData } from "../lib/products.js";
-// import { getSortedPostsData } from "../lib/posts";
+
 
 export async function getStaticProps() {
   const allPostsData = getSortedProductsData();
-  // const allPostsData= getSortedPostsData();
   return {
     props: {
       allPostsData
@@ -32,21 +34,24 @@ export default function Home({ allPostsData }) {
       <main className={styles.main}>
         <Title />
         <NavBar />
+        <div className={styles.wrapper}>
+          <Image_Gallery />
+
+        </div>
         <ul className={styles.list}>
-          <div>
+          <div className={styles.flex}>
             {allPostsData.map((d, index) => (
               <div key={index} className={styles.mapa}>
-               <div>
-                <a>{d.date} </a>
-                <Link href={`/posts/${d.id}`}>
+               <li>
+                {/* <a>{d.date} </a> */}
+                <Link href={`/products/dress1.js`}>
                 {d.title}
                 </Link>
-                </div>
+                </li>
               </div>
             ))}
           </div>
         </ul>
-
         <p>
           Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
           facilisis vulputate. Nam est tortor, varius non semper id, efficitur
