@@ -1,5 +1,5 @@
 //React components
-import styles from "../footer/header1/row7"
+import styles from "../index"
 //Page components
 import Head from "../../components/head";
 import Title from "../../components/title";

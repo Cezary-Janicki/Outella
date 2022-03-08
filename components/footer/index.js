@@ -34,31 +34,39 @@ return(
 {console.log()}      {/* If i pass a string or list its displayed correctly*/}
 <div className={styles.background}>
 <footer className={styles.footer}>
-<ul className={styles.list}>
+      <div className={styles.columns}>
+      <ul className={styles.list}>
+      <section>
+        <div className={styles.rows}>
+            <h2>Informacje</h2>
+        </div>
+        {foo.map((d, index)=>(
+          <div key={index} className={styles.mapa}>
+          <Link href={`/posts/${d.id}`} className={styles.rows}>
+          <p>{d.title}</p>
+          </Link>
+          </div>
+        ))}
+      </section>
+        
+      </ul>
+      </div>  
+      <div className={styles.columns} />
 
- <section>
-   <h2>Informacje</h2>
-   {foo.map((d, index)=>(
-     <div key={index} className={styles.mapa}>
-     <Link href={`/posts/${d.id}`} className={styles.rows}>
-     {d.title}
-     </Link>
-     </div>
-   ))}
- </section>
-  
- </ul>
-
- <div className={styles.rows}>
-            <h2>Dane firmy</h2>
-            <p>Cezary Janicki</p>
-            <p>Outella</p>
-            <p>Email: Cezary.D.Janicki@gmail.com</p>
-            <p>NIP:7792517402</p>
-            <p>REGON:386684150</p>
-</div>
-
+      <div className={styles.columns}>
+      <div className={styles.rows}>
+                  <h2>Dane firmy</h2>
+                  </div>
+                  <div className={styles.rows}>
+                  <p>Cezary Janicki</p>
+                  <p>Outella</p>
+                  <p>Email: Cezary.D.Janicki@gmail.com</p>
+                  <p>NIP:7792517402</p>
+                  <p>REGON:386684150</p>
+                  </div>
+      </div>
     
+{/*     
         <div className={styles.columns}>
           <div className={styles.rows}>
             <h2>Informacje</h2>
@@ -145,7 +153,7 @@ return(
           </div>
           <div className={styles.rows}>
           </div>
-        </div>
+        </div> */}
 
         
       </footer>

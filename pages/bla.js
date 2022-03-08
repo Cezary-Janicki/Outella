@@ -7,12 +7,12 @@ import styles from "./bla.module.css";
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
-// import { getSortedProductsData } from "../lib/products.js";
-import { getSortedPostsData } from "../lib/posts";
+import { getSortedProductsData } from "../lib/products.js";
+// import { getSortedPostsData } from "../lib/posts";
 
 export async function getStaticProps() {
-  // const allPostsData = getSortedProductsData();
-  const allPostsData= getSortedPostsData();
+  const allPostsData = getSortedProductsData();
+  // const allPostsData= getSortedPostsData();
   return {
     props: {
       allPostsData
