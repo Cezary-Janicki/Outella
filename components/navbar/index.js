@@ -13,11 +13,13 @@ window.addEventListener('kedown')
 
   return (
     <div>
+      <div className={styles.regularMenu}>
+         <NavBarHorizontal />
+      </div>
       {isOpen ? (
-        <div onClick={() => setIsOpen(!isOpen)}>Regular menu is open!
-        <NavBarHorizontal /></div>
+        <div className={styles.hamMenu} onClick={() => setIsOpen(!isOpen)}>Hamburger menu is closed! </div>
       ) : (
-        <div className={styles.hamMenu} onClick={() => setIsOpen(!isOpen)}>Hamburger is open! 
+        <div className={styles.hamMenu} background-color={red} onClick={() => setIsOpen(!isOpen)}>Hamburger is open! 
         <NavBarVer /></div>
       )}
       

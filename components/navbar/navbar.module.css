@@ -1,4 +1,4 @@
-.hamubrger{
+/* .hamubrger{
   display:none;
 }
 @media (max-width:767px){
@@ -8,11 +8,30 @@
     margin-left:10px;
     z-index:10;
   }
-}
+} */
 .hamMenu{
 position:absolute;
 top:2vw;
 left:2vw;
+padding:2vw 2vw 2vw 4vw;
+background-color: aqua;
+width:50vw;
+}
+.regularMenu{
+  
+}
+
+@media (min-width:767px){
+  .hamMenu{
+    display:none;
+  }
+}
+
+
+@media (max-width:768px){
+  .regularMenu{
+    display:none;
+  }
 }
 .navbar {
   /* Flexbox */
