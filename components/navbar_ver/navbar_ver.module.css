@@ -9,18 +9,14 @@
     z-index:10;
   }
 }
-.hamMenu{
-position:absolute;
-top:2vw;
-left:2vw;
-}
+
 .navbar {
   /* Flexbox */
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   height: 100%;
-  width:100%;
+  width:20%;
   /* background-color: rgba(170, 50, 220, 0.1); */
   /* General CSS */
   border-width: 3mm 0 3mm 0;
@@ -33,7 +29,7 @@ left:2vw;
 
 .navbarColumn {
   /* Flexbox */
-  flex-direction: row;
+  flex-direction:column;
   /* justify-content:center; */
   /* General CSS */
 }
@@ -41,7 +37,7 @@ left:2vw;
 
 .navbarRow {
   /* Flexbox */
-  flex-direction: column;
+  flex-direction: row;
   /* General CSS */
   margin: 2vh 2vw 2vh 0vw;
 }

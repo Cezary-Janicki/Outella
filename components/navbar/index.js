@@ -1,52 +1,29 @@
 import styles from "./navbar.module.css";
 import Link from "next/link";
+import Hamburger_Menu from "../hamburger";
+import {useState} from "react";
+import NavBarHorizontal from "../navbar_horizontal";
+import NavBarVer from "../navbar_ver";
+function test(){
+window.addEventListener('kedown')
+}
+ export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(true);
 
-export default function NavBar() {
+
   return (
-    <div className={styles.navbar}>
-      {" "}
-      {/*==================== N A V B A R====================>*/}
-      <div className={styles.navbarRow}>
-       
-        <Link href="/products/Typ1/lorem">
-        <p><a>Typ sukienki 1 </a></p> 
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ2/ipsum">
-        <p><a>Typ sukienki 2 </a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ3/dolor">
-        <p><a>Typ sukienki 3</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ4/sit">
-        <p><a>Typ sukienki 4</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ5/amet">
-        <p><a> Typ sukienki 5</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
+    <div>
+      {isOpen ? (
+        <div onClick={() => setIsOpen(!isOpen)}>Regular menu is open!
+        <NavBarHorizontal /></div>
+      ) : (
+        <div className={styles.hamMenu} onClick={() => setIsOpen(!isOpen)}>Hamburger is open! 
+        <NavBarVer /></div>
+      )}
+      
+      
     </div>
   );
 }
+ 
+

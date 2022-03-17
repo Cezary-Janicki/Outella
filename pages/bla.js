@@ -35,8 +35,7 @@ export default function Home({ allPostsData }) {
         <Title />
         <NavBar />
         <div className={styles.wrapper}>
-          <Image_Gallery />
-
+          {/* <Image_Gallery /> */}
         </div>
         <ul className={styles.list}>
           <div className={styles.flex}>

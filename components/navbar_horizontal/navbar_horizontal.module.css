@@ -9,11 +9,7 @@
     z-index:10;
   }
 }
-.hamMenu{
-position:absolute;
-top:2vw;
-left:2vw;
-}
+
 .navbar {
   /* Flexbox */
   display: flex;
