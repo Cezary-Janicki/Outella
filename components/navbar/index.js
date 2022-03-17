@@ -4,6 +4,7 @@ import Hamburger_Menu from "../hamburger";
 import {useState} from "react";
 import NavBarHorizontal from "../navbar_horizontal";
 import NavBarVer from "../navbar_ver";
+import Hamburger from "hamburger-react";
 function test(){
 window.addEventListener('kedown')
 }
@@ -13,16 +14,23 @@ window.addEventListener('kedown')
 
   return (
     <div>
+
       <div className={styles.regularMenu}>
          <NavBarHorizontal />
       </div>
+
       {isOpen ? (
-        <div className={styles.hamMenu} onClick={() => setIsOpen(!isOpen)}>Hamburger menu is closed! </div>
+        <div className={styles.hamMenu} onClick={() => setIsOpen(!isOpen)}>
+        </div>
       ) : (
-        <div className={styles.hamMenu} background-color={red} onClick={() => setIsOpen(!isOpen)}>Hamburger is open! 
-        <NavBarVer /></div>
+        <div className={styles.hamMenu}  onClick={() => setIsOpen(!isOpen)}>
+        <div className={styles.hamMenuOpen}><NavBarVer />
+        </div></div>
       )}
+      <div className={styles.hamIcon} onClick={() => setIsOpen(!isOpen)}>
+       <Hamburger toggled={!isOpen} toggle={setIsOpen} /></div> 
       
+
       
     </div>
   );
