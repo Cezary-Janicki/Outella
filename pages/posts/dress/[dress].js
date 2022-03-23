@@ -3,23 +3,31 @@ import Link from "next/link";
 import styles from "./products.module.css";
 import Image from "next/image"
 //Page components
-import Head from "../../components/head";
-import Title from "../../components/title";
-import NavBar from "../../components/navbar";
-import Footer from "../../components/footer";
-import Product_Page_Gallery from "../../components/product_page_gallery";
-import { getSortedProductsData } from "../../lib/products";
+import Head from "../../../components/head";
+import Title from "../../../components/title";
+import NavBar from "../../../components/navbar";
+import Footer from "../../../components/footer";
+import Product_Page_Gallery from "../../../components/product_page_gallery";
+import { getAllProductsIds,getProductsData  } from "../../../lib/products";
 
-export async function getStaticProps(){
-  const allProductsData=getSortedProductsData();
-  console.log(allProductsData);
+export async function getStaticProps(params){
+  const allProductsData=getProductsData(params.id);
   return{
    props:{ 
     allProductsData
-  
     }
   }
 }
+
+export async function getStaticPaths(){
+  const paths = getAllProductsIds()
+    return{
+      paths,
+      fallback:false
+    
+  }
+}
+
 
 export default function bla({allProductsData}) {
   return (
@@ -30,8 +38,12 @@ export default function bla({allProductsData}) {
       <Title />
       <NavBar />
       <main className={styles.main}>
-
-        <div className={styles.product_area}>
+      {allProductsData.title}
+      <br />
+      {allProductsData.id}
+      <br />
+      {allProductsData.date}
+        {/* <div className={styles.product_area}>
         <div className={styles.sidebar}>
         <Product_Page_Gallery />
         </div>
@@ -46,12 +58,12 @@ export default function bla({allProductsData}) {
             <p>{d.data}</p>
           </div>
         ))}
-         </div>
+         </div> */}
         {/* <h1> Sukienka Cekinowa Mini  </h1>
         <h2> 169 zł</h2>
         <h3> Opis produktu</h3>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet elementum libero. Nunc id ante urna. Vestibulum ullamcorper nisi vel augue volutpat ultrices. Donec mollis luctus commodo. Nullam pharetra tempus ex, vel pretium lorem posuere ut. Proin efficitur sed augue nec efficitur. Ut vel euismod turpis, at iaculis eros. Pellentesque faucibus vehicula ultricies. Nunc vitae dapibus augue. Curabitur a accumsan ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam vitae ullamcorper nisi. Quisque luctus enim et suscipit mattis. Cras aliquet fringilla nibh at consectetur.</p> */}
-        <h3>Wymiary sukienki:</h3>
+        {/* <h3>Wymiary sukienki:</h3>
         <div className={styles.wymiary_XS}>
           <ul>
               <li>Wymiary dla rozmiaru XS </li>
@@ -101,7 +113,7 @@ export default function bla({allProductsData}) {
 
 
         </div>
-        </div>
+        </div> */}
       </main>
 
       <Footer />

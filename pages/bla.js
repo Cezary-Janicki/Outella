@@ -14,13 +14,14 @@ import { getSortedProductsData } from "../lib/products.js";
 
 
 export async function getStaticProps() {
-  const allPostsData = getSortedProductsData();
+  const allPostsData = getProductsData();
   return {
     props: {
       allPostsData
     }
   }
 }
+
 
 export default function Home({ allPostsData }) {
   return (
@@ -43,7 +44,7 @@ export default function Home({ allPostsData }) {
               <div key={index} className={styles.mapa}>
                <li>
                 {/* <a>{d.date} </a> */}
-                <Link href={`/products/dress1.js`}>
+                <Link href={`/products/dress1`}>
                 {d.title}
                 </Link>
                 </li>

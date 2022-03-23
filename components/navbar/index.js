@@ -5,9 +5,7 @@ import {useState} from "react";
 import NavBarHorizontal from "../navbar_horizontal";
 import NavBarVer from "../navbar_ver";
 import Hamburger from "hamburger-react";
-function test(){
-window.addEventListener('kedown')
-}
+
  export default function NavBar() {
   const [isOpen, setIsOpen] = useState(true);
 
