@@ -1,39 +1,42 @@
 //React components
 import Link from "next/link";
-import styles from "./products.module.css";
+import styles from "../../index";
 import Image from "next/image"
+import createContext from 'react';
 //Page components
+
+
 import Head from "../../../components/head";
 import Title from "../../../components/title";
 import NavBar from "../../../components/navbar";
 import Footer from "../../../components/footer";
 import Product_Page_Gallery from "../../../components/product_page_gallery";
 import { getAllProductsIds,getProductsData  } from "../../../lib/products";
+// import { getAllPostsIds,getPostsData  } from "../../../lib/posts";
 
-export async function getStaticProps(params){
-  const allProductsData=getProductsData(params.id);
+
+
+
+export async function getStaticPaths(){
+  const paths= getAllProductsIds()
+  // const paths= path.toString();
+  return{
+      paths,
+      fallback:false
+  }
+}
+
+export async function getStaticProps({params}){
+  const allProductsData= await getProductsData(params.id)
   return{
    props:{ 
     allProductsData
     }
-  }
+  } 
 }
-
-export async function getStaticPaths(){
-  const paths = getAllProductsIds()
-    return{
-      paths,
-      fallback:false
-    
-  }
-}
-
-
 export default function bla({allProductsData}) {
   return (
     <div className={styles.container}>
-        {/* {console.log(allProductsData)} */}
-
       <Head />
       <Title />
       <NavBar />
@@ -43,6 +46,9 @@ export default function bla({allProductsData}) {
       {allProductsData.id}
       <br />
       {allProductsData.date}
+      <br />
+      <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
+
         {/* <div className={styles.product_area}>
         <div className={styles.sidebar}>
         <Product_Page_Gallery />

@@ -1,5 +1,5 @@
 //React components
-import styles from "../index"
+import styles from "./index"
 //Page components
 import Head from "../../components/head";
 import Title from "../../components/title";
@@ -15,7 +15,7 @@ export async function getStaticProps({params}){
             postData
         }
     }
-}
+} 
 
 export async function getStaticPaths(){
     const paths= getAllPostsIds()
