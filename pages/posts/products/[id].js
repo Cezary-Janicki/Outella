@@ -1,7 +1,7 @@
 //React components
 import Link from "next/link";
-import styles from "../../index";
-import Image from "next/image"
+import styles from "../../products/products.module.css";
+import Image from "next/image";
 import createContext from 'react';
 //Page components
 
@@ -41,35 +41,15 @@ export default function bla({allProductsData}) {
       <Title />
       <NavBar />
       <main className={styles.main}>
-      {/* {allProductsData.title}
-      <br />
-      {allProductsData.id}
-      <br />
-      {allProductsData.date}
-      <br /> */}
-      <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
-
-        {/* <div className={styles.product_area}>
+        <div className={styles.product_area}>
         <div className={styles.sidebar}>
         <Product_Page_Gallery />
         </div>
         <div className={styles.main_content}>
-          {console.log(allProductsData)}
-        <div>
-        {allProductsData.map((d,index)=>(
-          <div key={index} className={styles.list}>
-            <h1>{d.title}</h1>
-            <h2>169 zł</h2>
-            <h3>Opis produktu</h3>
-            <p>{d.data}</p>
-          </div>
-        ))}
-         </div> */}
-        {/* <h1> Sukienka Cekinowa Mini  </h1>
-        <h2> 169 zł</h2>
-        <h3> Opis produktu</h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet elementum libero. Nunc id ante urna. Vestibulum ullamcorper nisi vel augue volutpat ultrices. Donec mollis luctus commodo. Nullam pharetra tempus ex, vel pretium lorem posuere ut. Proin efficitur sed augue nec efficitur. Ut vel euismod turpis, at iaculis eros. Pellentesque faucibus vehicula ultricies. Nunc vitae dapibus augue. Curabitur a accumsan ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam vitae ullamcorper nisi. Quisque luctus enim et suscipit mattis. Cras aliquet fringilla nibh at consectetur.</p> */}
-        {/* <h3>Wymiary sukienki:</h3>
+ 
+        <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
+
+        <h3>Wymiary sukienki:</h3>
         <div className={styles.wymiary_XS}>
           <ul>
               <li>Wymiary dla rozmiaru XS </li>
@@ -119,7 +99,7 @@ export default function bla({allProductsData}) {
 
 
         </div>
-        </div> */}
+        </div>
       </main>
 
       <Footer />
