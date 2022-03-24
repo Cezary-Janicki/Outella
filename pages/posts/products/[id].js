@@ -41,12 +41,12 @@ export default function bla({allProductsData}) {
       <Title />
       <NavBar />
       <main className={styles.main}>
-      {allProductsData.title}
+      {/* {allProductsData.title}
       <br />
       {allProductsData.id}
       <br />
       {allProductsData.date}
-      <br />
+      <br /> */}
       <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
 
         {/* <div className={styles.product_area}>

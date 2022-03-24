@@ -14,7 +14,7 @@ import { getSortedProductsData } from "../lib/products.js";
 
 
 export async function getStaticProps() {
-  const allPostsData = getProductsData();
+  const allPostsData = await getSortedProductsData();
   return {
     props: {
       allPostsData
@@ -44,7 +44,7 @@ export default function Home({ allPostsData }) {
               <div key={index} className={styles.mapa}>
                <li>
                 {/* <a>{d.date} </a> */}
-                <Link href={`/products/dress1`}>
+                <Link href={`posts/products/${d.id}`}>
                 {d.title}
                 </Link>
                 </li>
