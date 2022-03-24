@@ -25,24 +25,18 @@ padding:0px 50px 0px 0px;
 line-height: 1.5;
 margin:auto;
 }
-
-.wymiary_XS{
+.divXS{
+    visibility: collapse;
+    position: absolute;
+}
+.size_hidden{
     font-size:16px;
     visibility: collapse;
     position:absolute;
 }
-.wymiary_S{
+.size_visible{
     font-size:16px;
-    visibility: collapse;
-    position:absolute
-}
-.wymiary_M{
-    font-size:16px;
-    visibility: collapse;
-    position:absolute
-}
-.wymiary_L{
-    font-size:16px;
+
 }
 
 .label{
@@ -50,4 +44,91 @@ margin:auto;
     height:50px;
     border: solid 2px red;
 }
+radio buttom menu
 
+/* radio1 */
+#radio1:checked ~ #divXS{
+    font-size:16px;
+    background-color: red;
+    visibility: visible;
+}
+#radio1:checked ~#divS{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute
+}
+#radio1:checked ~#divM{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute
+}
+#radio1:checked ~#divL{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute
+}
+
+/* radio2 */
+#radio2:checked ~ #divXS{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute;
+}
+#radio2:checked ~#divS{
+    font-size:16px;
+    visibility:visible;
+}
+#radio2:checked ~#divM{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute
+}
+#radio2:checked ~#divL{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute
+}
+
+/* radio3 */
+#radio3:checked ~ #divXS{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute;
+}
+#radio3:checked ~#divS{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute;
+}
+#radio3:checked ~#divM{
+    font-size:16px;
+    visibility:visible;
+ 
+}
+#radio4:checked ~#divL{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute
+}
+
+/* radio4 */
+#radio4:checked ~ #divXS{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute;
+}
+#radio4:checked ~#divS{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute;
+}
+#radio4:checked ~#divM{
+    font-size:16px;
+    visibility:collapse;
+    position:absolute
+}
+#radio4:checked ~#divL{
+    font-size:16px;
+    visibility:visible;
+
+}

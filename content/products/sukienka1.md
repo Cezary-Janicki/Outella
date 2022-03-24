@@ -1,22 +1,23 @@
 ---
 title: 'Sukienka 1'
 date: '2020-02-01'
-xs1: "2"
-xs2: "2"
-xs3: "2"
-xs4: "2"
-s1: "2"
-s2: "2"
-s3: "2"
-s4: "2"
-m1: "2"
-m2: "2"
-m3: "2"
-m4: "2"
-l1: "2"
-l2: "2"
-l3: "2"
-l4: "2"
+#1 -długość całkowita , 2- biust, 3- talia, 4- biodra
+xs1: "120 cm"
+xs2: "75 cm - maksymalnie 94 cm"
+xs3: "66 cm - maksymalnie 78 cm"
+xs4: "84 cm- maksymalnie 104 cm"
+s1: "120 cm - długość całkowita"
+s2: "81 cm - maksymalnie 102 cm"
+s3: "70 cm - maksymalnie 80 cm"
+s4: "84 cm- maksymalnie 110 cm"
+m1: "150 cm - długość całkowita"
+m2: "86 cm - maksymalnie 110 cm"
+m3: "70 cm - maksymalnie 80 cm"
+m4: "94 cm- maksymalnie 115 cm"
+l1: "150 cm - długość całkowita"
+l2: "48 cm - maksymalnie 130 cm"
+l3: "70 cm - maksymalnie 90 cm"
+l4: "94 cm- maksymalnie 120 cm"
 
 ---
 # Sukienka 1
