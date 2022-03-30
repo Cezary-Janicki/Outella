@@ -18,7 +18,7 @@ import leon8 from "../public/vertical/leon8.jpg"
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
-import Image_Carousel from "../components/image_carousel";
+import Image_Carousel from "../components/embla_carousel/image_carousel";
 import Image_Gallery from "../components/image_gallery";
 import { getSortedProductsData } from "../lib/products.js";
 

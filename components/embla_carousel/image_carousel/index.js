@@ -3,17 +3,17 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "./image_carousel.module.css";
 import Image from "next/image";
-import { useCallback } from "react";
+import { useCallback,useState } from "react";
 
 //Images
-import leon1 from "../../public/vertical/leon1.jpg"
-import leon2 from "../../public/vertical/leon2.jpg"
-import leon3 from "../../public/vertical/leon3.jpg"
-import leon4 from "../../public/vertical/leon4.jpg"
-import leon5 from "../../public/vertical/leon5.jpg"
-import leon6 from "../../public/vertical/leon6.jpg"
-import leon7 from "../../public/vertical/leon7.jpg"
-import leon8 from "../../public/vertical/leon8.jpg"
+import leon1 from "../../../public/vertical/leon1.jpg"
+import leon2 from "../../../public/vertical/leon2.jpg"
+import leon3 from "../../../public/vertical/leon3.jpg"
+import leon4 from "../../../public/vertical/leon4.jpg"
+import leon5 from "../../../public/vertical/leon5.jpg"
+import leon6 from "../../../public/vertical/leon6.jpg"
+import leon7 from "../../../public/vertical/leon7.jpg"
+import leon8 from "../../../public/vertical/leon8.jpg"
 
 //Embla
 import React, { useEffect } from 'react'
@@ -22,7 +22,7 @@ import Autoplay from "embla-carousel-autoplay"
 
 const EmblaCarousel = ({slides}) => {
   const[selectedIndex, setSelectedIndex]= useState(0);
-  const[mainViewportRef, embla]= useEmblaCarousel({skipSnaps=false});
+  const[mainViewportRef, embla]= useEmblaCarousel({skipSnaps:false});
   const[thumbViewportRef,emblaThumbs]=useEmblaCarousel({
     containScroll:"keepSnaps",
     selectedClass: "",
