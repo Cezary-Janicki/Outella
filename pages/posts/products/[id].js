@@ -47,6 +47,7 @@ export default function bla({allProductsData}) {
         </div>
         <div className={styles.main_content}>
         <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
+
         <h3>Wymiary sukienki:</h3>
         
 {/* Need to make an if statment that checks whether the radio button coresponding to size is active

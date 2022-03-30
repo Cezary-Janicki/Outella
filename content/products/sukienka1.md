@@ -18,7 +18,7 @@ l1: "150 cm - długość całkowita"
 l2: "48 cm - maksymalnie 130 cm"
 l3: "70 cm - maksymalnie 90 cm"
 l4: "94 cm- maksymalnie 120 cm"
-
+pic1: "https://i.imgur.com/wdUWdHr.jpg"
 ---
 # Sukienka 1
 ## 169 zł

@@ -10,6 +10,9 @@
   "dependencies": {
     "@splidejs/splide": "^3.6.9",
     "@types/react-router-dom": "^5.3.2",
+    "embla-carousel": "^6.2.0",
+    "embla-carousel-autoplay": "^6.2.0",
+    "embla-carousel-react": "^6.2.0",
     "fs": "0.0.1-security",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.4.1",

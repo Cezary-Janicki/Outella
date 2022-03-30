@@ -2,13 +2,23 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./bla.module.css";
-import Image from "next/image"
+import Image from "next/image";
+
+//Images
+import leon1 from "../public/vertical/leon1.jpg"
+import leon2 from "../public/vertical/leon2.jpg"
+import leon3 from "../public/vertical/leon3.jpg"
+import leon4 from "../public/vertical/leon4.jpg"
+import leon5 from "../public/vertical/leon5.jpg"
+import leon6 from "../public/vertical/leon6.jpg"
+import leon7 from "../public/vertical/leon7.jpg"
+import leon8 from "../public/vertical/leon8.jpg"
 
 //Page components
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
-import leon7 from "../public/vertical/leon7.jpg"
+import Image_Carousel from "../components/image_carousel";
 import Image_Gallery from "../components/image_gallery";
 import { getSortedProductsData } from "../lib/products.js";
 
@@ -24,6 +34,7 @@ export async function getStaticProps() {
 
 
 export default function Home({ allPostsData }) {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -37,6 +48,8 @@ export default function Home({ allPostsData }) {
         <NavBar />
         <div className={styles.wrapper}>
           {/* <Image_Gallery /> */}
+          {/* <Slider_Gallery /> */}
+          <Image_Carousel />
         </div>
         <ul className={styles.list}>
           <div className={styles.flex}>

@@ -44,9 +44,7 @@ margin:auto;
     height:50px;
     border: solid 2px red;
 }
-radio buttom menu
-
-/* radio1 */
+/* 
 #radio1:checked ~ #divXS{
     font-size:16px;
     background-color: red;
@@ -68,7 +66,6 @@ radio buttom menu
     position:absolute
 }
 
-/* radio2 */
 #radio2:checked ~ #divXS{
     font-size:16px;
     visibility:collapse;
@@ -89,7 +86,6 @@ radio buttom menu
     position:absolute
 }
 
-/* radio3 */
 #radio3:checked ~ #divXS{
     font-size:16px;
     visibility:collapse;
@@ -111,7 +107,6 @@ radio buttom menu
     position:absolute
 }
 
-/* radio4 */
 #radio4:checked ~ #divXS{
     font-size:16px;
     visibility:collapse;
@@ -131,4 +126,4 @@ radio buttom menu
     font-size:16px;
     visibility:visible;
 
-}
+} */
