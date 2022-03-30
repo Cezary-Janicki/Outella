@@ -9,4 +9,13 @@ import leon8 from "../../../public/vertical/leon8.jpg"
 
 
 export const media=[leon1,leon2,leon3,leon4,leon5,leon6,leon7];
-export const mediaByIndex = index => media[index %media.length];
+export const mediaByIndex = index => media[index % media.length];
+console.log(mediaByIndex(1)) 
+
+//The function returns an array
+//  {
+//   src: '/_next/static/media/leon2.88e94874.jpg',
+//   height: 2016,
+//   width: 1120,
+//   blurDataURL: '/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fleon2.88e94874.jpg&w=8&q=70'
+// }

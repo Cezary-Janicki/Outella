@@ -18,7 +18,7 @@ import leon8 from "../public/vertical/leon8.jpg"
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
-import Image_Carousel from "../components/embla_carousel/image_carousel";
+import EmblaCarousel from "../components/embla_carousel/image_carousel";
 import Image_Gallery from "../components/image_gallery";
 import { getSortedProductsData } from "../lib/products.js";
 
@@ -34,6 +34,8 @@ export async function getStaticProps() {
 
 
 export default function Home({ allPostsData }) {
+const SLIDE_COUNT =12;
+const slides = Array.from(Array(SLIDE_COUNT).keys())
 
   return (
     <div className={styles.container}>
@@ -49,7 +51,7 @@ export default function Home({ allPostsData }) {
         <div className={styles.wrapper}>
           {/* <Image_Gallery /> */}
           {/* <Slider_Gallery /> */}
-          <Image_Carousel />
+          <EmblaCarousel slides={slides} />
         </div>
         <ul className={styles.list}>
           <div className={styles.flex}>

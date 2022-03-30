@@ -5,15 +5,23 @@ import Image from "next/image";
 import { useCallback,useState } from "react";
 
 //Images , components
+import leon1 from "../../../public/vertical/leon1.jpg"
+import leon2 from "../../../public/vertical/leon2.jpg"
+import leon3 from "../../../public/vertical/leon3.jpg"
+import leon4 from "../../../public/vertical/leon4.jpg"
+import leon5 from "../../../public/vertical/leon5.jpg"
+import leon6 from "../../../public/vertical/leon6.jpg"
+import leon7 from "../../../public/vertical/leon7.jpg"
+import leon8 from "../../../public/vertical/leon8.jpg"
 
 import styles from "./image_carousel.module.css";
-import {mediaByIndex} from "../media_by_index"
+import { mediaByIndex } from "../media_by_index";
 
 //Embla
 import React, { useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from "embla-carousel-autoplay"
-
+import Thumbnails from "../thumbnails"
 const EmblaCarousel = ({slides}) => {
   const[selectedIndex, setSelectedIndex]= useState(0);
   const[mainViewportRef, embla]= useEmblaCarousel({skipSnaps:false});
@@ -41,12 +49,18 @@ useEffect(()=>{
   embla.on("select",onSelect);
 },[embla,onSelect]);
 
+
+// const media=[leon1,leon2,leon3,leon4,leon5,leon6,leon7];
+// const mediaByIndex = index => media[index % media.length];
 return(
+  
   <>
   <div className={styles.embla}>
     <div className={styles.embla_viewport} ref={mainViewportRef}>
       <div className={styles.embla_container}>
-        {slides.map((index)=>(
+ 
+
+        {slides.map((d, index) => (
           <div className={styles.embla_slide} key={index}>
             <Image
               className={styles.embla_slide_img}
@@ -60,10 +74,10 @@ return(
   </div>
 
   <div className={`${styles.embla} ${styles.embla_thumb}`}>
-    <div clasName={styles.embla_viewport} ref={thumbViewportRef}>
+    <div className={styles.embla_viewport} ref={thumbViewportRef}>
       <div className={`${styles.embla_container} ${styles.embla_container_thumb}`}>
         {slides.map((index)=>(
-          <Thumb 
+          <Thumbnails 
             onClick={()=> onThumbClick(index)}
             selected={index===selectedIndex}
             imgSrc={mediaByIndex(index)}
