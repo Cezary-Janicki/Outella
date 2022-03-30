@@ -1,19 +1,13 @@
 //React components
 import Head from "next/head";
 import Link from "next/link";
-import styles from "./image_carousel.module.css";
 import Image from "next/image";
 import { useCallback,useState } from "react";
 
-//Images
-import leon1 from "../../../public/vertical/leon1.jpg"
-import leon2 from "../../../public/vertical/leon2.jpg"
-import leon3 from "../../../public/vertical/leon3.jpg"
-import leon4 from "../../../public/vertical/leon4.jpg"
-import leon5 from "../../../public/vertical/leon5.jpg"
-import leon6 from "../../../public/vertical/leon6.jpg"
-import leon7 from "../../../public/vertical/leon7.jpg"
-import leon8 from "../../../public/vertical/leon8.jpg"
+//Images , components
+
+import styles from "./image_carousel.module.css";
+import {mediaByIndex} from "../media_by_index"
 
 //Embla
 import React, { useEffect } from 'react'
