@@ -12,6 +12,8 @@ import Title from "../../../components/title";
 import NavBar from "../../../components/navbar";
 import Footer from "../../../components/footer";
 import Product_Page_Gallery from "../../../components/product_page_gallery";
+import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
+
 import { getAllProductsIds,getProductsData  } from "../../../lib/products";
 
 
@@ -35,6 +37,10 @@ export async function getStaticProps({params}){
 }
 export default function bla({allProductsData}) {
   const [radio,setRadio]=useState('false')
+
+  const SLIDE_COUNT =12;
+  const slides = Array.from(Array(SLIDE_COUNT).keys())
+
   return (
     <div className={styles.container}>
       <Head />
@@ -43,7 +49,9 @@ export default function bla({allProductsData}) {
       <main className={styles.main}>
         <div className={styles.product_area}>
         <div className={styles.sidebar}>
-        <Product_Page_Gallery />
+        {/* <Product_Page_Gallery /> */}
+        <EmblaCarousel slides={slides} />
+
         </div>
         <div className={styles.main_content}>
         <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />

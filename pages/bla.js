@@ -18,7 +18,6 @@ import leon8 from "../public/vertical/leon8.jpg"
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
-import EmblaCarousel from "../components/embla_carousel/image_carousel";
 import Image_Gallery from "../components/image_gallery";
 import { getSortedProductsData } from "../lib/products.js";
 
@@ -51,7 +50,6 @@ const slides = Array.from(Array(SLIDE_COUNT).keys())
         <div className={styles.wrapper}>
           {/* <Image_Gallery /> */}
           {/* <Slider_Gallery /> */}
-          <EmblaCarousel slides={slides} />
         </div>
         <ul className={styles.list}>
           <div className={styles.flex}>

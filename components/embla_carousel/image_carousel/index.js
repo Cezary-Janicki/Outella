@@ -1,3 +1,9 @@
+//Embla
+import React, { useEffect } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from "embla-carousel-autoplay"
+import {Thumbnails} from "../thumbnails"
+
 //React components
 import Head from "next/head";
 import Link from "next/link";
@@ -5,23 +11,11 @@ import Image from "next/image";
 import { useCallback,useState } from "react";
 
 //Images , components
-import leon1 from "../../../public/vertical/leon1.jpg"
-import leon2 from "../../../public/vertical/leon2.jpg"
-import leon3 from "../../../public/vertical/leon3.jpg"
-import leon4 from "../../../public/vertical/leon4.jpg"
-import leon5 from "../../../public/vertical/leon5.jpg"
-import leon6 from "../../../public/vertical/leon6.jpg"
-import leon7 from "../../../public/vertical/leon7.jpg"
-import leon8 from "../../../public/vertical/leon8.jpg"
+import styles from "./image_carousel.module.css"
+import  {mediaByIndex}  from "../media/"
 
-import styles from "./image_carousel.module.css";
-import { mediaByIndex } from "../media_by_index";
 
-//Embla
-import React, { useEffect } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from "embla-carousel-autoplay"
-import Thumbnails from "../thumbnails"
+//Hooks
 const EmblaCarousel = ({slides}) => {
   const[selectedIndex, setSelectedIndex]= useState(0);
   const[mainViewportRef, embla]= useEmblaCarousel({skipSnaps:false});
@@ -50,8 +44,6 @@ useEffect(()=>{
 },[embla,onSelect]);
 
 
-// const media=[leon1,leon2,leon3,leon4,leon5,leon6,leon7];
-// const mediaByIndex = index => media[index % media.length];
 return(
   
   <>
@@ -64,7 +56,7 @@ return(
           <div className={styles.embla_slide} key={index}>
             <Image
               className={styles.embla_slide_img}
-              src={mediaByIndex(index)}
+              src={mediaByIndex(index)} // need to find a way to extract src from the array
               alt="dress"
               />
           </div>

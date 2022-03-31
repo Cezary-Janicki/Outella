@@ -6,11 +6,14 @@ import leon5 from "../../../public/vertical/leon5.jpg"
 import leon6 from "../../../public/vertical/leon6.jpg"
 import leon7 from "../../../public/vertical/leon7.jpg"
 import leon8 from "../../../public/vertical/leon8.jpg"
-
+import React from 'react';
 
 export const media=[leon1,leon2,leon3,leon4,leon5,leon6,leon7];
 export const mediaByIndex = index => media[index % media.length];
-console.log(mediaByIndex(1)) 
+
+console.log(mediaByIndex(1)[1]) 
+
+
 
 //The function returns an array
 //  {
