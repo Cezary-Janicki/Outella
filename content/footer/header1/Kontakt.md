@@ -1,12 +1,12 @@
 ---
 title: 'Kontakt'
-row: '6'
+date: '6'
 ---
-#Kontakt
+# Kontakt
 
 Outella
 
-Cezary Janicki
-Księdza Jerzego Popiełuszki 5/6, 64-920 Piła
-Instagram   
-Facebook
+- Cezary Janicki
+- Księdza Jerzego Popiełuszki 5/6, 64-920 Piła
+- Instagram   
+- Facebook

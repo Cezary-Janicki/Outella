@@ -11,6 +11,13 @@ export default function Hamburger_Menu(){
                 <FaIcons.FaBars />
                 </div>
             </Link>
+        <div className={styles.hamburger}>
+            <div className="burger burger1" />
+            <div className="burger burger2" />
+            <div className="burger burger3" />
+            <div className="burger burger4" />
+        </div>
+
         </div>
     )
 }

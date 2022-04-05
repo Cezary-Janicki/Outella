@@ -1,8 +1,8 @@
 ---
 title: 'Płatności'
-row: '5'
+date: '5'
 ---
-#Płatności
+# Płatności
 
 Celem dokonania zamówienia oraz płatności należy się kontaktować z nami poprzez kanały dostępne w stronie Kontakt
 

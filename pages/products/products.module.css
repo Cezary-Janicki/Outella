@@ -1,3 +1,7 @@
+.list{
+    letter-spacing:normal;
+}
+
 .main{
     width:90%;
 }
@@ -25,24 +29,18 @@ padding:0px 50px 0px 0px;
 line-height: 1.5;
 margin:auto;
 }
-
-.wymiary_XS{
+.divXS{
+    visibility: collapse;
+    position: absolute;
+}
+.size_hidden{
     font-size:16px;
     visibility: collapse;
     position:absolute;
 }
-.wymiary_S{
+.size_visible{
     font-size:16px;
-    visibility: collapse;
-    position:absolute
-}
-.wymiary_M{
-    font-size:16px;
-    visibility: collapse;
-    position:absolute
-}
-.wymiary_L{
-    font-size:16px;
+
 }
 
 .label{

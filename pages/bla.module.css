@@ -3,7 +3,8 @@
 .main {
   width: 90%;
 }
-
+.li{
+}
 .mapa {
   background-color: yellowgreen;
   min-height: 5em;
@@ -29,11 +30,19 @@
 }
 /* ============================ G R I D ============================ */
 
-.grid {
-  /* Flexbox */
+.grid{
+  /* display:flex; */
+  /* flex-wrap:wrap; 
+  margin: 10vw 10vh 10vw 10vh; */
+
+}
+.flex{
   display: flex;
   flex-direction: row;
-  /* General CSS */
+  justify-content: space-around;
+  list-style-type: none;
+  flex: 1 0 10%;
+ 
 }
 .gridBox {
   /* Flexbox */

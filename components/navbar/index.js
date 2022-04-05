@@ -1,52 +1,37 @@
 import styles from "./navbar.module.css";
 import Link from "next/link";
+import Hamburger_Menu from "../hamburger";
+import {useState} from "react";
+import NavBarHorizontal from "../navbar_horizontal";
+import NavBarVer from "../navbar_ver";
+import Hamburger from "hamburger-react";
 
-export default function NavBar() {
+ export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(true);
+
+
   return (
-    <div className={styles.navbar}>
-      {" "}
-      {/*==================== N A V B A R====================>*/}
-      <div className={styles.navbarRow}>
-       
-        <Link href="/products/Typ1/lorem">
-        <p><a>Typ sukienki 1 </a></p> 
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
+    <div>
+
+      <div className={styles.regularMenu}>
+         <NavBarHorizontal />
       </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ2/ipsum">
-        <p><a>Typ sukienki 2 </a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
+
+      {isOpen ? (
+        <div className={styles.hamMenu} onClick={() => setIsOpen(!isOpen)}>
         </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ3/dolor">
-        <p><a>Typ sukienki 3</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ4/sit">
-        <p><a>Typ sukienki 4</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ5/amet">
-        <p><a> Typ sukienki 5</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
+      ) : (
+        <div className={styles.hamMenu}  onClick={() => setIsOpen(!isOpen)}>
+        <div className={styles.hamMenuOpen}><NavBarVer />
+        </div></div>
+      )}
+      <div className={styles.hamIcon} onClick={() => setIsOpen(!isOpen)}>
+       <Hamburger toggled={!isOpen} toggle={setIsOpen} /></div> 
+      
+
+      
     </div>
   );
 }
+ 
+

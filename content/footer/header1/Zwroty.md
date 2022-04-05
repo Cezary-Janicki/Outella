@@ -1,5 +1,5 @@
 ---
-title: 'Kontakt'
-row: '7'
+title: 'Zwroty'
+date: '7'
 ---
-#Polityka Zwrotów
+# Polityka Zwrotów

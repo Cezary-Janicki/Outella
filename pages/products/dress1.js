@@ -8,15 +8,24 @@ import Title from "../../components/title";
 import NavBar from "../../components/navbar";
 import Footer from "../../components/footer";
 import Product_Page_Gallery from "../../components/product_page_gallery";
-import Main_Photos from "../../components/main_photos";
-import Dresses_Types from "../../components/dresses_types"
-import Bestsellers from "../../components/bestsellers"
-import leon7 from "../../public/vertical/leon7.jpg"
+import { getSortedProductsData } from "../../lib/products";
 
+export async function getStaticProps(){
+  const allProductsData=getSortedProductsData();
+  console.log(allProductsData);
+  return{
+   props:{ 
+    allProductsData
+  
+    }
+  }
+}
 
-export default function bla() {
+export default function bla({allProductsData}) {
   return (
     <div className={styles.container}>
+        {/* {console.log(allProductsData)} */}
+
       <Head />
       <Title />
       <NavBar />
@@ -27,10 +36,21 @@ export default function bla() {
         <Product_Page_Gallery />
         </div>
         <div className={styles.main_content}>
-        <h1> Sukienka Cekinowa Mini  </h1>
+          {console.log(allProductsData)}
+        <div>
+        {allProductsData.map((d,index)=>(
+          <div key={index} className={styles.list}>
+            <h1>{d.title}</h1>
+            <h2>169 zł</h2>
+            <h3>Opis produktu</h3>
+            <p>{d.data}</p>
+          </div>
+        ))}
+         </div>
+        {/* <h1> Sukienka Cekinowa Mini  </h1>
         <h2> 169 zł</h2>
         <h3> Opis produktu</h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet elementum libero. Nunc id ante urna. Vestibulum ullamcorper nisi vel augue volutpat ultrices. Donec mollis luctus commodo. Nullam pharetra tempus ex, vel pretium lorem posuere ut. Proin efficitur sed augue nec efficitur. Ut vel euismod turpis, at iaculis eros. Pellentesque faucibus vehicula ultricies. Nunc vitae dapibus augue. Curabitur a accumsan ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam vitae ullamcorper nisi. Quisque luctus enim et suscipit mattis. Cras aliquet fringilla nibh at consectetur.</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet elementum libero. Nunc id ante urna. Vestibulum ullamcorper nisi vel augue volutpat ultrices. Donec mollis luctus commodo. Nullam pharetra tempus ex, vel pretium lorem posuere ut. Proin efficitur sed augue nec efficitur. Ut vel euismod turpis, at iaculis eros. Pellentesque faucibus vehicula ultricies. Nunc vitae dapibus augue. Curabitur a accumsan ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam vitae ullamcorper nisi. Quisque luctus enim et suscipit mattis. Cras aliquet fringilla nibh at consectetur.</p> */}
         <h3>Wymiary sukienki:</h3>
         <div className={styles.wymiary_XS}>
           <ul>

@@ -1,26 +1,41 @@
 //React components
 import Head from "next/head";
-// import Link from "next/link";
+import Link from "next/link";
 import styles from "./bla.module.css";
+import Image from "next/image";
+
+//Images
+import leon1 from "../public/vertical/leon1.jpg"
+import leon2 from "../public/vertical/leon2.jpg"
+import leon3 from "../public/vertical/leon3.jpg"
+import leon4 from "../public/vertical/leon4.jpg"
+import leon5 from "../public/vertical/leon5.jpg"
+import leon6 from "../public/vertical/leon6.jpg"
+import leon7 from "../public/vertical/leon7.jpg"
+import leon8 from "../public/vertical/leon8.jpg"
 
 //Page components
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import Image_Gallery from "../components/image_gallery";
-import Gallery_Sidebar from "../components/gallery_sidebar";
-import { getSortedProductsData } from "../lib/products";
+import { getSortedProductsData } from "../lib/products.js";
+
 
 export async function getStaticProps() {
-  const allPostsData = getSortedProductsData();
+  const allPostsData = await getSortedProductsData();
   return {
     props: {
-      allPostsData,
-    },
-  };
+      allPostsData
+    }
+  }
 }
 
+
 export default function Home({ allPostsData }) {
+const SLIDE_COUNT =12;
+const slides = Array.from(Array(SLIDE_COUNT).keys())
+
   return (
     <div className={styles.container}>
       <Head>
@@ -32,32 +47,24 @@ export default function Home({ allPostsData }) {
       <main className={styles.main}>
         <Title />
         <NavBar />
-        {/*All of the data are properly passed into the map function but fail to showup/load on the website*/}
-        {/*paragraphs, console logs and callin the values mapped does nothing,maybe the map function is broken?*/}
+        <div className={styles.wrapper}>
+          {/* <Image_Gallery /> */}
+          {/* <Slider_Gallery /> */}
+        </div>
         <ul className={styles.list}>
-          {/* {
-            (allPostsData.map = ({ id, title, date }) => {
-              <li className={styles.listItem} key={id}>
-                {console.log(title)}
-                {title}
-                {date} <br />
-                <a>inside map</a>
-              </li>;
-            })
-          }*/}
-          {/* {console.log(allPostsData)} */}
-          <div>
+          <div className={styles.flex}>
             {allPostsData.map((d, index) => (
               <div key={index} className={styles.mapa}>
-                {console.log(d)}
-                {d.date}
+               <li>
+                {/* <a>{d.date} </a> */}
+                <Link href={`posts/products/${d.id}`}>
                 {d.title}
+                </Link>
+                </li>
               </div>
             ))}
           </div>
-          <p>test outside map</p>
         </ul>
-
         <p>
           Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
           facilisis vulputate. Nam est tortor, varius non semper id, efficitur
