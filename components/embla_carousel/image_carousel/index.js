@@ -51,13 +51,15 @@ return(
     <div className={styles.embla_viewport} ref={mainViewportRef}>
       <div className={styles.embla_container}>
  
-
+      
         {slides.map((d, index) => (
           <div className={styles.embla_slide} key={index}>
             <Image
               className={styles.embla_slide_img}
-              src={mediaByIndex(index)} // need to find a way to extract src from the array
+              src={mediaByIndex(index)} 
               alt="dress"
+              layout="responsive"
+              
               />
           </div>
         ))}

@@ -18,7 +18,10 @@ l1: "150 cm - długość całkowita"
 l2: "48 cm - maksymalnie 130 cm"
 l3: "70 cm - maksymalnie 90 cm"
 l4: "94 cm- maksymalnie 120 cm"
-
+xl1: "150 cm - długość całkowita"
+xl2: "53 cm - maksymalnie 150 cm"
+xl3: "74 cm - maksymalnie 100 cm"
+xl4: "98 cm- maksymalnie 130 cm"
 ---
 # Sukienka 4
 ## 199 zł

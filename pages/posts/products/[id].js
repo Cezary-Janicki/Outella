@@ -36,7 +36,10 @@ export async function getStaticProps({params}){
   } 
 }
 export default function bla({allProductsData}) {
-  const [radio,setRadio]=useState('false')
+  const [radio,setRadio]=useState('XS')
+  const handleChange=(e)=>{
+    setRadio(e.target.value);
+  }
 
   const SLIDE_COUNT =12;
   const slides = Array.from(Array(SLIDE_COUNT).keys())
@@ -62,45 +65,44 @@ export default function bla({allProductsData}) {
     and then if it is display the snippet with visible state  if not use the hidden state
     repeat for all four states and radio button select menu should be working  */}
         <div className={styles.sizeSelector}>
-       
-          <input type="radio" id="radio1" name="sizeSelector" value="radio1" />XS 
-          <input type="radio" id="radio2" name="sizeSelector" value="radio2" />S   
-          <input type="radio" id="radio3" name="sizeSelector" value="radio3" />M
-          <input type="radio" id="radio4" name="sizeSelector" value="radio4" />L
-        <div id="divXS" >
-          <ul>
-              <li>Wymiary dla rozmiaru XS </li>
-              <li>{allProductsData.xs1}</li>   
-              <li>{allProductsData.xs2}</li>
-              <li>{allProductsData.xs3}</li>
-              <li>{allProductsData.xs4}</li>       
-          </ul> 
+          <form>
+          <input type="radio" id="radio1" name="sizeSelector" value="XS"   onChange={handleChange}/><label for="radio1">XS</label>
+          <input type="radio" id="radio2" name="sizeSelector" value="S"   onChange={handleChange}/><label for="radio2">S</label> 
+          <input type="radio" id="radio3" name="sizeSelector" value="M"   onChange={handleChange}/><label for="radio3">M</label>
+          <input type="radio" id="radio4" name="sizeSelector" value="L"   onChange={handleChange}/><label for="radio4">L</label>
+          <input type="radio" id="radio5" name="sizeSelector" value="XL" onChange={handleChange}/><label for="radio5">XL</label>
+          </form>
+          <div className={styles.list}>
+          <p>Wymiary dla rozmiaru {radio}</p>
+          {radio=="XS" ? <ul>
+      <li>Długość całkowita: {allProductsData.xs1}</li>   
+      <li>Biust: {allProductsData.xs2}</li>
+      <li>Talia: {allProductsData.xs3}</li>
+      <li>Biodra: {allProductsData.xs4}</li>       
+      </ul> :radio=="S" ?<ul>
+              <li>Długość całkowita: {allProductsData.s1}</li> 
+              <li>Biust: {allProductsData.s2}</li>  
+              <li>Talia: {allProductsData.s3}</li>
+              <li>Biodra: {allProductsData.s4}</li>            
+          </ul> : radio=="M" ?<ul>
+              <li>Długość całkowita: {allProductsData.m1}</li>   
+              <li>Biust: {allProductsData.m2}</li>
+              <li>Talia: {allProductsData.m3}</li>
+              <li>Biodra: {allProductsData.m4}</li>           
+          </ul>: radio=="L"?  <ul>
+              <li>Długość całkowita: {allProductsData.l1}</li>   
+              <li>Buist: {allProductsData.l2}</li>
+              <li>Talia: {allProductsData.l3}</li>
+              <li>Biodra: {allProductsData.l4}</li>            
+          </ul> : radio=="XL"? <ul>
+              <li>Długośc całkowita: {allProductsData.xl1}</li>   
+              <li>Biust: {allProductsData.xl2}</li>
+              <li>Talia: {allProductsData.xl3}</li>
+              <li>Biodra: {allProductsData.xl4}</li>            
+          </ul> : <p>none</p> }
           </div>
-        <div id="divS">
-          <ul>
-              <li>Wymiary dla rozmiaru S </li>
-              <li>{allProductsData.s1}</li>   
-              <li>{allProductsData.s3}</li>
-              <li>{allProductsData.s4}</li>            
-          </ul>  
-          </div>
-        <div id="divM">
-          <ul>
-              <li>Wymiary dla rozmiaru M </li>
-              <li>{allProductsData.m1}</li>   
-              <li>{allProductsData.m2}</li>
-              <li>{allProductsData.m3}</li>
-              <li>{allProductsData.m4}</li>           
-          </ul>  
-          </div>
-        <div id="divL">  
-          <ul>
-              <li>Wymiary dla rozmiaru L </li>
-              <li>{allProductsData.l1}</li>   
-              <li>{allProductsData.l2}</li>
-              <li>{allProductsData.l3}</li>
-              <li>{allProductsData.l4}</li>            
-          </ul> 
+       <div>
+
         </div>
         </div>
         </div>

@@ -13,8 +13,6 @@ export const Thumbnails = ({selected, onClick, imgSrc}) => (
                 <Image
           alt="Dress"
           src={imgSrc}
-          width={380}
-          height={510}
           />
         </button>
     </div>
