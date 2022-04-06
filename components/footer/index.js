@@ -1,6 +1,5 @@
 import styles from "./footer.module.css" 
 import Link from "next/link"
-import  { getSortedProductsData } from "../../lib/products"
 import { getSortedPostsData } from "../../lib/posts";
 
 
@@ -26,8 +25,10 @@ var foo=[
   { id: 'zwroty', title: 'Zwroty', date: '7' }
 ]
 
-export default function footer({ xxx }) {
-return(
+
+export default function footer({  }) {
+  console.log(foo);
+  return(
   <div>
 
 <div className={styles.wrapper}> {/*if i place console log here for allPostsData it shows up undefined*/}
