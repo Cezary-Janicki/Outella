@@ -5,20 +5,14 @@ import styles from "./bla.module.css";
 import Image from "next/image";
 
 //Images
-import leon1 from "../public/vertical/leon1.jpg"
-import leon2 from "../public/vertical/leon2.jpg"
-import leon3 from "../public/vertical/leon3.jpg"
-import leon4 from "../public/vertical/leon4.jpg"
-import leon5 from "../public/vertical/leon5.jpg"
-import leon6 from "../public/vertical/leon6.jpg"
-import leon7 from "../public/vertical/leon7.jpg"
-import leon8 from "../public/vertical/leon8.jpg"
+
 
 //Page components
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import Image_Gallery from "../components/image_gallery";
+import Gallery_Sidebar from "../components/gallery_sidebar"
 import { getSortedProductsData } from "../lib/products.js";
 
 
@@ -30,11 +24,9 @@ export async function getStaticProps() {
     }
   }
 }
-
-
 export default function Home({ allPostsData }) {
-const SLIDE_COUNT =12;
-const slides = Array.from(Array(SLIDE_COUNT).keys())
+// const SLIDE_COUNT =12;
+// const slides = Array.from(Array(SLIDE_COUNT).keys())
 
   return (
     <div className={styles.container}>
@@ -48,8 +40,8 @@ const slides = Array.from(Array(SLIDE_COUNT).keys())
         <Title />
         <NavBar />
         <div className={styles.wrapper}>
-          {/* <Image_Gallery /> */}
-          {/* <Slider_Gallery /> */}
+        <Image_Gallery />
+        {/* <Gallery_Sidebar /> */}
         </div>
         <ul className={styles.list}>
           <div className={styles.flex}>
