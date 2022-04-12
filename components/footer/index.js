@@ -27,12 +27,11 @@ var foo=[
 
 
 export default function footer({  }) {
-  console.log(foo);
   return(
   <div>
 
-<div className={styles.wrapper}> {/*if i place console log here for allPostsData it shows up undefined*/}
-{console.log()}      {/* If i pass a string or list its displayed correctly*/}
+<div className={styles.wrapper}> {/* If i place console log here for allPostsData it shows up undefined*/}
+                                 {/* If i pass a string or list its displayed correctly */}
 <div className={styles.background}>
 <footer className={styles.footer}>
       <div className={styles.columns}>
