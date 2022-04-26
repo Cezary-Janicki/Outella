@@ -45,8 +45,7 @@
 .imageWrapper:hover .image{
   opacity:0.6;
   filter:blur(7px) hue-rotate(-20deg);
-  background-color: aquamarine;
-  margin:20px;
+
 }
 
 .image{

@@ -39,15 +39,15 @@ export default function Home({ allPostsData }) {
       <main className={styles.main}>
         <Title />
         <NavBar />
-        <div className={styles.wrapper}>
-        {/* <Image_Gallery /> */}
-        {/* <Gallery_Sidebar /> */}
-        </div>
+        {/* <div className={styles.wrapper}>
+        <Image_Gallery />
+        <Gallery_Sidebar />
+        </div> */}
           <div className={styles.grid}>
             {allPostsData.map((d, index) => (
                           <div key={index} className={styles.mapa}>
                           <Link href={`posts/products/${d.id}`}>
-                            <div>
+                            <div className={styles.imageWrapper}>
                              <div className={styles.image}><Image
                              alt="Dress"
                              src={leon1}
@@ -73,7 +73,27 @@ export default function Home({ allPostsData }) {
     </div>
   );
 }
+/* 
 
+
+ <div className={styles.grid}>
+
+        <Link href="/products/dress1">
+        <div className={styles.imageWrapper}>
+            <div className={styles.image}><Image
+            alt="Dress"
+            src={leon7}
+            width={380}
+            height={510}
+            /></div>
+            <div className={styles.middle}>
+             <div className={styles.text}>John Doe</div>
+            </div>
+            
+        </div>
+        </Link>
+
+*/
 
             /* <div key={index} className={styles.mapa}>
               <li>
