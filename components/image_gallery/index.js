@@ -19,7 +19,9 @@ export default function Image_Gallery({ allPostsData }){
 
     return(
     <div className={styles.grid}>
-        {/* <div className={styles.imageWrapper}>
+      
+      
+        <div className={styles.imageWrapper}>
           {allPostsData.map((d, index)=> (
             <div key={index} className={styles.mapa}>
                  <Link href={`posts/products/${d.id}`}>
@@ -35,7 +37,7 @@ export default function Image_Gallery({ allPostsData }){
                   </Link>
               </div>
           ))}
-        </div> */}
+        </div>
     </div>
     
     )

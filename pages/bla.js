@@ -11,9 +11,9 @@ import Image from "next/image";
 import Title from "../components/title";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
-import Image_Gallery from "../components/image_gallery";
-import Gallery_Sidebar from "../components/gallery_sidebar"
+import Gallery_Sidebar from "../components/gallery_sidebar";
 import { getSortedProductsData } from "../lib/products.js";
+import leon1 from "../public/vertical/leon1.jpg"
 
 
 export async function getStaticProps() {
@@ -40,23 +40,28 @@ export default function Home({ allPostsData }) {
         <Title />
         <NavBar />
         <div className={styles.wrapper}>
-        <Image_Gallery />
+        {/* <Image_Gallery /> */}
         {/* <Gallery_Sidebar /> */}
         </div>
-        <ul className={styles.list}>
-          <div className={styles.flex}>
+          <div className={styles.grid}>
             {allPostsData.map((d, index) => (
-              <div key={index} className={styles.mapa}>
-               <li>
-                {/* <a>{d.date} </a> */}
-                <Link href={`posts/products/${d.id}`}>
-                {d.title}
-                </Link>
-                </li>
-              </div>
+                          <div key={index} className={styles.mapa}>
+                          <Link href={`posts/products/${d.id}`}>
+                            <div>
+                             <div className={styles.image}><Image
+                             alt="Dress"
+                             src={leon1}
+                             width={380}
+                             height={510}
+                             /></div>
+                           <div className={styles.middle}>
+                           <div className={styles.text}>{d.title} <p>stefan xxxsdsa</p></div>
+                           </div>  </div>         
+                           </Link>
+                       </div>
+
             ))}
           </div>
-        </ul>
         <p>
           Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
           facilisis vulputate. Nam est tortor, varius non semper id, efficitur
@@ -68,6 +73,21 @@ export default function Home({ allPostsData }) {
     </div>
   );
 }
+
+
+            /* <div key={index} className={styles.mapa}>
+              <li>
+               <Link href={`posts/products/${d.id}`}>
+               <div>{d.title}
+               <div className={styles.image}><Image
+                   alt="Dress"
+                   src={leon1}
+                   width={380}
+                   height={510}
+                   /></div></div>
+               </Link>
+               </li>
+              </div> */
 
 {
   /* <div className={styles.wrapper}>
