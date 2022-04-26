@@ -1,6 +1,15 @@
 ---
 title: 'Sukienka 2'
 date: '2020-02-01'
+pictureNumber: "8"
+picture1: "leon2.jpg"
+picture2: "leon3.jpg"
+picture3: "leon4.jpg"
+picture4: "leon5.jpg"
+picture5: "leon6.jpg"
+picture6: "leon7.jpg"
+picture7: "leon8.jpg"
+picture8: "leon1.jpg"
 #1 -długość całkowita , 2- biust, 3- talia, 4- biodra
 xs1: "120 cm"
 xs2: "75 cm - maksymalnie 94 cm"

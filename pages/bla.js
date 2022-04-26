@@ -50,7 +50,7 @@ export default function Home({ allPostsData }) {
                             <div className={styles.imageWrapper}>
                              <div className={styles.image}><Image
                              alt="Dress"
-                             src={leon1}
+                             src={`/../public/vertical/${d.picture1}`}
                              width={380}
                              height={510}
                              /></div>
