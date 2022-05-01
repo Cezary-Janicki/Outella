@@ -24,10 +24,14 @@ export async function getStaticProps() {
     }
   }
 }
+
 export default function Home({ allPostsData }) {
 // const SLIDE_COUNT =12;
 // const slides = Array.from(Array(SLIDE_COUNT).keys())
-
+allPostsData.map((d,index)=> (
+  <div key={index} className={styles.mapa}>
+  </div>
+))
   return (
     <div className={styles.container}>
       <Head>
@@ -50,12 +54,13 @@ export default function Home({ allPostsData }) {
                             <div className={styles.imageWrapper}>
                              <div className={styles.image}><Image
                              alt="Dress"
-                             src={`/../public/vertical/${d.picture1}`}
+                             src={`/../public/products/${d.id}/${d.picture1}`}
                              width={380}
                              height={510}
                              /></div>
+                             
                            <div className={styles.middle}>
-                           <div className={styles.text}>{d.title} <p>stefan xxxsdsa</p></div>
+                           <div className={styles.text}>{d.title}</div>
                            </div>  </div>         
                            </Link>
                        </div>

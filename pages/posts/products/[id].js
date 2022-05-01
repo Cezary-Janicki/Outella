@@ -52,7 +52,6 @@ export default function bla({allProductsData}) {
       <main className={styles.main}>
         <div className={styles.product_area}>
         <div className={styles.sidebar}>
-        {/* <Product_Page_Gallery /> */}
         <EmblaCarousel slides={slides} />
 
         </div>
@@ -61,12 +60,9 @@ export default function bla({allProductsData}) {
 
         <h3>Wymiary sukienki:</h3>
         
-{/* Need to make an if statment that checks whether the radio button coresponding to size is active
-    and then if it is display the snippet with visible state  if not use the hidden state
-    repeat for all four states and radio button select menu should be working  */}
         <div className={styles.sizeSelector}>
           <form>
-          <input type="radio" id="radio1" name="sizeSelector" value="XS"   onChange={handleChange}/><label for="radio1">XS</label>
+          <input type="radio" id="radio1" name="sizeSelector" value="XS"   onChange={handleChange} /><label for="radio1">XS</label>
           <input type="radio" id="radio2" name="sizeSelector" value="S"   onChange={handleChange}/><label for="radio2">S</label> 
           <input type="radio" id="radio3" name="sizeSelector" value="M"   onChange={handleChange}/><label for="radio3">M</label>
           <input type="radio" id="radio4" name="sizeSelector" value="L"   onChange={handleChange}/><label for="radio4">L</label>

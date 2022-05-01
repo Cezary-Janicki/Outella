@@ -15,6 +15,8 @@ import styles from "./image_carousel.module.css"
 import  {mediaByIndex}  from "../media/"
 
 
+
+
 //Hooks
 const EmblaCarousel = ({slides}) => {
   const[selectedIndex, setSelectedIndex]= useState(0);
@@ -85,51 +87,3 @@ return(
 )
 }
 export default EmblaCarousel
-// export const Image_Carousel = () => {
-//   const autoOptions ={delay: 4000}
-//   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true },[Autoplay(autoOptions)])
-
-//   const scrollPrev= useCallback(()=>{
-//       if(emblaApi) emblaApi.scrollPrev()
-//   },[emblaApi])
-//   const scrollNext= useCallback(()=>{
-//       if(emblaApi) emblaApi.scrollNext()
-//   },[emblaApi])
-
-//   useEffect(() => {
-//     if (emblaApi) {
-//       // Embla API is ready
-//     }
-//   }, [emblaApi])
-
-//   return (
-//     <div className={styles.embla} >
-//       <div clasName={styles.embla__viewport} ref={emblaRef}>
-//       <div className={styles.embla__container}>
-//         <div className={styles.embla__slide}><Image
-//           alt="Dress"
-//           src={leon7}
-//           width={380}
-//           height={510}
-//           /></div>
-//         <div className={styles.embla__slide}><Image
-//           alt="Dress"
-//           src={leon3}
-//           width={380}
-//           height={510}
-//           /></div>
-//         <div className={styles.embla__slide}><Image
-//           alt="Dress"
-//           src={leon1}
-//           width={380}
-//           height={510}
-//           /></div>
-//         </div>
-//       </div>
-//     <button className={styles.embla_prev} onClick={scrollPrev}>Prev</button>
-//     <button className={styles.embla_prev} onClick={scrollNext}>Next</button>
-//     </div>
-//   )
-// }
-
-// export default Image_Carousel;
