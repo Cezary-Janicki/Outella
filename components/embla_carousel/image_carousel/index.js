@@ -59,6 +59,7 @@ return(
             <Image
               className={styles.embla_slide_img}
               src={mediaByIndex(index)} 
+              // src={`/../public/products/${d.id}/${d.picture1}`}
               alt="dress"
               layout="responsive"
               

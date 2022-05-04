@@ -13,22 +13,7 @@ export const mediaByIndex = index => media[index % media.length];
 console.log(mediaByIndex(1)[1]) 
 
 
-//The function returns an array
-//  {
-//   src: '/_next/static/media/leon2.88e94874.jpg',
-//   height: 2016,
-//   width: 1120,
-//   blurDataURL: '/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fleon2.88e94874.jpg&w=8&q=70'
-// }
 
-
-// I want to add variable images to embla carousel just like the images from main page
-// Number of slides is kept in the md file 
-// we should import getStortedProductsData and write a simmilar map as in bla.js page
-// the map should be located where the image map is 
-// each product should have it's own directory and all images in that dir should be automatically imported
-// then a map needs to be written to make an array of images for embla to use
-// how many slides information should be passed into the posts/products/[id].js
 
 
 
@@ -41,6 +26,27 @@ To load the into the file a map should be used that uses the stored picture coun
 To stop images from repeating we can overload the media const with images, and modulate how many slides we show in order for images not to repeat.
    (the image count value in md file that should be passed posts/products/[id].js as SLIDE_COUNT) ↑
 To do this all of the products would need to have the same generic import names dress1, dress2 ect.
+
+*/
+/*
+There is a better way to pass images into image_carousel component than dynamically improting images to this file. Code that is responsible for generating pictures looks like this 
+
+ {slides.map((d, index) => (
+          <div className={styles.embla_slide} key={index}>
+            <Image
+              className={styles.embla_slide_img}
+              src={mediaByIndex(index)} 
+              // src={`/../public/products/${d.id}/${d.picture1}`}
+              alt="dress"
+              layout="responsive"
+              
+              />
+          </div>
+        ))}
+
+To better plug pictures into it we can get rid of the mediaByIndex function that relies on importing single pictures, and plug pictures directly in the src part of the image component.
+In order to do this we need to use props to get all of the file names and contents from content folder for each dress as we are doing it in and [id].js type file.
+Then we can use a map to display pictures from the appropirate folder one by one.
 
 */
 
@@ -58,3 +64,22 @@ const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/
 
 
 */
+
+
+// OLD COMMENTS 
+//The function returns an array
+//  {
+//   src: '/_next/static/media/leon2.88e94874.jpg',
+//   height: 2016,
+//   width: 1120,
+//   blurDataURL: '/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fleon2.88e94874.jpg&w=8&q=70'
+// }
+
+
+// I want to add variable images to embla carousel just like the images from main page
+// Number of slides is kept in the md file 
+// we should import getStortedProductsData and write a simmilar map as in bla.js page
+// the map should be located where the image map is 
+// each product should have it's own directory and all images in that dir should be automatically imported
+// then a map needs to be written to make an array of images for embla to use
+// how many slides information should be passed into the posts/products/[id].js
