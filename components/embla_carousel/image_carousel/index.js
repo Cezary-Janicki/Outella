@@ -13,12 +13,21 @@ import { useCallback,useState } from "react";
 //Images , components
 import styles from "./image_carousel.module.css"
 import  {mediaByIndex}  from "../media/"
-
-
-
+import {getProductsData}  from "../../../lib/products";
+import leon5 from "/public/horizontal/leon5.jpg"
+import leon from "../../../public/vertical/leon5.jpg"
+//Props
+export async function getStaticProps(){
+  const allProductsData= await getProductsData();
+  return{
+    props:{
+      allProductsData
+    }
+  }
+}
 
 //Hooks
-const EmblaCarousel = ({slides}) => {
+const EmblaCarousel = ({slides,allProductsData}) => {
   const[selectedIndex, setSelectedIndex]= useState(0);
   const[mainViewportRef, embla]= useEmblaCarousel({skipSnaps:false});
   const[thumbViewportRef,emblaThumbs]=useEmblaCarousel({
@@ -26,6 +35,7 @@ const EmblaCarousel = ({slides}) => {
     selectedClass: "",
     dragFree: true
   });
+
 const onThumbClick = useCallback(
   (index) => {
     if(!embla || !emblaThumbs) return;
@@ -46,9 +56,12 @@ useEffect(()=>{
 },[embla,onSelect]);
 
 
+
 return(
   
   <>
+
+  {console.log("contents of allProductsData prop",allProductsData)}
   <div className={styles.embla}>
     <div className={styles.embla_viewport} ref={mainViewportRef}>
       <div className={styles.embla_container}>
@@ -56,13 +69,39 @@ return(
       
         {slides.map((d, index) => (
           <div className={styles.embla_slide} key={index}>
+           
+           
+             {/* {allProductsData.map((d, index) => (
+                          <div key={index} className={styles.mapa}>
+                          <Link href={`posts/products/${d.id}`}>
+                            <div className={styles.imageWrapper}>
+                             <div className={styles.image}><Image
+                             alt="Dress"
+                            //  src={`../../../public/products/${d.id}/${d.picture1}`}
+                            src={"../../../public/product/sukienka1/leon1.jpg"}
+                             width={380}
+                             height={510}
+                             /></div>
+                             
+                           <div className={styles.middle}>
+                           <div className={styles.text}>{d.title}</div>
+                           </div>  </div>         
+                           </Link>
+                       </div>
+
+            ))} */}
+           
             <Image
               className={styles.embla_slide_img}
-              src={mediaByIndex(index)} 
-              // src={`/../public/products/${d.id}/${d.picture1}`}
               alt="dress"
-              layout="responsive"
-              
+              src={"/vertical/leon5.jpg"}
+              // src={leon}
+              height={600}
+              width={700}
+              // src={mediaByIndex(index)} 
+                //  layout="responsive"
+              // layout = "fill"
+
               />
           </div>
         ))}
@@ -87,4 +126,12 @@ return(
   </>
 )
 }
+
 export default EmblaCarousel
+
+/*
+I cant seem to pass props into the return statement. I also cant make it a function as it breakes the code
+I need to learn how the return statement works without function being involved so i rewrite it to accept props
+
+
+*/

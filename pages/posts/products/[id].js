@@ -59,7 +59,6 @@ export default function bla({allProductsData}) {
         <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
 
         <h3>Wymiary sukienki:</h3>
-        
         <div className={styles.sizeSelector}>
           <form>
           <input type="radio" id="radio1" name="sizeSelector" value="XS"   onChange={handleChange} /><label for="radio1">XS</label>

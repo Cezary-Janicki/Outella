@@ -46,7 +46,7 @@
 }
 
 .embla_slide_img {
-  position: absolute;
+  /* position: absolute; */
   display: block;
   top: 50%;
   left: 50%;

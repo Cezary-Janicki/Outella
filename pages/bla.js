@@ -18,6 +18,7 @@ import leon1 from "../public/vertical/leon1.jpg"
 
 export async function getStaticProps() {
   const allPostsData = await getSortedProductsData();
+  // console.log("bla.js getSortedProductsData Content",allPostsData)
   return {
     props: {
       allPostsData

@@ -1,11 +1,11 @@
-import leon1 from "../../../public/horizontal/leon1.jpg"
-import leon2 from "../../../public/horizontal/leon2.jpg"
-import leon3 from "../../../public/horizontal/leon3.jpg"
-import leon4 from "../../../public/horizontal/leon4.jpg"
-import leon5 from "../../../public/horizontal/leon5.jpg"
-import leon6 from "../../../public/vertical/leon6.jpg"
-import leon7 from "../../../public/vertical/leon7.jpg"
-import leon8 from "../../../public/vertical/leon8.jpg"
+import leon1 from "/public/horizontal/leon1.jpg"
+import leon2 from "/public/horizontal/leon2.jpg"
+import leon3 from "/public/horizontal/leon3.jpg"
+import leon4 from "/public/horizontal/leon4.jpg"
+import leon5 from "/public/horizontal/leon5.jpg"
+import leon6 from "/public/vertical/leon6.jpg"
+import leon7 from "/public/vertical/leon7.jpg"
+import leon8 from "/public/vertical/leon8.jpg"
 
 export const media=[leon4,leon5];
 export const mediaByIndex = index => media[index % media.length];
@@ -49,6 +49,17 @@ In order to do this we need to use props to get all of the file names and conten
 Then we can use a map to display pictures from the appropirate folder one by one.
 
 */
+/*
+Best way to plug in this data would be the useContext function. The function would need to be called along getStaticProps so that the data can be saved and then recalled in  [id].js
+The getSortedPostsData in bla.js returns all of the data we need for pictures to work. We get all of the meta data along with the file id. 
+We can use the useContext hook just to pass data into our function. We dont need to write any additional hooks to process it in anyway. However all of the data is in one file.
+Map need to be used just like one in bla.js d.<desired value index name> ect ect 
+example one the internet : https://www.simplenextjs.com/posts/next-context
+*/
+
+
+// OLD COMMENTS 
+
 
 /* 
 Sample import code from stackoverflow https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
@@ -66,7 +77,7 @@ const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/
 */
 
 
-// OLD COMMENTS 
+
 //The function returns an array
 //  {
 //   src: '/_next/static/media/leon2.88e94874.jpg',
