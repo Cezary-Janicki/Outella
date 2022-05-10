@@ -15,7 +15,7 @@ import Product_Page_Gallery from "../../../components/product_page_gallery";
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 
 import { getAllProductsIds,getProductsData  } from "../../../lib/products";
-
+import { useAppContext } from "../../../context/state";
 
 
 
@@ -44,6 +44,11 @@ export default function bla({allProductsData}) {
   const SLIDE_COUNT =12;
   const slides = Array.from(Array(SLIDE_COUNT).keys())
 
+
+  const mycontext = useAppContext();
+
+
+
   return (
     <div className={styles.container}>
       <Head />
@@ -57,7 +62,7 @@ export default function bla({allProductsData}) {
         </div>
         <div className={styles.main_content}>
         <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
-
+        <p> value of mycontext is {mycontext.value} </p>
         <h3>Wymiary sukienki:</h3>
         <div className={styles.sizeSelector}>
           <form>
