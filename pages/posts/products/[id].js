@@ -29,6 +29,7 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
   const allProductsData= await getProductsData(params.id)
+  console.log(allProductsData)
   return{
    props:{ 
     allProductsData
@@ -36,15 +37,17 @@ export async function getStaticProps({params}){
   } 
 }
 export default function bla({allProductsData}) {
+
+  //radio buttons size selector code
   const [radio,setRadio]=useState('XS')
   const handleChange=(e)=>{
     setRadio(e.target.value);
   }
-
-  const SLIDE_COUNT =12;
+  //embla carousel slide code
+  const SLIDE_COUNT = allProductsData.pictureNumber
   const slides = Array.from(Array(SLIDE_COUNT).keys())
 
-
+  //useContext hook needed to get the image links when hook works we can copy it over to embla carousel code
   const mycontext = useAppContext();
 
 
@@ -62,7 +65,18 @@ export default function bla({allProductsData}) {
         </div>
         <div className={styles.main_content}>
         <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
-        <p> value of mycontext is {mycontext.value} </p>
+        <p> value of mycontext is {mycontext.xs1} </p>
+
+
+      <>
+      <div className={styles.image}><Image
+                    alt="Dress"
+                    src={`/vertical/${mycontext.picture5}`}
+                    width={380}
+                    height={510}
+                    /></div>
+      </>
+
         <h3>Wymiary sukienki:</h3>
         <div className={styles.sizeSelector}>
           <form>
