@@ -1,7 +1,9 @@
-import {createContext, useContext} from "react";
+import {createContext, useContext,useState} from "react";
 import { getAllProductsIds,getProductsData } from "../lib/products";
 const AppContext= createContext();
 const AppUpdateContext = createContext();
+
+
 export async function getStaticProps({params}){
     const allProductsData= await getProductsData(params.id)
     return{
@@ -12,8 +14,7 @@ export async function getStaticProps({params}){
   }
 
 export function AppWrapper({children},allProductsData){
-    const[propsData,setPropsData]=useState()
-    propsData={
+   let propsData={
         id: "sukienka2",
     contentHtml: '<h1>Sukienka 2</h1>\n' +
       '<h2>179 zł</h2>\n' +
@@ -29,19 +30,21 @@ export function AppWrapper({children},allProductsData){
     picture6: 'leon7.jpg',
     picture7: 'leon8.jpg',
     picture8: 'leon1.jpg',
-    }
-
-    function updateContext({propsDataFromIdPage}){      //function that updates the context based on the props data it recives
-        setPropsData(propsData=propsDataFromIdPage)         ///sets the current props data to the updated ones
+    pictureName: "leon.jpg"
 
     }
+
+    // function updateContext({propsDataFromIdPage}){      //function that updates the context based on the props data it recives
+    //     setPropsData(propsData=propsDataFromIdPage)         ///sets the current props data to the updated ones
+    // }
+
     return(
-        console.log("state.js context, calling allProductsData" ,allProductsData),
+        // console.log("state.js context, calling allProductsData" ,allProductsData),
 
-        <AppContext.Provider value={sharedState}>
-            <AppUpdateContext.Provider value={updateContext}>
+        <AppContext.Provider value={propsData}>
+            {/* <AppUpdateContext.Provider value={updateContext}> */}
             {children}
-            </AppUpdateContext.Provider>
+            {/* </AppUpdateContext.Provider> */}
         </AppContext.Provider>
     )
 }

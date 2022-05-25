@@ -29,7 +29,6 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
   const allProductsData= await getProductsData(params.id)
-  console.log(allProductsData)
   return{
    props:{ 
     allProductsData
@@ -44,13 +43,11 @@ export default function bla({allProductsData}) {
     setRadio(e.target.value);
   }
   //embla carousel slide code
-  const SLIDE_COUNT = allProductsData.pictureNumber
-  const slides = Array.from(Array(SLIDE_COUNT).keys())
+  const SLIDE_COUNT = 8;
+  const slides = Array.from(Array(SLIDE_COUNT).keys());
 
   //useContext hook needed to get the image links when hook works we can copy it over to embla carousel code
   const mycontext = useAppContext();
-
-
 
   return (
     <div className={styles.container}>
@@ -65,7 +62,7 @@ export default function bla({allProductsData}) {
         </div>
         <div className={styles.main_content}>
         <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
-        <p> value of mycontext is {mycontext.xs1} </p>
+        <p> value of mycontext is {mycontext.title} </p>
 
 
       <>

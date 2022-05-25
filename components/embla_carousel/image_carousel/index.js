@@ -14,17 +14,24 @@ import { useCallback,useState } from "react";
 import styles from "./image_carousel.module.css"
 import  {mediaByIndex}  from "../media/"
 import {getProductsData}  from "../../../lib/products";
+import{allProductsData} from "../../../pages/posts/products/[id].js"
 import leon5 from "/public/horizontal/leon5.jpg"
 import leon from "../../../public/vertical/leon5.jpg"
+import { useAppContext } from '../../../context/state';
 //Props
-export async function getStaticProps(){
-  const allProductsData= await getProductsData();
-  return{
-    props:{
-      allProductsData
-    }
-  }
-}
+
+// export async function getStaticProps(){
+//   const allProductsData= await getProductsData();
+//   console.log("index.js prop drilling", allProductsData)
+
+//   return{
+//     props:{
+//       allProductsData
+//     }
+//   }
+// }
+
+  // console.log("index.js prop drilling", allProductsData)
 
 //Hooks
 const EmblaCarousel = ({slides,allProductsData}) => {
@@ -56,21 +63,22 @@ useEffect(()=>{
 },[embla,onSelect]);
 
 
+//Context
+const mycontext=useAppContext()
+
 
 return(
   
   <>
 
-  {console.log("contents of allProductsData prop",allProductsData)}
   <div className={styles.embla}>
     <div className={styles.embla_viewport} ref={mainViewportRef}>
       <div className={styles.embla_container}>
- 
+  
       
         {slides.map((d, index) => (
           <div className={styles.embla_slide} key={index}>
-           
-           
+                {console.log("embla image carousel src path test",`/products/${mycontext.id}/${d+1}/${mycontext.pictureName}`)}  
              {/* {allProductsData.map((d, index) => (
                           <div key={index} className={styles.mapa}>
                           <Link href={`posts/products/${d.id}`}>
@@ -94,12 +102,11 @@ return(
             <Image
               className={styles.embla_slide_img}
               alt="dress"
-              src={"/vertical/leon5.jpg"}
-              // src={leon}
+              src={`/products/${mycontext.id}/${d+1}/${mycontext.pictureName}`}
               height={600}
               width={700}
               // src={mediaByIndex(index)} 
-                //  layout="responsive"
+                //  layout="responsive"s
               // layout = "fill"
 
               />
