@@ -29,6 +29,7 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
   const allProductsData= await getProductsData(params.id)
+  updateAppContext(allProductsData) //updating the context when props are updated
   return{
    props:{ 
     allProductsData
