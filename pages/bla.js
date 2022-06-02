@@ -55,7 +55,8 @@ allPostsData.map((d,index)=> (
                             <div className={styles.imageWrapper}>
                              <div className={styles.image}><Image
                              alt="Dress"
-                             src={`/../public/products/${d.id}/${d.picture1}`}
+//                              src={`/../public/products/${d.id}/${d.picture1}`}
+                             src={`/../public/products/sukienka1/${d.picture1}`}
                              width={380}
                              height={510}
                              /></div>
