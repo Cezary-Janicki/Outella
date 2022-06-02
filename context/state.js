@@ -34,17 +34,17 @@ export function AppWrapper({children},allProductsData){
 
     }
 
-    // function updateContext({propsDataFromIdPage}){      //function that updates the context based on the props data it recives
-    //     setPropsData(propsData=propsDataFromIdPage)         ///sets the current props data to the updated ones
-    // }
+    function updateContext({updatedData}){      //function that updates the context based on the props data it recives
+        setPropsData(propsData=updatedData)         ///sets the current props data to the updated ones
+    }
 
     return(
         // console.log("state.js context, calling allProductsData" ,allProductsData),
 
         <AppContext.Provider value={propsData}>
-            {/* <AppUpdateContext.Provider value={updateContext}> */}
+            <AppUpdateContext.Provider value={updateContext}> 
             {children}
-            {/* </AppUpdateContext.Provider> */}
+            </AppUpdateContext.Provider>
         </AppContext.Provider>
     )
 }
@@ -52,7 +52,9 @@ export function AppWrapper({children},allProductsData){
 export function useAppContext(){
     return useContext(AppContext);
 }
-
+export function updateAppContext(){
+    return useContext(AppUpdateContext);
+}
 
 // updateAppcontext needs to store an old value of a context and when the page is refresed rewrite it with a new one taht is taken from props
 // the function could should take an external value and overwrite the context with it
