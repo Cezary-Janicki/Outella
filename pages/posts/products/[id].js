@@ -15,7 +15,7 @@ import Product_Page_Gallery from "../../../components/product_page_gallery";
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 
 import { getAllProductsIds,getProductsData  } from "../../../lib/products";
-import { useAppContext } from "../../../context/state";
+import { useAppContext, updateAppContext } from "../../../context/state";    //added update app context
 
 
 
@@ -35,6 +35,11 @@ export async function getStaticProps({params}){
     }
   } 
 }
+
+// export function updateAppContext({allProductsData}){
+//  how to properly update the function ?
+//   
+// }
 export default function bla({allProductsData}) {
 
   //radio buttons size selector code
