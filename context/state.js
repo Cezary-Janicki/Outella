@@ -6,14 +6,19 @@ const AppUpdateContext = createContext();
 
 export async function getStaticProps({params}){
     const allProductsData= await getProductsData(params.id)
+    console.log("context/state.js allProductsData outside prop",allProductsData)
     return{
      props:{ 
       allProductsData
       }
     } 
   }
+export function AppWrapper({children},{allProductsData}){
+  //here we need to insert a useState hook in order to update this when the prop value changes, when we have the useState hook and the update function 
+  //then we can just call it in the lib/products.js and it will auto update as the value changes
+    console.log("context/state.js allProductsData inside prop",allProductsData)
 
-export function AppWrapper({children},allProductsData){
+
    let propsData={
         id: "sukienka2",
     contentHtml: '<h1>Sukienka 2</h1>\n' +
@@ -35,7 +40,7 @@ export function AppWrapper({children},allProductsData){
     }
 
     // function updateContext({propsDataFromIdPage}){      //function that updates the context based on the props data it recives
-    //     setPropsData(propsData=propsDataFromIdPage)         ///sets the current props data to the updated ones
+        // setPropsData(propsData=propsDataFromIdPage)         ///sets the current props data to the updated ones
     // }
 
     return(
