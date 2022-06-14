@@ -1,6 +1,7 @@
 //React components
 import styles from "./index"
 //Page components
+import Body_Wrapper from "../../components/body_wrapper";
 import Head from "../../components/head";
 import Title from "../../components/title";
 import NavBar from "../../components/navbar";
@@ -26,22 +27,8 @@ export async function getStaticPaths(){
 }
 export default function Post({postData}){
     return(
-        <div className={styles.container}>
-           
-        <Head />
-        <Title />
-        <NavBar />
-
-        <main className={styles.main}>
-        {/* {postData.title} <br />
-        {postData.id} <br />
-        {postData.date} <br /> */}
-        <div dangerouslySetInnerHTML={{__html: postData.contentHtml}} />
-        </main>
-        <Footer />
-
-
-
-        </div>
+        <Body_Wrapper>
+     <div dangerouslySetInnerHTML={{__html: postData.contentHtml}} />
+        </Body_Wrapper>
     )
 }
