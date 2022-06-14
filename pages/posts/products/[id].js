@@ -6,7 +6,7 @@ import createContext from 'react';
 import { useState } from "react";
 //Page components
 
-
+  
 import Head from "../../../components/head";
 import Title from "../../../components/title";
 import NavBar from "../../../components/navbar";
@@ -15,8 +15,7 @@ import Product_Page_Gallery from "../../../components/product_page_gallery";
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 
 import { getAllProductsIds,getProductsData  } from "../../../lib/products";
-import { useAppContext, updateAppContext } from "../../../context/state";    //added update app context
-
+import {useAppContext,  updateAppContext } from "../../../context/state";    //added update app context
 
 
 export async function getStaticPaths(){
@@ -29,7 +28,6 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
   const allProductsData= await getProductsData(params.id)
-  updateAppContext(allProductsData) //updating the context when props are updated
   return{
    props:{ 
     allProductsData
@@ -37,10 +35,7 @@ export async function getStaticProps({params}){
   } 
 }
 
-// export function updateAppContext({allProductsData}){
-//  how to properly update the function ?
-//   
-// }
+
 export default function bla({allProductsData}) {
 
   //radio buttons size selector code
@@ -53,10 +48,13 @@ export default function bla({allProductsData}) {
   const slides = Array.from(Array(SLIDE_COUNT).keys());
 
   //useContext hook needed to get the image links when hook works we can copy it over to embla carousel code
+  console.log("allproducctsData prop in id.js",{allProductsData})
   const mycontext = useAppContext();
-
+  const mycontextUpdate=updateAppContext(allProductsData);
   return (
     <div className={styles.container}>
+        <button onClick={useAppContext}>updateContext</button>
+
       <Head />
       <Title />
       <NavBar />
@@ -69,6 +67,7 @@ export default function bla({allProductsData}) {
         <div className={styles.main_content}>
         <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
         <p> value of mycontext is {mycontext.title} </p>
+        <p>updated context value is {mycontextUpdate}</p>
 
 
       <>
@@ -79,7 +78,7 @@ export default function bla({allProductsData}) {
                     height={510}
                     /></div>
       </>
-
+        
         <h3>Wymiary sukienki:</h3>
         <div className={styles.sizeSelector}>
           <form>
@@ -130,3 +129,7 @@ export default function bla({allProductsData}) {
     </div>
   )
 }
+
+
+
+

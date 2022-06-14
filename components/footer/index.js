@@ -34,7 +34,7 @@ export default function footer({  }) {
 <footer className={styles.footer}>
 
 <Footer_Wrapper>
-  <h2>Informacje</h2>
+        <h2>Informacje</h2>
         {foo.map((d, index)=>(
           <div key={index} className={styles.mapa}>
           <Link href={`/posts/${d.id}`} className={styles.rows}>
