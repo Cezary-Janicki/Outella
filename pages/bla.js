@@ -4,10 +4,10 @@ import styles from "./bla.module.css";
 import Image from "next/image";
 
 //Page components
-import Body_Wrapper from "../components/wrappers/body_wrapper";
 import Image_Wrapper from "../components/wrappers/image_wrapper";
 import Gallery_Sidebar from "../components/gallery_sidebar";
 import { getSortedProductsData } from "../lib/products.js";
+import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
 
 
 export async function getStaticProps() {
@@ -28,7 +28,10 @@ allPostsData.map((d,index)=> (
   </div>
 ))
   return (
-    <Body_Wrapper>
+    <Body_Wrapper_No_main>
+      {/* <button on click={} */}
+   <Gallery_Sidebar></Gallery_Sidebar>
+      <div className={styles.main}>
           <div className={styles.grid}>
             {allPostsData.map((d, index) => (
                           <div key={index} className={styles.mapa}>
@@ -57,8 +60,9 @@ allPostsData.map((d,index)=> (
           vitae risus. In hac habitasse platea dictumst. Vestibulum nec mauris
           vel tortor fermentum ullamcorper.
         </p>
+        </div>
 
-</Body_Wrapper>
+</Body_Wrapper_No_main>
 
   );
 }
