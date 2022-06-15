@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./dresses_types.module.css"
 import Link from "next/link"
-
+import Image_Wrapper from "../wrappers/image_wrapper";
 import leonVer1 from "../../public/vertical/leon1.jpg";
 import leonVer2 from "../../public/vertical/leon2.jpg";
 import leonVer3 from "../../public/vertical/leon3.jpg";
@@ -15,7 +15,7 @@ export default function Dresses_Types(){
         {" "}
         {/*==================== D R E S S E S _ T Y P E S ====================>*/}
         <div className={styles.gridBox}>
-          <div className={styles.imageWrapper}>
+          <Image_Wrapper>
             <Link href="products/Typ1/lorem">
             <Image
               alt="Next.js logo"
@@ -24,10 +24,10 @@ export default function Dresses_Types(){
               objectFit="cover"
             />
             </Link>
-          </div>
+          </Image_Wrapper>
         </div>
         <div className={styles.gridBox}>
-          <div className={styles.imageWrapper}>
+            <Image_Wrapper>
             <Link href="products/Typ2/ipsum">
             <Image
               alt="Cute cat"
@@ -36,10 +36,10 @@ export default function Dresses_Types(){
               objectFit="cover"
             />
             </Link>
-          </div>
+            </Image_Wrapper>
         </div>
         <div className={styles.gridBox}>
-          <div className={styles.imageWrapper}>
+            <Image_Wrapper>
             <Link href="products/Typ3/dolor">
             <Image
               alt="Fluffy cat"
@@ -48,10 +48,10 @@ export default function Dresses_Types(){
               objectFit="cover"
             />
             </Link>
-          </div>
+            </Image_Wrapper>
         </div>
         <div className={styles.gridBox}>
-          <div className={styles.imageWrapper}>
+            <Image_Wrapper>
             <Link href="products/Typ4/sit">
             <Image
               alt="Mad cat"
@@ -60,10 +60,10 @@ export default function Dresses_Types(){
               objectFit="cover"
             />
             </Link>
-          </div>
+            </Image_Wrapper>
         </div>
         <div className={styles.gridBox}>
-          <div className={styles.imageWrapper}>
+            <Image_Wrapper>
             <Link href="products/Typ5/amet">
             <Image
               alt="Mad cat"
@@ -72,7 +72,7 @@ export default function Dresses_Types(){
               objectFit="cover"
             />
             </Link>
-          </div>
+            </Image_Wrapper>
         </div>
 
       </div>

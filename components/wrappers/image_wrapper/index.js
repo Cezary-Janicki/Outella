@@ -1,14 +1,10 @@
 import React from 'react'
-import styles from "../../../pages/bla.module.css"
+import styles from "./image_wrapper.module.css"
+
 export default function Image_Wrapper({children}) {
   return (
-
-                    <div className={styles.imageWrapper}>
-                     <div className={styles.image}>
+                    <div className={styles.Picture_Wrapper}>
                       {children}
-                   </div>  </div>         
-               
-
-
+                   </div>         
   )
 }
