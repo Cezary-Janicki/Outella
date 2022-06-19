@@ -9,3 +9,6 @@
   height: 75px;
   text-align: center;
 }
+.image {
+  cursor: pointer;
+}
