@@ -3,20 +3,32 @@ import Link from "next/link";
 import styles from "./amet.module.css";
 
 //Page components
-import Body_Wrapper from "../../../components/wrappers/body_wrapper"
-
+import Head from "../../../components/head"
+import Title from "../../../components/title";
+import NavBar from "../../../components/navbar";
+import Footer from "../../../components/footer";
+import Main_Photos from "../../../components/main_photos";
+import Dresses_Types from "../../../components/dresses_types"
+import Bestsellers from "../../../components/bestsellers"
 
 export default function bla() {
   return (
-<Body_Wrapper>
-  
-<h1> Typ sukienki 5</h1>
+    <div className={styles.container}>
+      <Head />
+      <Title />
+      <NavBar />
+      <main className={styles.main}>
+
+        <h1> Typ sukienki 5 </h1>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet elementum libero. Nunc id ante urna. Vestibulum ullamcorper nisi vel augue volutpat ultrices. Donec mollis luctus commodo. Nullam pharetra tempus ex, vel pretium lorem posuere ut. Proin efficitur sed augue nec efficitur. Ut vel euismod turpis, at iaculis eros. Pellentesque faucibus vehicula ultricies. Nunc vitae dapibus augue. Curabitur a accumsan ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam vitae ullamcorper nisi. Quisque luctus enim et suscipit mattis. Cras aliquet fringilla nibh at consectetur.</p>
         <p> Nam ex risus, venenatis at mi sed, convallis pellentesque lacus. Fusce malesuada ipsum tristique pellentesque lacinia. Cras vel posuere libero. Sed finibus velit vitae justo viverra dapibus. Mauris pulvinar, leo id euismod faucibus, nibh lacus facilisis justo, vitae dignissim diam augue posuere elit. Fusce lectus leo, convallis a est nec, tempor rutrum turpis. Fusce tempus aliquet tellus. Pellentesque lobortis ipsum in odio faucibus, eu ultricies mauris dictum. Vivamus at ullamcorper dolor. </p>
         <p> Pellentesque sagittis finibus nunc, sed faucibus turpis bibendum sit amet. Ut hendrerit ligula non quam posuere semper. Phasellus eget massa ornare, bibendum metus vitae, vehicula lectus. Aenean pretium odio libero, sed fringilla neque lobortis nec. Etiam vitae erat tellus. Aliquam erat volutpat. Vestibulum egestas libero ut neque euismod suscipit. Morbi egestas vulputate leo, nec porttitor magna tristique at. Nam aliquet, diam eu pulvinar luctus, mi risus vulputate purus, a convallis mi orci nec enim. Sed risus nunc, iaculis ac felis at, rhoncus tincidunt justo. </p>
         <p> Sed id convallis massa. Praesent non augue quam. Proin rhoncus quis nisl in hendrerit. Nunc ultricies neque vitae nisi accumsan faucibus. Donec in enim ut diam vehicula vehicula vitae vitae eros. Duis efficitur ipsum at odio ultrices volutpat. Sed aliquet interdum lacus non accumsan. Sed sed magna quam. Nunc ultricies sit amet nisl ut vulputate. Cras nec ornare ex. Nulla tempor tristique congue. Integer lobortis urna quis orci suscipit dapibus. Phasellus vehicula, lectus vel ultrices auctor, elit diam posuere lectus, vitae maximus mauris diam iaculis nisl. Suspendisse quis dolor et ligula tempus porttitor. </p>
         <p> Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum facilisis vulputate. Nam est tortor, varius non semper id, efficitur vitae risus. In hac habitasse platea dictumst. Vestibulum nec mauris vel tortor fermentum ullamcorper. Fusce rutrum metus nulla, eget viverra augue interdum vitae. Vivamus a dictum enim. Nam laoreet nulla fermentum hendrerit lobortis. Quisque luctus sit amet orci non tincidunt. Nam et ex libero. Proin arcu metus, consequat ultrices fringilla id, suscipit at sem. Aliquam aliquet neque ipsum, eu lobortis odio euismod at. Phasellus non sagittis arcu, non pretium nisl. Integer ullamcorper ligula ornare viverra mattis. </p>
 
-</Body_Wrapper>
+      </main>
+
+      <Footer />
+    </div>
   )
 }

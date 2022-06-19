@@ -3,9 +3,11 @@
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
-
 //Page components
-import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
+import Head from "../components/head"
+import Title from "../components/title";
+import NavBar from "../components/navbar";
+import Footer from "../components/footer";
 import Main_Photos from "../components/main_photos";
 import Dresses_Types from "../components/dresses_types"
 import Bestsellers from "../components/bestsellers"
@@ -15,14 +17,25 @@ import Bestsellers from "../components/bestsellers"
 //Main function
 export default function Home() {
   return (
-    <Body_Wrapper_No_main>
+    <div className={styles.container}>
+      <Head />
+      <Title />
+
+        <NavBar />
+      
+      <main className={styles.main}>
+        {/* <Title />
+
+        <NavBar /> */}
+      </main>
 
         <Link  href="./bla">
         <p className={styles.description}><a>Zdjęcia przykładowe</a></p>
         </Link>
+        {/* <Slider_Gallery /> */}
         <Main_Photos />
-             
-        <main className={styles.main}>
+        
+      <main className={styles.main}>
         <p className={styles.description}>Ikony typów sukien</p>
 
         <Dresses_Types />
@@ -32,8 +45,7 @@ export default function Home() {
         <Bestsellers />
       </main>
 
-
-    </Body_Wrapper_No_main>
-    
+      <Footer />
+    </div>
   )
 }

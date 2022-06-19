@@ -78,6 +78,7 @@ return(
       
         {slides.map((d, index) => (
           <div className={styles.embla_slide} key={index}>
+                {console.log("embla image carousel src path test",`/products/${mycontext.id}/${d+1}/${mycontext.pictureName}`)}  
              {/* {allProductsData.map((d, index) => (
                           <div key={index} className={styles.mapa}>
                           <Link href={`posts/products/${d.id}`}>
