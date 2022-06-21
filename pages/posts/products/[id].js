@@ -50,7 +50,6 @@ export default function bla({allProductsData}) {
   return (
     <Body_Wrapper>
 
-     <button onClick={useAppContext}>updateContext</button>
      <div className={styles.product_area}>
         <div className={styles.sidebar}>
         <EmblaCarousel slides={slides} />
