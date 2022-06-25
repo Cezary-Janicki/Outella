@@ -1,24 +1,21 @@
 import { Divide } from "hamburger-react";
 import {React, createContext, useContext,useState} from "react";
-import { getAllProductsIds,getProductsData } from "../lib/products";
+import { getAllProductsIds,getProductData } from "../lib/products";
 import allProductsData from "../pages/posts/products/[id]"
 
 
-const AppContext= createContext();
-const AppUpdateContext = createContext();
+const AppContext = createContext();
 
 export function useAppContext(){
     return useContext(AppContext)
 }
-export function updateAppContext(){
-    return useContext(AppUpdateContext)
-}
 
 export async function getStaticProps({params}){
-    const productsData= await getProductsData(params.id)
+  // todo put following in try/catch
+    const products = params.id ? [await getProductData(params.id)] : []
     return{
      props:{ 
-      productsData
+        products
       }
     } 
   }
@@ -46,14 +43,14 @@ pictureName: "leon.jpg"
 
 }
 
-export function AppWrapper({children},{productsData}){
+export function AppWrapper({children}){
   //here we need to insert a useState hook in order to update this when the prop value changes, when we have the useState hook and the update function 
   //then we can just call it in the lib/products.js and it will auto update as the value changes
 
-    const[products,updateProducts]=useState(() => initialProductValue())
+    const [products, updateProducts] = useState([]);
    
     function refreshProducts(){
-      updateProducts({
+      updateProducts([{
         id: "sukienka3",
     contentHtml: '<h1>Sukienka 3</h1>\n' +
       '<h2>189 zł</h2>\n' +
@@ -71,24 +68,15 @@ export function AppWrapper({children},{productsData}){
     picture8: 'leon2.jpg',
     pictureName: "leon.jpg"
   
-      })
+      }])
     }
-
-    function updateContext({updatedData}){      //function that updates the context based on the props data it recives
-        let propsData=updatedData            ///sets the current props data to the updated ones
-        return(
-          propsData
-        )
-      }
 
     return(
         // console.log("state.js context, calling allProductsData" ,allProductsData),
 
-        <AppContext.Provider value={products}>
-            <AppUpdateContext.Provider value={updateContext}> 
+        <AppContext.Provider value={[products, setProducts]}>
             <button onClick={refreshProducts}>refresh</button>
             {children}
-            </AppUpdateContext.Provider>
         </AppContext.Provider>
     )
 }

@@ -13,7 +13,7 @@ import { useCallback,useState } from "react";
 //Images , components
 import styles from "./image_carousel.module.css"
 import  {mediaByIndex}  from "../media/"
-import {getProductsData}  from "../../../lib/products";
+// import {getProductData}  from "../../../lib/products";
 import{allProductsData} from "../../../pages/posts/products/[id].js"
 import leon5 from "/public/horizontal/leon5.jpg"
 import leon from "../../../public/vertical/leon5.jpg"

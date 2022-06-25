@@ -2,7 +2,7 @@
 import Link from "next/link";
 import styles from "../../products/products.module.css";
 import Image from "next/image";
-import createContext from 'react';
+import createContext, { useEffect } from 'react';
 import { useState } from "react";
 //Page components
 import Body_Wrapper from "../../../components/wrappers/body_wrapper";
@@ -10,8 +10,8 @@ import Body_Wrapper from "../../../components/wrappers/body_wrapper";
 
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 
-import { getAllProductsIds,getProductsData  } from "../../../lib/products";
-import {useAppContext,  updateAppContext } from "../../../context/state";    //added update app context
+import { getAllProductsIds,getProductData  } from "../../../lib/products";
+import { useAppContext } from "../../../context/state";    //added update app context
 
 
 export async function getStaticPaths(){
@@ -23,16 +23,17 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps({params}){
-  const allProductsData= await getProductsData(params.id)
+  const product = await getProductData(params.id)
+  
   return{
    props:{ 
-    allProductsData
+      product
     }
   } 
 }
 
 
-export default function bla({allProductsData}) {
+export default function ProductPage({product}) {
 
   //radio buttons size selector code
   const [radio,setRadio]=useState('XS')
@@ -44,9 +45,13 @@ export default function bla({allProductsData}) {
   const slides = Array.from(Array(SLIDE_COUNT).keys());
 
   //useContext hook needed to get the image links when hook works we can copy it over to embla carousel code
-  console.log("allproducctsData prop in id.js",{allProductsData})
-  const mycontext = useAppContext();
-  const mycontextUpdate=updateAppContext(allProductsData);
+
+  const [products, setProducts] = useAppContext();
+
+  useEffect(() => {
+    setProducts([product]);
+  }, [product])
+
   return (
     <Body_Wrapper>
 
@@ -56,7 +61,7 @@ export default function bla({allProductsData}) {
 
         </div>
         <div className={styles.main_content}>
-        <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
+        <div dangerouslySetInnerHTML={{__html: product.contentHtml}} />
         
         <h3>Wymiary sukienki:</h3>
         <div className={styles.sizeSelector}>
@@ -70,30 +75,30 @@ export default function bla({allProductsData}) {
           <div className={styles.list}>
           <p>Wymiary dla rozmiaru {radio}</p>
           {radio=="XS" ? <ul>
-      <li>Długość całkowita: {allProductsData.xs1}</li>   
-      <li>Biust: {allProductsData.xs2}</li>
-      <li>Talia: {allProductsData.xs3}</li>
-      <li>Biodra: {allProductsData.xs4}</li>       
+      <li>Długość całkowita: {product.xs1}</li>   
+      <li>Biust: {product.xs2}</li>
+      <li>Talia: {product.xs3}</li>
+      <li>Biodra: {product.xs4}</li>       
       </ul> :radio=="S" ?<ul>
-              <li>Długość całkowita: {allProductsData.s1}</li> 
-              <li>Biust: {allProductsData.s2}</li>  
-              <li>Talia: {allProductsData.s3}</li>
-              <li>Biodra: {allProductsData.s4}</li>            
+              <li>Długość całkowita: {product.s1}</li> 
+              <li>Biust: {product.s2}</li>  
+              <li>Talia: {product.s3}</li>
+              <li>Biodra: {product.s4}</li>            
           </ul> : radio=="M" ?<ul>
-              <li>Długość całkowita: {allProductsData.m1}</li>   
-              <li>Biust: {allProductsData.m2}</li>
-              <li>Talia: {allProductsData.m3}</li>
-              <li>Biodra: {allProductsData.m4}</li>           
+              <li>Długość całkowita: {product.m1}</li>   
+              <li>Biust: {product.m2}</li>
+              <li>Talia: {product.m3}</li>
+              <li>Biodra: {product.m4}</li>           
           </ul>: radio=="L"?  <ul>
-              <li>Długość całkowita: {allProductsData.l1}</li>   
-              <li>Buist: {allProductsData.l2}</li>
-              <li>Talia: {allProductsData.l3}</li>
-              <li>Biodra: {allProductsData.l4}</li>            
+              <li>Długość całkowita: {product.l1}</li>   
+              <li>Buist: {product.l2}</li>
+              <li>Talia: {product.l3}</li>
+              <li>Biodra: {product.l4}</li>            
           </ul> : radio=="XL"? <ul>
-              <li>Długośc całkowita: {allProductsData.xl1}</li>   
-              <li>Biust: {allProductsData.xl2}</li>
-              <li>Talia: {allProductsData.xl3}</li>
-              <li>Biodra: {allProductsData.xl4}</li>            
+              <li>Długośc całkowita: {product.xl1}</li>   
+              <li>Biust: {product.xl2}</li>
+              <li>Talia: {product.xl3}</li>
+              <li>Biodra: {product.xl4}</li>            
           </ul> : <p>none</p> }
           </div>
        <div>
@@ -101,11 +106,9 @@ export default function bla({allProductsData}) {
         </div>
 
         <>
-        <p> value of mycontext is {mycontext.title} </p>
-        <p>updated context value is {mycontextUpdate}</p>
       <div className={styles.image}><Image
                     alt="Dress"
-                    src={`/vertical/${mycontext.picture5}`}
+                    src={`/vertical/${product.picture5}`}
                     width={380}
                     height={510}
                     /></div>
@@ -134,7 +137,7 @@ export default function bla({allProductsData}) {
 
 //         </div>
 //         <div className={styles.main_content}>
-//         <div dangerouslySetInnerHTML={{__html: allProductsData.contentHtml}} />
+//         <div dangerouslySetInnerHTML={{__html: product.contentHtml}} />
 //         <p> value of mycontext is {mycontext.title} </p>
 //         <p>updated context value is {mycontextUpdate}</p>
 
@@ -160,30 +163,30 @@ export default function bla({allProductsData}) {
 //           <div className={styles.list}>
 //           <p>Wymiary dla rozmiaru {radio}</p>
 //           {radio=="XS" ? <ul>
-//       <li>Długość całkowita: {allProductsData.xs1}</li>   
-//       <li>Biust: {allProductsData.xs2}</li>
-//       <li>Talia: {allProductsData.xs3}</li>
-//       <li>Biodra: {allProductsData.xs4}</li>       
+//       <li>Długość całkowita: {product.xs1}</li>   
+//       <li>Biust: {product.xs2}</li>
+//       <li>Talia: {product.xs3}</li>
+//       <li>Biodra: {product.xs4}</li>       
 //       </ul> :radio=="S" ?<ul>
-//               <li>Długość całkowita: {allProductsData.s1}</li> 
-//               <li>Biust: {allProductsData.s2}</li>  
-//               <li>Talia: {allProductsData.s3}</li>
-//               <li>Biodra: {allProductsData.s4}</li>            
+//               <li>Długość całkowita: {product.s1}</li> 
+//               <li>Biust: {product.s2}</li>  
+//               <li>Talia: {product.s3}</li>
+//               <li>Biodra: {product.s4}</li>            
 //           </ul> : radio=="M" ?<ul>
-//               <li>Długość całkowita: {allProductsData.m1}</li>   
-//               <li>Biust: {allProductsData.m2}</li>
-//               <li>Talia: {allProductsData.m3}</li>
-//               <li>Biodra: {allProductsData.m4}</li>           
+//               <li>Długość całkowita: {product.m1}</li>   
+//               <li>Biust: {product.m2}</li>
+//               <li>Talia: {product.m3}</li>
+//               <li>Biodra: {product.m4}</li>           
 //           </ul>: radio=="L"?  <ul>
-//               <li>Długość całkowita: {allProductsData.l1}</li>   
-//               <li>Buist: {allProductsData.l2}</li>
-//               <li>Talia: {allProductsData.l3}</li>
-//               <li>Biodra: {allProductsData.l4}</li>            
+//               <li>Długość całkowita: {product.l1}</li>   
+//               <li>Buist: {product.l2}</li>
+//               <li>Talia: {product.l3}</li>
+//               <li>Biodra: {product.l4}</li>            
 //           </ul> : radio=="XL"? <ul>
-//               <li>Długośc całkowita: {allProductsData.xl1}</li>   
-//               <li>Biust: {allProductsData.xl2}</li>
-//               <li>Talia: {allProductsData.xl3}</li>
-//               <li>Biodra: {allProductsData.xl4}</li>            
+//               <li>Długośc całkowita: {product.xl1}</li>   
+//               <li>Biust: {product.xl2}</li>
+//               <li>Talia: {product.xl3}</li>
+//               <li>Biodra: {product.xl4}</li>            
 //           </ul> : <p>none</p> }
 //           </div>
 //        <div>
