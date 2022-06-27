@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./bla.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 //Page components
 import Image_Wrapper from "../components/wrappers/image_wrapper";
@@ -12,7 +13,7 @@ import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
 
 export async function getStaticProps() {
   const allPostsData = await getSortedProductsData();
-  // console.log("bla.js getSortedProductsData Content",allPostsData)
+  console.log("bla.js getSortedProductsData Content",allPostsData)
   return {
     props: {
       allPostsData
@@ -27,13 +28,19 @@ allPostsData.map((d,index)=> (
   <div key={index} className={styles.mapa}>
   </div>
 ))
+
+
+
   return (
     <Body_Wrapper_No_main>
-      {/* <button on click={} */}
-   <Gallery_Sidebar></Gallery_Sidebar>
+
       <div className={styles.main}>
-          <div className={styles.grid}>
-            {allPostsData.map((d, index) => (
+      <div clasName={styles.gallerySidebarWrapper}>
+      <Gallery_Sidebar />
+      </div>
+          <div className={styles.flex}>
+            {allPostsData
+            .map((d, index) => (
                           <div key={index} className={styles.mapa}>
                           <Link href={`posts/products/${d.id}`}>
                             <div className={styles.imageWrapper}>
@@ -52,16 +59,33 @@ allPostsData.map((d,index)=> (
                            </Link>
                        </div>
 
-            ))}
+            )
+            )}
           </div>
-         <p>
+
+        {allPostsData
+        .filter((dresses)=>
+               filter === "short"
+               ? !["long","mid"].includes(
+                 dresses.tag
+               )
+               : filter
+               ? dresses.format === filter
+               : true
+        )
+        .map((dresses) =>(
+          {dresses}
+        ))}
+        {console.log(dresses)}
+        </div>
+        <p>
           Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
           facilisis vulputate. Nam est tortor, varius non semper id, efficitur
           vitae risus. In hac habitasse platea dictumst. Vestibulum nec mauris
           vel tortor fermentum ullamcorper.
         </p>
-        </div>
 
+        {}
 </Body_Wrapper_No_main>
 
   );
