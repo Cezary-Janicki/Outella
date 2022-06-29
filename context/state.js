@@ -47,10 +47,10 @@ export function AppWrapper({children}){
   //here we need to insert a useState hook in order to update this when the prop value changes, when we have the useState hook and the update function 
   //then we can just call it in the lib/products.js and it will auto update as the value changes
 
-    const [products, updateProducts] = useState([]);
+    const [products, setProducts] = useState([]);
    
     function refreshProducts(){
-      updateProducts([{
+      setProducts([{
         id: "sukienka3",
     contentHtml: '<h1>Sukienka 3</h1>\n' +
       '<h2>189 zł</h2>\n' +
