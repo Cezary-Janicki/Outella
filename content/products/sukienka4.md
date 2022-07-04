@@ -32,6 +32,10 @@ xl2: "53 cm - maksymalnie 150 cm"
 xl3: "74 cm - maksymalnie 100 cm"
 xl4: "98 cm- maksymalnie 130 cm"
 
+
+
+
+pictureName: "leon4"
 ---
 # Sukienka 4
 ## 199 zł

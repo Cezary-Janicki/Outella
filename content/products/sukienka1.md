@@ -32,7 +32,7 @@ xl3: "74 cm - maksymalnie 100 cm"
 xl4: "98 cm- maksymalnie 130 cm"
 tags: "tag1 tag2 tag3 tag4 tag5"
 #1 -długość całkowita , 2- biust, 3- talia, 4- biodra
-
+pictureName: "leon"
 ---
 # Sukienka 1
 ## 169 zł

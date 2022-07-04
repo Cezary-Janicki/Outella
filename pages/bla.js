@@ -39,7 +39,7 @@ allPostsData.map((d,index)=> (
                             <div className={styles.imageWrapper}>
                              <div className={styles.image}><Image
                              alt="Dress"
-                             //src={`/../public/products/${d.id}/${d.picture1}`}
+                            //  src={`/../public/products/${d.id}/${d.picture1}`} needs to be products/sukienka{id+1}/picture
                              src={`/../public/products/sukienka1/${d.picture1}`}
                              width={380}
                              height={510}
@@ -54,17 +54,36 @@ allPostsData.map((d,index)=> (
 
             ))}
           </div>
-         <p>
+
+          
+{/* 
+//         {allPostsData
+//         .filter((dresses)=>
+//                filter === "short"
+//                ? !["long","mid"].includes(
+//                  dresses.tag
+//                )
+//                : filter
+//                ? dresses.format === filter
+//                : true
+//         )
+//         .map((dresses) =>(
+//           {dresse
+s}
+//         ))} */}
+        {/* {console.log(dresses)} */}
+        </div>
+        <p>
           Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
           facilisis vulputate. Nam est tortor, varius non semper id, efficitur
           vitae risus. In hac habitasse platea dictumst. Vestibulum nec mauris
           vel tortor fermentum ullamcorper.
         </p>
-        </div>
+        {/* </div> */}
 
 </Body_Wrapper_No_main>
 
-  );
+  )
 }
 /* 
 

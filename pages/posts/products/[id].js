@@ -4,12 +4,11 @@ import styles from "../../products/products.module.css";
 import Image from "next/image";
 import createContext, { useEffect } from 'react';
 import { useState } from "react";
+
 //Page components
 import Body_Wrapper from "../../../components/wrappers/body_wrapper";
 // import Size_Selector from "../../../components/size_selector";
-
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
-
 import { getAllProductsIds,getProductData  } from "../../../lib/products";
 import { useAppContext } from "../../../context/state";    //added update app context
 
@@ -23,8 +22,7 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps({params}){
-  const product = await getProductData(params.id)
-  
+  const product = await getProductData(params.id)      
   return{
    props:{ 
       product
@@ -46,18 +44,18 @@ export default function ProductPage({product}) {
 
   //useContext hook needed to get the image links when hook works we can copy it over to embla carousel code
 
-  const [products, setProducts] = useAppContext();
+  let [products, setProducts] = useAppContext();
 
   useEffect(() => {
-    setProducts([product]);
+    setProducts([product]);         //why the context value of products isnt equal to product? the setProducts function should set it, I need to read up on hooks more
   }, [product])
-
+  products=product
   return (
     <Body_Wrapper>
 
      <div className={styles.product_area}>
         <div className={styles.sidebar}>
-        <EmblaCarousel slides={slides} />
+        <EmblaCarousel slides={slides} product={product} />
 
         </div>
         <div className={styles.main_content}>
@@ -108,7 +106,7 @@ export default function ProductPage({product}) {
         <>
       <div className={styles.image}><Image
                     alt="Dress"
-                    src={`/vertical/${product.picture5}`}
+                    src={`/vertical/${product.picture1}`}
                     width={380}
                     height={510}
                     /></div>

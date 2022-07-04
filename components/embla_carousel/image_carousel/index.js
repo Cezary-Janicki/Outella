@@ -4,37 +4,18 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from "embla-carousel-autoplay"
 import {Thumbnails} from "../thumbnails"
 
-//React components
-import Head from "next/head";
-import Link from "next/link";
+
 import Image from "next/image";
 import { useCallback,useState } from "react";
 
 //Images , components
 import styles from "./image_carousel.module.css"
 import  {mediaByIndex}  from "../media/"
-// import {getProductData}  from "../../../lib/products";
-import{allProductsData} from "../../../pages/posts/products/[id].js"
-import leon5 from "/public/horizontal/leon5.jpg"
-import leon from "../../../public/vertical/leon5.jpg"
 import { useAppContext } from '../../../context/state';
-//Props
 
-// export async function getStaticProps(){
-//   const allProductsData= await getProductsData();
-//   console.log("index.js prop drilling", allProductsData)
-
-//   return{
-//     props:{
-//       allProductsData
-//     }
-//   }
-// }
-
-  // console.log("index.js prop drilling", allProductsData)
 
 //Hooks
-const EmblaCarousel = ({slides,allProductsData}) => {
+const EmblaCarousel = ({slides,product}) => {
   const[selectedIndex, setSelectedIndex]= useState(0);
   const[mainViewportRef, embla]= useEmblaCarousel({skipSnaps:false});
   const[thumbViewportRef,emblaThumbs]=useEmblaCarousel({
@@ -63,14 +44,10 @@ useEffect(()=>{
 },[embla,onSelect]);
 
 
-//Context
-const mycontext=useAppContext()
-
-
 return(
-  
   <>
-
+  
+{  console.log("embla product",product)}
   <div className={styles.embla}>
     <div className={styles.embla_viewport} ref={mainViewportRef}>
       <div className={styles.embla_container}>
@@ -78,34 +55,16 @@ return(
       
         {slides.map((d, index) => (
           <div className={styles.embla_slide} key={index}>
-             {/* {allProductsData.map((d, index) => (
-                          <div key={index} className={styles.mapa}>
-                          <Link href={`posts/products/${d.id}`}>
-                            <div className={styles.imageWrapper}>
-                             <div className={styles.image}><Image
-                             alt="Dress"
-                            //  src={`../../../public/products/${d.id}/${d.picture1}`}
-                            src={"../../../public/product/sukienka1/leon1.jpg"}
-                             width={380}
-                             height={510}
-                             /></div>
-                             
-                           <div className={styles.middle}>
-                           <div className={styles.text}>{d.title}</div>
-                           </div>  </div>         
-                           </Link>
-                       </div>
 
-            ))} */}
            
             <Image
               className={styles.embla_slide_img}
               alt="dress"
-              src={`/products/${mycontext.id}/${d+1}/${mycontext.pictureName}`}
+              src={`/products/${product.id}/${d+1}/${product.pictureName}.jpg`}         //i need to find a way to take id from the product prop
               height={600}
               width={700}
               // src={mediaByIndex(index)} 
-                //  layout="responsive"s
+                //  layout="responsive"
               // layout = "fill"
 
               />
