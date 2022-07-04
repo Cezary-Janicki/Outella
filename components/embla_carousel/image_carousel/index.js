@@ -77,13 +77,17 @@ return(
   <div className={`${styles.embla} ${styles.embla_thumb}`}>
     <div className={styles.embla_viewport} ref={thumbViewportRef}>
       <div className={`${styles.embla_container} ${styles.embla_container_thumb}`}>
-        {slides.map((index)=>(
+        {slides.map((d,index)=>(
+          <div key={index}>
           <Thumbnails 
             onClick={()=> onThumbClick(index)}
             selected={index===selectedIndex}
-            imgSrc={mediaByIndex(index)}
+            product={product}
+            imgSrc={`/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
+            // imgSrc={mediaByIndex(index)}            // in order to plug anything in here i need to make and array not sure if i can try to map it
             key={index}
           />
+          </div>
         ))}
       </div>
     </div>
