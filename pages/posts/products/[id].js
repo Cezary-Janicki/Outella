@@ -104,12 +104,6 @@ export default function ProductPage({product}) {
         </div>
 
         <>
-      <div className={styles.image}><Image
-                    alt="Dress"
-                    src={`/vertical/${product.picture1}`}
-                    width={380}
-                    height={510}
-                    /></div>
       </>
      
 

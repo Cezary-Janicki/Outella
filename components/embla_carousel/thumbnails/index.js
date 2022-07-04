@@ -14,8 +14,6 @@ export const Thumbnails = ({selected, onClick,product, imgSrc}) => (
             type="button">
                 <Image
           alt="Dress"
-        // layout="fill"
-        // objectFit="cover"
             height="200vw"
           width="200vw"
           src={imgSrc}

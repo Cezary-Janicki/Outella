@@ -84,7 +84,6 @@ return(
             selected={index===selectedIndex}
             product={product}
             imgSrc={`/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
-            // imgSrc={mediaByIndex(index)}            // in order to plug anything in here i need to make and array not sure if i can try to map it
             key={index}
           />
           </div>
