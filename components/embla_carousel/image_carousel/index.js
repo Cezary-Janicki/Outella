@@ -47,7 +47,7 @@ useEffect(()=>{
 return(
   <>
   
-{  console.log("embla product",product)}
+{/* {  console.log("embla product",product)} */}
   <div className={styles.embla}>
     <div className={styles.embla_viewport} ref={mainViewportRef}>
       <div className={styles.embla_container}>

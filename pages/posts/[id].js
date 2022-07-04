@@ -1,6 +1,8 @@
 
+
 //Page components
-import Body_Wrapper from "../../components/body_wrapper";
+import Body_Wrapper from "../../components/wrappers/body_wrapper";
+
 import { getAllPostsIds,getPostData } from "../../lib/posts";
 
 export async function getStaticProps({params}){
