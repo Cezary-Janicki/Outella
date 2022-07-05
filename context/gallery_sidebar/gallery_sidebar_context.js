@@ -11,11 +11,16 @@ export default function Gallery_Sidebar_Context() {
         width: sidebar ? "20%" : "" ,
         backgroundColor: sidebar ? "#CCC": "",
         padding: sidebar ? "200px": "",
-        
+        position: sidebar ? "fixed" : "",
+        top: sidebar? "140px": "",
+    }
+    const buttonStyles={
+      position: sidebar? "relative":"relative",
+      top: sidebar? "-100px" : "-100px",
     }
   return (
     <>
-    <button onClick={changeSidebar}>change sidebar</button>
+  
     <div style={sidebarStyles}> <div><p> About </p>
               <p> Services </p>
               <p> Clients </p>
@@ -25,6 +30,7 @@ export default function Gallery_Sidebar_Context() {
               <p> Contact </p>
               <p> Contact </p>
               </div></div>
+              <button onClick={changeSidebar} style={buttonStyles}>change sidebar</button>
     </>
 )
 }

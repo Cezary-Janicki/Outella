@@ -30,14 +30,12 @@ allPostsData.map((d,index)=> (
 ))
 
 
-
+const filter="short"
   return (
-    <Body_Wrapper_No_main>
+    <>   
+        <Body_Wrapper_No_main>
 
       <div className={styles.main}>
-      <div clasName={styles.gallerySidebarWrapper}>
-      <Gallery_Sidebar />
-      </div>
           <div className={styles.flex}>
             {allPostsData
             .map((d, index) => (
@@ -62,21 +60,7 @@ allPostsData.map((d,index)=> (
             )
             )}
           </div>
-
-        {allPostsData
-        .filter((dresses)=>
-               filter === "short"
-               ? !["long","mid"].includes(
-                 dresses.tag
-               )
-               : filter
-               ? dresses.format === filter
-               : true
-        )
-        .map((dresses) =>(
-          {dresses}
-        ))}
-        {console.log(dresses)}
+        {/* {console.log(dresses)} */}
         </div>
         <p>
           Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
@@ -85,8 +69,10 @@ allPostsData.map((d,index)=> (
           vel tortor fermentum ullamcorper.
         </p>
 
-        {}
+        {}      <Gallery_Sidebar />
+
 </Body_Wrapper_No_main>
+</>
 
   );
 }
@@ -180,4 +166,5 @@ allPostsData.map((d,index)=> (
           vel ultrices auctor, elit diam posuere lectus, vitae maximus mauris
           diam iaculis nisl. Suspendisse quis dolor et ligula tempus porttitor.{" "}
         </p> */
+
 }
