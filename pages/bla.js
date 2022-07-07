@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./bla.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 //Page components
 import Image_Wrapper from "../components/wrappers/image_wrapper";
@@ -12,7 +13,7 @@ import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
 
 export async function getStaticProps() {
   const allPostsData = await getSortedProductsData();
-  // console.log("bla.js getSortedProductsData Content",allPostsData)
+  console.log("bla.js getSortedProductsData Content",allPostsData)
   return {
     props: {
       allPostsData
@@ -27,19 +28,23 @@ allPostsData.map((d,index)=> (
   <div key={index} className={styles.mapa}>
   </div>
 ))
+
+
+const filter="short"
   return (
-    <Body_Wrapper_No_main>
-      {/* <button on click={} */}
-   <Gallery_Sidebar></Gallery_Sidebar>
+    <>   
+        <Body_Wrapper_No_main>
+
       <div className={styles.main}>
-          <div className={styles.grid}>
-            {allPostsData.map((d, index) => (
+          <div className={styles.flex}>
+            {allPostsData
+            .map((d, index) => (
                           <div key={index} className={styles.mapa}>
                           <Link href={`posts/products/${d.id}`}>
                             <div className={styles.imageWrapper}>
                              <div className={styles.image}><Image
                              alt="Dress"
-                            //  src={`/../public/products/${d.id}/${d.picture1}`} needs to be products/sukienka{id+1}/picture
+                             //src={`/../public/products/${d.id}/${d.picture1}`}
                              src={`/../public/products/sukienka1/${d.picture1}`}
                              width={380}
                              height={510}
@@ -52,25 +57,9 @@ allPostsData.map((d,index)=> (
                            </Link>
                        </div>
 
-            ))}
+            )
+            )}
           </div>
-
-          
-{/* 
-//         {allPostsData
-//         .filter((dresses)=>
-//                filter === "short"
-//                ? !["long","mid"].includes(
-//                  dresses.tag
-//                )
-//                : filter
-//                ? dresses.format === filter
-//                : true
-//         )
-//         .map((dresses) =>(
-//           {dresse
-s}
-//         ))} */}
         {/* {console.log(dresses)} */}
         </div>
         <p>
@@ -79,11 +68,13 @@ s}
           vitae risus. In hac habitasse platea dictumst. Vestibulum nec mauris
           vel tortor fermentum ullamcorper.
         </p>
-        {/* </div> */}
+
+        {}      <Gallery_Sidebar />
 
 </Body_Wrapper_No_main>
+</>
 
-  )
+  );
 }
 /* 
 
@@ -175,4 +166,5 @@ s}
           vel ultrices auctor, elit diam posuere lectus, vitae maximus mauris
           diam iaculis nisl. Suspendisse quis dolor et ligula tempus porttitor.{" "}
         </p> */
+
 }

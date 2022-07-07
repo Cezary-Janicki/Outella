@@ -10,6 +10,7 @@ picture5: "leon6.jpg"
 picture6: "leon7.jpg"
 picture7: "leon8.jpg"
 picture8: "leon1.jpg"
+pictureName: "leon.jpg"
 xs1: "120 cm"
 xs2: "75 cm - maksymalnie 94 cm"
 xs3: "66 cm - maksymalnie 78 cm"
@@ -30,8 +31,7 @@ xl1: "150 cm"
 xl2: "53 cm - maksymalnie 150 cm"
 xl3: "74 cm - maksymalnie 100 cm"
 xl4: "98 cm- maksymalnie 130 cm"
-pictureName: "leon"
-
+tags: "short"
 #1 -długość całkowita , 2- biust, 3- talia, 4- biodra
 ---
 # Sukienka 2
