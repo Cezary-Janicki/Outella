@@ -10,6 +10,7 @@ picture5: "leon7.jpg"
 picture6: "leon8.jpg"
 picture7: "leon1.jpg"
 picture8: "leon2.jpg"
+pictureName: "leon"
 #1 -długość całkowita , 2- biust, 3- talia, 4- biodra
 xs1: "120 cm"
 xs2: "75 cm - maksymalnie 94 cm"

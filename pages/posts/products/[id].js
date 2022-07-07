@@ -22,7 +22,7 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps({params}){
-  const product = await getProductData(params.id)      
+  const product = await getProductData(params.id)
   return{
    props:{ 
       product
@@ -30,22 +30,27 @@ export async function getStaticProps({params}){
   } 
 }
 
+ 
 
 export default function ProductPage({product}) {
-
+console.log(product.pictureNumber)
   //radio buttons size selector code
   const [radio,setRadio]=useState('XS')
   const handleChange=(e)=>{
     setRadio(e.target.value);
   }
-  //embla carousel slide code
-  const SLIDE_COUNT = 8;
+  // //embla carousel slide code
+  // let arr=Array(product.pictureNumber)
+  // const slides= Array.from(arr.keys());
+
+  const SLIDE_COUNT= parseInt(product.pictureNumber);
+  // const SLIDE_COUNT = 10;
   const slides = Array.from(Array(SLIDE_COUNT).keys());
-
+  
   //useContext hook needed to get the image links when hook works we can copy it over to embla carousel code
-
+  
   let [products, setProducts] = useAppContext();
-
+  
   useEffect(() => {
     setProducts([product]);         //why the context value of products isnt equal to product? the setProducts function should set it, I need to read up on hooks more
   }, [product])
