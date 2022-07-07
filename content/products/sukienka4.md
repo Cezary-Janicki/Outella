@@ -1,7 +1,7 @@
 ---
 title: 'Sukienka 4'
 date: '2020-02-01'
-pictureNumber: "10"
+pictureNumber: "6"
 picture1: "leon4.jpg"
 picture2: "leon5.jpg"
 picture3: "leon6.jpg"
