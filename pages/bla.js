@@ -40,10 +40,12 @@ const filter="short"
                           <div key={index} className={styles.mapa}>
                           <Link href={`posts/products/${d.id}`}>
                             <div className={styles.imageWrapper}>
+                             {console.log("index value is",index)}
                              <div className={styles.image}><Image
                              alt="Dress"
-                            //  src={`/../public/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
-                             src={`/../public/products/sukienka1/${d.picture1}`}
+                             
+                              src={`/../public/products/${d.id}/1/${d.pictureName}.jpg`}
+                             
                              width={380}
                              height={510}
                              /></div>
