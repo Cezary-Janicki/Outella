@@ -10,7 +10,6 @@ import { useCallback,useState } from "react";
 
 //Images , components
 import styles from "./image_carousel.module.css"
-import  {mediaByIndex}  from "../media/"
 import { useAppContext } from '../../../context/state';
 
 
@@ -47,7 +46,6 @@ useEffect(()=>{
 return(
   <>
   
-{/* {  console.log("embla product",product)} */}
   <div className={styles.embla}>
     <div className={styles.embla_viewport} ref={mainViewportRef}>
       <div className={styles.embla_container}>
@@ -60,7 +58,7 @@ return(
             <Image
               className={styles.embla_slide_img}
               alt="dress"
-              src={`/products/${product.id}/${d+1}/${product.pictureName}.jpg`}         //i need to find a way to take id from the product prop
+              src={`/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
               height={600}
               width={700}
               // src={mediaByIndex(index)} 
@@ -82,7 +80,6 @@ return(
           <Thumbnails 
             onClick={()=> onThumbClick(index)}
             selected={index===selectedIndex}
-            product={product}
             imgSrc={`/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
             key={index}
           />

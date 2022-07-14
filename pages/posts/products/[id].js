@@ -10,7 +10,7 @@ import Body_Wrapper from "../../../components/wrappers/body_wrapper";
 // import Size_Selector from "../../../components/size_selector";
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 import { getAllProductsIds,getProductData  } from "../../../lib/products";
-import { useAppContext } from "../../../context/state";    //added update app context
+import { useAppContext } from "../../../context/state";    
 
 
 export async function getStaticPaths(){
@@ -39,12 +39,8 @@ console.log(product.pictureNumber)
   const handleChange=(e)=>{
     setRadio(e.target.value);
   }
-  // //embla carousel slide code
-  // let arr=Array(product.pictureNumber)
-  // const slides= Array.from(arr.keys());
-
+ //embla carousel slide code
   const SLIDE_COUNT= parseInt(product.pictureNumber);
-  // const SLIDE_COUNT = 10;
   const slides = Array.from(Array(SLIDE_COUNT).keys());
   
   //useContext hook needed to get the image links when hook works we can copy it over to embla carousel code
@@ -119,80 +115,3 @@ console.log(product.pictureNumber)
   )
 }
 
-
-
-// <div className={styles.container}>
-//         <button onClick={useAppContext}>updateContext</button>
-
-//       <Head />
-//       <Title />
-//       <NavBar />
-//       <main className={styles.main}>
-//         <div className={styles.product_area}>
-//         <div className={styles.sidebar}>
-//         <EmblaCarousel slides={slides} />
-
-//         </div>
-//         <div className={styles.main_content}>
-//         <div dangerouslySetInnerHTML={{__html: product.contentHtml}} />
-//         <p> value of mycontext is {mycontext.title} </p>
-//         <p>updated context value is {mycontextUpdate}</p>
-
-
-//       <>
-//       <div className={styles.image}><Image
-//                     alt="Dress"
-//                     src={`/vertical/${mycontext.picture5}`}
-//                     width={380}
-//                     height={510}
-//                     /></div>
-//       </>
-        
-//         <h3>Wymiary sukienki:</h3>
-//         <div className={styles.sizeSelector}>
-//           <form>
-//           <input type="radio" id="radio1" name="sizeSelector" value="XS"   onChange={handleChange} /><label for="radio1">XS</label>
-//           <input type="radio" id="radio2" name="sizeSelector" value="S"   onChange={handleChange}/><label for="radio2">S</label> 
-//           <input type="radio" id="radio3" name="sizeSelector" value="M"   onChange={handleChange}/><label for="radio3">M</label>
-//           <input type="radio" id="radio4" name="sizeSelector" value="L"   onChange={handleChange}/><label for="radio4">L</label>
-//           <input type="radio" id="radio5" name="sizeSelector" value="XL" onChange={handleChange}/><label for="radio5">XL</label>
-//           </form>
-//           <div className={styles.list}>
-//           <p>Wymiary dla rozmiaru {radio}</p>
-//           {radio=="XS" ? <ul>
-//       <li>Długość całkowita: {product.xs1}</li>   
-//       <li>Biust: {product.xs2}</li>
-//       <li>Talia: {product.xs3}</li>
-//       <li>Biodra: {product.xs4}</li>       
-//       </ul> :radio=="S" ?<ul>
-//               <li>Długość całkowita: {product.s1}</li> 
-//               <li>Biust: {product.s2}</li>  
-//               <li>Talia: {product.s3}</li>
-//               <li>Biodra: {product.s4}</li>            
-//           </ul> : radio=="M" ?<ul>
-//               <li>Długość całkowita: {product.m1}</li>   
-//               <li>Biust: {product.m2}</li>
-//               <li>Talia: {product.m3}</li>
-//               <li>Biodra: {product.m4}</li>           
-//           </ul>: radio=="L"?  <ul>
-//               <li>Długość całkowita: {product.l1}</li>   
-//               <li>Buist: {product.l2}</li>
-//               <li>Talia: {product.l3}</li>
-//               <li>Biodra: {product.l4}</li>            
-//           </ul> : radio=="XL"? <ul>
-//               <li>Długośc całkowita: {product.xl1}</li>   
-//               <li>Biust: {product.xl2}</li>
-//               <li>Talia: {product.xl3}</li>
-//               <li>Biodra: {product.xl4}</li>            
-//           </ul> : <p>none</p> }
-//           </div>
-//        <div>
-
-//         </div>
-//         </div>
-//         </div>
-//         </div>
-//       </main>
-
-//       <Footer />
-//     </div>

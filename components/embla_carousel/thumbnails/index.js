@@ -2,23 +2,30 @@ import React from "react"
 import styles from "../image_carousel/image_carousel.module.css"
 import Image from "next/image"
 
-export const Thumbnails = ({selected, onClick,product, imgSrc}) => (
+export const Thumbnails = ({ onClick, selected, imgSrc}) => (
     <>
-    {/* {console.log("thumbnailsprop",product)} */}
-    <div className={`${styles.embla_slide} ${styles.embla_slide_thumb} ${
-        selected ? "is-selected" : ""
+
+    <div className={`${styles.embla_slide} ${styles.embla_slide_thumb} ${selected ? styles.is_selected : ""
     }`}> 
         <button 
             onClick={onClick}
             className={`${styles.embla_slide_inner} ${styles.embla_slide_inner_thumb}`}
             type="button">
+                <div className={styles.embla_slide_thumbnail}>
                 <Image
-          alt="Dress"
-            height="200vw"
-          width="200vw"
-          src={imgSrc}
-          />
+             alt="Dress"
+            //  layout="fill"
+            //  objectFit="contain"
+
+             height="150rem"
+             width="150rem"
+             src={imgSrc}
+             />
+             </div>
         </button>
     </div>
     </>
 )
+
+//the thumbnail images dont overflow but all consolidate into a single line
+//If i change theimage margins ect they all autocompress to fit all in a single 

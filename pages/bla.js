@@ -22,8 +22,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
-// const SLIDE_COUNT =12;
-// const slides = Array.from(Array(SLIDE_COUNT).keys())
 allPostsData.map((d,index)=> (
   <div key={index} className={styles.mapa}>
   </div>
@@ -44,7 +42,7 @@ const filter="short"
                             <div className={styles.imageWrapper}>
                              <div className={styles.image}><Image
                              alt="Dress"
-                             //src={`/../public/products/${d.id}/${d.picture1}`}
+                            //  src={`/../public/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
                              src={`/../public/products/sukienka1/${d.picture1}`}
                              width={380}
                              height={510}
