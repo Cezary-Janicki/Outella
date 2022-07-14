@@ -42,8 +42,8 @@ const filter="short"
                             <div className={styles.imageWrapper}>
                              <div className={styles.image}><Image
                              alt="Dress"
-                            //  src={`/../public/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
-                             src={`/../public/products/sukienka1/${d.picture1}`}
+                             src={`/../public/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
+                            //  src={`/../public/products/sukienka1/${d.picture1}`}
                              width={380}
                              height={510}
                              /></div>
