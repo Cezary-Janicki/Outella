@@ -93,8 +93,8 @@
   bottom: 0;
   margin: auto;
   max-width: none;
-  min-width:200rem ;
-  min-height: 200rem;
+  /* min-width: '300px' ; */
+  /* min-height: '300px' ; */
   transition: opacity 0.5s;
 
 }
