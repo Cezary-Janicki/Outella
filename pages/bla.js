@@ -9,11 +9,14 @@ import Image_Wrapper from "../components/wrappers/image_wrapper";
 import Gallery_Sidebar from "../components/gallery_sidebar";
 import { getSortedProductsData } from "../lib/products.js";
 import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
+import Filtering_Buttons from "../components/filtering_buttons";
+import Gallery_Picture from "../components/gallery_picture";
 
 
+// Props
 export async function getStaticProps() {
   const allPostsData = await getSortedProductsData();
-  console.log("bla.js getSortedProductsData Content",allPostsData)
+  // console.log("bla.js getSortedProductsData Content",allPostsData)
   return {
     props: {
       allPostsData
@@ -27,23 +30,41 @@ allPostsData.map((d,index)=> (
   </div>
 ))
 
+//Hooks and filtering for the selectable gallery
+const [item,setItem]=useState(allPostsData)
+const galleryItems = [... new Set(allPostsData.map((Val)=> Val.tags))]
+const filterItem = (curcat) => {
+  const newItem = allPostsData.filter((newVal) => {
+    return newVal.tags === curcat;
+  })
+  setItem(newItem)
+}
 
 const filter="short"
   return (
     <>   
-        <Body_Wrapper_No_main>
+            <Body_Wrapper_No_main>
+
+      <Filtering_Buttons
+          filterItem={filterItem}
+          setItem={setItem}
+          galleryItems={galleryItems}
+          allPostsData={allPostsData}    
+          />
 
       <div className={styles.main}>
+        
           <div className={styles.flex}>
-            {allPostsData
-            .map((d, index) => (
+            
+          <Gallery_Picture item={item}  />
+
+            {/* {allPostsData.map((d, index) => (
                           <div key={index} className={styles.mapa}>
                           <Link href={`posts/products/${d.id}`}>
                             <div className={styles.imageWrapper}>
                              <div className={styles.image}><Image
                              alt="Dress"
-                             src={`/../public/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
-                            //  src={`/../public/products/sukienka1/${d.picture1}`}
+                             src={`/../public/products/${d.id}/1/${d.pictureName}.jpg`}
                              width={380}
                              height={510}
                              /></div>
@@ -56,7 +77,7 @@ const filter="short"
                        </div>
 
             )
-            )}
+            )} */}
           </div>
         {/* {console.log(dresses)} */}
         </div>
@@ -67,7 +88,11 @@ const filter="short"
           vel tortor fermentum ullamcorper.
         </p>
 
-        {}      <Gallery_Sidebar />
+        <Gallery_Sidebar 
+           filterItem={filterItem}
+           setItem={setItem}
+           galleryItems={galleryItems}
+           allPostsData={allPostsData}/>
 
 </Body_Wrapper_No_main>
 </>
