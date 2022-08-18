@@ -86,17 +86,12 @@
 }
 
 .embla_slide_thumbnail {
-  /* display:inline; */
-  /* position:absolute; */
-  /* overflow: hidden; */
   opacity: 0.5;
   top: 0;
   bottom: 0;
   margin: auto;
-  min-width: 150px;
-  /* max-width: none; */
-  /* min-width: '3000px' ; */
-  /* min-height: '3000px' ; */
+  min-width: 120px;
+  max-width: 3000px;
   transition: opacity 0.5s;
 
 }
