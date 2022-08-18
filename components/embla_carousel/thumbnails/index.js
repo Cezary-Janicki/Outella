@@ -13,13 +13,13 @@ export const Thumbnails = ({ onClick, selected, imgSrc}) => (
             type="button">
                 <div className={styles.embla_slide_thumbnail}>
                 <Image
-             alt="Dress"
-            //  layout="fill"
-            //  objectFit="contain"
+                          alt="Dress"
+                        //   layout="fill"
+                        //   objectFit="contain"
 
-             height="150rem"
-             width="150rem"
-             src={imgSrc}
+                          height="250rem"
+                          width="250rem"
+                          src={imgSrc}
              />
              </div>
         </button>
