@@ -43,45 +43,30 @@ const filterItem = (curcat) => {
 const filter="short"
   return (
     <>   
-            <Body_Wrapper_No_main>
+    
+      <Body_Wrapper_No_main>
+        <Gallery_Sidebar 
+             filterItem={filterItem}
+             setItem={setItem}
+             galleryItems={galleryItems}
+             allPostsData={allPostsData}
+             />
+        <Filtering_Buttons
+             filterItem={filterItem}
+             setItem={setItem}
+             galleryItems={galleryItems}
+             allPostsData={allPostsData}    
+             />
+   
 
-      <Filtering_Buttons
-          filterItem={filterItem}
-          setItem={setItem}
-          galleryItems={galleryItems}
-          allPostsData={allPostsData}    
-          />
-
+           
       <div className={styles.main}>
         
           <div className={styles.flex}>
             
           <Gallery_Picture item={item}  />
 
-            {/* {allPostsData.map((d, index) => (
-                          <div key={index} className={styles.mapa}>
-                          <Link href={`posts/products/${d.id}`}>
-                            <div className={styles.imageWrapper}>
-                             {console.log("index value is",index)}
-                             <div className={styles.image}><Image
-                             alt="Dress"
-                            //  src={`/../public/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
-                             src={`/../public/products/sukienka1/${d.picture1}`}
-                             width={380}
-                             height={510}
-                             /></div>
-                             
-                           <div className={styles.middle}>
-                           <div className={styles.text}>{d.title}</div></div>
-                           
-                             </div>         
-                           </Link>
-                       </div>
-
-            )
-            )} */}
           </div>
-        {/* {console.log(dresses)} */}
         </div>
         <p>
           Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
@@ -90,106 +75,16 @@ const filter="short"
           vel tortor fermentum ullamcorper.
         </p>
 
-        <Gallery_Sidebar 
+        {/* <Gallery_Sidebar 
            filterItem={filterItem}
            setItem={setItem}
            galleryItems={galleryItems}
-           allPostsData={allPostsData}/>
+           allPostsData={allPostsData}/> */}
 
 </Body_Wrapper_No_main>
 </>
 
   );
 }
-/* 
 
 
- <div className={styles.grid}>
-
-        <Link href="/products/dress1">
-        <div className={styles.imageWrapper}>
-            <div className={styles.image}><Image
-            alt="Dress"
-            src={leon7}
-            width={380}
-            height={510}
-            /></div>
-            <div className={styles.middle}>
-             <div className={styles.text}>John Doe</div>
-            </div>
-            
-        </div>
-        </Link>
-
-*/
-
-            /* <div key={index} className={styles.mapa}>
-              <li>
-               <Link href={`posts/products/${d.id}`}>
-               <div>{d.title}
-               <div className={styles.image}><Image
-                   alt="Dress"
-                   src={leon1}
-                   width={380}
-                   height={510}
-                   /></div></div>
-               </Link>
-               </li>
-              </div> */
-
-{
-  /* <div className={styles.wrapper}>
-          <Gallery_Sidebar />
-          <Image_Gallery />
-
-        </div>
-
-        <p>
-          {" "}
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet
-          elementum libero. Nunc id ante urna. Vestibulum ullamcorper nisi vel
-          augue volutpat ultrices. Donec mollis luctus commodo. Nullam pharetra
-          tempus ex, vel pretium lorem posuere ut. Proin efficitur sed augue nec
-          efficitur. Ut vel euismod turpis, at iaculis eros. Pellentesque
-          faucibus vehicula ultricies. Nunc vitae dapibus augue. Curabitur a
-          accumsan ligula. Interdum et malesuada fames ac ante ipsum primis in
-          faucibus. Nam vitae ullamcorper nisi. Quisque luctus enim et suscipit
-          mattis. Cras aliquet fringilla nibh at consectetur.
-        </p>
-        <p>
-          {" "}
-          Nam ex risus, venenatis at mi sed, convallis pellentesque lacus. Fusce
-          malesuada ipsum tristique pellentesque lacinia. Cras vel posuere
-          libero. Sed finibus velit vitae justo viverra dapibus. Mauris
-          pulvinar, leo id euismod faucibus, nibh lacus facilisis justo, vitae
-          dignissim diam augue posuere elit. Fusce lectus leo, convallis a est
-          nec, tempor rutrum turpis. Fusce tempus aliquet tellus. Pellentesque
-          lobortis ipsum in odio faucibus, eu ultricies mauris dictum. Vivamus
-          at ullamcorper dolor.{" "}
-        </p>
-        <p>
-          {" "}
-          Pellentesque sagittis finibus nunc, sed faucibus turpis bibendum sit
-          amet. Ut hendrerit ligula non quam posuere semper. Phasellus eget
-          massa ornare, bibendum metus vitae, vehicula lectus. Aenean pretium
-          odio libero, sed fringilla neque lobortis nec. Etiam vitae erat
-          tellus. Aliquam erat volutpat. Vestibulum egestas libero ut neque
-          euismod suscipit. Morbi egestas vulputate leo, nec porttitor magna
-          tristique at. Nam aliquet, diam eu pulvinar luctus, mi risus vulputate
-          purus, a convallis mi orci nec enim. Sed risus nunc, iaculis ac felis
-          at, rhoncus tincidunt justo.{" "}
-        </p>
-        <p>
-          {" "}
-          Sed id convallis massa. Praesent non augue quam. Proin rhoncus quis
-          nisl in hendrerit. Nunc ultricies neque vitae nisi accumsan faucibus.
-          Donec in enim ut diam vehicula vehicula vitae vitae eros. Duis
-          efficitur ipsum at odio ultrices volutpat. Sed aliquet interdum lacus
-          non accumsan. Sed sed magna quam. Nunc ultricies sit amet nisl ut
-          vulputate. Cras nec ornare ex. Nulla tempor tristique congue. Integer
-          lobortis urna quis orci suscipit dapibus. Phasellus vehicula, lectus
-          vel ultrices auctor, elit diam posuere lectus, vitae maximus mauris
-          diam iaculis nisl. Suspendisse quis dolor et ligula tempus porttitor.{" "}
-        </p> */
-
-}
