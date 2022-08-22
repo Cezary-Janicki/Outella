@@ -17,8 +17,8 @@ export const Thumbnails = ({ onClick, selected, imgSrc}) => (
             //  layout="fill"
             //  objectFit="contain"
 
-             height={10}
-             width={10}
+             height="150rem"
+             width="150rem"
              src={imgSrc}
              />
              </div>
