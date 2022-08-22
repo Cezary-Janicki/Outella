@@ -43,6 +43,8 @@
     margin:10px;
     transition: .5s ease;
     display:block;
+    z-index: 4;
+    position:relative;
   }
   
   

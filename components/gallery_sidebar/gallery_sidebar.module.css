@@ -5,6 +5,7 @@
     opacity: 50%;
     /* Sticky and positioning */
     /* position:-webkit-sticky; */
+    z-index: 6;
     position: absolute;
     top:100px;
     width: 15vw;

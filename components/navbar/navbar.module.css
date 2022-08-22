@@ -23,7 +23,7 @@ width:100vw;
 position:absolute;
 top:0vw;
 left:0vw;
-z-index: auto;
+/* z-index: auto;  <= xD ?*/ 
 }
 
 @media (min-width:767px){

@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-around;
     flex-flow: nowrap column;
-    z-index: -10;
+    /* z-index: -10; */
 }
 .burger{
     width:2rem;

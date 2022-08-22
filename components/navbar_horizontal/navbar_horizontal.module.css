@@ -6,7 +6,7 @@
     display:fixed;
     padding-top: 10px;
     margin-left:10px;
-    z-index:10;
+    /* z-index:10; */
   }
 }
 
