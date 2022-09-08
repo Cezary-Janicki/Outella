@@ -45,12 +45,12 @@ const filter="short"
     <>   
     
       <Body_Wrapper_No_main>
-        <Gallery_Sidebar 
+      {/* <Gallery_Sidebar 
              filterItem={filterItem}
              setItem={setItem}
              galleryItems={galleryItems}
              allPostsData={allPostsData}
-             />
+             /> */}
         <Filtering_Buttons
              filterItem={filterItem}
              setItem={setItem}
@@ -61,9 +61,14 @@ const filter="short"
 
            
       <div className={styles.main}>
-        
+                                        {/*  */}
           <div className={styles.flex}>
-            
+          {/* <Gallery_Sidebar 
+             filterItem={filterItem}
+             setItem={setItem}
+             galleryItems={galleryItems}
+             allPostsData={allPostsData}
+             /> */}
           <Gallery_Picture item={item}  />
 
           </div>

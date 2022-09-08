@@ -35,7 +35,7 @@ export function AppWrapper({children}){
 //button below is displayed globally!
 
         <AppContext.Provider value={[products, setProducts]}>
-            <button onClick={refreshProducts}>refresh</button>   
+            {/* <button onClick={refreshProducts}>refresh</button>    */}
             {children}
         </AppContext.Provider>
     )

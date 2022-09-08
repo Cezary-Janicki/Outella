@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 
 const Gallery_Picture = ({item,allPostsData})=>{
+    // console.log(item)
     return(
         <>
         {item.map((d,index)=>{
