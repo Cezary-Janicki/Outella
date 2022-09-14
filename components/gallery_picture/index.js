@@ -14,7 +14,7 @@ const Gallery_Picture = ({item,allPostsData})=>{
                 <div className={styles.imageWrapper}>
                  <div className={styles.image}><Image
                  alt="Dress"
-                 src={`/products/${d.id}/1/${d.pictureName}.jpg`}
+                 src={`/products/${d.id}/1/${d.pictureName}.jpeg`}
                  width={380}
                  height={510}
                  /></div>

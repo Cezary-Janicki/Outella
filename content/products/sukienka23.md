@@ -23,7 +23,7 @@ xl1: "150 cm"
 xl2: "53 cm - maksymalnie 150 cm"
 xl3: "74 cm - maksymalnie 100 cm"
 xl4: "98 cm- maksymalnie 130 cm"
-tags: "mini"
+tags: "Mini"
 #1 -długość całkowita , 2- biust, 3- talia, 4- biodra
 
 ---

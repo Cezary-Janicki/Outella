@@ -58,7 +58,7 @@ return(
             <Image
               className={styles.embla_slide_img}
               alt="dress"
-              src={`/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
+              src={`/products/${product.id}/${d+1}/${product.pictureName}.jpeg`}
               height={600}
               width={700}
               // src={mediaByIndex(index)} 
@@ -80,7 +80,7 @@ return(
           <Thumbnails 
             onClick={()=> onThumbClick(index)}
             selected={index===selectedIndex}
-            imgSrc={`/products/${product.id}/${d+1}/${product.pictureName}.jpg`}
+            imgSrc={`/products/${product.id}/${d+1}/${product.pictureName}.jpeg`}
             key={index}
           />
           </div>
