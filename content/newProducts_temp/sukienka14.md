@@ -1,7 +1,7 @@
 ---
-title: 'Sukienka 1'
+title: 'Sukienka 14'
 date: '2020-02-01'
-pictureNumber: "8"
+pictureNumber: "3"
 pictureName: "sukienka"
 xs1: "120 cm"
 xs2: "75 cm - maksymalnie 94 cm"
@@ -27,8 +27,8 @@ tags: "Maxi"
 #1 -długość całkowita , 2- biust, 3- talia, 4- biodra
 
 ---
-# Sukienka 1
-## 169 zł
+# Sukienka 14
+## 279 zł
  
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel purus sapien. In sed tristique nisl, vitae varius mauris. Cras luctus pharetra risus at ullamcorper. In urna felis, tempor eu sollicitudin vel, convallis vitae erat. Phasellus vitae turpis ac augue auctor tristique. Curabitur in ultricies nunc, sed condimentum velit. Donec. 

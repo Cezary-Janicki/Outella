@@ -1,7 +1,7 @@
 ---
-title: 'Sukienka 1'
+title: 'Sukienka 27'
 date: '2020-02-01'
-pictureNumber: "8"
+pictureNumber: "4"
 pictureName: "sukienka"
 xs1: "120 cm"
 xs2: "75 cm - maksymalnie 94 cm"
@@ -23,11 +23,11 @@ xl1: "150 cm"
 xl2: "53 cm - maksymalnie 150 cm"
 xl3: "74 cm - maksymalnie 100 cm"
 xl4: "98 cm- maksymalnie 130 cm"
-tags: "Maxi"
+tags: "Ślubne"
 #1 -długość całkowita , 2- biust, 3- talia, 4- biodra
 
 ---
-# Sukienka 1
+# Sukienka 27
 ## 169 zł
  
 
