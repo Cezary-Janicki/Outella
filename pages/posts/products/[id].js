@@ -1,9 +1,8 @@
 //React components
-import Link from "next/link";
 import styles from "../../products/products.module.css";
-import Image from "next/image";
 import createContext, { useEffect } from 'react';
 import { useState } from "react";
+import axios from "axios";
 
 //Page components
 import Body_Wrapper from "../../../components/wrappers/body_wrapper";
@@ -23,10 +22,12 @@ export async function getStaticPaths(){
 export async function getStaticProps({params}){
   const product = await getProductData(params.id)
   const photoNumber = await getPhotoCount(params.id)
+  const id=params.id
   return{
    props:{ 
       product,
-      photoNumber
+      photoNumber,
+      id
     }
   } 
 }
@@ -41,7 +42,6 @@ export default function ProductPage({product,photoNumber}) {
     setRadio(e.target.value);
   }
  //embla carousel slide code
-
   const slides = Array.from(Array(photoNumber).keys());
   
   //useContext hook needed to get the image links when hook works we can copy it over to embla carousel code
@@ -52,6 +52,7 @@ export default function ProductPage({product,photoNumber}) {
     setProducts([product]);         //why the context value of products isnt equal to product? the setProducts function should set it, I need to read up on hooks more
   }, [product])
   products=product
+
   return (
     <Body_Wrapper_No_main>
       <div className={styles.main}>
