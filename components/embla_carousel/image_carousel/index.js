@@ -59,11 +59,11 @@ return(
               className={styles.embla_slide_img}
               alt="dress"
               src={`/products/${product.id}/${d+1}/${product.pictureName}.jpeg`}
-              height={2048}
-              width={1536}
-              // src={mediaByIndex(index)} 
-                //  layout="responsive"
-              // layout = "fill"
+              // height={2048}
+              // width={1536}
+
+              layout = "fill"
+              objectFit='contain'
 
               />
           </div>

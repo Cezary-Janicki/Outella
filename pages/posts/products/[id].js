@@ -7,12 +7,11 @@ import { useState } from "react";
 
 //Page components
 import Body_Wrapper from "../../../components/wrappers/body_wrapper";
-// import Size_Selector from "../../../components/size_selector";
+import Body_Wrapper_No_main from "../../../components/wrappers/body_wrapper_no_main";
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 import { getAllProductsIds,getProductData  } from "../../../lib/products";
 import { useAppContext } from "../../../context/state";    
-
-
+import { getPhotoCount } from "../../../lib/products";
 export async function getStaticPaths(){
   const paths= getAllProductsIds()
   return{
@@ -23,25 +22,27 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
   const product = await getProductData(params.id)
+  const photoNumber = await getPhotoCount(params.id)
   return{
    props:{ 
-      product
+      product,
+      photoNumber
     }
   } 
 }
 
- 
 
-export default function ProductPage({product}) {
-console.log(product.pictureNumber)
+
+export default function ProductPage({product,photoNumber}) {
+// console.log(product.pictureNumber)
   //radio buttons size selector code
   const [radio,setRadio]=useState('XS')
   const handleChange=(e)=>{
     setRadio(e.target.value);
   }
  //embla carousel slide code
-  const SLIDE_COUNT= parseInt(product.pictureNumber);
-  const slides = Array.from(Array(SLIDE_COUNT).keys());
+
+  const slides = Array.from(Array(photoNumber).keys());
   
   //useContext hook needed to get the image links when hook works we can copy it over to embla carousel code
   
@@ -52,8 +53,8 @@ console.log(product.pictureNumber)
   }, [product])
   products=product
   return (
-    <Body_Wrapper>
-
+    <Body_Wrapper_No_main>
+      <div className={styles.main}>
      <div className={styles.product_area}>
         <div className={styles.sidebar}>
         <EmblaCarousel slides={slides} product={product} />
@@ -110,8 +111,8 @@ console.log(product.pictureNumber)
 
         </div>
         </div>
-
-    </Body_Wrapper>
+        </div>
+    </Body_Wrapper_No_main>
   )
 }
 

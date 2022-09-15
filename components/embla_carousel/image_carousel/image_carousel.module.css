@@ -2,7 +2,7 @@
   position: relative;
   background-color: #f7f7f7;
   padding: 20px;
-  /* max-width: 700px; */
+  max-width: 60vh;
   margin-left: auto;
   margin-right: auto;
 }
@@ -35,7 +35,7 @@
   padding-left: 10px;
   min-width: 100%;
   position: relative;
- 
+  height:80vh;
 }
 
 .embla_slide_inner {
@@ -58,6 +58,7 @@
 .embla_thumb {
   padding-top: 0;
   margin-top: -12px;
+  
 }
 
 .embla_container_thumb {
@@ -68,6 +69,9 @@
 .embla_slide_thumb {
   padding-left: 8px;
   min-width: 20%;
+  padding-left: 10px;
+  min-width: 100%;
+  position: relative;
 }
 
 .embla_slide_inner_thumb {
@@ -78,7 +82,6 @@
   margin: 0;
   padding: 0;
   height: 180px;
-  width: 100%;
   background-color: transparent;
   position: relative;
   display: block;

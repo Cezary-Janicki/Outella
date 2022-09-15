@@ -5,7 +5,7 @@ import Image from "next/image"
 export const Thumbnails = ({ onClick, selected, imgSrc}) => (
     <>
 
-    <div className={`${styles.embla_slide} ${styles.embla_slide_thumb} ${selected ? styles.is_selected : ""
+    <div className={` ${styles.embla_slide_thumb} ${selected ? styles.is_selected : ""
     }`}> 
         <button 
             onClick={onClick}

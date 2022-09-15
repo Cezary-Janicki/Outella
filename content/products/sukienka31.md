@@ -1,7 +1,6 @@
 ---
 title: 'Sukienka 31'
 date: '2020-02-01'
-pictureNumber: "8"
 pictureName: "sukienka"
 xs1: "120 cm"
 xs2: "75 cm - maksymalnie 94 cm"
