@@ -34,7 +34,7 @@ export async function getStaticProps({params}){
 
 
 
-export default function ProductPage({product,photoNumber}) {
+export default function ProductPage({product,photoNumber,id}) {
 // console.log(product.pictureNumber)
   //radio buttons size selector code
   const [radio,setRadio]=useState('XS')
@@ -53,6 +53,15 @@ export default function ProductPage({product,photoNumber}) {
   }, [product])
   products=product
 
+
+  let [dress,setDress] = useState([])
+  useEffect(()=>{
+    axios.get(`https://outella-database.herokuapp.com/${id}`).then(res =>{
+      setDress(res.data)
+    })
+  },[])
+  console.log("useEffect hook fetching result:",dress)  // why the data is fetched 2 times? The first fetch returns empty, but the 2nd fetch is successfull
+  
   return (
     <Body_Wrapper_No_main>
       <div className={styles.main}>
