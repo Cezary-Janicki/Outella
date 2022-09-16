@@ -39,18 +39,12 @@ const filterItem = (curcat) => {
   })
   setItem(newItem)
 }
-
+console.log("all posts data value",allPostsData)
 const filter="short"
   return (
     <>   
     
       <Body_Wrapper_No_main>
-      {/* <Gallery_Sidebar 
-             filterItem={filterItem}
-             setItem={setItem}
-             galleryItems={galleryItems}
-             allPostsData={allPostsData}
-             /> */}
         <Filtering_Buttons
              filterItem={filterItem}
              setItem={setItem}
@@ -63,12 +57,6 @@ const filter="short"
       <div className={styles.main}>
                                         {/*  */}
           <div className={styles.flex}>
-          {/* <Gallery_Sidebar 
-             filterItem={filterItem}
-             setItem={setItem}
-             galleryItems={galleryItems}
-             allPostsData={allPostsData}
-             /> */}
           <Gallery_Picture item={item}  />
 
           </div>
@@ -80,11 +68,6 @@ const filter="short"
           vel tortor fermentum ullamcorper.
         </p>
 
-        {/* <Gallery_Sidebar 
-           filterItem={filterItem}
-           setItem={setItem}
-           galleryItems={galleryItems}
-           allPostsData={allPostsData}/> */}
 
 </Body_Wrapper_No_main>
 </>
