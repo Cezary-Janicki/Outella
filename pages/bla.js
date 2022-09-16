@@ -2,7 +2,9 @@
 import Link from "next/link";
 import styles from "./bla.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import axios from "axios";
+
 
 //Page components
 import Image_Wrapper from "../components/wrappers/image_wrapper";
@@ -13,64 +15,49 @@ import Filtering_Buttons from "../components/filtering_buttons";
 import Gallery_Picture from "../components/gallery_picture";
 
 
-// Props
-export async function getStaticProps() {
-  const allPostsData = await getSortedProductsData();
-  // console.log("bla.js getSortedProductsData Content",allPostsData)
-  return {
-    props: {
-      allPostsData
-    }
-  }
-}
 
-export default function Home({ allPostsData }) {
-allPostsData.map((d,index)=> (
-  <div key={index} className={styles.mapa}>
-  </div>
-))
+export default function Home() {
+  //DATA FETCHING FROM A SERVER
+  let [products,setProducts] = useState([])
+  useEffect(()=>{
+      axios.get(`https://outella-database.herokuapp.com/products`).then(res =>{
+      setProducts(res.data)
+    })
+  },[])
 
-//Hooks and filtering for the selectable gallery
-const [item,setItem]=useState(allPostsData)
-const galleryItems = [... new Set(allPostsData.map((Val)=> Val.tags))]
+
+// Hooks and filtering for the selectable gallery
+const [item,setItem]=useState(products)
+const galleryItems = [... new Set(products.map((Val)=> Val.tags))]
 const filterItem = (curcat) => {
-  const newItem = allPostsData.filter((newVal) => {
+  const newItem = products.filter((newVal) => {
     return newVal.tags === curcat;
   })
   setItem(newItem)
 }
-console.log("all posts data value",allPostsData)
-const filter="short"
+
   return (
-    <>   
     
       <Body_Wrapper_No_main>
         <Filtering_Buttons
              filterItem={filterItem}
              setItem={setItem}
              galleryItems={galleryItems}
-             allPostsData={allPostsData}    
+            products={products}    
              />
    
 
            
       <div className={styles.main}>
-                                        {/*  */}
           <div className={styles.flex}>
           <Gallery_Picture item={item}  />
 
           </div>
         </div>
-        <p>
-          Mauris suscipit dignissim malesuada. Aenean faucibus neque vitae ipsum
-          facilisis vulputate. Nam est tortor, varius non semper id, efficitur
-          vitae risus. In hac habitasse platea dictumst. Vestibulum nec mauris
-          vel tortor fermentum ullamcorper.
-        </p>
+
 
 
 </Body_Wrapper_No_main>
-</>
 
   );
 }
