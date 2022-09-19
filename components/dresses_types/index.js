@@ -2,11 +2,6 @@ import Image from "next/image";
 import styles from "./dresses_types.module.css"
 import Link from "next/link"
 import Image_Wrapper from "../wrappers/image_wrapper";
-import leonVer1 from "../../public/vertical/leon1.jpg";
-import leonVer2 from "../../public/vertical/leon2.jpg";
-import leonVer3 from "../../public/vertical/leon3.jpg";
-import leonVer4 from "../../public/vertical/leon4.jpg";
-import leonVer5 from "../../public/vertical/leon5.jpg";
 
 
 export default function Dresses_Types(){
@@ -16,10 +11,10 @@ export default function Dresses_Types(){
         {/*==================== D R E S S E S _ T Y P E S ====================>*/}
         <div className={styles.gridBox}>
           <Image_Wrapper>
-            <Link href="products/Typ1/lorem">
+            <Link href="product_gallery">
             <Image
-              alt="Next.js logo"
-              src={leonVer1}
+              alt="Dress"
+              src={`/products/sukienka18/3/sukienka.jpeg`}
               layout="fill"
               objectFit="cover"
             />
@@ -28,10 +23,10 @@ export default function Dresses_Types(){
         </div>
         <div className={styles.gridBox}>
             <Image_Wrapper>
-            <Link href="products/Typ2/ipsum">
+            <Link href="product_gallery">
             <Image
-              alt="Cute cat"
-              src={leonVer2}
+              alt="Dress"
+              src={"/products/sukienka10/1/sukienka.jpeg"}
               layout="fill"
               objectFit="cover"
             />
@@ -40,10 +35,10 @@ export default function Dresses_Types(){
         </div>
         <div className={styles.gridBox}>
             <Image_Wrapper>
-            <Link href="products/Typ3/dolor">
+            <Link href="product_gallery">
             <Image
-              alt="Fluffy cat"
-              src={leonVer3}
+              alt="Dress"
+              src={"/products/sukienka4/1/sukienka.jpeg"}
               layout="fill"
               objectFit="cover"
             />
@@ -52,10 +47,10 @@ export default function Dresses_Types(){
         </div>
         <div className={styles.gridBox}>
             <Image_Wrapper>
-            <Link href="products/Typ4/sit">
+            <Link href="product_gallery">
             <Image
-              alt="Mad cat"
-              src={leonVer4}
+              alt="Dress"
+              src={"/products/sukienka33/6/sukienka.jpeg"}
               layout="fill"
               objectFit="cover"
             />
@@ -64,10 +59,10 @@ export default function Dresses_Types(){
         </div>
         <div className={styles.gridBox}>
             <Image_Wrapper>
-            <Link href="products/Typ5/amet">
+            <Link href="product_gallery">
             <Image
-              alt="Mad cat"
-              src={leonVer5}
+              alt="Dress"
+              src={"/products/sukienka7/1/sukienka.jpeg"}
               layout="fill"
               objectFit="cover"
             />
