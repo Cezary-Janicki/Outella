@@ -1,7 +1,7 @@
 # Outella
 
 Outella is a online product catalog for a clothes store. This is my main project through which I learn react, javascript and basic webdesing principles. 
-
+The site can be accessed at https://outella.vercel.app/
 
 ## Features I'm curently working on 
 - Fully implementing an online json database
