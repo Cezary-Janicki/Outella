@@ -17,14 +17,14 @@ export default function Home() {
   return (
     <Body_Wrapper_No_main>
 
-        <Link  href="./bla">
+        {/* <Link  href="./bla">
         <p className={styles.description}><a>Zdjęcia przykładowe</a></p>
         </Link>
-        <Main_Photos />
-             
+        <Main_Photos /> */}
         <main className={styles.main}>
-        <p className={styles.description}>Ikony typów sukien</p>
-
+        <Link href="./product_gallery">     
+          <p className={styles.description}>Galeria produtków</p>
+        </Link>
         <Dresses_Types />
 
         <p className={styles.description}>Bestsellery</p>

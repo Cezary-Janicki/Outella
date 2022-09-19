@@ -28,3 +28,5 @@ export default function Post({postData}){
         </Body_Wrapper>
     )
 }
+
+//this page generates the footer
