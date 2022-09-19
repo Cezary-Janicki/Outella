@@ -1,11 +1,11 @@
 # Outella
 
-Outella is a fis
+Outella is a online product catalog for a clothes store. This is my main project through which I learn react, javascript and basic webdesing principles. 
 
 
-## Curently working on 
+## Features I'm curently working on 
 - Fully implementing an online json database
-- Implementing a wider use of queries to allow
+- Implementing a wider use of queries to allow for greater filtering, and page linking options
 - Improving the site both desktop and mobile layout as well as overall responsiveness 
 
 ## Already working on Outella
