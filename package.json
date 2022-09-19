@@ -10,6 +10,7 @@
   "dependencies": {
     "@splidejs/splide": "^3.6.9",
     "@types/react-router-dom": "^5.3.2",
+    "axios": "^0.27.2",
     "embla-carousel": "^6.2.0",
     "embla-carousel-autoplay": "^6.2.0",
     "embla-carousel-react": "^6.2.0",
@@ -17,7 +18,7 @@
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.4.1",
     "netlify-cms-app": "^2.15.65",
-    "next": "^12.0.7",
+    "next": "^12.3.0",
     "nextjs-progressbar": "0.0.13",
     "nprogress": "^0.2.0",
     "pure-react-carousel": "^1.27.8",
