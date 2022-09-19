@@ -1,6 +1,5 @@
 import styles from "./navbar_horizontal.module.css";
 import Link from "next/link";
-import {useState} from "react";
 
 
  export default function NavBarHorziontal() {
