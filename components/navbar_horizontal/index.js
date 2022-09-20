@@ -1,6 +1,5 @@
 import styles from "./navbar_horizontal.module.css";
 import Link from "next/link";
-import {useState} from "react";
 
 
  export default function NavBarHorziontal() {
@@ -13,7 +12,7 @@ import {useState} from "react";
 
       <div className={styles.navbarRow}>
        
-        <Link href="/products/Typ1/lorem">
+        <Link href="/product_gallery">
         <p><a>Typ sukienki 1 </a></p> 
         </Link>
         <div className={styles.navbarColumn}>
@@ -21,7 +20,7 @@ import {useState} from "react";
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <Link href="/products/Typ2/ipsum">
+      <Link href="/product_gallery">
         <p><a>Typ sukienki 2 </a></p>
         </Link>
         <div className={styles.navbarColumn}>
@@ -29,7 +28,7 @@ import {useState} from "react";
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <Link href="/products/Typ3/dolor">
+      <Link href="/product_gallery">
         <p><a>Typ sukienki 3</a></p>
         </Link>
         <div className={styles.navbarColumn}>
@@ -37,7 +36,7 @@ import {useState} from "react";
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <Link href="/products/Typ4/sit">
+      <Link href="/product_gallery">
         <p><a>Typ sukienki 4</a></p>
         </Link>
         <div className={styles.navbarColumn}>
@@ -45,7 +44,7 @@ import {useState} from "react";
         </div>
       </div>
       <div className={styles.navbarRow}>
-        <Link href="/products/Typ5/amet">
+      <Link href="/product_gallery">
         <p><a> Typ sukienki 5</a></p>
         </Link>
         <div className={styles.navbarColumn}>
