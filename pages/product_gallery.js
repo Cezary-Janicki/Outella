@@ -1,15 +1,10 @@
 //React components
-import Link from "next/link";
 import styles from "./bla.module.css";
-import Image from "next/image";
 import { useState,useEffect } from "react";
 import axios from "axios";
 
 
 //Page components
-import Image_Wrapper from "../components/wrappers/image_wrapper";
-import Gallery_Sidebar from "../components/gallery_sidebar";
-import { getSortedProductsData } from "../lib/products.js";
 import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
 import Filtering_Buttons from "../components/filtering_buttons";
 import Gallery_Picture from "../components/gallery_picture";
@@ -17,6 +12,7 @@ import Gallery_Picture from "../components/gallery_picture";
 
 
 export default function Home() {
+
   //DATA FETCHING FROM A SERVER
   let [products,setProducts] = useState([])
   useEffect(()=>{

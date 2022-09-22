@@ -1,11 +1,9 @@
-import { Divide } from "hamburger-react";
 import {React, createContext, useContext,useState,useEffect} from "react";
 import { getAllProductsIds,getProductsData } from "../lib/products";
-import allProductsData from "../pages/posts/products/[id]"
 import axios from "axios";
 
 const AppContext = createContext();
-export function useAppContext(){
+export function useDressIdContext(){
     return useContext(AppContext)
 }
 
@@ -21,12 +19,12 @@ export async function getStaticProps({params}){
 
 
 
-export function AppWrapper({children}){
+export function dressIdContextWrapper({children}){
 
    
   let [dress,setDress] = useState([])
   useEffect(()=>{
-      axios.get(`https://outella-database.herokuapp.com/products`).then(res =>{
+      axios.get(`https://outella-database.herokuapp.com/products/4`).then(res =>{
       setDress(res.data)
     })
   },[])

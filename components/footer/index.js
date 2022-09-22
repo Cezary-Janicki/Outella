@@ -14,13 +14,13 @@ export async function getStaticProps() {
 
 
 var foo=[
-  { id: 'Informacje', title: 'O firmie', date: '1' },
-  { id: 'Regulamin', title: 'Regulamin sklepu internetowego', date: '2'},
-  { id: 'Polityka', title: 'Polityka Prywatności', date: '3' },
-  { id: 'Dostawa', title: 'Dostawa', date: '4' },
-  { id: 'Platnosci', title: 'Płatności', date: '5' },
-  { id: 'Kontakt', title: 'Kontakt', date: '6' },
-  { id: 'Zwroty', title: 'Zwroty', date: '7' }
+  { id: 'informacje', title: 'O firmie', date: '1' },
+  { id: 'regulamin', title: 'Regulamin sklepu internetowego', date: '2'},
+  { id: 'polityka', title: 'Polityka Prywatności', date: '3' },
+  { id: 'dostawa', title: 'Dostawa', date: '4' },
+  { id: 'platnosci', title: 'Płatności', date: '5' },
+  { id: 'kontakt', title: 'Kontakt', date: '6' },
+  { id: 'zwroty', title: 'Zwroty', date: '7' }
 ]
 
 
