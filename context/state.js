@@ -6,7 +6,14 @@ import axios from "axios";
 
 const AppContext = createContext();
 export function useAppContext(){
-    return useContext(AppContext)
+  const data = useContext(AppContext)[0]
+  return data
+}
+
+const dressIdContext = createContext();
+export function useDressIdContext(){
+  const data = useContext(dressIdContext)
+    return data[0]
 }
 
 export async function getStaticProps({params}){
@@ -30,16 +37,27 @@ export function AppWrapper({children}){
       setDress(res.data)
     })
   },[])
+
+  let [id,setId] = useState([])
+  useEffect(()=>{
+      axios.get(`https://outella-database.herokuapp.com/products/4`).then(res =>{
+      setId(res.data)
+    })
+  },[])
+
+  
     function refreshProducts(){
       console.log("You've just pressed the refresh button here are the contents of products prop")
-      console.log(dress)
+      console.log(id)
     }
  
     return(
+        <dressIdContext.Provider value={[id,setId]}>      
         <AppContext.Provider value={[dress,setDress]}>
             <button onClick={refreshProducts}>refresh</button>   
             {children}
         </AppContext.Provider>
+        </dressIdContext.Provider>
     )
 }
 

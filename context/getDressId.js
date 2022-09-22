@@ -7,6 +7,7 @@ export function useDressIdContext(){
     return useContext(AppContext)
 }
 
+
 export async function getStaticProps({params}){
   // todo put following in try/catch
     const products = params.id ? [await getProductsData(params.id)] : []

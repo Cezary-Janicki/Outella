@@ -11,8 +11,7 @@ import { getAllProductsIds,getProductData } from "../../../lib/products";
 import { useAppContext } from "../../../context/state";    
 import { getPhotoCount } from "../../../lib/products";
 import { getAxiosData } from "../../../lib/products";
-import { useDressIdContext } from "../../../context/getDressId";
-
+import { useDressIdContext } from "../../../context/state";
 
 export async function getStaticPaths(){
   const paths= getAllProductsIds() // this returns all of the id's 
