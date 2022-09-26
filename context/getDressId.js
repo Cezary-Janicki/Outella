@@ -2,12 +2,12 @@ import {React, createContext, useContext,useState,useEffect} from "react";
 import { getAllProductsIds,getProductsData } from "../lib/products";
 import axios from "axios";
 
-const AppContext = createContext();
+const dressIdContext = createContext();
+
 export function useDressIdContext(){
-    return useContext(AppContext)
+  const data = useContext(dressIdContext)[0]
+    return data
 }
-
-
 export async function getStaticProps({params}){
   // todo put following in try/catch
     const products = params.id ? [await getProductsData(params.id)] : []
@@ -20,28 +20,31 @@ export async function getStaticProps({params}){
 
 
 
-export function dressIdContextWrapper({children}){
+export function DressIdContextWrapper({children}){
 
-   
-  let [dress,setDress] = useState([])
+  let [id,setId] = useState([])
   useEffect(()=>{
-      axios.get(`https://outella-database.herokuapp.com/products/4`).then(res =>{
-      setDress(res.data)
-    })
+      axios.get(`https://outella-database.herokuapp.com/products`).then(res =>{
+        const dressData=res.data.map(dressNames => {
+          const dressNumber = dressNames.id
+          const dressName = dressNames.pictureName
+          const id = (dressName.concat(dressNumber)).toString()
+          return{
+            params:{id}
+          }
+        })
+        setId(dressData)
+        
+      }
+    )
   },[])
-    function refreshProducts(){
-      console.log("You've just pressed the refresh button here are the contents of products prop")
-      console.log(dress)
-    }
+
  
     return(
-        <AppContext.Provider value={[dress,setDress]}>
-            <button onClick={refreshProducts}>refresh</button>   
+        <dressIdContext.Provider value={[id,setId]}>      
             {children}
-        </AppContext.Provider>
+        </dressIdContext.Provider>
     )
 }
 
 
-// updateAppcontext needs to store an old value of a context and when the page is refresed rewrite it with a new one taht is taken from props
-// the function could should take an external value and overwrite the context with it

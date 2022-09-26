@@ -10,12 +10,11 @@ export function useAppContext(){
   return data
 }
 
-const dressIdContext = createContext();
-export function useDressIdContext(){
-  const data = useContext(dressIdContext)
-    return data[0]
-}
-
+// const dressIdContext = createContext();
+// export function useDressIdContext(){
+//   const data = useContext(dressIdContext)[0]
+//     return data
+// }
 export async function getStaticProps({params}){
   // todo put following in try/catch
     const products = params.id ? [await getProductsData(params.id)] : []
@@ -37,27 +36,34 @@ export function AppWrapper({children}){
       setDress(res.data)
     })
   },[])
-
-  let [id,setId] = useState([])
-  useEffect(()=>{
-      axios.get(`https://outella-database.herokuapp.com/products/4`).then(res =>{
-      setId(res.data)
-    })
-  },[])
+  
+  // let [id,setId] = useState([])
+  // useEffect(()=>{
+  //     axios.get(`https://outella-database.herokuapp.com/products`).then(res =>{
+  //       const dressData=res.data.map(dressNames => {
+  //         const dressNumber = dressNames.id
+  //         const dressName = dressNames.pictureName
+  //         const dressId = dressName.concat(dressNumber)
+  //         return{
+  //           dressId
+  //         }
+  //       })
+  //       setId(dressData)
+        
+  //     }
+  //   )
+  // },[])
 
   
-    function refreshProducts(){
-      console.log("You've just pressed the refresh button here are the contents of products prop")
-      console.log(id)
-    }
+    // function refreshProducts(){
+    //   console.log("You've just pressed the refresh button here are the contents of products prop")
+    //   console.log(id)
+    // }
  
     return(
-        <dressIdContext.Provider value={[id,setId]}>      
         <AppContext.Provider value={[dress,setDress]}>
-            <button onClick={refreshProducts}>refresh</button>   
             {children}
         </AppContext.Provider>
-        </dressIdContext.Provider>
     )
 }
 

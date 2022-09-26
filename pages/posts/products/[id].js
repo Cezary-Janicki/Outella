@@ -8,18 +8,13 @@ import Body_Wrapper from "../../../components/wrappers/body_wrapper";
 import Body_Wrapper_No_main from "../../../components/wrappers/body_wrapper_no_main";
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 import { getAllProductsIds,getProductData } from "../../../lib/products";
-import { useAppContext } from "../../../context/state";    
 import { getPhotoCount } from "../../../lib/products";
-import { getAxiosData } from "../../../lib/products";
-import { useDressIdContext } from "../../../context/state";
 
 export async function getStaticPaths(){
-  const paths= getAllProductsIds() // this returns all of the id's 
-  // console.log("id", paths)
-  
+  const paths= await getAllProductsIds()
   return{
-      paths,
-      fallback:false
+    paths,
+    fallback:false
   }
 }
 
@@ -38,10 +33,6 @@ export async function getStaticProps({params}){
 }
 
 export default function ProductPage({photoNumber,id}) {
-
-console.log(useAppContext(),"used app context")
-console.log(useDressIdContext(),"dress id context")
-
   //DATA FETCHING FROM A SERVER
   let [dress,setDress] = useState([])
   useEffect(()=>{
@@ -57,10 +48,12 @@ console.log(useDressIdContext(),"dress id context")
   }
  //EMBLA CAROUSEL SLIDE CODE
   const slides = Array.from(Array(photoNumber).keys());
+
   return (
     <Body_Wrapper_No_main>
       <div className={styles.main}>
      <div className={styles.product_area}>
+      
         <div className={styles.sidebar}>
         <EmblaCarousel slides={slides} id={id} />
 
