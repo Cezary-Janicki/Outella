@@ -1,4 +1,4 @@
-//Embla
+//EMBLA
 import React, { useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from "embla-carousel-autoplay"
@@ -7,14 +7,23 @@ import {Thumbnails} from "../thumbnails"
 
 import Image from "next/image";
 import { useCallback,useState } from "react";
-
-//Images , components
 import styles from "./image_carousel.module.css"
 import { useAppContext } from '../../../context/state';
+import axios from 'axios';
 
 
-//Hooks
-const EmblaCarousel = ({slides,product}) => {
+
+const EmblaCarousel = ({slides,id}) => {
+
+  //DATA FETCHING FROM A SERVER
+  let [dress,setDress] = useState([])
+  useEffect(()=>{
+      axios.get(`https://outella-database.herokuapp.com/products/${id}`).then(res =>{
+      setDress(res.data)
+    })
+  },[])
+
+  //MAIN EMBLA CODE
   const[selectedIndex, setSelectedIndex]= useState(0);
   const[mainViewportRef, embla]= useEmblaCarousel({skipSnaps:false});
   const[thumbViewportRef,emblaThumbs]=useEmblaCarousel({
@@ -58,10 +67,7 @@ return(
             <Image
               className={styles.embla_slide_img}
               alt="dress"
-              src={`/products/${product.id}/${d+1}/${product.pictureName}.jpeg`}
-              // height={2048}
-              // width={1536}
-
+              src={`/products/${dress.pictureName}${id}/${d+1}/${dress.pictureName}.jpeg`}
               layout = "fill"
               objectFit='contain'
 
@@ -80,7 +86,7 @@ return(
           <Thumbnails 
             onClick={()=> onThumbClick(index)}
             selected={index===selectedIndex}
-            imgSrc={`/products/${product.id}/${d+1}/${product.pictureName}.jpeg`}
+            imgSrc={`/products/${dress.pictureName}${id}/${d+1}/${dress.pictureName}.jpeg`}
             key={index}
           />
           </div>
