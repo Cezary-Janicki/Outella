@@ -36,7 +36,7 @@ export default function Bestsellers(){
         </div>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
-            <Link href="/posts/products/sukienka33/">
+            <Link href="/posts/sukienka33/1/sukienka.jpeg">
             <Image 
               alt="Sukienka 33" 
               src={"/products/sukienka33/1/sukienka.jpeg"} 

@@ -4,16 +4,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 
-const Gallery_Picture = ({item})=>{
+const Gallery_Picture = ({item,allPostsData})=>{
+    // console.log(item)
     return(
         <>
         {item.map((d,index)=>{
             return (
-                <Link href={`posts/products/${d.pictureName}${d.id}`}>
+                <Link href={`posts/products/${d.id}`}>
                 <div className={styles.imageWrapper}>
                  <div className={styles.image}><Image
                  alt="Dress"
-                 src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
+                 src={`/products/${d.id}/1/${d.pictureName}.jpeg`}
                  width={380}
                  height={510}
                  /></div>

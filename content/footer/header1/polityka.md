@@ -2,9 +2,10 @@
 title: 'Polityka Prywatności'
 date: '3'
 ---
-# Polityka Prywatności
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque tristique congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur a lorem vitae efficitur. Fusce facilisis pharetra dictum. Morbi pellentesque quam nisl, sed auctor turpis facilisis quis. Suspendisse tempus ante a laoreet finibus. Mauris fringilla quam in mauris vulputate, ac imperdiet nisl convallis.
 
-Suspendisse lobortis arcu quis sem finibus, luctus hendrerit velit posuere. Aliquam at neque fermentum, feugiat diam vel, luctus leo. Proin vulputate sit amet diam sit amet porttitor. Etiam molestie pharetra pellentesque. Vivamus eget suscipit turpis, at elementum ex. Nullam dolor risus, auctor eget nisi et, porttitor euismod sem. Integer et aliquam neque, vitae porttitor nulla.
+Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
 
-Quisque eget arcu ut ipsum imperdiet mollis. Nam convallis facilisis nisi in sodales. Proin accumsan sed risus dignissim posuere. Donec laoreet ut lacus vitae vehicula. Etiam posuere commodo felis, semper mollis tortor semper at. Maecenas blandit urna in libero viverra porttitor. Sed blandit at ante quis tempus. 
+- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
+- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
+
+Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.

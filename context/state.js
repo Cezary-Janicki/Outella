@@ -2,19 +2,14 @@ import { Divide } from "hamburger-react";
 import {React, createContext, useContext,useState,useEffect} from "react";
 import { getAllProductsIds,getProductsData } from "../lib/products";
 import allProductsData from "../pages/posts/products/[id]"
-import axios from "axios";
+
 
 const AppContext = createContext();
+
 export function useAppContext(){
-  const data = useContext(AppContext)[0]
-  return data
+    return useContext(AppContext)
 }
 
-// const dressIdContext = createContext();
-// export function useDressIdContext(){
-//   const data = useContext(dressIdContext)[0]
-//     return data
-// }
 export async function getStaticProps({params}){
   // todo put following in try/catch
     const products = params.id ? [await getProductsData(params.id)] : []
@@ -29,39 +24,18 @@ export async function getStaticProps({params}){
 
 export function AppWrapper({children}){
 
-   
-  let [dress,setDress] = useState([])
-  useEffect(()=>{
-      axios.get(`https://outella-database.herokuapp.com/products`).then(res =>{
-      setDress(res.data)
-    })
-  },[])
-  
-  // let [id,setId] = useState([])
-  // useEffect(()=>{
-  //     axios.get(`https://outella-database.herokuapp.com/products`).then(res =>{
-  //       const dressData=res.data.map(dressNames => {
-  //         const dressNumber = dressNames.id
-  //         const dressName = dressNames.pictureName
-  //         const dressId = dressName.concat(dressNumber)
-  //         return{
-  //           dressId
-  //         }
-  //       })
-  //       setId(dressData)
-        
-  //     }
-  //   )
-  // },[])
+    const [products, setProducts] = useState([]);
+    function refreshProducts(){
+      setProducts([products])
+      console.log("You've just pressed the refresh button here are the contents of products prop",products)
 
-  
-    // function refreshProducts(){
-    //   console.log("You've just pressed the refresh button here are the contents of products prop")
-    //   console.log(id)
-    // }
+    }
  
     return(
-        <AppContext.Provider value={[dress,setDress]}>
+//button below is displayed globally!
+
+        <AppContext.Provider value={[products, setProducts]}>
+            {/* <button onClick={refreshProducts}>refresh</button>    */}
             {children}
         </AppContext.Provider>
     )

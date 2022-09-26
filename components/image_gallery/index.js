@@ -6,6 +6,7 @@ import { getSortedProductsData} from "../../lib/products.js"
   
 export async function getStaticProps() {
   const allPostsData = await getSortedProductsData();
+  console.log(allPostsData)
   return {
     props: {
       allPostsData
@@ -14,6 +15,7 @@ export async function getStaticProps() {
 }
 
 export default function Image_Gallery({ allPostsData }){
+  console.log(allPostsData)
 
     return(
     <div className={styles.grid}>
