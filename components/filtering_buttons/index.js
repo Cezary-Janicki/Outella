@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Filtering_Buttons({filterItem,setItem,galleryItems,allPostsData}) {
-  return (
+export default function Filtering_Buttons({filterItem,setItem,galleryItems,products}) {
+
+return (
   
   <>
-    <div>filtering_buttons</div>
     {galleryItems.map((Val,id)=>{
         return(
             <button
@@ -15,9 +15,7 @@ export default function Filtering_Buttons({filterItem,setItem,galleryItems,allPo
             </button>
         )
     })}
-    <button
-    onClick={()=> setItem(allPostsData)}
-    >all</button>
+    <button onClick={()=> setItem(products)}>Wszystkie rodzaje</button>
   
   </>
   )
