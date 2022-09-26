@@ -11,7 +11,17 @@ import { getAllProductsIds,getProductData } from "../../../lib/products";
 import { getPhotoCount } from "../../../lib/products";
 
 export async function getStaticPaths(){
-  const paths= await getAllProductsIds()
+  // const paths= await getAllProductsIds()
+  let pathsJSON = await axios.get(`https://outella-database.herokuapp.com/productIds`) 
+    let paths=pathsJSON.data[0]
+    paths.map(path => {
+      return{
+        params:{
+          id: path.params.id.toString()
+        }
+      }
+    })
+
   return{
     paths,
     fallback:false
