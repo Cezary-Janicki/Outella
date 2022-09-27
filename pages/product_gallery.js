@@ -24,10 +24,10 @@ export default function Home() {
 
 // Hooks and filtering for the selectable gallery
 const [item,setItem]=useState(products)
-const galleryItems = [... new Set(products.map((Val)=> Val.tags))]
+const galleryItems = [... new Set(products.map((Val)=> Val.tags.length))]
 const filterItem = (curcat) => {
   const newItem = products.filter((newVal) => {
-    return newVal.tags === curcat;
+    return newVal.tags.length === curcat;
   })
   setItem(newItem)
 }
