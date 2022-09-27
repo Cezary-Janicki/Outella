@@ -28,9 +28,8 @@ export async function getStaticPaths(){
   }
 }
 
-// skąd ten kod kurwa bierze te jebane paramsy
+// skąd ten kod kurwa bierze te paramsy
 export async function getStaticProps({params}){
-  // const product = await getProductData(params.id)
   const photoNumber = await getPhotoCount(params.id)
   const id=params.id.replace(/sukienka/,"")
   return{
