@@ -2,6 +2,7 @@
 // import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import React from "react";
 
 
 //Page components
@@ -13,7 +14,10 @@ import Bestsellers from "../components/bestsellers"
 
 
 //Main function
+
 export default function Home() {
+
+  
   return (
     <Body_Wrapper_No_main>
 
@@ -31,8 +35,6 @@ export default function Home() {
 
         <Bestsellers />
       </main>
-
-
     </Body_Wrapper_No_main>
     
   )
