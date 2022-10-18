@@ -2,9 +2,13 @@ import React from 'react'
 import styles from "./gallery_picture.module.css"
 import Link from 'next/link'
 import Image from 'next/image'
+import { getSortedProductsData} from "../../lib/products"
 
+// const Gallery_Picture = ({item})=>{
+    const Gallery_Picture = ()=>{
+        
+    const item = getSortedProductsData()
 
-const Gallery_Picture = ({item})=>{
     return(
         <>
         {item.map((d,index)=>{
