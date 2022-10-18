@@ -2,27 +2,25 @@
 import styles from "./bla.module.css";
 import { useState,useEffect } from "react";
 import axios from "axios";
-
+import { getSortedProductsData } from "../lib/products";
 
 //Page components
 import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
 import Filtering_Buttons from "../components/filtering_buttons";
 import Gallery_Picture from "../components/gallery_picture";
-
+import Formik_Filtering from "../components/formik_filtering";
 
 
 export default function Home() {
 
   //DATA FETCHING FROM A SERVER
-  let [products,setProducts] = useState([])
-  useEffect(()=>{
-      axios.get(`https://outella-database.herokuapp.com/products`).then(res =>{
-      setProducts(res.data)
-    })
-  },[])
+  const products = getSortedProductsData()
+
 
 
 // Hooks and filtering for the selectable gallery
+// this gallery filtering makes the product gallery brake on site refresh
+
 const [item,setItem]=useState(products)
 const galleryItems = [... new Set(products.map((Val)=> Val.tags.length))]
 const filterItem = (curcat) => {
@@ -31,10 +29,15 @@ const filterItem = (curcat) => {
   })
   setItem(newItem)
 }
-
   return (
-    
+
+      
       <Body_Wrapper_No_main>
+
+    <Formik_Filtering 
+    galleryItems={galleryItems}
+   />
+        
         <Filtering_Buttons
              filterItem={filterItem}
              setItem={setItem}

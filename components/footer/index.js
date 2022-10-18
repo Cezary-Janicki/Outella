@@ -43,6 +43,9 @@ export default function Footer({  }) {
           </div>
           
         ))}  
+         <Link href={`/faq`} className={styles.rows}>
+          <p>Często zadwane pytania</p>
+          </Link>
 </Footer_Wrapper>
 
 <Footer_Wrapper>

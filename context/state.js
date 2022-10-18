@@ -5,6 +5,8 @@ import allProductsData from "../pages/posts/products/[id]"
 import axios from "axios";
 
 const AppContext = createContext();
+const ProductContext = createContext();
+
 export function useAppContext(){
   const data = useContext(AppContext)[0]
   return data
@@ -28,7 +30,6 @@ export async function getStaticProps({params}){
 
 
 export function AppWrapper({children}){
-
    
   let [dress,setDress] = useState([])
   useEffect(()=>{
@@ -37,6 +38,7 @@ export function AppWrapper({children}){
     })
   },[])
   
+
   // let [id,setId] = useState([])
   // useEffect(()=>{
   //     axios.get(`https://outella-database.herokuapp.com/products`).then(res =>{
