@@ -12,37 +12,37 @@ export default function Bestsellers(){
         <div className={styles.grid}>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
-           <Link href="/posts/products/sukienka8">
+           <Link href="/posts/products/sukienka8"><a>
              <Image
               alt="Sukienka8"
               src={"/products/sukienka8/1/sukienka.jpeg"}
               layout="fill"
               objectFit="cover"
             />
-            </Link>
+            </a></Link>
           </div>
         </div>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
-            <Link href="/posts/products/sukienka25">
-            <Image
-              alt="sukienka 25"
-              src={"/products/sukienka25/1/sukienka.jpeg"}
-              layout="fill"
-              objectFit="cover"
-            />
-            </Link>
+            <Link href="/posts/products/sukienka25"><a>
+              <Image
+                alt="sukienka 25"
+                src={"/products/sukienka25/1/sukienka.jpeg"}
+                layout="fill"
+                objectFit="cover"
+              />
+           </a></Link>
           </div>
         </div>
         <div className={styles.gridBox}>
           <div className={styles.imageWrapper}>
-            <Link href="/posts/products/sukienka33/">
-            <Image 
-              alt="Sukienka 33" 
-              src={"/products/sukienka33/1/sukienka.jpeg"} 
-              layout="fill" 
-              objectFit="cover" />
-            </Link>
+            <Link href="/posts/products/sukienka33/"><a>
+              <Image 
+                alt="Sukienka 33" 
+                src={"/products/sukienka33/1/sukienka.jpeg"} 
+                layout="fill" 
+                objectFit="cover" />
+            </a></Link>
           </div>
         </div>
       </div>

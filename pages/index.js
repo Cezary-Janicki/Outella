@@ -21,18 +21,13 @@ export default function Home() {
   return (
     <Body_Wrapper_No_main>
 
-        {/* <Link  href="./bla">
-        <p className={styles.description}><a>Zdjęcia przykładowe</a></p>
-        </Link>
-        <Main_Photos /> */}
+
         <main className={styles.main}>
         <Link href="./product_gallery" >     
-          <p className={styles.description}>Galeria produtków</p>
+          <a><p className={styles.description}>Galeria produtków</p></a>
         </Link>
         <Dresses_Types />
-
         <p className={styles.description}>Bestsellery</p>
-
         <Bestsellers />
       </main>
     </Body_Wrapper_No_main>

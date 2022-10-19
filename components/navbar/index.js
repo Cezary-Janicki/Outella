@@ -1,5 +1,4 @@
 import styles from "./navbar.module.css";
-import Link from "next/link";
 import Hamburger_Menu from "../hamburger";
 import {useState} from "react";
 import NavBarHorizontal from "../navbar_horizontal";

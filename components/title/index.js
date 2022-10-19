@@ -6,14 +6,14 @@ export default function Title(){
     return(
         <h1 className={styles.title}>
  
-        <Link href='/'>
+        <Link href='/'><a>
         <Image className={styles.image}
         src={outella_logo}
         alt='Outella logo'
         height={125}
         width={125}
         ></Image>
-        </Link>
+        </a></Link>
 
       </h1>
     )

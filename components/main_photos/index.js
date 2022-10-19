@@ -10,14 +10,14 @@ export default function Main_Photos(){
           {/*==================== M A I N _ P H O T O S ====================>*/}
           <div className={styles.gridBox}>
             <Image_Wrapper>
-             <Link href="./bla">
-              <Image
-                alt="Next.js logo"
-                src={leon2}
-                layout="fill"
-                objectFit="cover"
-              />
-              </Link>
+             <Link href="./bla"><a>
+                <Image
+                  alt="Next.js logo"
+                  src={leon2}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </a></Link>
             </Image_Wrapper>
           </div>
         </div>

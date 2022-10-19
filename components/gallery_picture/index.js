@@ -13,19 +13,19 @@ const Gallery_Picture = ({item})=>{
         <>
         {item.map((d,index)=>{
             return (
-                <Link key={index} href={`posts/products/${d.pictureName}${d.id}`}>
-                <div className={styles.imageWrapper} > 
-                 <div className={styles.image}><Image
-                 alt="Dress"
-                 src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
-                 width={380}
-                 height={510}
-                 /></div>
-                 
-               <div className={styles.middle}>
-               <div className={styles.text}>{d.title}</div></div>
-               
-                 </div>         
+                <Link key={index} href={`posts/products/${d.pictureName}${d.id}`}><a>
+                    <div className={styles.imageWrapper} > 
+                     <div className={styles.image}><Image
+                     alt="Dress"
+                     src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
+                     width={380}
+                     height={510}
+                     /></div>
+                     
+                   <div className={styles.middle}>
+                   <div className={styles.text}>{d.title}</div></div>
+                   
+                     </div></a>         
                </Link>
             ) 
             // </div>

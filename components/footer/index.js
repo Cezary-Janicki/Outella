@@ -38,13 +38,13 @@ export default function Footer({  }) {
         {foo.map((d, index)=>(
           <div key={index} className={styles.mapa}>
           <Link href={`/posts/${d.id}`} className={styles.rows}>
-          <p>{d.title}</p>
+          <a><p>{d.title}</p></a>
           </Link>
           </div>
           
         ))}  
          <Link href={`/faq`} className={styles.rows}>
-          <p>Często zadwane pytania</p>
+         <a><p>Często zadwane pytania</p></a>
           </Link>
 </Footer_Wrapper>
 

@@ -1,5 +1,4 @@
 //React components
-import Link from "next/link"
 
 // import styles from "./row7.module.css"
 import styles from "../../styles/Home.module.css"
