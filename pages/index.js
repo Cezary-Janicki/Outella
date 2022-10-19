@@ -26,7 +26,7 @@ export default function Home() {
         </Link>
         <Main_Photos /> */}
         <main className={styles.main}>
-        <Link href="./product_gallery">     
+        <Link href="./product_gallery" >     
           <p className={styles.description}>Galeria produtków</p>
         </Link>
         <Dresses_Types />

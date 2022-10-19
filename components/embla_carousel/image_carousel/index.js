@@ -62,15 +62,12 @@ return(
       
         {slides.map((d, index) => (
           <div className={styles.embla_slide} key={index}>
-
-           
             <Image
               className={styles.embla_slide_img}
               alt="dress"
-              src={`/products/${dress.pictureName}${id}/${d+1}/${dress.pictureName}.jpeg`}
+              src={`/products/${dress?.pictureName}${id}/${d+1}/${dress?.pictureName}.jpeg`}
               layout = "fill"
               objectFit='contain'
-
               />
           </div>
         ))}
@@ -86,7 +83,7 @@ return(
           <Thumbnails 
             onClick={()=> onThumbClick(index)}
             selected={index===selectedIndex}
-            imgSrc={`/products/${dress.pictureName}${id}/${d+1}/${dress.pictureName}.jpeg`}
+            imgSrc={`/products/${dress?.pictureName}${id}/${d+1}/${dress?.pictureName}.jpeg`}
             key={index}
           />
           </div>

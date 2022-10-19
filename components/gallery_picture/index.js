@@ -4,17 +4,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getSortedProductsData} from "../../lib/products"
 
-// const Gallery_Picture = ({item})=>{
-    const Gallery_Picture = ()=>{
-        
-    const item = getSortedProductsData()
+const Gallery_Picture = ({item})=>{
+    
+    // const Gallery_Picture = ()=>{
+    // const item = getSortedProductsData()
 
     return(
         <>
         {item.map((d,index)=>{
             return (
-                <Link href={`posts/products/${d.pictureName}${d.id}`}>
-                <div className={styles.imageWrapper}>
+                <Link key={index} href={`posts/products/${d.pictureName}${d.id}`}>
+                <div className={styles.imageWrapper} > 
                  <div className={styles.image}><Image
                  alt="Dress"
                  src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}

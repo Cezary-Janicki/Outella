@@ -35,7 +35,9 @@
   padding-left: 10px;
   min-width: 100%;
   position: relative;
-  height:80vh;
+  /* height:80vh; */
+  height:900px;
+  width:450px;
 }
 
 .embla_slide_inner {
@@ -46,7 +48,6 @@
 
 .embla_slide_img {
   position: relative;
-  /* display: block; */
   top: 50%;
   left: 50%;
   width: auto;

@@ -1,5 +1,5 @@
 import styles from "./head.module.css"
-
+import Link from "next/link"
 
 export default function Head(){
     return(

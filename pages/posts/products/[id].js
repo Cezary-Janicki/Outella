@@ -85,13 +85,13 @@ export default function ProductPage({photoNumber,id}) {
         <h2>{dress?.price}</h2>
         <p>{dress?.description}</p>
         <h3>Wymiary sukienki:</h3>
-        <div className={styles.sizeSelector}>
+        <div className={styles.sizeSelector}>   {/* Size selector code */}
           <form>
-          <input type="radio" id="radio1" name="sizeSelector" value="XS"  onChange={handleChange} /><label for="radio1">XS</label>
-          <input type="radio" id="radio2" name="sizeSelector" value="S"   onChange={handleChange} defaultChecked /><label for="radio2">S</label> 
-          <input type="radio" id="radio3" name="sizeSelector" value="M"   onChange={handleChange}/><label for="radio3">M</label>
-          <input type="radio" id="radio4" name="sizeSelector" value="L"   onChange={handleChange}/><label for="radio4">L</label>
-          <input type="radio" id="radio5" name="sizeSelector" value="XL" onChange={handleChange}/><label for="radio5">XL</label>
+          <input type="radio" id="radio1" name="sizeSelector" value="XS"  onChange={handleChange} /><label htmlFor="radio1">XS</label>
+          <input type="radio" id="radio2" name="sizeSelector" value="S"   onChange={handleChange} defaultChecked /><label htmlFor="radio2">S</label> 
+          <input type="radio" id="radio3" name="sizeSelector" value="M"   onChange={handleChange}/><label htmlFor="radio3">M</label>
+          <input type="radio" id="radio4" name="sizeSelector" value="L"   onChange={handleChange}/><label htmlFor="radio4">L</label>
+          <input type="radio" id="radio5" name="sizeSelector" value="XL" onChange={handleChange}/><label htmlFor="radio5">XL</label>
           </form>
 
           <div className={styles.list}>
