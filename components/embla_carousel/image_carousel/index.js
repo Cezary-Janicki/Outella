@@ -62,6 +62,7 @@ return(
       
         {slides.map((d, index) => (
           <div className={styles.embla_slide} key={index}>
+            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
             <Image
               className={styles.embla_slide_img}
               alt="dress"
@@ -69,6 +70,7 @@ return(
               layout = "fill"
               objectFit='contain'
               />
+              </div>
           </div>
         ))}
       </div>

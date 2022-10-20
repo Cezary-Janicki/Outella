@@ -54,7 +54,7 @@ export default function Formik_Filtering({galleryItems}) {
               <Grid container spacing={3}>
               <Grid item xs={12} sm={5}> 
                 <FormControl fullWidth variant="outlined">
-                 <InputLabel id="search-style">Styl</InputLabel>
+                 <InputLabel id="search-style"><>Styl</></InputLabel>
                  <Field 
                  as={Select}
                  name = "style" 
@@ -76,7 +76,7 @@ export default function Formik_Filtering({galleryItems}) {
               <Grid item xs={12} sm={5}> Kolor </Grid>
               <Grid item xs={12} sm={5}>                 
               <FormControl fullWidth variant="outlined">
-                 <InputLabel id="search-minPrice">Minimalna cena</InputLabel>
+                 <InputLabel id="search-minPrice"><>Minimalna cena</></InputLabel>
                  <Field 
                  as={Select}
                  name = "minPrice" 
