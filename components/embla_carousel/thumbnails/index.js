@@ -10,15 +10,15 @@ export const Thumbnails = ({ onClick, selected, imgSrc}) => (
         <button 
             onClick={onClick}
             className={`${styles.embla_slide_inner} ${styles.embla_slide_inner_thumb}`}
-            type="button">
+            type="button">    
                 <div className={styles.embla_slide_thumbnail}>
                 <Image
-             alt="Dress"
-             layout="fill"
-             objectFit="contain"
-             src={imgSrc}
-             />
-             </div>
+                     alt="Dress"
+                     layout="fill"
+                     objectFit="contain"
+                     src={imgSrc}
+                     />
+                </div>
         </button>
     </div>
     </>
