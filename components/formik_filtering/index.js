@@ -1,24 +1,13 @@
 import React from 'react'
 import { useRouter } from "next/router";
-import { useState,useEffect } from 'react';
-import axios from 'axios';
-import { ReactQueryDevtools } from 'react-query-devtools';
+
 //Formik and mui
-// import styles from "components/formik_filtering/formik_filtering.module.css"
 import styles from "./formik_filtering.module.css"
 import { Formik,Form,Field } from "formik";
 import {Paper, Grid, makeStyles} from "@material-ui/core"
 import {InputLabel,MenuItem,FormControl,Select, SelectChangeEvent} from "@mui/material"
-import { getSortedProductsData } from '../../lib/products';
 import { getProductCount } from '../../lib/products';
 
-// const useStyles= makeStyles((theme)=>({
-//   paper:{
-//     margin: "auto",
-//     maxWidth: 500,
-//     padding: theme.spacing(3)
-//     }
-// }))
 
 function getCount(style){
   const count=getProductCount(style)
@@ -26,14 +15,11 @@ function getCount(style){
 }
 export default function Formik_Filtering({galleryItems}) {
 // console.log("product count", getProductCount("Maxi"))  
-    //STYLES
-    // const styles= useStyles()
 
     //DATA FETCHING FROM A SERVER
 
     //ROUTER
     const { query }= useRouter();
-
     const initialValues = {
       style: query.style || "all",
       model: query.model || "all",
@@ -46,9 +32,8 @@ export default function Formik_Filtering({galleryItems}) {
 
   return (
     <>
-{/* {console.log("query.styles", query.styles)} */}
         <Formik initialValues={initialValues} onSubmit={()=>{}}>
-        {({values})=>(
+        {({values}) => (
           <Form>
             <Paper className={styles.paper} elevation={5}>
               <Grid container spacing={3}>
@@ -66,7 +51,7 @@ export default function Formik_Filtering({galleryItems}) {
                     </MenuItem>
                    {galleryItems.map((item,index) =>(
                     <MenuItem key={index} value={item}>
-                        {/* {item}  {`(${getCount(item)})`} */}
+                        {/* { `${item}  (${getCount(item)})` } */}
                         {item}
                     </MenuItem>
                    ))} 

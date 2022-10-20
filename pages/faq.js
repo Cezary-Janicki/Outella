@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Body_Wrapper from "../components/wrappers/body_wrapper"
 
-
 export default function Faq(){
   const database=[
     {

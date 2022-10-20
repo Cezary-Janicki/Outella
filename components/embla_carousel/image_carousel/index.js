@@ -1,5 +1,5 @@
 //EMBLA
-import React, { useEffect } from 'react'
+import React,{ useEffect, } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from "embla-carousel-autoplay"
 import {Thumbnails} from "../thumbnails"
@@ -11,31 +11,23 @@ import styles from "./image_carousel.module.css"
 import { useAppContext } from '../../../context/state';
 import axios from 'axios';
 
-function errorcheck(data){
-  const  result=(data.length=0)?(console.log(data,"data is undefined")):(console.log(data,"data is defined"))
-  return result
-}
+
 
 const EmblaCarousel = ({slides,id}) => {
 
   //DATA FETCHING FROM A SERVER
 
-  let [dress,setDress] = useState([])
-  useEffect(()=>{
-      axios.get(`https://outella-database.herokuapp.com/products/${id}`).then(res =>{
-      setDress(res.data)
-    })
-  },[])
 
-  // const [dress, setDress] = useState({});
-  // useEffect(() => {
-  //   const dataRes = async () =>
-  //     await axios
-  //       .get("https://jsonplaceholder.typicode.com/todos/1")
-  //       .then((res) => res.data)
-  //       .then((dress) => setTimeout(() => setDress(dress), 5000));
-  //   dataRes();
-  // }, []);
+  let [dress,setDress] = useState()
+  useEffect(()=>{
+      axios
+      .get(`https://outella-database.herokuapp.com/products/${id}`)
+      .then(res =>{setDress(res.data)})
+  },[dress])
+
+
+
+
   //MAIN EMBLA CODE
   const[selectedIndex, setSelectedIndex]= useState(0);
   const[mainViewportRef, embla]= useEmblaCarousel({skipSnaps:false});
@@ -63,7 +55,6 @@ useEffect(()=>{
   onSelect();
   embla.on("select",onSelect);
 },[embla,onSelect]);
-
 
 return(
   <>
