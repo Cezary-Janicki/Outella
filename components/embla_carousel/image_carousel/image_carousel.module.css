@@ -35,7 +35,8 @@
   padding-left: 10px;
   min-width: 100%;
   position: relative;
-  /* height:80vh; */
+  /* height:80vh;
+  width: 50vw; */
   height:900px;
   width:450px;
 }
@@ -84,7 +85,7 @@
   margin: 0;
   padding: 0;
   background-color: transparent;
-  /* display: block; */
+  display: block;
   overflow: hidden;
 }
 
@@ -94,8 +95,10 @@
   /* top: 0;
   bottom: 0; */
   margin: auto;
-  width: 120px;
-  height: 180px;
+  /* width: 120px;
+  height: 180px; */
+  width: 15vmin;
+  height: 22vmin;
   transition: opacity 0.5s;
 
 
