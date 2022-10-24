@@ -1,9 +1,8 @@
 import React from 'react'
 
 export default function Filtering_Buttons({filterItem,setItem,galleryItems,products}) {
-
 return (
-  
+
   <>
     {galleryItems.map((Val,id)=>{
         return(

@@ -9,13 +9,14 @@ import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
 import Filtering_Buttons from "../components/filtering_buttons";
 import Gallery_Picture from "../components/gallery_picture";
 import Formik_Filtering from "../components/formik_filtering";
+import { ProductionQuantityLimits } from "@mui/icons-material";
 
 
 export default function Home() {
 
   //DATA FETCHING FROM A SERVER
   const products = getSortedProductsData()
-
+  // console.log("products", products[1])
 
 
 // Hooks and filtering for the selectable gallery
@@ -33,11 +34,11 @@ const filterItem = (curcat) => {
 
       
       <Body_Wrapper_No_main>
-
-    <Formik_Filtering 
+{/* <Issue2> */}
+    <Formik_Filtering   
     galleryItems={galleryItems}
-   />
-        
+   />   
+{/* </Issue2> */}        
         <Filtering_Buttons
              filterItem={filterItem}
              setItem={setItem}

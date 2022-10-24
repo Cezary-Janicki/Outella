@@ -11,6 +11,8 @@ import { getAllProductsIds,getProductData } from "../../../lib/products";
 import { getPhotoCount } from "../../../lib/products";
 import { getSortedProductsData } from "../../../lib/products";
 import { getSortedPostsData } from "../../../lib/posts";
+
+
 export async function getStaticPaths(){
   // const paths= await getAllProductsIds()
   let pathsJSON = await axios.get(`https://outella-database.herokuapp.com/productIds`) 
@@ -22,7 +24,6 @@ export async function getStaticPaths(){
         }
       }
     })
-
   return{
     paths,
     fallback:false
@@ -33,25 +34,28 @@ export async function getStaticPaths(){
 export async function getStaticProps({params}){
   const photoNumber = await getPhotoCount(params.id)
   const id=params.id.replace(/sukienka/,"")
+
   return{
     props:{ 
-      // product,
       photoNumber,
       id
     }
   } 
 }
 
-// i had wrote an dress id wrapper earlier i need to look up on how was i supposed to use 
-// const fetchDressData =({id})=>{
-//   // const data = axios.get(`https://outella-database.herokuapp.com/products/${id}`).then(res =>{ res.data})
-//   return(data)
+// The axios wrappring function m
+// export async function data(id){
+//   const products = await getSortedProductsData()
+//   const test = products[id-1]
+//   return test
 // }
 export default function ProductPage({photoNumber,id}) {
-  //DATA FETCHING FROM A SERVER
-  // const { isLoading, data}=useQuery("dresses", fetchDressData({id}))
-  // console.log("direct query data", data)
-  // const dress=data?.data
+  //<Issue #1>
+  //DATA FETCHING FROM A SERVER     
+/* tried to use the general function and grab a single array element that I need
+   const products = getSortedProductsData()  
+   const dress = products[id-1]
+ */ 
 
   let [dress,setDress] = useState([])
   useEffect(()=>{
@@ -59,6 +63,8 @@ export default function ProductPage({photoNumber,id}) {
       setDress(res.data)
     })
   },[])
+
+  //</Issue 1>
 
   //RADIO BUTTONS SELECT CODE
   const [radio,setRadio]=useState("S")
@@ -126,7 +132,6 @@ export default function ProductPage({photoNumber,id}) {
        <div>
         </div>
         </div>
-
         <>
       </>
         </div>

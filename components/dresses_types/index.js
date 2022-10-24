@@ -12,7 +12,7 @@ export default function Dresses_Types(){
         <div className={styles.gridBox}>
           <Image_Wrapper>
             <Link href="product_gallery"><a>
-              <Image
+              <Image className={styles.image}
                 alt="Dress"
                 src={`/products/sukienka18/3/sukienka.jpeg`}
                 layout="fill"

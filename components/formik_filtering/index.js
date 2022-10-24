@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 //Formik and mui
 import styles from "./formik_filtering.module.css"
 import { Formik,Form,Field } from "formik";
-import {Paper, Grid, makeStyles} from "@material-ui/core"
+import {Paper, Grid} from "@material-ui/core"
 import {InputLabel,MenuItem,FormControl,Select, SelectChangeEvent} from "@mui/material"
 import { getProductCount } from '../../lib/products';
 
@@ -14,7 +14,6 @@ function getCount(style){
   return (count)
 }
 export default function Formik_Filtering({galleryItems}) {
-// console.log("product count", getProductCount("Maxi"))  
 
     //DATA FETCHING FROM A SERVER
 
@@ -29,7 +28,6 @@ export default function Formik_Filtering({galleryItems}) {
     }
   const prices=[90,100,120,140,160,180,200]
 
-
   return (
     <>
         <Formik initialValues={initialValues} onSubmit={()=>{}}>
@@ -41,8 +39,8 @@ export default function Formik_Filtering({galleryItems}) {
                 <FormControl fullWidth variant="outlined">
                  <InputLabel id="search-style"><>Styl</></InputLabel>
                  <Field 
-                 as={Select}
                  name = "style" 
+                 as={Select}
                  labelId="search-style"
                  label="Style"
                  >
@@ -50,8 +48,9 @@ export default function Formik_Filtering({galleryItems}) {
                       <em>Wszystkie style</em>
                     </MenuItem>
                    {galleryItems.map((item,index) =>(
+                   
                     <MenuItem key={index} value={item}>
-                        {/* { `${item}  (${getCount(item)})` } */}
+                        {/* { `${item}  (${getCount(item)})` } */} 
                         {item}
                     </MenuItem>
                    ))} 
