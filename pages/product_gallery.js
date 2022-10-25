@@ -35,7 +35,8 @@ const filterItem = (curcat) => {
       
       <Body_Wrapper_No_main>
 {/* <Issue2> */}
-    <Formik_Filtering   
+    <Formik_Filtering
+    products={products}   
     galleryItems={galleryItems}
    />   
 {/* </Issue2> */}        

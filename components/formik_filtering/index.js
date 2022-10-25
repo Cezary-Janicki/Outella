@@ -5,57 +5,82 @@ import { useRouter } from "next/router";
 import styles from "./formik_filtering.module.css"
 import { Formik,Form,Field } from "formik";
 import {Paper, Grid} from "@material-ui/core"
-import {InputLabel,MenuItem,FormControl,Select, SelectChangeEvent} from "@mui/material"
+import {InputLabel,MenuItem,FormControl,Select, SelectChangeEvent, listItemClasses} from "@mui/material"
 import { getProductCount } from '../../lib/products';
 
 
-function getCount(style){
-  const count=getProductCount(style)
-  return (count)
-}
-export default function Formik_Filtering({galleryItems}) {
+// function getCount(style){
+//   const count=getProductCount(style)
+//   return (count)
+// } //this function doesnt work properly there is an issue with context there is a placeholder for now
 
+function getCount(items,type){
+  let count = 0
+  const products= items
+  {products.map((dress,index)=>(
+    (dress.tags.length===type ? count++ : count)
+  ))}
+  return count
+}
+
+export default function Formik_Filtering({products,galleryItems}) {
     //DATA FETCHING FROM A SERVER
 
     //ROUTER
     const { query }= useRouter();
+
     const initialValues = {
-      style: query.style || "all",
-      model: query.model || "all",
-      minPrice: query.minPrice || "all",
-      maxPrice: query.maxPrice || "all",
+      make: query.make || 'all',
+      model: query.model || 'all',
+      minPrice: query.minPrice || 'all',
+      maxPrice: query.maxPrice || 'all',
+    };
 
-    }
   const prices=[90,100,120,140,160,180,200]
-
+  const makes=['Maxi',"Mini","Ślubna"]
+  // this query code works in the tutorial there must be something else wrong with my code
   return (
-    <>
-        <Formik initialValues={initialValues} onSubmit={()=>{}}>
+    <Formik initialValues={initialValues} onSubmit={() => {}}>
         {({values}) => (
           <Form>
             <Paper className={styles.paper} elevation={5}>
-              <Grid container spacing={3}>
+             <Grid container spacing={3}>
               <Grid item xs={12} sm={5}> 
-                <FormControl fullWidth variant="outlined">
+              <FormControl fullWidth variant="outlined">
+                  <InputLabel id="search-make">Make</InputLabel>
+                  <Field
+                    name="make"
+                    as={Select}
+                    labelId="search-make"
+                    label="Make"
+                  >
+                    <MenuItem value="all">
+                      <em>All Makes</em>
+                    </MenuItem>
+                    {makes.map((make,index) => (
+                      <MenuItem value={make} index={index}>
+                        {`${make} `}
+                      </MenuItem>
+                    ))}
+                  </Field>
+                </FormControl>
+                {/* <FormControl fullWidth variant="outlined">
                  <InputLabel id="search-style"><>Styl</></InputLabel>
                  <Field 
-                 name = "style" 
-                 as={Select}
-                 labelId="search-style"
-                 label="Style"
-                 >
+                  as={Select} 
+                  name="style" 
+                  labelId="search-style" 
+                  label="Style">
                     <MenuItem value="all">
                       <em>Wszystkie style</em>
                     </MenuItem>
                    {galleryItems.map((item,index) =>(
-                   
                     <MenuItem key={index} value={item}>
-                        {/* { `${item}  (${getCount(item)})` } */} 
-                        {item}
+                        { `${item}  (${getCount(products,item)})` } 
                     </MenuItem>
                    ))} 
                   </Field>
-                </FormControl>
+                </FormControl> */}
               </Grid>
               <Grid item xs={12} sm={5}> Kolor </Grid>
               <Grid item xs={12} sm={5}>                 
@@ -97,9 +122,5 @@ export default function Formik_Filtering({galleryItems}) {
           </Form>
         )}
         </Formik>
-
-        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-
-    </>
   )
 }
