@@ -30,14 +30,13 @@ export default function Formik_Filtering({products,galleryItems}) {
     const { query }= useRouter();
 
     const initialValues = {
-      make: query.make || 'all',
+      style: query.style || 'all',
       model: query.model || 'all',
       minPrice: query.minPrice || 'all',
       maxPrice: query.maxPrice || 'all',
     };
 
   const prices=[90,100,120,140,160,180,200]
-  const makes=['Maxi',"Mini","Ślubna"]
   // this query code works in the tutorial there must be something else wrong with my code
   return (
     <Formik initialValues={initialValues} onSubmit={() => {}}>
@@ -46,29 +45,11 @@ export default function Formik_Filtering({products,galleryItems}) {
             <Paper className={styles.paper} elevation={5}>
              <Grid container spacing={3}>
               <Grid item xs={12} sm={5}> 
-              <FormControl fullWidth variant="outlined">
-                  <InputLabel id="search-make">Make</InputLabel>
-                  <Field
-                    name="make"
-                    as={Select}
-                    labelId="search-make"
-                    label="Make"
-                  >
-                    <MenuItem value="all">
-                      <em>All Makes</em>
-                    </MenuItem>
-                    {makes.map((make,index) => (
-                      <MenuItem value={make} index={index}>
-                        {`${make} `}
-                      </MenuItem>
-                    ))}
-                  </Field>
-                </FormControl>
-                {/* <FormControl fullWidth variant="outlined">
-                 <InputLabel id="search-style"><>Styl</></InputLabel>
+                <FormControl fullWidth variant="outlined">
+                 <InputLabel id="search-style">Styl</InputLabel>
                  <Field 
-                  as={Select} 
                   name="style" 
+                  as={Select} 
                   labelId="search-style" 
                   label="Style">
                     <MenuItem value="all">
@@ -80,7 +61,7 @@ export default function Formik_Filtering({products,galleryItems}) {
                     </MenuItem>
                    ))} 
                   </Field>
-                </FormControl> */}
+                </FormControl>
               </Grid>
               <Grid item xs={12} sm={5}> Kolor </Grid>
               <Grid item xs={12} sm={5}>                 
