@@ -10,64 +10,64 @@ export default function Dresses_Types(){
         {" "}
         {/*==================== D R E S S E S _ T Y P E S ====================>*/}
         <div className={styles.gridBox}>
-          <Image_Wrapper>
-            <Link href="product_gallery"><a>
+          <Link href="product_gallery"><a>
+            <Image_Wrapper>
               <Image className={styles.image}
                 alt="Dress"
                 src={`/products/sukienka18/3/sukienka.jpeg`}
                 layout="fill"
                 objectFit="cover"
               />
-            </a></Link>
-          </Image_Wrapper>
+            </Image_Wrapper>
+          </a></Link>
         </div>
         <div className={styles.gridBox}>
+          <Link href="product_gallery"><a>
             <Image_Wrapper>
-            <Link href="product_gallery"><a>
               <Image
                 alt="Dress"
                 src={"/products/sukienka10/1/sukienka.jpeg"}
                 layout="fill"
                 objectFit="cover"
               />
-            </a></Link>
             </Image_Wrapper>
+          </a></Link>
         </div>
         <div className={styles.gridBox}>
+          <Link href="product_gallery"><a>
             <Image_Wrapper>
-            <Link href="product_gallery"><a>
               <Image
                 alt="Dress"
                 src={"/products/sukienka4/1/sukienka.jpeg"}
                 layout="fill"
                 objectFit="cover"
               />
-            </a></Link>
             </Image_Wrapper>
+          </a></Link>
         </div>
         <div className={styles.gridBox}>
+          <Link href="product_gallery"><a>
             <Image_Wrapper>
-            <Link href="product_gallery"><a>
               <Image
                 alt="Dress"
                 src={"/products/sukienka33/6/sukienka.jpeg"}
                 layout="fill"
                 objectFit="cover"
               />
-            </a></Link>
             </Image_Wrapper>
+          </a></Link>
         </div>
         <div className={styles.gridBox}>
+          <Link href="product_gallery"><a>
             <Image_Wrapper>
-            <Link href="product_gallery"><a>
               <Image
                 alt="Dress"
                 src={"/products/sukienka7/1/sukienka.jpeg"}
                 layout="fill"
                 objectFit="cover"
               />
-            </a></Link>
             </Image_Wrapper>
+          </a></Link>
         </div>
 
       </div>
