@@ -12,7 +12,7 @@ import Formik_Filtering from "../components/formik_filtering";
 import { ProductionQuantityLimits } from "@mui/icons-material";
 
 
-export default function Home() {
+export default function ProductGallery() {
 
   //DATA FETCHING FROM A SERVER
   const products = getSortedProductsData()
