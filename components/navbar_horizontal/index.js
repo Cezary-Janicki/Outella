@@ -1,56 +1,37 @@
 import styles from "./navbar_horizontal.module.css";
 import Link from "next/link";
-
+import { useState,useEffect } from "react";
+import axios from "axios";
+import { getSortedProductsData } from "../../lib/products";
 
  export default function NavBarHorziontal() {
+  //fetching all of the products and creating the array with each dress type
+  const products = getSortedProductsData()
+  const galleryItems = [... new Set(products.map((Val)=> Val.tags.length))]
 
   return (
     <div>
 
     <div className={styles.navbar}>
       {" "}
-
-      <div className={styles.navbarRow}>
-       
-        <Link href="/product_gallery">
-        <p><a>Typ sukienki 1 </a></p> 
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
+    {galleryItems.map((item,index)=>(
+          <div className={styles.navbarRow}>
+           <Link href={`/product_gallery?style=${item}`}>
+            <p><a>Sukienki {item} </a></p> 
+            </Link>
+            <div className={styles.navbarColumn}>
+              <p> </p>
+            </div>
+          </div>
+    ))}
+    <div className={styles.navbarRow}>
       <Link href="/product_gallery">
-        <p><a>Typ sukienki 2 </a></p>
+        <p><a> Wszystkie sukienki</a></p>
         </Link>
         <div className={styles.navbarColumn}>
           <p> </p>
         </div>
-      </div>
-      <div className={styles.navbarRow}>
-      <Link href="/product_gallery">
-        <p><a>Typ sukienki 3</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-      <Link href="/product_gallery">
-        <p><a>Typ sukienki 4</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-      <Link href="/product_gallery">
-        <p><a> Typ sukienki 5</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
+      </div> 
     </div>
     </div>
   )

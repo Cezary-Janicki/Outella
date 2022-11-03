@@ -12,6 +12,7 @@ import {
   Select,
   SelectChangeEvent,
   listItemClasses,
+  
 } from "@mui/material";
 import { getProductCount } from "../../lib/products";
 
@@ -118,7 +119,9 @@ export default function Formik_Filtering({ products, galleryItems }) {
                       </MenuItem>
                     ))}
                   </Field>
+
                 </FormControl>
+
               </Grid>
             </Grid>
           </Paper>

@@ -10,7 +10,7 @@ import Filtering_Buttons from "../components/filtering_buttons";
 import Gallery_Picture from "../components/gallery_picture";
 import Formik_Filtering from "../components/formik_filtering";
 import { ProductionQuantityLimits } from "@mui/icons-material";
-
+ 
 
 export default function ProductGallery() {
 
