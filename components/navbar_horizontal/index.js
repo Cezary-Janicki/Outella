@@ -1,10 +1,9 @@
 import styles from "./navbar_horizontal.module.css";
 import Link from "next/link";
-import { useState,useEffect } from "react";
-import axios from "axios";
 import { getSortedProductsData } from "../../lib/products";
 
  export default function NavBarHorziontal() {
+  
   //fetching all of the products and creating the array with each dress type
   const products = getSortedProductsData()
   const galleryItems = [... new Set(products.map((Val)=> Val.tags.length))]

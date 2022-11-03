@@ -12,7 +12,7 @@ import {
   Select,
   SelectChangeEvent,
   listItemClasses,
-  
+  Input
 } from "@mui/material";
 import { getProductCount } from "../../lib/products";
 
@@ -39,8 +39,8 @@ export default function Formik_Filtering({ products, galleryItems }) {
   const initialValues = {
     style: query.style || "all",
     model: query.model || "all",
-    minPrice: query.minPrice || "all",
-    maxPrice: query.maxPrice || "all",
+    minPrice: query.minPrice || "",
+    maxPrice: query.maxPrice || "",
   };
 
   const prices = [90, 100, 120, 140, 160, 180, 200];
@@ -85,19 +85,19 @@ export default function Formik_Filtering({ products, galleryItems }) {
                     <>Minimalna cena</>
                   </InputLabel>
                   <Field
-                    as={Select}
+                    as={Input}
                     name="minPrice"
                     labelId="search-minPrice"
                     label="MinPrice"
                   >
-                    <MenuItem value="all">
+                    {/* <MenuItem value="all">
                       <em>Brak ceny minimalnej</em>
                     </MenuItem>
                     {prices.map((price, key) => (
                       <MenuItem value={price} key={key}>
                         {price}
                       </MenuItem>
-                    ))}
+                    ))} */}
                   </Field>
                 </FormControl>
               </Grid>
@@ -105,19 +105,19 @@ export default function Formik_Filtering({ products, galleryItems }) {
                 <FormControl fullWidth variant="outlined">
                   <InputLabel id="search-maxPrice">Maksymalna cena</InputLabel>
                   <Field
-                    as={Select}
+                    as={Input}
                     name="maxPrice"
                     labelId="search-maxPrice"
                     label="MaxPrice"
                   >
-                    <MenuItem value="all">
+                    {/* <MenuItem value="all">
                       <em>Brak ceny maksymalnej</em>
                     </MenuItem>
                     {prices.map((price, key) => (
                       <MenuItem value={price} key={key}>
                         {price}
                       </MenuItem>
-                    ))}
+                    ))} */}
                   </Field>
 
                 </FormControl>

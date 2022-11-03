@@ -1,7 +1,6 @@
 //React components
 import styles from "./bla.module.css";
 import { useState,useEffect } from "react";
-import axios from "axios";
 import { getSortedProductsData } from "../lib/products";
 
 //Page components
@@ -9,7 +8,6 @@ import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
 import Filtering_Buttons from "../components/filtering_buttons";
 import Gallery_Picture from "../components/gallery_picture";
 import Formik_Filtering from "../components/formik_filtering";
-import { ProductionQuantityLimits } from "@mui/icons-material";
  
 
 export default function ProductGallery() {
