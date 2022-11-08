@@ -41,7 +41,7 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
     console.log("type data",query.style)
     {
       products.map((dress, index) =>
-        dress.tags.color === chosenColor && dress.tags.style===query.style ? count++ : count
+        dress.tags.color === chosenColor && (query.style===dress.tags.style || query.style==="all") ? count++ : count
       );
     }
     return count;

@@ -37,8 +37,8 @@ const dressColors = [... new Set(products.map((Val)=> Val.tags.color))]
 // }
 const queryFilter = () => {
   const newItem = products.filter((product) => {
-    return queryDataStyle===product.tags.style &&( queryDataColor===product.tags.color || queryDataColor==="all"); // this function filters only by length i wonder if i could map the whole tags array and stack the filters 
-  })
+    return (queryDataStyle===product.tags.style || queryDataStyle==="all") 
+    &&( queryDataColor===product.tags.color || queryDataColor==="all");})
   setItem(newItem)
 }
 
