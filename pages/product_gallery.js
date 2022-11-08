@@ -22,6 +22,7 @@ export default function ProductGallery() {
 
 const [item,setItem]=useState(products)
 const galleryItems = [... new Set(products.map((Val)=> Val.tags.length))]
+const dressColors = [... new Set(products.map((Val)=> Val.tags.color))]
 const filterItem = (curcat) => {
   const newItem = products.filter((newVal) => {
     return newVal.tags.length === curcat;
@@ -36,6 +37,7 @@ const filterItem = (curcat) => {
     <Formik_Filtering
     products={products}   
     galleryItems={galleryItems}
+    dressColors={dressColors}
    />   
 {/* </Issue2> */}        
         <Filtering_Buttons

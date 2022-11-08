@@ -21,7 +21,7 @@ import { getProductCount } from "../../lib/products";
 //   return (count)
 // } //this function doesnt work properly there is an issue with context there is a placeholder for now
 
-function getCount(items, type) {
+function getTypeCount(items, type) {
   let count = 0;
   const products = items;
   {
@@ -31,14 +31,24 @@ function getCount(items, type) {
   }
   return count;
 }
+function getColorCount(items, type) {
+  let count = 0;
+  const products = items;
+  {
+    products.map((dress, index) =>
+      dress.tags.color === type ? count++ : count
+    );
+  }
+  return count;
+}
 
-export default function Formik_Filtering({ products, galleryItems }) {
+export default function Formik_Filtering({ products, galleryItems,dressColors }) {
   //ROUTER
   const { query } = useRouter();
 
   const initialValues = {
     style: query.style || "all",
-    model: query.model || "all",
+    color: query.color || "all",
     minPrice: query.minPrice || "",
     maxPrice: query.maxPrice || "",
   };
@@ -69,15 +79,31 @@ export default function Formik_Filtering({ products, galleryItems }) {
                     </MenuItem>
                     {galleryItems.map((item, index) => (
                       <MenuItem key={index} value={item}>
-                        {`${item}  (${getCount(products, item)})`}
+                        {`${item}  (${getTypeCount(products,item)})`}
                       </MenuItem>
                     ))}
                   </Field>
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={5}>
-                {" "}
-                Kolor{" "}
+              <FormControl fullWidth variant="outlined">
+                  <InputLabel id="search-color">Kolor</InputLabel>
+                  <Field
+                    name="color"
+                    as={Select}
+                    labelId="search-color"
+                    label="Color"
+                  >
+                    <MenuItem value="all">
+                      <em>Wszystkie Kolory</em>
+                    </MenuItem>
+                    {dressColors.map((item, index) => (
+                      <MenuItem key={index} value={item}>
+                        {`${item}  (${getColorCount(products,item)})`}
+                      </MenuItem>
+                    ))}
+                  </Field>
+                </FormControl>
               </Grid>
               <Grid item xs={12} sm={5}>
                 <FormControl fullWidth variant="outlined">
