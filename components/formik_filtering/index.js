@@ -21,28 +21,32 @@ import { getProductCount } from "../../lib/products";
 //   return (count)
 // } //this function doesnt work properly there is an issue with context there is a placeholder for now
 
-function getTypeCount(items, type) {
-  let count = 0;
-  const products = items;
-  {
-    products.map((dress, index) =>
-      dress.tags.style === type ? count++ : count
-    );
-  }
-  return count;
-}
-function getColorCount(items, type) {
-  let count = 0;
-  const products = items;
-  {
-    products.map((dress, index) =>
-      dress.tags.color === type ? count++ : count
-    );
-  }
-  return count;
-}
 
-export default function Formik_Filtering({ products, galleryItems,dressColors }) {
+
+export default function Formik_Filtering({ products, galleryItems,dressColors,queryFilter }) {
+  function getTypeCount(items, type) {
+    let count = 0;
+    const products = items;
+    {
+      products.map((dress, index) =>
+        dress.tags.style === type ? count++ : count
+      );
+    }
+    return count;
+  }
+
+  function getColorCount(items,chosenColor) {
+    let count = 0;
+    const products = items;
+    console.log("type data",query.style)
+    {
+      products.map((dress, index) =>
+        dress.tags.color === chosenColor && dress.tags.style===query.style ? count++ : count
+      );
+    }
+    return count;
+  }
+  
   //ROUTER
   const { query } = useRouter();
 
