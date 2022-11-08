@@ -6,7 +6,7 @@ import { getSortedProductsData } from "../../lib/products";
   
   //fetching all of the products and creating the array with each dress type
   const products = getSortedProductsData()
-  const galleryItems = [... new Set(products.map((Val)=> Val.tags.length))]
+  const galleryItems = [... new Set(products.map((Val)=> Val.tags.style))]
 
   return (
     <div>

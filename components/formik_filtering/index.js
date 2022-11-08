@@ -1,6 +1,5 @@
 import React from "react";
-import { useRouter } from "next/router";
-
+import router,{ useRouter } from "next/router";
 //Formik and mui
 import styles from "./formik_filtering.module.css";
 import { Formik, Form, Field } from "formik";
@@ -12,7 +11,8 @@ import {
   Select,
   SelectChangeEvent,
   listItemClasses,
-  Input
+  Input,
+  Button
 } from "@mui/material";
 import { getProductCount } from "../../lib/products";
 
@@ -26,7 +26,7 @@ function getTypeCount(items, type) {
   const products = items;
   {
     products.map((dress, index) =>
-      dress.tags.length === type ? count++ : count
+      dress.tags.style === type ? count++ : count
     );
   }
   return count;
@@ -59,13 +59,19 @@ export default function Formik_Filtering({ products, galleryItems,dressColors })
     <Formik
       enableReinitialize // Pass this to re-render on initialValues change
       initialValues={initialValues}
-      onSubmit={() => {}}
+      onSubmit={(values) => {
+        router.replace({
+          pathname: "/product_gallery",
+          query:{...values}
+        }
+          ,undefined,{shallow:true})
+      }}
     >
       {({ values }) => (
         <Form>
           <Paper className={styles.paper} elevation={5}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} sm={5}>
+            <Grid container spacing={3} >
+              <Grid item xs={12} sm={6}>
                 <FormControl fullWidth variant="outlined">
                   <InputLabel id="search-style">Styl</InputLabel>
                   <Field
@@ -85,7 +91,7 @@ export default function Formik_Filtering({ products, galleryItems,dressColors })
                   </Field>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={5}>
+              <Grid item xs={12} sm={6}>
               <FormControl fullWidth variant="outlined">
                   <InputLabel id="search-color">Kolor</InputLabel>
                   <Field
@@ -105,7 +111,7 @@ export default function Formik_Filtering({ products, galleryItems,dressColors })
                   </Field>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={5}>
+              <Grid item xs={12} sm={6}>
                 <FormControl fullWidth variant="outlined">
                   <InputLabel id="search-minPrice">
                     <>Minimalna cena</>
@@ -127,7 +133,7 @@ export default function Formik_Filtering({ products, galleryItems,dressColors })
                   </Field>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={5}>
+              <Grid item xs={12} sm={6}>
                 <FormControl fullWidth variant="outlined">
                   <InputLabel id="search-maxPrice">Maksymalna cena</InputLabel>
                   <Field
@@ -136,18 +142,12 @@ export default function Formik_Filtering({ products, galleryItems,dressColors })
                     labelId="search-maxPrice"
                     label="MaxPrice"
                   >
-                    {/* <MenuItem value="all">
-                      <em>Brak ceny maksymalnej</em>
-                    </MenuItem>
-                    {prices.map((price, key) => (
-                      <MenuItem value={price} key={key}>
-                        {price}
-                      </MenuItem>
-                    ))} */}
                   </Field>
 
                 </FormControl>
-
+              </Grid>
+              <Grid item xs={12}>
+                <Button type="submit" variant="contained" fullWidth>Search</Button>
               </Grid>
             </Grid>
           </Paper>

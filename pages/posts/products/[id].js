@@ -80,7 +80,7 @@ export default function ProductPage({ photoNumber, id, ...dress }) {
           </div>
           <div className={styles.main_content}>
             <h1>{dress?.title}</h1>
-            <h2>{dress?.price}</h2>
+            <h2>{dress?.price} zł</h2>
             <p>{dress?.description}</p>
             <h3>Wymiary sukienki:</h3>
             <div className={styles.sizeSelector}>
