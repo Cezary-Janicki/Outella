@@ -22,9 +22,10 @@ export default function ProductGallery() {
 
 const router = useRouter()
 const queryData = router.query
-console.log(queryData);
 let queryDataStyle=queryData.style
 let queryDataColor=queryData.color
+let queryDataMaxPrice=queryData.maxPrice
+let queryDataMinPrice=queryData.minPrice
 
 const [item,setItem]=useState(products)
 const galleryItems = [... new Set(products.map((Val)=> Val.tags.style))]
@@ -37,8 +38,11 @@ const dressColors = [... new Set(products.map((Val)=> Val.tags.color))]
 // }
 const queryFilter = () => {
   const newItem = products.filter((product) => {
+    // console.log("price", Number(product.price) )
     return (queryDataStyle===product.tags.style || queryDataStyle==="all") 
-    &&( queryDataColor===product.tags.color || queryDataColor==="all");})
+    &&( queryDataColor===product.tags.color || queryDataColor==="all")
+    &&((product.price<queryDataMaxPrice||queryDataMaxPrice==="") && (product.price>queryDataMinPrice || queryDataMinPrice===""))
+    ;})
   setItem(newItem)
 }
 
@@ -51,7 +55,7 @@ const queryFilter = () => {
     products={products}   
     galleryItems={galleryItems}
     dressColors={dressColors}
-    // queryFilter={queryFilter}
+    queryFilter={queryFilter}
    />   
 {/* </Issue2> */}        
         {/* <Filtering_Buttons

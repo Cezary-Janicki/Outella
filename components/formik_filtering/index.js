@@ -38,7 +38,6 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
   function getColorCount(items,chosenColor) {
     let count = 0;
     const products = items;
-    console.log("type data",query.style)
     {
       products.map((dress, index) =>
         dress.tags.color === chosenColor && (query.style===dress.tags.style || query.style==="all") ? count++ : count
@@ -57,19 +56,20 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
     maxPrice: query.maxPrice || "",
   };
 
-  const prices = [90, 100, 120, 140, 160, 180, 200];
-
   return (
     <Formik
       enableReinitialize // Pass this to re-render on initialValues change
       initialValues={initialValues}
+      
       onSubmit={(values) => {
         router.replace({
           pathname: "/product_gallery",
           query:{...values}
         }
           ,undefined,{shallow:true})
-      }}
+     }
+    }
+    
     >
       {({ values }) => (
         <Form>
@@ -126,14 +126,6 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
                     labelId="search-minPrice"
                     label="MinPrice"
                   >
-                    {/* <MenuItem value="all">
-                      <em>Brak ceny minimalnej</em>
-                    </MenuItem>
-                    {prices.map((price, key) => (
-                      <MenuItem value={price} key={key}>
-                        {price}
-                      </MenuItem>
-                    ))} */}
                   </Field>
                 </FormControl>
               </Grid>
@@ -151,7 +143,9 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
                 </FormControl>
               </Grid>
               <Grid item xs={12}>
-                <Button type="submit" variant="contained" fullWidth>Search</Button>
+                <Button type="submit" variant="contained" fullWidth onClick={queryFilter} >Search with on Click</Button>
+                <Button type="submit" variant="contained" fullWidth >Search without on Click</Button>
+
               </Grid>
             </Grid>
           </Paper>
