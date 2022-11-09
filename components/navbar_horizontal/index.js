@@ -13,7 +13,9 @@ export default function NavBarHorziontal() {
         {" "}
         {galleryItems.map((item, index) => (
           <div className={styles.navbarRow}>
-            <Link href={`/product_gallery?style=${item}`}>
+            <Link
+              href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
+            >
               <p>
                 <a>Sukienki {item} </a>
               </p>

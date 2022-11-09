@@ -169,7 +169,6 @@ export default function Formik_Filtering({
                 >
                   Search with on Click
                 </Button>
-                {/* <button onClick={() => window.location.reload(false)}>Click to reload!</button> */}
                 <Button type="submit" variant="contained" fullWidth>
                   Search without on Click
                 </Button>
