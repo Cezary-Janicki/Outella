@@ -15,9 +15,9 @@ import { getSortedPostsData } from "../../../lib/posts";
 // See https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
 export async function getStaticPaths() {
   // Fetch paths from endpoint at build-time, generate static pages
-  const { data: [paths] } = await axios.get(
-    `https://outella-database.herokuapp.com/productIds`
-  );
+  const {
+    data: [paths],
+  } = await axios.get(`https://outella-database.herokuapp.com/productIds`);
 
   return {
     paths, // Array<{params: {id: number} }>
@@ -30,14 +30,16 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const photoNumber = await getPhotoCount(params.id);
   const id = params.id.replace(/sukienka/, "");
-  
+
   // Fetch product from database, provide as props
-  const {data} = await axios(`https://outella-database.herokuapp.com/products/${id}`)
-  
+  const { data } = await axios(
+    `https://outella-database.herokuapp.com/products/${id}`
+  );
+
   return {
     props: {
       ...data,
-      photoNumber
+      photoNumber,
     },
   };
 }
@@ -56,8 +58,8 @@ export default function ProductPage({ photoNumber, id, ...dress }) {
    const dress = products[id-1]
  */
 
-   // This is provided to the page props at build time via getStaticProps;
-   // Fetching again at run-time is unnecessary for statically-generated sites -ae
+  // This is provided to the page props at build time via getStaticProps;
+  // Fetching again at run-time is unnecessary for statically-generated sites -ae
 
   //</Issue 1>
 

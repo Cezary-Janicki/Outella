@@ -1,5 +1,5 @@
 import React from "react";
-import router,{ useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 //Formik and mui
 import styles from "./formik_filtering.module.css";
 import { Formik, Form, Field } from "formik";
@@ -12,7 +12,7 @@ import {
   SelectChangeEvent,
   listItemClasses,
   Input,
-  Button
+  Button,
 } from "@mui/material";
 import { getProductCount } from "../../lib/products";
 
@@ -21,31 +21,43 @@ import { getProductCount } from "../../lib/products";
 //   return (count)
 // } //this function doesnt work properly there is an issue with context there is a placeholder for now
 
-
-
-export default function Formik_Filtering({ products, galleryItems,dressColors,queryFilter }) {
+export default function Formik_Filtering({
+  products,
+  galleryItems,
+  dressColors,
+  queryFilter,
+}) {
   function getTypeCount(items, type) {
     let count = 0;
     const products = items;
     {
       products.map((dress, index) =>
-        dress.tags.style === type ? count++ : count
+        dress.tags.style === type &&
+        (query.minPrice < dress.price || query.minPrice === "") &&
+        (query.maxPrice > dress.price || query.maxPrice === "")
+          ? count++
+          : count
       );
     }
     return count;
   }
 
-  function getColorCount(items,chosenColor) {
+  function getColorCount(items, chosenColor) {
     let count = 0;
     const products = items;
     {
       products.map((dress, index) =>
-        dress.tags.color === chosenColor && (query.style===dress.tags.style || query.style==="all") ? count++ : count
+        dress.tags.color === chosenColor &&
+        (query.style === dress.tags.style || query.style === "all") &&
+        (query.minPrice < dress.price || query.minPrice === "") &&
+        (query.maxPrice > dress.price || query.maxPrice === "")
+          ? count++
+          : count
       );
     }
     return count;
   }
-  
+
   //ROUTER
   const { query } = useRouter();
 
@@ -60,21 +72,21 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
     <Formik
       enableReinitialize // Pass this to re-render on initialValues change
       initialValues={initialValues}
-      
       onSubmit={(values) => {
-        router.replace({
-          pathname: "/product_gallery",
-          query:{...values}
-        }
-          ,undefined,{shallow:true})
-     }
-    }
-    
+        router.replace(
+          {
+            pathname: "/product_gallery",
+            query: { ...values },
+          },
+          undefined,
+          { shallow: true }
+        );
+      }}
     >
       {({ values }) => (
         <Form>
           <Paper className={styles.paper} elevation={5}>
-            <Grid container spacing={3} >
+            <Grid container spacing={3}>
               <Grid item xs={12} sm={6}>
                 <FormControl fullWidth variant="outlined">
                   <InputLabel id="search-style">Styl</InputLabel>
@@ -89,14 +101,14 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
                     </MenuItem>
                     {galleryItems.map((item, index) => (
                       <MenuItem key={index} value={item}>
-                        {`${item}  (${getTypeCount(products,item)})`}
+                        {`${item}  (${getTypeCount(products, item)})`}
                       </MenuItem>
                     ))}
                   </Field>
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={6}>
-              <FormControl fullWidth variant="outlined">
+                <FormControl fullWidth variant="outlined">
                   <InputLabel id="search-color">Kolor</InputLabel>
                   <Field
                     name="color"
@@ -109,7 +121,7 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
                     </MenuItem>
                     {dressColors.map((item, index) => (
                       <MenuItem key={index} value={item}>
-                        {`${item}  (${getColorCount(products,item)})`}
+                        {`${item}  (${getColorCount(products, item)})`}
                       </MenuItem>
                     ))}
                   </Field>
@@ -125,8 +137,7 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
                     name="minPrice"
                     labelId="search-minPrice"
                     label="MinPrice"
-                  >
-                  </Field>
+                  ></Field>
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -137,15 +148,22 @@ export default function Formik_Filtering({ products, galleryItems,dressColors,qu
                     name="maxPrice"
                     labelId="search-maxPrice"
                     label="MaxPrice"
-                  >
-                  </Field>
-
+                  ></Field>
                 </FormControl>
               </Grid>
               <Grid item xs={12}>
-                <Button type="submit" variant="contained" fullWidth onClick={queryFilter} >Search with on Click</Button>
-                <Button type="submit" variant="contained" fullWidth >Search without on Click</Button>
-
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  onClick={queryFilter}
+                >
+                  Search with on Click
+                </Button>
+                {/* <button onClick={() => window.location.reload(false)}>Click to reload!</button> */}
+                <Button type="submit" variant="contained" fullWidth>
+                  Search without on Click
+                </Button>
               </Grid>
             </Grid>
           </Paper>
