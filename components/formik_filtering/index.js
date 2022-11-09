@@ -68,6 +68,11 @@ export default function Formik_Filtering({
     maxPrice: query.maxPrice || "",
   };
 
+  // This function filters dress colors so that when filters are applied only colors that match the filters are shown
+  const filteredColors = dressColors.filter(
+    (item) => getColorCount(products, item) > 0
+  );
+
   return (
     <Formik
       enableReinitialize // Pass this to re-render on initialValues change
@@ -119,7 +124,7 @@ export default function Formik_Filtering({
                     <MenuItem value="all">
                       <em>Wszystkie Kolory</em>
                     </MenuItem>
-                    {dressColors.map((item, index) => (
+                    {filteredColors.map((item, index) => (
                       <MenuItem key={index} value={item}>
                         {`${item}  (${getColorCount(products, item)})`}
                       </MenuItem>
