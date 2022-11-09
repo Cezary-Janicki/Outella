@@ -68,7 +68,11 @@ export default function Formik_Filtering({
     maxPrice: query.maxPrice || "",
   };
 
-  // This function filters dress colors so that when filters are applied only colors that match the filters are shown
+  // This function filters dress colors/types so that when filters are applied only colors/types that match the filters are shown
+  const filteredTypes = galleryItems.filter(
+    (item) => getTypeCount(products, item) > 0
+  );
+
   const filteredColors = dressColors.filter(
     (item) => getColorCount(products, item) > 0
   );
@@ -104,7 +108,7 @@ export default function Formik_Filtering({
                     <MenuItem value="all">
                       <em>Wszystkie style</em>
                     </MenuItem>
-                    {galleryItems.map((item, index) => (
+                    {filteredTypes.map((item, index) => (
                       <MenuItem key={index} value={item}>
                         {`${item}  (${getTypeCount(products, item)})`}
                       </MenuItem>
