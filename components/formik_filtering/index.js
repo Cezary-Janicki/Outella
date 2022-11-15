@@ -166,6 +166,7 @@ export default function Formik_Filtering({
                   variant="contained"
                   fullWidth
                   onClick={queryFilter}
+                  // onPress={queryFilter}
                 >
                   Search with on Click
                 </Button>
