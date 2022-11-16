@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/react */
+
+//React components
+import { css } from "@emotion/react";
 import React from "react";
 import router, { useRouter } from "next/router";
 //Formik and mui
@@ -94,7 +98,15 @@ export default function Formik_Filtering({
     >
       {({ values }) => (
         <Form>
-          <Paper className={styles.paper} elevation={5}>
+          <Paper
+            css={css`
+              max-width: 500px;
+              margin: auto;
+              padding: 3vh;
+              box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            `}
+            elevation={5}
+          >
             <Grid container spacing={3}>
               <Grid item xs={12} sm={6}>
                 <FormControl fullWidth variant="outlined">
@@ -166,7 +178,6 @@ export default function Formik_Filtering({
                   variant="contained"
                   fullWidth
                   onClick={queryFilter}
-                  // onPress={queryFilter}
                 >
                   Search with on Click
                 </Button>

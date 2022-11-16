@@ -1,4 +1,7 @@
+/** @jsxImportSource @emotion/react */
+
 //React components
+import { css } from "@emotion/react";
 import styles from "./bla.module.css";
 import { useState, useEffect } from "react";
 import { getSortedProductsData } from "../lib/products";
@@ -9,7 +12,6 @@ import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
 import Filtering_Buttons from "../components/filtering_buttons";
 import Gallery_Picture from "../components/gallery_picture";
 import Formik_Filtering from "../components/formik_filtering";
-import { updateSourceFile } from "typescript";
 
 export default function ProductGallery() {
   //DATA FETCHING FROM A SERVER
@@ -59,8 +61,23 @@ export default function ProductGallery() {
             products={products}    
              /> */}
       <button onClick={queryFilter}>click me</button>
-      <div className={styles.main}>
-        <div className={styles.flex}>
+      <div
+        css={css`
+          display: flex;
+        `}
+      >
+        <div
+          css={css`
+            width: 75%;
+            margin-left: auto;
+            margin-right: 5vw;
+
+            display: flex;
+            flex: 3;
+            flex-wrap: wrap;
+            justify-content: space-around;
+          `}
+        >
           <Gallery_Picture item={item} />
         </div>
       </div>

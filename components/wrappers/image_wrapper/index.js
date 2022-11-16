@@ -1,10 +1,20 @@
-import React from 'react'
-import styles from "./image_wrapper.module.css"
+/** @jsxImportSource @emotion/react */
 
-export default function Image_Wrapper({children}) {
+//React components
+import { css } from "@emotion/react";
+import React from "react";
+
+export default function Image_Wrapper({ children }) {
   return (
-                    <div className={styles.Picture_Wrapper}>
-                      {children}
-                   </div>         
-  )
+    <div
+      css={css`
+        width: 100%;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+      `}
+    >
+      {children}
+    </div>
+  );
 }

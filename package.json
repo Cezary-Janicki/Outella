@@ -8,8 +8,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@fontsource/montserrat": "^4.5.13",
     "@fontsource/playfair-display": "^4.5.12",
     "@material-ui/core": "^4.12.4",
@@ -43,11 +43,13 @@
     "react-router-dom": "^6.4.2-pre.1",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
+    "request": "^2.79.0",
     "sort-by": "^1.2.0",
     "sqlite": "^4.1.2",
     "swr": "^1.3.0"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.5",
     "babel-preset-env": "^1.7.0",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.3",

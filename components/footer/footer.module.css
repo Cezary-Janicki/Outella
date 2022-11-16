@@ -1,59 +1,61 @@
-.wrapper{
+.wrapper {
   /* background: content-box radial-gradient(crimson, skyblue);   */
   /* background: content-box linear-gradient((90deg, rgba(255,255,255,1) 0%, rgba(170,50,220,1) 50%, rgba(255,255,255,1) 100%)); */
-  
-  background: radial-gradient(circle, rgba(170,50,220,0.71) 0%, rgba(255,255,255,1) 80%); 
+
+  background: radial-gradient(
+    circle,
+    rgba(170, 50, 220, 0.71) 0%,
+    rgba(255, 255, 255, 1) 80%
+  );
   background-size: cover;
 }
-.background{
-  height:2px;
-  width:100vw; 
-  color:rgba(255,255,255,1);
-
+.background {
+  height: 2px;
+  width: 100vw;
+  color: rgba(255, 255, 255, 1);
 }
 .footer {
-
-    /* Flexbox  */
-    /* display: flex; */
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    
-    /* align-content: flex-end; */
-
-    /* General CSS */
-    height:auto;
-    width:auto;
-    margin: 3vh 0 0 0;
-
+  /* Flexbox  */
+  /* display: flex; */
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  /* General CSS */
+  height: auto;
+  width: auto;
+  margin: 3vh 0 0 0;
+}
+@media screen and (min-width: 750px) {
+  .footer {
+    display: flex;
   }
-@media screen and (min-width:750px){
-    .footer{
-        display:flex;
-    }
 }
 
+.columns {
+  /* Flexbox */
+  flex-direction: row;
+
+  /* General CSS */
+}
+@media screen and (max-width: 749px) {
   .columns {
-    /* Flexbox */
-    flex-direction: row;
-    
-    /* General CSS */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 30px 10px;
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(170, 50, 220, 0.04) 100%
+    );
   }
-  @media screen and (max-width:749px){
-    .columns{
-    padding:10px 10px 10px 10px;
-    margin:10px 0px 30px 10px;
-    background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(170,50,220,0.04) 100%);     }
-    }
-  .row {
-    /* Flexbox */
-    flex-direction: column;
-    align-content: space-between;
-    margin: 3vh 0 0 0;
-    /* General CSS */
-    
-  }
-  
-.h2{
+}
+.row {
+  /* Flexbox */
+  flex-direction: column;
+  align-content: space-between;
+  margin: 3vh 0 0 0;
+  /* General CSS */
+}
+
+.h2 {
   font-weight: normal;
-  font-size:17px;
+  font-size: 17px;
 }

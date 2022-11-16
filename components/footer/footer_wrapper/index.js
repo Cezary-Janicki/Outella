@@ -1,15 +1,25 @@
-import React from 'react'
-import styles from "../footer.module.css"
+/** @jsxImportSource @emotion/react */
 
+//React components
+import { css } from "@emotion/react";
+import React from "react";
 
-export default function Footer_Wrapper({children}) {
+export default function Footer_Wrapper({ children }) {
   return (
-
-        <div className={styles.columns}>
-        <div className={styles.rows}>
-                 {children}
-        </div>
-        </div> 
-
-  )
+    <div
+      css={css`
+        flex-direction: row;
+      `}
+    >
+      <div
+        css={css`
+          flex-direction: column;
+          align-content: space-between;
+          margin: 3vh 0 0 0;
+        `}
+      >
+        {children}
+      </div>
+    </div>
+  );
 }

@@ -1,28 +1,43 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
 import Image from "next/image";
-import styles from "./dresses_types.module.css"
-import Link from "next/link"
+import styles from "./dresses_types.module.css";
+import Link from "next/link";
 import Image_Wrapper from "../wrappers/image_wrapper";
 
-
-export default function Dresses_Types(){
-    return(
-        <div className={styles.grid}>
-        {" "}
-        {/*==================== D R E S S E S _ T Y P E S ====================>*/}
-        <div className={styles.gridBox}>
-          <Link href="product_gallery"><a>
+const gridBox = css`
+  width: 100%;
+  height: 50vh;
+  margin: 1.5vh 0.5vw 1.5vh 0vw;
+`;
+export default function Dresses_Types() {
+  return (
+    <div
+      css={css`
+        display: flex;
+        flex-direction: row;
+      `}
+    >
+      {/*==================== D R E S S E S _ T Y P E S ====================>*/}
+      <div css={gridBox}>
+        <Link href="product_gallery">
+          <a>
             <Image_Wrapper>
-              <Image className={styles.image}
+              <Image
+                className={styles.image}
                 alt="Dress"
                 src={`/products/sukienka18/3/sukienka.jpeg`}
                 layout="fill"
                 objectFit="cover"
               />
             </Image_Wrapper>
-          </a></Link>
-        </div>
-        <div className={styles.gridBox}>
-          <Link href="product_gallery"><a>
+          </a>
+        </Link>
+      </div>
+      <div css={gridBox}>
+        <Link href="product_gallery">
+          <a>
             <Image_Wrapper>
               <Image
                 alt="Dress"
@@ -31,10 +46,12 @@ export default function Dresses_Types(){
                 objectFit="cover"
               />
             </Image_Wrapper>
-          </a></Link>
-        </div>
-        <div className={styles.gridBox}>
-          <Link href="product_gallery"><a>
+          </a>
+        </Link>
+      </div>
+      <div css={gridBox}>
+        <Link href="product_gallery">
+          <a>
             <Image_Wrapper>
               <Image
                 alt="Dress"
@@ -43,10 +60,12 @@ export default function Dresses_Types(){
                 objectFit="cover"
               />
             </Image_Wrapper>
-          </a></Link>
-        </div>
-        <div className={styles.gridBox}>
-          <Link href="product_gallery"><a>
+          </a>
+        </Link>
+      </div>
+      <div css={gridBox}>
+        <Link href="product_gallery">
+          <a>
             <Image_Wrapper>
               <Image
                 alt="Dress"
@@ -55,10 +74,12 @@ export default function Dresses_Types(){
                 objectFit="cover"
               />
             </Image_Wrapper>
-          </a></Link>
-        </div>
-        <div className={styles.gridBox}>
-          <Link href="product_gallery"><a>
+          </a>
+        </Link>
+      </div>
+      <div css={gridBox}>
+        <Link href="product_gallery">
+          <a>
             <Image_Wrapper>
               <Image
                 alt="Dress"
@@ -67,10 +88,9 @@ export default function Dresses_Types(){
                 objectFit="cover"
               />
             </Image_Wrapper>
-          </a></Link>
-        </div>
-
+          </a>
+        </Link>
       </div>
-
-    )
+    </div>
+  );
 }

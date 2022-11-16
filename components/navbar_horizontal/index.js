@@ -10,7 +10,6 @@ export default function NavBarHorziontal() {
   return (
     <div>
       <div className={styles.navbar}>
-        {" "}
         {galleryItems.map((item, index) => (
           <div className={styles.navbarRow}>
             <Link

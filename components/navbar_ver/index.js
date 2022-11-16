@@ -1,69 +1,45 @@
+/** @jsxImportSource @emotion/react */
+
+//React components
+import { css } from "@emotion/react";
 import styles from "./navbar_ver.module.css";
 import Link from "next/link";
 import Hamburger_Menu from "../hamburger";
-import {useState} from "react";
+import { useState } from "react";
+import { getSortedProductsData } from "../../lib/products";
 
-function test(){
-window.addEventListener('kedown')
-}
- export default function NavBarVer() {
+export default function NavBarVer() {
+  const products = getSortedProductsData();
+  const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
 
   return (
     <div>
-
-    <div className={styles.navbar}>
-      {" "}
-
-      <div className={styles.navbarRow}>
-       
-        <Link href="/products/Typ1/lorem">
-        <p><a>Typ sukienki 1 </a></p> 
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ2/ipsum">
-        <p><a>Typ sukienki 2 </a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ3/dolor">
-        <p><a>Typ sukienki 3</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ4/sit">
-        <p><a>Typ sukienki 4</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ5/amet">
-        <p><a> Typ sukienki 5</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
-        </div>
-      </div>
-      <div className={styles.navbarRow}>
-        <Link href="/products/Typ5/amet">
-        <p><a> Hambureger</a></p>
-        </Link>
-        <div className={styles.navbarColumn}>
-          <p> </p>
+      <div className={styles.navbar}>
+        {galleryItems.map((item, index) => (
+          <div className={styles.navbarRow}>
+            <Link
+              href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
+            >
+              <p>
+                <a>Sukienki {item} </a>
+              </p>
+            </Link>
+            <div className={styles.navbarColumn}>
+              <p> </p>
+            </div>
+          </div>
+        ))}
+        <div className={styles.navbarRow}>
+          <Link href="/product_gallery">
+            <p>
+              <a> Wszystkie sukienki</a>
+            </p>
+          </Link>
+          <div className={styles.navbarColumn}>
+            <p> </p>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-  )
+  );
 }
