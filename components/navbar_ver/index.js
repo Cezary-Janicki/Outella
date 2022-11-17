@@ -2,21 +2,41 @@
 
 //React components
 import { css } from "@emotion/react";
-import styles from "./navbar_ver.module.css";
 import Link from "next/link";
 import Hamburger_Menu from "../hamburger";
-import { useState } from "react";
 import { getSortedProductsData } from "../../lib/products";
-
+const navbarColumn = css`
+  /* Flexbox */
+  flex-direction: column;
+`;
+const navbarRow = css`
+  /* Flexbox */
+  flex-direction: row;
+  /* General CSS */
+  margin: 2vh 2vw 2vh 0vw;
+`;
 export default function NavBarVer() {
   const products = getSortedProductsData();
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
 
   return (
     <div>
-      <div className={styles.navbar}>
+      <div
+        css={css`
+          /* Flexbox */
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          height: 100%;
+          width: 35%;
+          /* General CSS */
+          border-width: 3mm 0 3mm 0;
+          font-family: "Playfair Display", serif;
+          padding: 2vw 2vw 2vw 4vw;
+        `}
+      >
         {galleryItems.map((item, index) => (
-          <div className={styles.navbarRow}>
+          <div css={navbarRow}>
             <Link
               href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
             >
@@ -24,18 +44,18 @@ export default function NavBarVer() {
                 <a>Sukienki {item} </a>
               </p>
             </Link>
-            <div className={styles.navbarColumn}>
+            <div css={navbarColumn}>
               <p> </p>
             </div>
           </div>
         ))}
-        <div className={styles.navbarRow}>
+        <div css={navbarRow}>
           <Link href="/product_gallery">
             <p>
               <a> Wszystkie sukienki</a>
             </p>
           </Link>
-          <div className={styles.navbarColumn}>
+          <div css={navbarColumn}>
             <p> </p>
           </div>
         </div>
