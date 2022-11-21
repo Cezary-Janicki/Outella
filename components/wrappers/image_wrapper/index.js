@@ -3,8 +3,9 @@
 //React components
 import { css } from "@emotion/react";
 import React from "react";
+import PropTypes from "prop-types";
 
-export default function Image_Wrapper({ children, title }) {
+function Image_Wrapper({ children }) {
   return (
     <>
       <div
@@ -20,3 +21,7 @@ export default function Image_Wrapper({ children, title }) {
     </>
   );
 }
+Image_Wrapper.propTypes = {
+  children: PropTypes.node,
+};
+export default Image_Wrapper;

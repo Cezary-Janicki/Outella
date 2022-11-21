@@ -1,9 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
 //React components
+import React from "react";
 import { css } from "@emotion/react";
 import Link from "next/link";
-import Hamburger_Menu from "../hamburger";
+// import Hamburger_Menu from "../hamburger";
 import { getSortedProductsData } from "../../lib/products";
 const navbarColumn = css`
   /* Flexbox */
@@ -36,7 +37,7 @@ export default function NavBarVer() {
         `}
       >
         {galleryItems.map((item, index) => (
-          <div css={navbarRow}>
+          <div css={navbarRow} key={index}>
             <Link
               href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
             >

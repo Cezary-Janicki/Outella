@@ -1,16 +1,17 @@
 //React components
+import React from "react";
 import styles from "../../products/products.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { useQuery } from "react-query";
+import PropTypes from "prop-types";
 //Page components
-import Body_Wrapper from "../../../components/wrappers/body_wrapper";
+// import Body_Wrapper from "../../../components/wrappers/body_wrapper";
 import Body_Wrapper_No_main from "../../../components/wrappers/body_wrapper_no_main";
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
-import { getAllProductsIds, getProductData } from "../../../lib/products";
+// import { getAllProductsIds, getProductData } from "../../../lib/products";
 import { getPhotoCount } from "../../../lib/products";
-import { getSortedProductsData } from "../../../lib/products";
-import { getSortedPostsData } from "../../../lib/posts";
+// import { getSortedProductsData } from "../../../lib/products";
+// import { getSortedPostsData } from "../../../lib/posts";
 
 // See https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
 export async function getStaticPaths() {
@@ -50,7 +51,7 @@ export async function getStaticProps({ params }) {
 //   const test = products[id-1]
 //   return test
 // }
-export default function ProductPage({ photoNumber, id, ...dress }) {
+function ProductPage({ photoNumber, id, ...dress }) {
   //<Issue #1>
   //DATA FETCHING FROM A SERVER
   /* tried to use the general function and grab a single array element that I need
@@ -181,3 +182,8 @@ export default function ProductPage({ photoNumber, id, ...dress }) {
     </Body_Wrapper_No_main>
   );
 }
+ProductPage.propTypes = {
+  photoNumber: PropTypes.number,
+  id: PropTypes.number,
+};
+export default ProductPage;

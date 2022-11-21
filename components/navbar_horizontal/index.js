@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 //React components
+import React from "react";
 import { css } from "@emotion/react";
 import Link from "next/link";
 import { getSortedProductsData } from "../../lib/products";
@@ -36,8 +37,8 @@ export default function NavBarHorziontal() {
           font-family: "Playfair Display", serif;
         `}
       >
-        {galleryItems.map((item, index) => (
-          <div css={navbarColumn}>
+        {galleryItems.map((item, key) => (
+          <div css={navbarColumn} key={key}>
             <Link
               href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
             >

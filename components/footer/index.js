@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 //React components
+import React from "react";
 import { css } from "@emotion/react";
 import Link from "next/link";
 import { getSortedPostsData } from "../../lib/posts";
@@ -29,7 +30,7 @@ const row = css`
   align-content: space-between;
   margin: 3vh 0 0 0;
 `;
-export default function Footer({}) {
+export default function Footer() {
   return (
     <div>
       <div

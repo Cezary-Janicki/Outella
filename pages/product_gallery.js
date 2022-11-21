@@ -2,18 +2,17 @@
 
 //React components
 import { css } from "@emotion/react";
-import styles from "./bla.module.css";
-import { useState, useEffect } from "react";
+// import styles from "./bla.module.css";
+import { useState } from "react";
 import { getSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
-
+import React from "react";
 //Page components
 import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
-import Filtering_Buttons from "../components/filtering_buttons";
 import Gallery_Picture from "../components/gallery_picture";
 import Formik_Filtering from "../components/formik_filtering";
 
-export default function ProductGallery() {
+function ProductGallery() {
   //DATA FETCHING FROM A SERVER
   const products = getSortedProductsData();
   // console.log("products", products[1])
@@ -54,12 +53,7 @@ export default function ProductGallery() {
         queryFilter={queryFilter}
       />
       {/* </Issue2> */}
-      {/* <Filtering_Buttons
-             filterItem={filterItem}
-             setItem={setItem}
-             galleryItems={galleryItems}
-            products={products}    
-             /> */}
+
       <button onClick={queryFilter}>click me</button>
       <div
         css={css`
@@ -84,3 +78,4 @@ export default function ProductGallery() {
     </Body_Wrapper_No_main>
   );
 }
+export default ProductGallery;

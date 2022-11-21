@@ -4,8 +4,8 @@
 import { css } from "@emotion/react";
 import React from "react";
 import router, { useRouter } from "next/router";
+import PropTypes from "prop-types";
 //Formik and mui
-import styles from "./formik_filtering.module.css";
 import { Formik, Form, Field } from "formik";
 import { Paper, Grid } from "@material-ui/core";
 import {
@@ -13,19 +13,17 @@ import {
   MenuItem,
   FormControl,
   Select,
-  SelectChangeEvent,
-  listItemClasses,
   Input,
   Button,
 } from "@mui/material";
-import { getProductCount } from "../../lib/products";
+// import { getProductCount } from "../../lib/products";
 
 // function getCount(style){
 //   const count=getProductCount(style)
 //   return (count)
 // } //this function doesnt work properly there is an issue with context there is a placeholder for now
 
-export default function Formik_Filtering({
+function Formik_Filtering({
   products,
   galleryItems,
   dressColors,
@@ -35,7 +33,7 @@ export default function Formik_Filtering({
     let count = 0;
     const products = items;
     {
-      products.map((dress, index) =>
+      products.map((dress) =>
         dress.tags.style === type &&
         (query.minPrice < dress.price || query.minPrice === "") &&
         (query.maxPrice > dress.price || query.maxPrice === "")
@@ -50,7 +48,7 @@ export default function Formik_Filtering({
     let count = 0;
     const products = items;
     {
-      products.map((dress, index) =>
+      products.map((dress) =>
         dress.tags.color === chosenColor &&
         (query.style === dress.tags.style || query.style === "all") &&
         (query.minPrice < dress.price || query.minPrice === "") &&
@@ -80,7 +78,6 @@ export default function Formik_Filtering({
   const filteredColors = dressColors.filter(
     (item) => getColorCount(products, item) > 0
   );
-
   return (
     <Formik
       enableReinitialize // Pass this to re-render on initialValues change
@@ -96,7 +93,7 @@ export default function Formik_Filtering({
         );
       }}
     >
-      {({ values }) => (
+      {() => (
         <Form>
           <Paper
             css={css`
@@ -114,7 +111,8 @@ export default function Formik_Filtering({
                   <Field
                     name="style"
                     as={Select}
-                    labelId="search-style"
+                    labelid="search-style"
+                    // labelId="search-style"
                     label="Style"
                   >
                     <MenuItem value="all">
@@ -134,7 +132,8 @@ export default function Formik_Filtering({
                   <Field
                     name="color"
                     as={Select}
-                    labelId="search-color"
+                    labelid="search-color"
+                    // labelId="search-color"
                     label="Color"
                   >
                     <MenuItem value="all">
@@ -156,7 +155,8 @@ export default function Formik_Filtering({
                   <Field
                     as={Input}
                     name="minPrice"
-                    labelId="search-minPrice"
+                    labelid="search-minPrice"
+                    // labelId="search-minPrice"
                     label="MinPrice"
                   ></Field>
                 </FormControl>
@@ -167,7 +167,8 @@ export default function Formik_Filtering({
                   <Field
                     as={Input}
                     name="maxPrice"
-                    labelId="search-maxPrice"
+                    labelid="search-maxPrice"
+                    // labelId="search-maxPrice"
                     label="MaxPrice"
                   ></Field>
                 </FormControl>
@@ -192,3 +193,11 @@ export default function Formik_Filtering({
     </Formik>
   );
 }
+Formik_Filtering.propTypes = {
+  galleryItems: PropTypes.array,
+  dressColors: PropTypes.array,
+  products: PropTypes.array,
+  queryFilter: PropTypes.func,
+};
+
+export default Formik_Filtering;
