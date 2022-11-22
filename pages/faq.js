@@ -6,6 +6,18 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Body_Wrapper from "../components/wrappers/body_wrapper";
 
+import styled from "@emotion/styled";
+
+const Child = styled.div`
+  color: red;
+`;
+
+const Parent = styled.div`
+  ${Child} {
+    color: green;
+  }
+`;
+
 export default function Faq() {
   const database = [
     {
@@ -31,6 +43,12 @@ export default function Faq() {
   ];
   return (
     <Body_Wrapper>
+      <div>
+        <Parent>
+          <Child>Green because I am inside a Parent</Child>
+        </Parent>
+        <Child>Red because I am not inside a Parent</Child>
+      </div>
       <p>Często zadawane pytania</p>
       {database.map((faqEntry, index) => (
         <Accordion key={index}>
