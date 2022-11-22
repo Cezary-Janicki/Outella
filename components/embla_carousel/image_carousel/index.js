@@ -22,7 +22,8 @@ const EmblaCarousel = ({ slides, id }) => {
       .then((res) => {
         setDress(res.data);
       });
-  }, [dress]);
+  });
+  // }, [dress]); // previous version that esLint didnt like
 
   //MAIN EMBLA CODE
   const [selectedIndex, setSelectedIndex] = useState(0);

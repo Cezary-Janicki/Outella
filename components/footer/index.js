@@ -4,11 +4,11 @@
 import React from "react";
 import { css } from "@emotion/react";
 import Link from "next/link";
-import { getSortedPostsData } from "../../lib/posts";
+import { GetSortedPostsData } from "../../lib/posts";
 import Footer_Wrapper from "./footer_wrapper";
 export async function getStaticProps() {
-  // const allPostsData = getSortedProductsData();
-  const allPostsData = getSortedPostsData();
+  // const allPostsData = GetSortedProductsData();
+  const allPostsData = GetSortedPostsData();
   return {
     props: {
       allPostsData,

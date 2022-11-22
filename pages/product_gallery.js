@@ -4,7 +4,7 @@
 import { css } from "@emotion/react";
 // import styles from "./bla.module.css";
 import { useState } from "react";
-import { getSortedProductsData } from "../lib/products";
+import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
 import React from "react";
 //Page components
@@ -14,7 +14,7 @@ import Formik_Filtering from "../components/formik_filtering";
 
 function ProductGallery() {
   //DATA FETCHING FROM A SERVER
-  const products = getSortedProductsData();
+  const products = GetSortedProductsData();
   // console.log("products", products[1])
 
   // Hooks and filtering for the selectable gallery

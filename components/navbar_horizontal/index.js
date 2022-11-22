@@ -4,7 +4,7 @@
 import React from "react";
 import { css } from "@emotion/react";
 import Link from "next/link";
-import { getSortedProductsData } from "../../lib/products";
+import { GetSortedProductsData } from "../../lib/products";
 
 const navbarColumn = css`
   /* Flexbox */
@@ -18,7 +18,7 @@ const navbarRow = css`
 `;
 export default function NavBarHorziontal() {
   //fetching all of the products and creating the array with each dress type
-  const products = getSortedProductsData();
+  const products = GetSortedProductsData();
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
 
   return (
@@ -41,6 +41,7 @@ export default function NavBarHorziontal() {
           <div css={navbarColumn} key={key}>
             <Link
               href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
+              passHref
             >
               <p>
                 <a>Sukienki {item} </a>
@@ -52,7 +53,7 @@ export default function NavBarHorziontal() {
           </div>
         ))}
         <div css={navbarColumn}>
-          <Link href="/product_gallery">
+          <Link href="/product_gallery" passHref>
             <p>
               <a> Wszystkie sukienki</a>
             </p>

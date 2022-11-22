@@ -7,12 +7,12 @@ import styles from "./gallery_picture.module.css";
 import Link from "next/link";
 import Image from "next/image";
 // import Image_Wrapper from "../wrappers/image_wrapper";
-// import { getSortedProductsData } from "../../lib/products";
+// import { GetSortedProductsData } from "../../lib/products";
 // import Gallery_Wrapper from "../wrappers/gallery_wrapper";
 
 const Gallery_Picture = (item) => {
   // const Gallery_Picture = ()=>{
-  // const item = getSortedProductsData()
+  // const item = GetSortedProductsData()
   return (
     <>
       {item.item.map((d, index) => {

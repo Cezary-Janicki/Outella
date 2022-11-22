@@ -6,7 +6,7 @@ import * as FaIcons from "react-icons/fa";
 export default function Hamburger_Menu() {
   return (
     <div className={styles.navbar}>
-      <Link href="#">
+      <Link href="#" passHref>
         <div className={styles.menuBars}>
           <FaIcons.FaBars />
         </div>

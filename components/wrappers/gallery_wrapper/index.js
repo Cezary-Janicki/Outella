@@ -50,7 +50,7 @@ export default function Gallery_Wrapper(children, title) {
     <div>
       {/* image_wrapper */}
       <ImageWrapper>
-        <Image>{children}</Image>
+        <Image alt="dress">{children}</Image>
         {/* middle (text wrapper) */}
 
         <Middle>

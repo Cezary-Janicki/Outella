@@ -10,7 +10,7 @@ import Body_Wrapper_No_main from "../../../components/wrappers/body_wrapper_no_m
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 // import { getAllProductsIds, getProductData } from "../../../lib/products";
 import { getPhotoCount } from "../../../lib/products";
-// import { getSortedProductsData } from "../../../lib/products";
+// import { GetSortedProductsData } from "../../../lib/products";
 // import { getSortedPostsData } from "../../../lib/posts";
 
 // See https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
@@ -47,7 +47,7 @@ export async function getStaticProps({ params }) {
 
 // The axios wrappring function m
 // export async function data(id){
-//   const products = await getSortedProductsData()
+//   const products = await GetSortedProductsData()
 //   const test = products[id-1]
 //   return test
 // }
@@ -55,7 +55,7 @@ function ProductPage({ photoNumber, id, ...dress }) {
   //<Issue #1>
   //DATA FETCHING FROM A SERVER
   /* tried to use the general function and grab a single array element that I need
-   const products = getSortedProductsData()  
+   const products = GetSortedProductsData()  
    const dress = products[id-1]
  */
 

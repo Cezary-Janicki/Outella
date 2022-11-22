@@ -5,7 +5,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import Link from "next/link";
 // import Hamburger_Menu from "../hamburger";
-import { getSortedProductsData } from "../../lib/products";
+import { GetSortedProductsData } from "../../lib/products";
 const navbarColumn = css`
   /* Flexbox */
   flex-direction: column;
@@ -17,7 +17,7 @@ const navbarRow = css`
   margin: 2vh 2vw 2vh 0vw;
 `;
 export default function NavBarVer() {
-  const products = getSortedProductsData();
+  const products = GetSortedProductsData();
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
 
   return (
@@ -40,6 +40,7 @@ export default function NavBarVer() {
           <div css={navbarRow} key={index}>
             <Link
               href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
+              passHref
             >
               <p>
                 <a>Sukienki {item} </a>
@@ -51,7 +52,7 @@ export default function NavBarVer() {
           </div>
         ))}
         <div css={navbarRow}>
-          <Link href="/product_gallery">
+          <Link href="/product_gallery" passHref>
             <p>
               <a> Wszystkie sukienki</a>
             </p>
