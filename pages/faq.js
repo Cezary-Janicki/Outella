@@ -5,7 +5,11 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Body_Wrapper from "../components/wrappers/body_wrapper";
-// import { isMobile,isTablet,isDesktop } from "../components/width_check/values";
+import {
+  isMobile,
+  isTablet,
+  isDesktop,
+} from "../components/width_check/values";
 
 export default function Faq() {
   const database = [
@@ -33,6 +37,9 @@ export default function Faq() {
 
   return (
     <Body_Wrapper>
+      <p>
+        isDesktop: {isDesktop()}, isTablet: {isTablet()}, isMobile:{isMobile()}
+      </p>
       <p>Często zadawane pytania</p>
       {database.map((faqEntry, index) => (
         <Accordion key={index}>
