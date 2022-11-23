@@ -17,7 +17,7 @@ function Gallery_Wrapper({ children, title }) {
       transition: 0.5s ease;
     }
   `;
-  const Middle = styled.div`
+  const TextWrapper = styled.div`
     // :hover ${ImageWrapper} {
     //   opacity: 1;
     // }
@@ -40,7 +40,7 @@ function Gallery_Wrapper({ children, title }) {
       filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
         saturate(150%) contrast(1);
     }
-    :hover ${Middle} {
+    :hover ${TextWrapper} {
       opacity: 1;
     }
      {
@@ -53,13 +53,11 @@ function Gallery_Wrapper({ children, title }) {
 
   return (
     <div>
-      {/* image_wrapper */}
       <ImageWrapper>
-        <Middle>
+        <TextWrapper>
           <Text> {title}</Text>
-        </Middle>
+        </TextWrapper>
         <Image alt="dress">{children}</Image>
-        {/* middle (text wrapper) */}
       </ImageWrapper>
     </div>
   );
