@@ -5,18 +5,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Body_Wrapper from "../components/wrappers/body_wrapper";
-
-import styled from "@emotion/styled";
-
-const Child = styled.div`
-  color: red;
-`;
-
-const Parent = styled.div`
-  ${Child} {
-    color: green;
-  }
-`;
+import Width_Check from "../components/width_check";
 
 export default function Faq() {
   const database = [
@@ -41,14 +30,10 @@ export default function Faq() {
       answer: "pytanie 3",
     },
   ];
+  let xxx = Width_Check();
   return (
     <Body_Wrapper>
-      <div>
-        <Parent>
-          <Child>Green because I am inside a Parent</Child>
-        </Parent>
-        <Child>Red because I am not inside a Parent</Child>
-      </div>
+      <button onClick={console.log("check", xxx)}>Bools?</button>
       <p>Często zadawane pytania</p>
       {database.map((faqEntry, index) => (
         <Accordion key={index}>
