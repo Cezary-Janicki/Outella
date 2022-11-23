@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 export default function Width_Check() {
-  //   const [show, setShow] = useState(true);
-  // const [windowWidth, setWindowWidth] = useState(0);
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   );
 
-  //   const triggerToggle = () => {
-  //     setShow(!show);
-  //   };
   function watchWidth() {
     setWindowWidth(window.innerWidth);
   }
@@ -26,9 +21,7 @@ export default function Width_Check() {
   let isMobile = new Boolean(true);
   let isTablet = new Boolean(false);
   let isDesktop = new Boolean(false);
-  let mobileValue = isMobile.toString();
-  let tabletValue = isTablet.toString();
-  let desktopValue = String(isDesktop);
+
   {
     windowWidth > 1000
       ? //   "window width is bigger than 1000 DESKTOP"
@@ -41,78 +34,10 @@ export default function Width_Check() {
 
   return (
     <>
-      {desktopValue}
-      {/* {console.log(mobileValue, tabletValue, desktopValue)} */}
-      {/* <button
-        onClick={console.log(
-          "Desktop:",
-          isDesktop,
-          "Tablet:",
-          isTablet,
-          "Mobile:",
-          isMobile
-        )}
-      >
-        Bools!
-      </button>{" "} */}
-      {/* [{isDesktop},{isTablet},{isMobile}] */}
-      {/* [
-        {
-          ("Desktop:",
-          { isDesktop },
-          "Tablet:",
-          { isTablet },
-          "Mobile:",
-          { isMobile })
-        }
-        ] */}
+      {String(isDesktop)}
+      {String(isTablet)}
+      {String(isMobile)}
+      {/* {console.log(isMobile, isTablet, isDesktop)} */}
     </>
   );
-  // }
-}
-{
-  /* {windowWidth < 768
-            ? windowWidth < 900
-              ? ("window width is bigger than 900",
-                (isDesktop = false),
-                (isTablet = true),
-                (isMobile = false))
-              : ("window width bigger than 768 smaller than 900",
-                (isDesktop = false),
-                (isTablet = false),
-                (isMobile = false))
-            : ("window width is smaller than 768",
-              (isDesktop = true),
-              (isTablet = false),
-              (isMobile = true))} */
-}
-{
-  /* 
-        <button onClick={triggerToggle}>Toggle WindowTracker</button>
-          {
-            show && <h1>Window width: {windowWidth}px </h1>
-            // <p>
-            //   isDesktop:{isDesktop}, isTablet:{isTablet},isMobile:{isMobile}
-            // </p>
-          }{" "}
-          <button onClick={triggerToggle}>Toggle bools</button>
-          {show && (
-            <p>
-              isDesktop:{isDesktop}, isTablet:{isTablet},isMobile:{isMobile}
-            </p>
-          )} */
-}
-{
-  /* <button
-          onClick={console.log(
-            "Desktop:",
-            isDesktop,
-            "Tablet:",
-            isTablet,
-            "Mobile:",
-            isMobile
-          )}
-        >
-          Bools!
-        </button> */
 }

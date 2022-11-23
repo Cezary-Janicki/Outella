@@ -5,7 +5,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Body_Wrapper from "../components/wrappers/body_wrapper";
-import Width_Check from "../components/width_check";
+// import { isMobile,isTablet,isDesktop } from "../components/width_check/values";
 
 export default function Faq() {
   const database = [
@@ -30,10 +30,9 @@ export default function Faq() {
       answer: "pytanie 3",
     },
   ];
-  let xxx = Width_Check();
+
   return (
     <Body_Wrapper>
-      <button onClick={console.log("check", xxx)}>Bools?</button>
       <p>Często zadawane pytania</p>
       {database.map((faqEntry, index) => (
         <Accordion key={index}>
