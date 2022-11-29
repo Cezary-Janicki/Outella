@@ -6,17 +6,18 @@ import { css } from "@emotion/react";
 import Link from "next/link";
 // import Hamburger_Menu from "../hamburger";
 import { GetSortedProductsData } from "../../lib/products";
-const navbarColumn = css`
-  /* Flexbox */
-  flex-direction: column;
-`;
-const navbarRow = css`
-  /* Flexbox */
-  flex-direction: row;
-  /* General CSS */
-  margin: 2vh 2vw 2vh 0vw;
-`;
+
 export default function NavBarVer() {
+  const navbarColumn = css`
+    /* Flexbox */
+    flex-direction: column;
+  `;
+  const navbarRow = css`
+    /* Flexbox */
+    flex-direction: row;
+    /* General CSS */
+    margin: 2vh 2vw 2vh 0vw;
+  `;
   const products = GetSortedProductsData();
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
 

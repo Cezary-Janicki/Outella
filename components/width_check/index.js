@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { desktopBreakPoint, tabletBreakPoint } from "./values";
 export default function Width_Check() {
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -23,21 +23,20 @@ export default function Width_Check() {
   let isDesktop = new Boolean(false);
 
   {
-    windowWidth > 1000
+    windowWidth > desktopBreakPoint
       ? //   "window width is bigger than 1000 DESKTOP"
         ((isDesktop = true), (isTablet = false), (isMobile = false))
-      : windowWidth > 800 //"window width is bigger than 800 TABLET",
+      : windowWidth > tabletBreakPoint //"window width is bigger than 800 TABLET",
       ? ((isDesktop = false), (isTablet = true), (isMobile = false))
       : //"window width is smaller than 800 MOBILE ",
         ((isDesktop = false), (isTablet = false), (isMobile = true));
-  } // i think i need to write a useState to keep track of which bool is active and then return the usestae te value
+  }
 
   return (
     <>
       {String(isDesktop)}
       {String(isTablet)}
       {String(isMobile)}
-      {/* {console.log(isMobile, isTablet, isDesktop)} */}
     </>
   );
 }

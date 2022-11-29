@@ -12,3 +12,5 @@ export let isDesktop = () => {
   let dataArray = Width_Check();
   return dataArray.props.children[0];
 };
+export const desktopBreakPoint = 1000;
+export const tabletBreakPoint = 800;

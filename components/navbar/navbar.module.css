@@ -1,56 +1,42 @@
-/* .hamubrger{
-  display:none;
+.hamMenu {
+  position: absolute;
+  top: 0vw;
+  left: 0vw;
+  width: 100vw;
 }
-@media (max-width:767px){
-  .hamubrger{
-    display:fixed;
-    padding-top: 10px;
-    margin-left:10px;
-    z-index:10;
-  }
-} */
-.break{
-  /* position:absolute; */
-  /* z-index: 10; */
-}
-.hamMenu{
-position:absolute;
-top:0vw;
-left:0vw;
-width:100vw;
-}
-.hamIcon{
-position:absolute;
-top:0vw;
-left:0vw;
-/* z-index: auto;  <= xD ?*/ 
+.hamIcon {
+  position: absolute;
+  top: 0vw;
+  left: 0vw;
 }
 
-@media (min-width:767px){
-  .hamMenu{
-    /* display:none; */
-    visibility: hidden;
-
-  }
-  .hamIcon{
-    display:inline;
-    visibility: hidden;
-  }
-}
-
-
-@media (max-width:768px){
-  .regularMenu{
+@media (min-width: 767px) {
+  .hamMenu {
     /* display:none; */
     visibility: hidden;
   }
-  .hamMenuOpen{
-    background-position: left ;
-    background: linear-gradient(90deg, rgba(170,50,220,0.975) 0%, rgba(255,255,255,1) 100%); 
+  .hamIcon {
+    display: inline;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .regularMenu {
+    /* display:none; */
+    visibility: hidden;
+  }
+  .hamMenuOpen {
+    background-position: left;
+    background: linear-gradient(
+      90deg,
+      rgba(170, 50, 220, 0.975) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
     background-size: cover;
   }
-  .hamIcon{
-    display:inline;
+  .hamIcon {
+    display: inline;
     visibility: visible;
   }
 }
@@ -60,16 +46,15 @@ left:0vw;
   justify-content: center;
   flex-wrap: nowrap;
   height: 100%;
-  width:100%;
+  width: 100%;
   /* background-color: rgba(170, 50, 220, 0.1); */
   /* General CSS */
   border-width: 3mm 0 3mm 0;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 
   /* Hamburger menu*/
   /* display: ${hamburgerOpen ? 'inline' : 'none'}; */
 }
-
 
 .navbarColumn {
   /* Flexbox */
@@ -77,7 +62,6 @@ left:0vw;
   /* justify-content:center; */
   /* General CSS */
 }
-
 
 .navbarRow {
   /* Flexbox */

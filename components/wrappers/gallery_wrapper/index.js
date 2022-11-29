@@ -13,8 +13,8 @@ function Gallery_Wrapper({ children, title }) {
       display: block;
       width: 100%;
       height: auto;
-      backface-visibility: hidden;
       transition: 0.5s ease;
+      backface-visibility: hidden;
     }
   `;
   const TextWrapper = styled.div`
@@ -35,19 +35,21 @@ function Gallery_Wrapper({ children, title }) {
   `;
 
   const ImageWrapper = styled.div`
+     {
+      transition: 0.5s ease;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+    }
     :hover ${Image} {
+      transition: all 0.5s ease;
       opacity: 0.6;
       filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
         saturate(150%) contrast(1);
     }
     :hover ${TextWrapper} {
       opacity: 1;
-    }
-     {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      cursor: pointer;
     }
   `;
 
