@@ -3,9 +3,11 @@
 //React components
 import React from "react";
 import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import Link from "next/link";
 import { GetSortedPostsData } from "../../lib/posts";
-import Footer_Wrapper from "./footer_wrapper";
+import Footer_Column_Wrapper from "./Footer_Column_Wrapper";
+import { tabletBreakPoint, desktopBreakPoint } from "../width_check/values";
 export async function getStaticProps() {
   // const allPostsData = GetSortedProductsData();
   const allPostsData = GetSortedPostsData();
@@ -30,20 +32,42 @@ const row = css`
   align-content: space-between;
   margin: 3vh 0 0 0;
 `;
+const Footer_Wrapper = styled.div`
+  padding: 10px 10px 10px 10px;
+  @media (min-width: ${desktopBreakPoint}px) {
+    /* Flexbox  */
+    display: flex;
+    justify-content: space-around;
+
+    /* General CSS */
+    height: auto;
+    width: auto;
+    margin: 3vh 0 0 0;
+  }
+  @media (max-width: ${desktopBreakPoint}px) {
+    /* General CSS */
+    height: auto;
+    width: auto;
+    margin: 3vh 0 0 3vh;
+  }
+`;
+const Gradient = styled.div`
+  // positon: relative;
+  // top: -100px;
+  // margin: 3vh 3vh 3vh 3vh;
+
+  // this part of the code is responsible forthe footer gradient line
+  background: radial-gradient(
+    circle,
+    rgba(170, 50, 220, 0.71) 0%,
+    rgba(255, 255, 255, 1) 80%
+  );
+  background-size: cover;
+`;
 export default function Footer() {
   return (
     <div>
-      <div
-        css={css`
-          // this part of the code is responsible forthe footer gradient line
-          background: radial-gradient(
-            circle,
-            rgba(170, 50, 220, 0.71) 0%,
-            rgba(255, 255, 255, 1) 80%
-          );
-          background-size: cover;
-        `}
-      >
+      <Gradient>
         <div
           css={css`
             height: 2px;
@@ -51,19 +75,8 @@ export default function Footer() {
             color: rgba(255, 255, 255, 1);
           `}
         >
-          <footer
-            css={css`
-              /* Flexbox  */
-              display: flex;
-              justify-content: space-around;
-              flex-wrap: nowrap;
-              /* General CSS */
-              height: auto;
-              width: auto;
-              margin: 3vh 0 0 0;
-            `}
-          >
-            <Footer_Wrapper>
+          <Footer_Wrapper>
+            <Footer_Column_Wrapper>
               <h2>Informacje</h2>
               {foo.map((d, index) => (
                 <div key={index}>
@@ -79,19 +92,19 @@ export default function Footer() {
                   <p>Często zadwane pytania</p>
                 </a>
               </Link>
-            </Footer_Wrapper>
+            </Footer_Column_Wrapper>
 
-            <Footer_Wrapper>
+            <Footer_Column_Wrapper>
               <h2>Dane firmy</h2>
               <p>Cezary Janicki</p>
               <p>Outella</p>
               <p>Email: Cezary.D.Janicki@gmail.com</p>
               <p>NIP:7792517402</p>
               <p>REGON:386684150</p>
-            </Footer_Wrapper>
-          </footer>
+            </Footer_Column_Wrapper>
+          </Footer_Wrapper>
         </div>
-      </div>
+      </Gradient>
     </div>
   );
 }

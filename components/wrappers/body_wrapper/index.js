@@ -3,7 +3,7 @@
 //React components
 import React from "react";
 import PropTypes from "prop-types";
-// import styles from "../../../styles/Home.module.css";
+import styles from "../../../styles/Home.module.css";
 import Head from "../../head";
 import Title from "../../title";
 import NavBar from "../../navbar";

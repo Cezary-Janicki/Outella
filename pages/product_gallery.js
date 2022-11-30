@@ -15,7 +15,6 @@ import Formik_Filtering from "../components/formik_filtering";
 function ProductGallery() {
   //DATA FETCHING FROM A SERVER
   const products = GetSortedProductsData();
-  // console.log("products", products[1])
 
   // Hooks and filtering for the selectable gallery
   // this gallery filtering makes the product gallery brake on site refresh

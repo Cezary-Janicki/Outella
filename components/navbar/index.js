@@ -3,7 +3,6 @@
 //React components
 import React from "react";
 import styled from "@emotion/styled";
-import styles from "./navbar.module.css";
 // import Hamburger_Menu from "../hamburger";
 import { useState } from "react";
 import NavBarHorizontal from "../navbar_horizontal";
@@ -11,11 +10,11 @@ import NavBarVer from "../navbar_ver";
 import Hamburger from "hamburger-react";
 
 import {
-  isMobile,
-  isTablet,
-  isDesktop,
+  // isMobile,
+  // isTablet,
+  // isDesktop,
   desktopBreakPoint,
-  tabletBreakPoint,
+  // tabletBreakPoint,
 } from "../width_check/values";
 
 export default function NavBar() {

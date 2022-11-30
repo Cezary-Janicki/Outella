@@ -15,7 +15,7 @@ function Body_Wrapper_No_Main({ children }) {
       <Head />
       <Title />
       <NavBar />
-      <main>{children}</main>
+      {children}
       <Footer />
     </div>
   );

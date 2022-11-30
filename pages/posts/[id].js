@@ -21,7 +21,6 @@ export async function getStaticPaths() {
   };
 }
 function Post({ postData }) {
-  console.log("postData", postData);
   return (
     <Body_Wrapper>
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />

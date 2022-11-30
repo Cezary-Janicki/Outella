@@ -1,85 +1,75 @@
-*{
-    /* box-sizing: border-box; */
-    font-family: 'Montserrat', sans-serif;
-    /* font-family: 'Playfair Display', serif; */
-
-    /* font:"Montserrat", sans-serif; */
-    /* font-family: "Montserrat"; */
-    font-weight: 400;
-    color:rgba(0, 0, 0, 0.836);
-
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.836);
 }
-h1{
-    font-weight: bold ;
+h1 {
+  font-weight: bold;
 }
-main{
-    font-size: 15px;
-    /* margin: 0vh 10vw 0vh 10vw; */
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    
+main {
+  font-size: 15px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-p{
-    /* Word styling */
-    font-size:100%;
-    font:inherit;
-    line-height: 1.8rem;
-    word-spacing: 0.4rem;
-    letter-spacing: 0.1rem;
+p {
+  /* Word styling */
+  font-size: 100%;
+  font: inherit;
+  line-height: 1.8rem;
+  word-spacing: 0.4rem;
+  letter-spacing: 0.1rem;
 }
-html,body.div,img{
-    padding:0;
-    border:0;
-    vertical-align: baseline;
+html,
+body.div,
+img {
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
 
-    /* Word styling */
-    font-size:100%;
-    font:inherit;
-    line-height: 1.2rem;
-    word-spacing: 0.4rem;
-    letter-spacing: 0.06rem;
+  /* Word styling */
+  font-size: 100%;
+  font: inherit;
+  line-height: 1.2rem;
+  word-spacing: 0.4rem;
+  letter-spacing: 0.06rem;
 }
-.container{
-    /* General CSS */
-    margin:0px -8px -8px -8px ;
-    /* Flexbox */
-    display:flex;
-    flex-wrap:wrap; 
-    justify-content: space-around;
-}
-
-body{
-    margin: 10px 0 0 0 ;
-    min-height: 100vh;
-
-}
-a{
-outline:none;
-text-decoration: none;
-/* padding: 2px 1px 0px; */
+.container {
+  /* General CSS */
+  margin: 0px -8px -8px -8px;
+  /* Flexbox */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-
-a:link{
-/* color: #265301; */
-cursor:pointer;
+body {
+  margin: 10px 0 0 0;
+  min-height: 100vh;
+}
+a {
+  outline: none;
+  text-decoration: none;
+  /* padding: 2px 1px 0px; */
 }
 
-a:focus{
-color: #437A16;
-/* background: #BAE498; */
+a:link {
+  /* color: #265301; */
+  cursor: pointer;
 }
 
-a:hover{
-border-bottom: 1px solid;
-cursor:pointer;     
+a:focus {
+  color: #437a16;
+  /* background: #BAE498; */
 }
 
-a:active{
-/* background: #265301; */
-/* color: #CDFEAA; */
-
+a:hover {
+  border-bottom: 1px solid;
+  cursor: pointer;
 }
 
+a:active {
+  /* background: #265301; */
+  /* color: #CDFEAA; */
+}

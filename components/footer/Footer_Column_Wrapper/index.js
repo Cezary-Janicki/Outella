@@ -4,7 +4,7 @@
 import { css } from "@emotion/react";
 import React from "react";
 
-export default function Footer_Wrapper({ children }) {
+export default function Footer_Column_Wrapper({ children }) {
   return (
     <div
       css={css`
