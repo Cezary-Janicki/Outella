@@ -22,7 +22,21 @@ export default function NavBarVer() {
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
 
   return (
-    <div>
+    <div
+      css={css`
+        z-index: 1;
+        position: fixed;
+        top: 0px;
+        display: inline-block;
+        height: 100vh;
+        background-position: left;
+        background: linear-gradient(
+          90deg,
+          rgb(242, 224, 230, 0.975) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      `}
+    >
       <div
         css={css`
           /* Flexbox */
@@ -30,7 +44,7 @@ export default function NavBarVer() {
           justify-content: center;
           flex-wrap: wrap;
           height: 100%;
-          width: 35%;
+          width: 45%;
           /* General CSS */
           border-width: 3mm 0 3mm 0;
           font-family: "Playfair Display", serif;
