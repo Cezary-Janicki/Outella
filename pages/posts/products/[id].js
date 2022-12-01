@@ -73,7 +73,7 @@ function ProductPage({ photoNumber, id, ...dress }) {
           @media (min-width: ${desktopBreakPoint}px) {
             display: flex;
           }
-          padding: 0px 10px 0px 10px;
+          padding: 0px 10vw 0px 10vw;
           // display: flex;
         `}
       >

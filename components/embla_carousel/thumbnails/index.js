@@ -1,3 +1,4 @@
+//React components
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "../image_carousel/image_carousel.module.css";

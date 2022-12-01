@@ -1,4 +1,8 @@
-//EMBLA
+/** @jsxImportSource @emotion/react */
+
+//React components
+import css from "@emotion/css";
+import styled from "@emotion/styled";
 import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import PropTypes from "prop-types";
@@ -9,7 +13,6 @@ import Thumbnails from "../thumbnails";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import styles from "./image_carousel.module.css";
-// import { useAppContext } from '../../../context/state';
 import axios from "axios";
 
 const EmblaCarousel = ({ slides, id }) => {
@@ -23,7 +26,6 @@ const EmblaCarousel = ({ slides, id }) => {
         setDress(res.data);
       });
   });
-  // }, [dress]); // previous version that esLint didnt like
 
   //MAIN EMBLA CODE
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -104,10 +106,3 @@ EmblaCarousel.propTypes = {
   id: PropTypes.number,
 };
 export default EmblaCarousel;
-
-/*
-I cant seem to pass props into the return statement. I also cant make it a function as it breakes the code
-I need to learn how the return statement works without function being involved so i rewrite it to accept props
-
-
-*/

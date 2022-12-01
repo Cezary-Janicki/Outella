@@ -37,7 +37,8 @@ export default function NavBar() {
     z-index: 2;
     position: fixed;
     top: 1vw;
-    right: 10vw;
+    right: 3vw;
+
     // display: inline;
   `;
 
