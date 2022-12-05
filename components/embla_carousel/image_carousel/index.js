@@ -19,7 +19,7 @@ const EmblaCarousel = ({ slides, id }) => {
   let [dress, setDress] = useState();
   useEffect(() => {
     axios
-      .get(`https://outella-vercel-database.vercel.app/products/${id}`)
+      .get(`https://outella-database.vercel.app/products/${id}`)
       .then((res) => {
         setDress(res.data);
       });

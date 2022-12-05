@@ -30,16 +30,14 @@ export async function getStaticProps({ params }) {
 export function AppWrapper({ children }) {
   let [dress, setDress] = useState([]);
   useEffect(() => {
-    axios
-      .get(`https://outella-vercel-database.vercel.app/products`)
-      .then((res) => {
-        setDress(res.data);
-      });
+    axios.get(`https://outella-database.vercel.app/products`).then((res) => {
+      setDress(res.data);
+    });
   }, []);
 
   // let [id,setId] = useState([])
   // useEffect(()=>{
-  //     axios.get(`https://outella-vercel-database.vercel.app/products`).then(res =>{
+  //     axios.get(`https://outella-database.vercel.app/products`).then(res =>{
   //       const dressData=res.data.map(dressNames => {
   //         const dressNumber = dressNames.id
   //         const dressName = dressNames.pictureName

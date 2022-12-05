@@ -21,19 +21,17 @@ export async function getStaticProps({ params }) {
 export function DressIdContextWrapper({ children }) {
   let [id, setId] = useState([]);
   useEffect(() => {
-    axios
-      .get(`https://outella-vercel-database.vercel.app/products`)
-      .then((res) => {
-        const dressData = res.data.map((dressNames) => {
-          const dressNumber = dressNames.id;
-          const dressName = dressNames.pictureName;
-          const id = dressName.concat(dressNumber).toString();
-          return {
-            params: { id },
-          };
-        });
-        setId(dressData);
+    axios.get(`https://outella-database.vercel.app/products`).then((res) => {
+      const dressData = res.data.map((dressNames) => {
+        const dressNumber = dressNames.id;
+        const dressName = dressNames.pictureName;
+        const id = dressName.concat(dressNumber).toString();
+        return {
+          params: { id },
+        };
       });
+      setId(dressData);
+    });
   }, []);
 
   return (
