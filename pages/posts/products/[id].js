@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   // Fetch paths from endpoint at build-time, generate static pages
   const {
     data: [paths],
-  } = await axios.get(`https://outella-database.herokuapp.com/productIds`);
+  } = await axios.get(`https://outella-vercel-database.vercel.app/productIds`);
 
   return {
     paths, // Array<{params: {id: number} }>
@@ -36,7 +36,7 @@ export async function getStaticProps({ params }) {
 
   // Fetch product from database, provide as props
   const { data } = await axios(
-    `https://outella-database.herokuapp.com/products/${id}`
+    `https://outella-vercel-database.vercel.app/products/${id}`
   );
   return {
     props: {
