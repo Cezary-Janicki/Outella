@@ -2,7 +2,6 @@
 
 //React components
 import React from "react";
-import css from "@emotion/css";
 import styled from "@emotion/styled";
 import { useState } from "react";
 import NavBarHorizontal from "../navbar_horizontal";

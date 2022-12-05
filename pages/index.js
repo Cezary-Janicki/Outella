@@ -9,14 +9,9 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 //Page components
 import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
-import Body_Wrapper from "../components/wrappers/body_wrapper";
 import Dresses_Types from "../components/dresses_types";
 import Bestsellers from "../components/bestsellers";
-import Body_Wrapper_No_Main from "../components/wrappers/body_wrapper_no_main";
-import {
-  desktopBreakPoint,
-  tabletBreakPoint,
-} from "../components/width_check/values";
+import { desktopBreakPoint } from "../components/width_check/values";
 // import Slider_Gallery from "../components/slider_gallery";
 
 // //Main function

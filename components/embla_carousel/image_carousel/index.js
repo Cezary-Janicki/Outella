@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 //React components
-import css from "@emotion/css";
-import styled from "@emotion/styled";
 import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import PropTypes from "prop-types";

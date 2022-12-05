@@ -3,7 +3,6 @@
 //React components
 import React from "react";
 import css from "@emotion/css";
-import styled from "@emotion/styled";
 import { useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
@@ -11,10 +10,7 @@ import PropTypes from "prop-types";
 import Body_Wrapper_No_main from "../../../components/wrappers/body_wrapper_no_main";
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 import { getPhotoCount } from "../../../lib/products";
-import {
-  desktopBreakPoint,
-  tabletBreakPoint,
-} from "../../../components/width_check/values";
+import { desktopBreakPoint } from "../../../components/width_check/values";
 // See https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
 export async function getStaticPaths() {
   // Fetch paths from endpoint at build-time, generate static pages

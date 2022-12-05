@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 import React from "react";
-import styled from "@emotion/styled";
 
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";

@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 import { GetSortedPostsData } from "../../lib/posts";
 import Footer_Column_Wrapper from "./Footer_Column_Wrapper";
-import { tabletBreakPoint, desktopBreakPoint } from "../width_check/values";
+import { desktopBreakPoint } from "../width_check/values";
 export async function getStaticProps() {
   // const allPostsData = GetSortedProductsData();
   const allPostsData = GetSortedPostsData();
