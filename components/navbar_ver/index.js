@@ -31,11 +31,6 @@ export default function NavBarVer() {
         height: 100vh;
         width: 100vw;
         background-position: left;
-        // background: linear-gradient(
-        //   90deg,
-        //   rgb(245, 200, 205, 0.99) 25%,
-        //   rgba(245, 225, 235, 0.5) 85%
-        // );
         background: linear-gradient(
           90deg,
           rgba(232, 176, 190, 1) 20%,

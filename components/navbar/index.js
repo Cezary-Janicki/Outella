@@ -27,23 +27,6 @@ export default function NavBar() {
     left: 0vw;
     width: 100vw;
   `;
-  const HamIcon = styled.div`
-    @media (min-width: ${desktopBreakPoint}px) {
-      visibility: hidden;
-    }
-    @media (max-width: ${desktopBreakPoint}px) {
-      visibility: visible;
-    }
-    z-index: 2;
-    position: fixed;
-    top: 1vw;
-    right: 3vw;
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 1) 10%,
-      rgba(255, 255, 255, 0) 75%
-    );
-  `;
 
   const RegularMenu = styled.div`
     @media (max-width: ${desktopBreakPoint}px) {
@@ -65,7 +48,6 @@ export default function NavBar() {
           <NavBarVer />
         </HamMenu>
       )}
-      {/* <HamIcon onClick={() => setIsOpen(!isOpen)}> */}
       <div
         onClick={() => setIsOpen(!isOpen)}
         css={css`
@@ -79,13 +61,8 @@ export default function NavBar() {
           position: fixed;
           top: 1vw;
           right: 3vw;
-          // background: radial-gradient(
-          //   circle,
-          //   rgba(255, 255, 255, 1) 10%,
-          //   rgba(255, 255, 255, 0) 75%
-          // );
           ${isOpen === true
-            ? `          background: radial-gradient(
+            ? `background: radial-gradient(
             circle,
             rgba(255, 255, 255, 1) 10%,
             rgba(255, 255, 255, 0) 75%
@@ -95,8 +72,6 @@ export default function NavBar() {
       >
         <Hamburger toggled={!isOpen} toggle={setIsOpen} />
       </div>
-      {/* </div> */}
-      {/* </HamIcon> */}
     </div>
   );
 }

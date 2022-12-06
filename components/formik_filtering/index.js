@@ -150,7 +150,7 @@ function Formik_Filtering({
               <Grid item xs={12} sm={6}>
                 <FormControl fullWidth variant="outlined">
                   <InputLabel id="search-minPrice">
-                    <>Minimalna cena</>
+                    <em>Minimalna cena</em>
                   </InputLabel>
                   <Field
                     as={Input}
@@ -163,7 +163,9 @@ function Formik_Filtering({
               </Grid>
               <Grid item xs={12} sm={6}>
                 <FormControl fullWidth variant="outlined">
-                  <InputLabel id="search-maxPrice">Maksymalna cena</InputLabel>
+                  <InputLabel id="search-maxPrice">
+                    <em>Maksymalna cena</em>
+                  </InputLabel>
                   <Field
                     as={Input}
                     name="maxPrice"

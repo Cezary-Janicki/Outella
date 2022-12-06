@@ -8,10 +8,10 @@ import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
 import React from "react";
 //Page components
-import Body_Wrapper_No_main from "../components/wrappers/body_wrapper_no_main";
+import Product_Gallery_Wrapper from "../components/wrappers/Product_Gallery_Wrapper";
 import Gallery_Picture from "../components/gallery_picture";
-import Formik_Filtering from "../components/formik_filtering";
-
+// import Formik_Filtering from "../components/formik_filtering";
+import Formik_Filtering_Wrapper from "../components/wrappers/formik_filtering_wrapper";
 function ProductGallery() {
   //DATA FETCHING FROM A SERVER
   const products = GetSortedProductsData();
@@ -43,9 +43,9 @@ function ProductGallery() {
   };
 
   return (
-    <Body_Wrapper_No_main>
+    <Product_Gallery_Wrapper>
       {/* <Issue2> */}
-      <Formik_Filtering
+      <Formik_Filtering_Wrapper
         products={products}
         galleryItems={galleryItems}
         dressColors={dressColors}
@@ -74,7 +74,7 @@ function ProductGallery() {
           <Gallery_Picture item={item} />
         </div>
       </div>
-    </Body_Wrapper_No_main>
+    </Product_Gallery_Wrapper>
   );
 }
 export default ProductGallery;
