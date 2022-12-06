@@ -2,6 +2,7 @@
 
 //React components
 import React from "react";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { useState } from "react";
 import NavBarHorizontal from "../navbar_horizontal";
@@ -37,8 +38,11 @@ export default function NavBar() {
     position: fixed;
     top: 1vw;
     right: 3vw;
-
-    // display: inline;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 1) 10%,
+      rgba(255, 255, 255, 0) 75%
+    );
   `;
 
   const RegularMenu = styled.div`
@@ -61,18 +65,38 @@ export default function NavBar() {
           <NavBarVer />
         </HamMenu>
       )}
-      <HamIcon onClick={() => setIsOpen(!isOpen)}>
-        {/* <div // the animations dont seem to work with styled only css
+      {/* <HamIcon onClick={() => setIsOpen(!isOpen)}> */}
+      <div
         onClick={() => setIsOpen(!isOpen)}
         css={css`
-          position: sticky;
-          top: 0 px;
-          left: 0 px;
+          @media (min-width: ${desktopBreakPoint}px) {
+            visibility: hidden;
+          }
+          @media (max-width: ${desktopBreakPoint}px) {
+            visibility: visible;
+          }
+          z-index: 2;
+          position: fixed;
+          top: 1vw;
+          right: 3vw;
+          // background: radial-gradient(
+          //   circle,
+          //   rgba(255, 255, 255, 1) 10%,
+          //   rgba(255, 255, 255, 0) 75%
+          // );
+          ${isOpen === true
+            ? `          background: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 1) 10%,
+            rgba(255, 255, 255, 0) 75%
+          );`
+            : ``}
         `}
-      > */}
+      >
         <Hamburger toggled={!isOpen} toggle={setIsOpen} />
-        {/* </div> */}
-      </HamIcon>
+      </div>
+      {/* </div> */}
+      {/* </HamIcon> */}
     </div>
   );
 }
