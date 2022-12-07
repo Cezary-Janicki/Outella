@@ -107,27 +107,57 @@ export default function Formik_Filtering_Wrapper({
           queryFilter={queryFilter}
         />
       </RegularMenu>
-
-      {isOpen ? (
-        <HamMenu></HamMenu>
-      ) : (
-        <HamMenu>
-          <div
-            css={css`
-              position: fixed;
-              top: 30px;
-              z-index: 1;
-            `}
-          >
-            <Formik_Filtering
-              products={products}
-              galleryItems={galleryItems}
-              dressColors={dressColors}
-              queryFilter={queryFilter}
-            />
-          </div>
-        </HamMenu>
-      )}
+      <div
+        // when i put a background here it works but it's able to be scrolled down
+        // i need to find a way to put a global background with 100vw 100vh and position absolute so that it can't be scrolled through
+        // the background should have a gradient similar to the one that is on hamburger menu but horizontal instead of a vertical one
+        css={css`
+          // background: green;
+          // top: -30px;
+          // height: 100vh;
+          // width: 100vw;
+        `}
+      >
+        {isOpen ? (
+          <HamMenu></HamMenu>
+        ) : (
+          <HamMenu>
+            <div>
+              {" "}
+              <div
+                css={css`
+                  position: fixed;
+                  top: 30px;
+                  z-index: 2;
+                `}
+              >
+                <Formik_Filtering
+                  products={products}
+                  galleryItems={galleryItems}
+                  dressColors={dressColors}
+                  queryFilter={queryFilter}
+                />
+              </div>
+              <div
+                css={css`
+                  position: fixed;
+                  z-index: 1;
+                  transparency: 50%;
+                  background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 1) 10%,
+                    rgba(232, 176, 190, 1) 50%,
+                    rgba(239, 207, 212, 0.75) 70%,
+                    rgba(245, 220, 224, 0.5) 100%
+                  );
+                  height: 100vh;
+                  width: 100vw;
+                `}
+              ></div>
+            </div>
+          </HamMenu>
+        )}
+      </div>
       <div
         onClick={() => setIsOpen(!isOpen)}
         css={css`
@@ -150,6 +180,12 @@ export default function Formik_Filtering_Wrapper({
             : ``}
         `}
       >
+        {/* <div
+          css={css`
+            background: green;
+            background-size: cover;
+          `}
+        ></div> */}
         <Hamburger toggled={!isOpen} toggle={setIsOpen} />
       </div>
     </div>

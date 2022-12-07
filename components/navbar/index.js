@@ -42,9 +42,9 @@ export default function NavBar() {
       </RegularMenu>
 
       {isOpen ? (
-        <HamMenu onClick={() => setIsOpen(!isOpen)}></HamMenu>
+        <HamMenu></HamMenu>
       ) : (
-        <HamMenu onClick={() => setIsOpen(!isOpen)}>
+        <HamMenu>
           <NavBarVer />
         </HamMenu>
       )}
