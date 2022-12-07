@@ -92,7 +92,7 @@ export default function Formik_Filtering_Wrapper({
 
   const RegularMenu = styled.div`
     @media (max-width: ${desktopBreakPoint}px) {
-      visibility: hidden;
+      display: none;
     }
   `;
   const [isOpen, setIsOpen] = useState(true);
@@ -109,15 +109,23 @@ export default function Formik_Filtering_Wrapper({
       </RegularMenu>
 
       {isOpen ? (
-        <HamMenu onClick={() => setIsOpen(!isOpen)}></HamMenu>
+        <HamMenu></HamMenu>
       ) : (
-        <HamMenu onClick={() => setIsOpen(!isOpen)}>
-          <Formik_Filtering
-            products={products}
-            galleryItems={galleryItems}
-            dressColors={dressColors}
-            queryFilter={queryFilter}
-          />
+        <HamMenu>
+          <div
+            css={css`
+              position: fixed;
+              top: 30px;
+              z-index: 1;
+            `}
+          >
+            <Formik_Filtering
+              products={products}
+              galleryItems={galleryItems}
+              dressColors={dressColors}
+              queryFilter={queryFilter}
+            />
+          </div>
         </HamMenu>
       )}
       <div

@@ -2,7 +2,6 @@
 
 //React components
 import { css } from "@emotion/react";
-// import styles from "./bla.module.css";
 import { useState } from "react";
 import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
@@ -10,8 +9,8 @@ import React from "react";
 //Page components
 import Product_Gallery_Wrapper from "../components/wrappers/Product_Gallery_Wrapper";
 import Gallery_Picture from "../components/gallery_picture";
-// import Formik_Filtering from "../components/formik_filtering";
 import Formik_Filtering_Wrapper from "../components/wrappers/formik_filtering_wrapper";
+
 function ProductGallery() {
   //DATA FETCHING FROM A SERVER
   const products = GetSortedProductsData();
