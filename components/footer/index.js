@@ -48,7 +48,7 @@ const Footer_Wrapper = styled.div`
     /* General CSS */
     height: auto;
     width: auto;
-    margin: 3vh 0 0 3vh;
+    margin: 2vw 0 0 2vw;
   }
 `;
 const Gradient = styled.div`

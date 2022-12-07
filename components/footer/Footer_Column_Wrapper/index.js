@@ -15,7 +15,7 @@ export default function Footer_Column_Wrapper({ children }) {
         css={css`
           flex-direction: column;
           align-content: space-between;
-          margin: 3vh 0 0 0;
+          // margin: 3vh 0 0 0;
         `}
       >
         {children}

@@ -127,7 +127,7 @@ export default function Formik_Filtering_Wrapper({
               <div
                 css={css`
                   position: fixed;
-                  top: 30px;
+                  top: 55px;
                   z-index: 2;
                 `}
               >
@@ -145,7 +145,7 @@ export default function Formik_Filtering_Wrapper({
                   transparency: 50%;
                   background: linear-gradient(
                     180deg,
-                    rgba(255, 255, 255, 1) 10%,
+                    rgba(255, 255, 255, 1) 15%,
                     rgba(232, 176, 190, 1) 50%,
                     rgba(239, 207, 212, 0.75) 70%,
                     rgba(245, 220, 224, 0.5) 100%

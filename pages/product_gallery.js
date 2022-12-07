@@ -61,9 +61,7 @@ function ProductGallery() {
         <div
           css={css`
             width: 75%;
-            margin-left: auto;
-            margin-right: 5vw;
-
+            margin: 3vw;
             display: flex;
             flex: 3;
             flex-wrap: wrap;
