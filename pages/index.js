@@ -38,7 +38,7 @@ export default function Home() {
     <>
       <Body_Wrapper_No_main>
         <Main>
-          <Link href="./product_gallery">
+          <Link href="./product_gallery?style=all&color=all&minPrice=&maxPrice=">
             <a>
               <p>
                 <div css={description}>Galeria produtków</div>

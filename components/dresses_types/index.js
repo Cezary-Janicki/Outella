@@ -22,7 +22,7 @@ export default function Dresses_Types() {
     >
       {/*==================== D R E S S E S _ T Y P E S ====================>*/}
       <div css={gridBox}>
-        <Link href="product_gallery">
+        <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
           <a>
             <Image_Wrapper>
               <Image
@@ -37,7 +37,7 @@ export default function Dresses_Types() {
         </Link>
       </div>
       <div css={gridBox}>
-        <Link href="product_gallery">
+        <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
           <a>
             <Image_Wrapper>
               <Image
@@ -51,7 +51,7 @@ export default function Dresses_Types() {
         </Link>
       </div>
       <div css={gridBox}>
-        <Link href="product_gallery">
+        <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
           <a>
             <Image_Wrapper>
               <Image
@@ -65,7 +65,7 @@ export default function Dresses_Types() {
         </Link>
       </div>
       <div css={gridBox}>
-        <Link href="product_gallery">
+        <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
           <a>
             <Image_Wrapper>
               <Image
@@ -79,7 +79,7 @@ export default function Dresses_Types() {
         </Link>
       </div>
       <div css={gridBox}>
-        <Link href="product_gallery">
+        <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
           <a>
             <Image_Wrapper>
               <Image
