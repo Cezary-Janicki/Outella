@@ -6,7 +6,7 @@ import React from "react";
 import router, { useRouter } from "next/router";
 import PropTypes from "prop-types";
 //Formik and mui
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, useFormikContext } from "formik";
 import { Paper, Grid } from "@material-ui/core";
 import {
   InputLabel,
@@ -16,9 +16,8 @@ import {
   Input,
   Button,
 } from "@mui/material";
-import { useFormikContext } from "formik";
-import { useEffect } from "react";
 import debounce from "just-debounce-it";
+
 function Formik_Filtering({
   products,
   galleryItems,
