@@ -26,6 +26,7 @@
     "fs": "0.0.1-security",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.4.1",
+    "just-debounce-it": "^3.1.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "material-ui": "^0.20.2",

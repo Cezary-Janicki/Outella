@@ -16,13 +16,9 @@ import {
   Input,
   Button,
 } from "@mui/material";
-// import { getProductCount } from "../../lib/products";
-
-// function getCount(style){
-//   const count=getProductCount(style)
-//   return (count)
-// } //this function doesnt work properly there is an issue with context there is a placeholder for now
-
+import { useFormikContext } from "formik";
+import { useEffect } from "react";
+import debounce from "just-debounce-it";
 function Formik_Filtering({
   products,
   galleryItems,
@@ -78,6 +74,38 @@ function Formik_Filtering({
   const filteredColors = dressColors.filter(
     (item) => getColorCount(products, item) > 0
   );
+
+  // const MyAutoSavingComponent = () => {
+  //   const formik = useFormikContext();
+
+  //   useEffect(() => {
+  //     // use your own equality test or react-fast-compare because they are probably different objects
+  //     if (formik.values !== formik.initialValues) {
+  //       formik.submitForm(); // or onSubmit if you want to do validations before submitting
+  //     }
+  //   }, [formik, formik.values]);
+  //   // not listening for initialValues, because even if they are updated you probably don't want to autosave.
+  //   return null;
+  // };
+
+  const AutoSave = () => {
+    let debounceMs = 500; // time it takes for the request to be sent
+    const formik = useFormikContext();
+    const debouncedSubmit = React.useCallback(
+      //use callback caches the debounce function between re-renders
+      debounce(() => formik.submitForm(), debounceMs),
+      [debounceMs, formik.submitForm]
+    );
+    // debounce makes sure that the submitForm gets triggered only once and after the debounceMs period
+    // additional arguments trigger the debouncedSubmit to reload tbh im not sure it is needed
+    React.useEffect(() => {
+      if (formik.values !== formik.initialValues && formik.dirty)
+        debouncedSubmit();
+    }, [debouncedSubmit, formik.dirty, formik.initialValues, formik.values]);
+
+    return null;
+  };
+
   return (
     <Formik
       enableReinitialize // Pass this to re-render on initialValues change
@@ -112,7 +140,6 @@ function Formik_Filtering({
                     name="style"
                     as={Select}
                     labelid="search-style"
-                    // labelId="search-style"
                     label="Style"
                   >
                     <MenuItem value="all">
@@ -180,18 +207,18 @@ function Formik_Filtering({
                   type="submit"
                   variant="contained"
                   fullWidth
-                  // onSubmit={setTimeout(queryFilter, 1000)}
-                  // onClick={setTimeout(queryFilter, 1000)}
                   onClick={queryFilter}
                 >
-                  Search fields
+                  Search
                 </Button>
-                <Button type="submit" variant="contained" fullWidth>
+                {/* <Button type="submit" variant="contained" fullWidth>
                   Submit fields
-                </Button>
+                </Button> */}
               </Grid>
             </Grid>
           </Paper>
+          {/* <MyAutoSavingComponent /> */}
+          <AutoSave />
         </Form>
       )}
     </Formik>
