@@ -180,12 +180,14 @@ function Formik_Filtering({
                   type="submit"
                   variant="contained"
                   fullWidth
+                  // onSubmit={setTimeout(queryFilter, 1000)}
+                  // onClick={setTimeout(queryFilter, 1000)}
                   onClick={queryFilter}
                 >
-                  Search with on Click
+                  Search fields
                 </Button>
                 <Button type="submit" variant="contained" fullWidth>
-                  Search without on Click
+                  Submit fields
                 </Button>
               </Grid>
             </Grid>

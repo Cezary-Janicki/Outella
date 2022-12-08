@@ -43,12 +43,12 @@ export default function NavBarVer() {
         css={css`
           /* Flexbox */
           display: flex;
-          justify-content: center;
+          justify-content: left;
           flex-wrap: wrap;
-          height: 100%;
+          height: auto;
           width: 45%;
           /* General CSS */
-          border-width: 3mm 0 3mm 0;
+          // border-width: 3mm 0 3mm 0;
           font-family: "Playfair Display", serif;
           padding: 2vw 2vw 2vw 4vw;
         `}
@@ -63,9 +63,6 @@ export default function NavBarVer() {
                 <a>Sukienki {item} </a>
               </p>
             </Link>
-            <div css={navbarColumn}>
-              <p> </p>
-            </div>
           </div>
         ))}
         <div css={navbarRow}>

@@ -52,9 +52,12 @@ export default function Faq() {
       answer: "pytanie 3",
     },
   ];
-
+  setTimeout(function () {
+    console.log("Stuff be done");
+  }, 10000);
   return (
     <Body_Wrapper>
+      {/* <button onClick={setTimeout}>click me!</button> */}
       <div css={desktop}>isDesktop: {isDesktop()},</div>
       <div css={tablet}>isTablet: {isTablet()},</div>{" "}
       <div css={mobile}>isMobile:{isMobile()}</div>
