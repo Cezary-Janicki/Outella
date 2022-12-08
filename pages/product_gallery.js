@@ -52,7 +52,6 @@ function ProductGallery() {
       />
       {/* </Issue2> */}
 
-      <button onClick={queryFilter}>click me</button>
       <div
         css={css`
           display: flex;
