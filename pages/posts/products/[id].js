@@ -69,8 +69,7 @@ function ProductPage({ photoNumber, id, ...dress }) {
           @media (min-width: ${desktopBreakPoint}px) {
             display: flex;
           }
-          padding: 0px 10vw 0px 10vw;
-          // display: flex;
+          padding: 0px 3vw 0px 3vw;
         `}
       >
         <div //"sidebar"
@@ -82,8 +81,7 @@ function ProductPage({ photoNumber, id, ...dress }) {
         </div>
         <div //main content
           css={css`  flex: 3;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 30px;
+    margin: 0vh 3vw 0vh 3vw;
   }`}
         >
           <h1>{dress?.title}</h1>

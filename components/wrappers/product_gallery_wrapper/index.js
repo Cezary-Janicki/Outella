@@ -26,7 +26,13 @@ function Product_Gallery_Wrapper({ children }) {
       >
         <NavBar />
       </div>
-      {children}
+      <div
+        css={css`
+          margin-top: 2rem;
+        `}
+      >
+        {children}
+      </div>
       <Footer />
     </div>
   );
