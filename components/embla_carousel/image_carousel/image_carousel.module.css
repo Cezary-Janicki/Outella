@@ -1,36 +1,20 @@
 @media (max-width: 500px) {
   .embla_slide {
-    padding-left: 10px;
-    min-width: 100%;
-    min-height: 50vh;
-    position: relative;
+    min-height: 65vh;
   }
   .embla_slide_thumbnail {
     width: 9.75vmax;
     height: 13vmax;
   }
-  /* .embla_slide_inner {
-    position: relative;
-    overflow: hidden;
-    height: 10vh;
-  } */
 }
 @media (min-width: 501px) {
   .embla_slide {
-    padding-left: 10px;
-    min-width: 100%;
     min-height: 80vh;
-    position: relative;
   }
   .embla_slide_thumbnail {
     width: 15vmin;
     height: 22vmin;
   }
-  /* .embla_slide_inner {
-    position: relative;
-    overflow: hidden;
-    height: 190px;
-  } */
 }
 .embla {
   position: relative;
@@ -65,12 +49,11 @@
   margin-left: -10px;
 }
 
-/* .embla_slide {
-  padding-left: 10px;
+.embla_slide {
+  margin-right: 10px;
   min-width: 100%;
-  min-height: 100vw;
   position: relative;
-} */
+}
 
 .embla_slide_inner {
   position: relative;
@@ -124,8 +107,6 @@
   position: relative;
   opacity: 0.5;
   margin: auto;
-  /* width: 15vmin;
-  height: 22vmin; */
   transition: opacity 0.5s;
 }
 
