@@ -150,8 +150,8 @@ export default function Formik_Filtering_Wrapper({
                     rgba(239, 207, 212, 0.75) 70%,
                     rgba(245, 220, 224, 0.5) 100%
                   );
-                  height: 100vh;
-                  width: 100vw;
+                  height: 100%;
+                  width: 100%;
                 `}
               ></div>
             </div>
