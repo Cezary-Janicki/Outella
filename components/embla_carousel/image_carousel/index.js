@@ -68,7 +68,7 @@ const EmblaCarousel = ({ slides, id }) => {
                     dress?.pictureName
                   }.jpeg`}
                   layout="fill"
-                  objectFit="contain"
+                  objectFit="cover"
                 />
               </div>
             ))}
