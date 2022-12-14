@@ -144,10 +144,10 @@ export default function Formik_Filtering_Wrapper({
                   position: fixed;
                   display: inline-block;
                   z-index: 1;
-                  transparency: 50%;
                   top: 0px;
-                  height: 100%;
-                  width: 100%;
+                  height: 100vh;
+                  width: 100vw;
+                  transparency: 50%;
                   background: linear-gradient(
                     180deg,
                     rgba(255, 255, 255, 1) 15%,
