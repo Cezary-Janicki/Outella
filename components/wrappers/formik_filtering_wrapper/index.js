@@ -84,7 +84,7 @@ export default function Formik_Filtering_Wrapper({
     @media (min-width: ${desktopBreakPoint}px) {
       visibility: hidden;
     }
-    position: absolute;
+    position: fixed;
     top: 0vw;
     left: 0vw;
     width: 100vw;
@@ -127,10 +127,8 @@ export default function Formik_Filtering_Wrapper({
               <div
                 css={css`
                   position: fixed;
-                  top: 3rem;
+                  top: 55px;
                   z-index: 2;
-                  height: 100vh;
-                  width: 100vw;
                 `}
               >
                 <Formik_Filtering
