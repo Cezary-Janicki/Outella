@@ -89,6 +89,7 @@ export default function Formik_Filtering_Wrapper({
     left: 0px;
     // width: 100vw;
     width: 100%;
+    height: 100%;
   `;
 
   const RegularMenu = styled.div`
