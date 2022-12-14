@@ -87,7 +87,6 @@ export default function Formik_Filtering_Wrapper({
     position: fixed;
     top: 0px;
     left: 0px;
-    // width: 100vw;
     width: 100%;
     height: 100%;
   `;
@@ -143,6 +142,7 @@ export default function Formik_Filtering_Wrapper({
               <div
                 css={css`
                   position: fixed;
+                  display: inline-block;
                   z-index: 1;
                   transparency: 50%;
                   top: 0px;
