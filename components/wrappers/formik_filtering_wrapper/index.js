@@ -143,6 +143,9 @@ export default function Formik_Filtering_Wrapper({
                   position: fixed;
                   z-index: 1;
                   transparency: 50%;
+                  top: 0px;
+                  height: 100vh;
+                  width: 100vw;
                   background: linear-gradient(
                     180deg,
                     rgba(255, 255, 255, 1) 15%,
@@ -150,8 +153,6 @@ export default function Formik_Filtering_Wrapper({
                     rgba(239, 207, 212, 0.75) 70%,
                     rgba(245, 220, 224, 0.5) 100%
                   );
-                  height: 100%;
-                  width: 100%;
                 `}
               ></div>
             </div>

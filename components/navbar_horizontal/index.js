@@ -53,7 +53,10 @@ export default function NavBarHorziontal() {
           </div>
         ))}
         <div css={navbarColumn}>
-          <Link href="/product_gallery" passHref>
+          <Link
+            href={`/product_gallery?style=all&color=all&minPrice=&maxPrice=`}
+            passHref
+          >
             <p>
               <a> Wszystkie sukienki</a>
             </p>
