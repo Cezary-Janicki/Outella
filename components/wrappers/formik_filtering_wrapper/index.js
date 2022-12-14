@@ -87,7 +87,8 @@ export default function Formik_Filtering_Wrapper({
     position: fixed;
     top: 0vw;
     left: 0vw;
-    width: 100vw;
+    // width: 100vw;
+    width: 100%;
   `;
 
   const RegularMenu = styled.div`
@@ -144,8 +145,8 @@ export default function Formik_Filtering_Wrapper({
                   z-index: 1;
                   transparency: 50%;
                   top: 0px;
-                  height: 100vh;
-                  width: 100vw;
+                  height: 100%;
+                  width: 100%;
                   background: linear-gradient(
                     180deg,
                     rgba(255, 255, 255, 1) 15%,
