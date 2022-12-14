@@ -85,8 +85,8 @@ export default function Formik_Filtering_Wrapper({
       visibility: hidden;
     }
     position: fixed;
-    top: 0vw;
-    left: 0vw;
+    top: 0px;
+    left: 0px;
     // width: 100vw;
     width: 100%;
   `;
