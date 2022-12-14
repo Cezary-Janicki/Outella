@@ -127,8 +127,10 @@ export default function Formik_Filtering_Wrapper({
               <div
                 css={css`
                   position: fixed;
-                  top: 55px;
+                  top: 3rem;
                   z-index: 2;
+                  height: 100vh;
+                  width: 100vw;
                 `}
               >
                 <Formik_Filtering
