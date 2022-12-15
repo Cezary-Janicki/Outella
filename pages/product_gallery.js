@@ -43,15 +43,6 @@ function ProductGallery() {
 
   return (
     <Product_Gallery_Wrapper>
-      {/* <Issue2> */}
-      <Formik_Filtering_Wrapper
-        products={products}
-        galleryItems={galleryItems}
-        dressColors={dressColors}
-        queryFilter={queryFilter}
-      />
-      {/* </Issue2> */}
-
       <div
         css={css`
           display: flex;
@@ -70,6 +61,12 @@ function ProductGallery() {
           <Gallery_Picture item={item} />
         </div>
       </div>
+      <Formik_Filtering_Wrapper
+        products={products}
+        galleryItems={galleryItems}
+        dressColors={dressColors}
+        queryFilter={queryFilter}
+      />
     </Product_Gallery_Wrapper>
   );
 }
