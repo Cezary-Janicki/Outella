@@ -66,7 +66,10 @@ export default function NavBarVer() {
           </div>
         ))}
         <div css={navbarRow}>
-          <Link href="/product_gallery" passHref>
+          <Link
+            href={`/product_gallery?style=all&color=all&minPrice=&maxPrice=`}
+            passHref
+          >
             <p>
               <a> Wszystkie sukienki</a>
             </p>
