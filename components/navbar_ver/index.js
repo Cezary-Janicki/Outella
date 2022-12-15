@@ -56,7 +56,7 @@ export default function NavBarVer() {
         {galleryItems.map((item, index) => (
           <div css={navbarRow} key={index}>
             <Link
-              href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
+              href={`product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
               passHref
             >
               <p>
@@ -67,7 +67,7 @@ export default function NavBarVer() {
         ))}
         <div css={navbarRow}>
           <Link
-            href={`/product_gallery?style=all&color=all&minPrice=&maxPrice=`}
+            href={`product_gallery?style=all&color=all&minPrice=&maxPrice=`}
             passHref
           >
             <p>

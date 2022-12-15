@@ -14,7 +14,7 @@ export default function Title() {
         text-align: center;
       `}
     >
-      <Link href="/">
+      <Link href="/" passHref>
         <a>
           <Image
             css={css`
