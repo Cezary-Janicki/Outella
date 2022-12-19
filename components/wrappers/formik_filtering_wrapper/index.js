@@ -82,13 +82,15 @@ export default function Formik_Filtering_Wrapper({
 }) {
   const HamMenu = styled.div`
     @media (min-width: ${desktopBreakPoint}px) {
-      visibility: hidden;
+      display: none;
     }
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
+    @media (max-width: ${desktopBreakPoint}px) {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+    }
   `;
 
   const RegularMenu = styled.div`
@@ -120,7 +122,7 @@ export default function Formik_Filtering_Wrapper({
         `}
       >
         {isOpen ? (
-          <HamMenu></HamMenu>
+          <></>
         ) : (
           <HamMenu>
             <div>
@@ -165,10 +167,12 @@ export default function Formik_Filtering_Wrapper({
         onClick={() => setIsOpen(!isOpen)}
         css={css`
           @media (min-width: ${desktopBreakPoint}px) {
-            visibility: hidden;
+            // visibility: hidden;
+            display: none;
           }
           @media (max-width: ${desktopBreakPoint}px) {
-            visibility: visible;
+            // visibility: visible;
+            display: block;
           }
           z-index: 2;
           position: fixed;

@@ -4,12 +4,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-// import { GetSortedProductsData } from "../../lib/products";
-import Gallery_Wrapper from "../wrappers/gallery_wrapper";
-
-const Gallery_Picture = (item) => {
-  // const Gallery_Picture = ()=>{
-  // const item = GetSortedProductsData()
+import Gallery_Wrapper from "../../../wrappers/gallery_wrapper";
+const Gallery_Picture_Large = (item) => {
   return (
     <>
       {item.item.map((d, index) => {
@@ -34,4 +30,4 @@ const Gallery_Picture = (item) => {
   );
 };
 
-export default Gallery_Picture;
+export default Gallery_Picture_Large;
