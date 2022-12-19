@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import PropTypes from "prop-types";
 
-function Gallery_Wrapper({ children, title }) {
+function Gallery_Wrapper_Description({ children, title, price, style }) {
   const Image = styled.div`
      {
       opacity: 1;
@@ -54,15 +54,20 @@ function Gallery_Wrapper({ children, title }) {
     <div>
       <ImageWrapper>
         <TextWrapper>
-          <Text>{title}</Text>
+          <Text>
+            {" "}
+            {title}, {style}, {price}
+          </Text>
         </TextWrapper>
         <Image alt="dress">{children}</Image>
       </ImageWrapper>
     </div>
   );
 }
-Gallery_Wrapper.propTypes = {
+Gallery_Wrapper_Description.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string,
+  price: PropTypes.string,
+  style: PropTypes.string,
 };
-export default Gallery_Wrapper;
+export default Gallery_Wrapper_Description;

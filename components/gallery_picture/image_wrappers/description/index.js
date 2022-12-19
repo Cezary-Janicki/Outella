@@ -4,8 +4,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Gallery_Wrapper from "../../../wrappers/gallery_wrapper";
-const Gallery_Picture_Large = (item) => {
+import Gallery_Wrapper_Description from "../../../wrappers/gallery_wrapper_description";
+const Gallery_Picture_Description = (item) => {
   return (
     <>
       {item.item.map((d, index) => {
@@ -15,14 +15,18 @@ const Gallery_Picture_Large = (item) => {
         return (
           <Link key={index} href={`posts/products/${d.pictureName}${d.id}`}>
             <a>
-              <Gallery_Wrapper title={title} price={price} style={style}>
+              <Gallery_Wrapper_Description
+                title={title}
+                price={price}
+                style={style}
+              >
                 <Image
                   alt="Dress"
                   src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
                   width={380}
                   height={510}
                 />
-              </Gallery_Wrapper>
+              </Gallery_Wrapper_Description>
             </a>
           </Link>
         );
@@ -32,4 +36,4 @@ const Gallery_Picture_Large = (item) => {
   );
 };
 
-export default Gallery_Picture_Large;
+export default Gallery_Picture_Description;
