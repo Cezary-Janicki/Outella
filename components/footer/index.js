@@ -80,14 +80,14 @@ export default function Footer() {
               <h2>Informacje</h2>
               {foo.map((d, index) => (
                 <div key={index}>
-                  <Link href={`posts/${d.id}`} css={row}>
+                  <Link href={`/posts/${d.id}`} css={row}>
                     <a>
                       <p>{d.title}</p>
                     </a>
                   </Link>
                 </div>
               ))}
-              <Link href={`faq`} css={row}>
+              <Link href={`/faq`} css={row}>
                 <a>
                   <p>Często zadwane pytania</p>
                 </a>

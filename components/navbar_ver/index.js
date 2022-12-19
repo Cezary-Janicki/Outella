@@ -7,10 +7,21 @@ import Link from "next/link";
 // import Hamburger_Menu from "../hamburger";
 import { GetSortedProductsData } from "../../lib/products";
 
+var foo = [
+  { id: "informacje", title: "O firmie", date: "1" },
+  { id: "regulamin", title: "Regulamin sklepu internetowego", date: "2" },
+  { id: "polityka", title: "Polityka Prywatności", date: "3" },
+  { id: "dostawa", title: "Dostawa", date: "4" },
+  { id: "platnosci", title: "Płatności", date: "5" },
+  { id: "kontakt", title: "Kontakt", date: "6" },
+  { id: "zwroty", title: "Zwroty", date: "7" },
+];
+
 export default function NavBarVer() {
   const navbarColumn = css`
     /* Flexbox */
     flex-direction: column;
+    margin: 2vh 2vw 2vh 0vw;
   `;
   const navbarRow = css`
     /* Flexbox */
@@ -46,37 +57,50 @@ export default function NavBarVer() {
           justify-content: left;
           flex-wrap: wrap;
           height: auto;
-          width: 45%;
+          width: 100%;
           /* General CSS */
           // border-width: 3mm 0 3mm 0;
           font-family: "Playfair Display", serif;
           padding: 2vw 2vw 2vw 4vw;
         `}
       >
-        {galleryItems.map((item, index) => (
-          <div css={navbarRow} key={index}>
-            <Link
-              href={`product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
-              passHref
-            >
-              <p>
-                <a>Sukienki {item} </a>
-              </p>
-            </Link>
-          </div>
-        ))}
-        <div css={navbarRow}>
+        <div css={navbarColumn}>
+          {galleryItems.map((item, index) => (
+            <div key={index}>
+              <Link
+                href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
+                passHref
+              >
+                <p>
+                  <a>Sukienki {item} </a>
+                </p>
+              </Link>
+            </div>
+          ))}
           <Link
-            href={`product_gallery?style=all&color=all&minPrice=&maxPrice=`}
+            href={`/product_gallery?style=all&color=all&minPrice=&maxPrice=`}
             passHref
           >
             <p>
               <a> Wszystkie sukienki</a>
             </p>
           </Link>
-          <div css={navbarColumn}>
-            <p> </p>
-          </div>
+        </div>
+        <div css={navbarColumn}>
+          {foo.map((d, index) => (
+            <div key={index}>
+              <Link href={`/posts/${d.id}`} css={navbarRow} passHref>
+                <p>
+                  <a>{d.title}</a>
+                </p>
+              </Link>
+            </div>
+          ))}
+          <Link href={`/faq`} css={navbarRow}>
+            <a>
+              <p>Często zadwane pytania</p>
+            </a>
+          </Link>
         </div>
       </div>
     </div>
