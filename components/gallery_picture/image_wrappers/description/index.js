@@ -13,21 +13,25 @@ const Gallery_Picture_Description = (item) => {
         let price = d.price;
         let style = d.tags.style;
         return (
-          <Link key={index} href={`posts/products/${d.pictureName}${d.id}`}>
-            <a>
-              <Gallery_Wrapper_Description
-                title={title}
-                price={price}
-                style={style}
-              >
-                <Image
-                  alt="Dress"
-                  src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
-                  width={380}
-                  height={510}
-                />
-              </Gallery_Wrapper_Description>
-            </a>
+          <Link
+            key={index}
+            href={`posts/products/${d.pictureName}${d.id}`}
+            passHref
+          >
+            {/* <a> */}
+            <Gallery_Wrapper_Description
+              title={title}
+              price={price}
+              style={style}
+            >
+              <Image
+                alt="Dress"
+                src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
+                width={225}
+                height={300}
+              />
+            </Gallery_Wrapper_Description>
+            {/* </a> */}
           </Link>
         );
         // </div>
