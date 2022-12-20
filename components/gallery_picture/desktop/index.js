@@ -4,27 +4,44 @@ import React from "react";
 import Gallery_Picture_Small from "../image_wrappers/small";
 import Gallery_Picture_Large from "../image_wrappers/large";
 import Gallery_Picture_Description from "../image_wrappers/description";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
-// import { BiGridSmall, BiGridAlt, BiListUl } from "react-icons/bi";
+import { BsGrid3X3, BsGrid, BsListUl } from "react-icons/bs";
 
 export default function Gallery_Picture_Desktop(item) {
+  const [hasMounted, setHasMounted] = useState(false);
   const [isSmall, setIsSmall] = useState(false);
+  const [isBig, setIsBig] = useState(true);
   const [isGallery, setIsGallery] = useState(false);
-
-  // icons i need
-  // small gallery BiGridSmall
-  // big galley BiGridAlt
-  // descriptive BiListUl
-  //<BiGridSmall onClick={() => setIsSmall(true)} />
-  //<BiGridAlt onClick={() => setIsSmall(false)} />
-  //<BiListUl onClick={() => setIsGallery(!isGallery)} />
-
+  useEffect(() => {
+    // This will only be called once the component is mounted inside the browser
+    setHasMounted(true);
+  }, []);
+  //use effects to handle the gallery toggling
+  useEffect(() => {
+    setIsGallery(false);
+  }, [isSmall, isBig]);
+  useEffect(() => {
+    setIsSmall(false);
+  }, [isGallery, isBig]);
+  useEffect(() => {
+    setIsBig(false);
+  }, [isGallery, isSmall]);
   return (
     <>
-      <button onClick={() => setIsSmall(true)}>small</button>
-      <button onClick={() => setIsSmall(false)}>large</button>
-      <button onClick={() => setIsGallery(!isGallery)}>gallery</button>
+      {hasMounted === true ? (
+        <>
+          {/* <button onClick={() => setIsSmall(true)}>small</button>
+          <button onClick={() => setIsSmall(false)}>large</button>
+          <button onClick={() => setIsGallery(!isGallery)}>gallery</button> */}
+
+          <BsGrid3X3 onClick={() => setIsSmall(true)} size="2em" />
+
+          <BsGrid onClick={() => setIsBig(true)} size="2em" />
+
+          <BsListUl onClick={() => setIsGallery(!isGallery)} size="2em" />
+        </>
+      ) : null}
       {isGallery === true ? (
         <Gallery_Picture_Description item={item.item} />
       ) : (
