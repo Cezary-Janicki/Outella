@@ -26,6 +26,10 @@ function ProductGallery() {
   let queryDataMinPrice = queryData.minPrice;
 
   const [item, setItem] = useState(products);
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
   const dressColors = [...new Set(products.map((Val) => Val.tags.color))];
 
@@ -51,10 +55,7 @@ function ProductGallery() {
     });
     setItem(newItem);
   }
-  const [hasMounted, setHasMounted] = useState(false);
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
+
   return (
     <Product_Gallery_Wrapper>
       {hasMounted === true ? (
@@ -64,16 +65,26 @@ function ProductGallery() {
         </>
       ) : null}
       {isDesktop() === "false" ? (
-        <Gallery_Picture_Mobile item={item} />
+        <>
+          <Gallery_Picture_Mobile item={item} />{" "}
+          <Formik_Filtering_Wrapper
+            products={products}
+            galleryItems={galleryItems}
+            dressColors={dressColors}
+            queryFilter={queryFilter}
+          />
+        </>
       ) : (
-        <Gallery_Picture_Desktop item={item} />
+        <>
+          <Formik_Filtering_Wrapper
+            products={products}
+            galleryItems={galleryItems}
+            dressColors={dressColors}
+            queryFilter={queryFilter}
+          />
+          <Gallery_Picture_Desktop item={item} />
+        </>
       )}
-      <Formik_Filtering_Wrapper
-        products={products}
-        galleryItems={galleryItems}
-        dressColors={dressColors}
-        queryFilter={queryFilter}
-      />
     </Product_Gallery_Wrapper>
   );
 }
