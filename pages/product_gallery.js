@@ -29,7 +29,7 @@ function ProductGallery() {
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => {
     setHasMounted(true);
-  }, []);
+  }, [queryData]);
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
   const dressColors = [...new Set(products.map((Val) => Val.tags.color))];
 

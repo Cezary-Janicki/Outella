@@ -16,6 +16,7 @@ const navbarRow = css`
   /* Flexbox */
   flex-direction: row;
 `;
+
 export default function NavBarHorziontal() {
   //fetching all of the products and creating the array with each dress type
   const products = GetSortedProductsData();
@@ -42,7 +43,8 @@ export default function NavBarHorziontal() {
             <Link
               href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
               passHref
-              legacyBehavior>
+              legacyBehavior
+            >
               <p>
                 <a>Sukienki {item} </a>
               </p>
@@ -56,7 +58,8 @@ export default function NavBarHorziontal() {
           <Link
             href={`/product_gallery?style=all&color=all&minPrice=&maxPrice=`}
             passHref
-            legacyBehavior>
+            legacyBehavior
+          >
             <p>
               <a> Wszystkie sukienki</a>
             </p>
