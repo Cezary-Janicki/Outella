@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 // import { Thumbnails } from "../thumbnails";
 import Thumbnails from "../thumbnails";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useCallback, useState } from "react";
 import styles from "./image_carousel.module.css";
 import axios from "axios";

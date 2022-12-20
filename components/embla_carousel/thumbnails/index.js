@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "../image_carousel/image_carousel.module.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const Thumbnails = ({ onClick, selected, imgSrc }) => (
   <>

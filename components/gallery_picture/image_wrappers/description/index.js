@@ -3,7 +3,7 @@
 // React components
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Gallery_Wrapper_Description from "../../../wrappers/gallery_wrapper_description";
 const Gallery_Picture_Description = (item) => {
   return (

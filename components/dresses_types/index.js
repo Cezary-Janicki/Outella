@@ -2,7 +2,7 @@
 
 import React from "react";
 import { css } from "@emotion/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./dresses_types.module.css";
 import Link from "next/link";
 import Image_Wrapper from "../wrappers/image_wrapper";
