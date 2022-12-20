@@ -34,22 +34,20 @@ const Main = styled.div`
   }
 `;
 export default function Home() {
-  return (
-    <>
-      <Body_Wrapper_No_main>
-        <Main>
-          <Link href="./product_gallery?style=all&color=all&minPrice=&maxPrice=">
-            <a>
-              <p>
-                <div css={description}>Galeria produtków</div>
-              </p>
-            </a>
-          </Link>
-          <Dresses_Types />
-          <p css={description}>Bestsellery</p>
-          <Bestsellers />
-        </Main>
-      </Body_Wrapper_No_main>
-    </>
-  );
+  return <>
+    <Body_Wrapper_No_main>
+      <Main>
+        <Link href="./product_gallery?style=all&color=all&minPrice=&maxPrice=">
+
+          <p>
+            <div css={description}>Galeria produtków</div>
+          </p>
+
+        </Link>
+        <Dresses_Types />
+        <p css={description}>Bestsellery</p>
+        <Bestsellers />
+      </Main>
+    </Body_Wrapper_No_main>
+  </>;
 }

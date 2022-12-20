@@ -15,17 +15,17 @@ export default function Title() {
       `}
     >
       <Link href="/" passHref>
-        <a>
-          <Image
-            css={css`
-              cursor: pointer;
-            `}
-            src={outella_logo}
-            alt="Outella logo"
-            height={125}
-            width={125}
-          ></Image>
-        </a>
+
+        <Image
+          css={css`
+            cursor: pointer;
+          `}
+          src={outella_logo}
+          alt="Outella logo"
+          height={125}
+          width={125}
+        ></Image>
+
       </Link>
     </h1>
   );
