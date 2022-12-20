@@ -43,17 +43,17 @@ function ProductGallery() {
 
   return (
     <Product_Gallery_Wrapper>
+      {isDesktop() === "false" ? (
+        <Gallery_Picture_Mobile item={item} />
+      ) : (
+        <Gallery_Picture_Desktop item={item} />
+      )}
       <Formik_Filtering_Wrapper
         products={products}
         galleryItems={galleryItems}
         dressColors={dressColors}
         queryFilter={queryFilter}
       />
-      {isDesktop() === "false" ? (
-        <Gallery_Picture_Mobile item={item} />
-      ) : (
-        <Gallery_Picture_Desktop item={item} />
-      )}
     </Product_Gallery_Wrapper>
   );
 }
