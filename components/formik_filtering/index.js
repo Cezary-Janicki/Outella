@@ -17,7 +17,7 @@ import {
   Button,
 } from "@mui/material";
 import debounce from "just-debounce-it";
-
+import { useEffect, useState } from "react";
 function Formik_Filtering({
   products,
   galleryItems,
@@ -104,123 +104,127 @@ function Formik_Filtering({
 
     return null;
   };
-
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
   return (
-    <Formik
-      enableReinitialize // Pass this to re-render on initialValues change
-      initialValues={initialValues}
-      onSubmit={(values) => {
-        router.replace(
-          {
-            pathname: "/product_gallery",
-            query: { ...values },
-          },
-          undefined,
-          { shallow: true }
-        );
-      }}
-    >
-      {() => (
-        <Form>
-          <Paper
-            css={css`
-              max-width: 500px;
-              margin: auto;
-              padding: 3vh;
-              box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-            `}
-            elevation={5}
-          >
-            <Grid container spacing={3}>
-              <Grid item xs={12} sm={6}>
-                <FormControl fullWidth variant="outlined">
-                  <InputLabel id="search-style">Styl</InputLabel>
-                  <Field
-                    name="style"
-                    as={Select}
-                    labelid="search-style"
-                    label="Style"
-                  >
-                    <MenuItem value="all">
-                      <em>Wszystkie style</em>
-                    </MenuItem>
-                    {filteredTypes.map((item, index) => (
-                      <MenuItem key={index} value={item}>
-                        {`${item}  (${getTypeCount(products, item)})`}
-                      </MenuItem>
-                    ))}
-                  </Field>
-                </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <FormControl fullWidth variant="outlined">
-                  <InputLabel id="search-color">Kolor</InputLabel>
-                  <Field
-                    name="color"
-                    as={Select}
-                    labelid="search-color"
-                    // labelId="search-color"
-                    label="Color"
-                  >
-                    <MenuItem value="all">
-                      <em>Wszystkie Kolory</em>
-                    </MenuItem>
-                    {filteredColors.map((item, index) => (
-                      <MenuItem key={index} value={item}>
-                        {`${item}  (${getColorCount(products, item)})`}
-                      </MenuItem>
-                    ))}
-                  </Field>
-                </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <FormControl fullWidth variant="outlined">
-                  <InputLabel id="search-minPrice">
-                    <em>Minimalna cena</em>
-                  </InputLabel>
-                  <Field
-                    as={Input}
-                    name="minPrice"
-                    labelid="search-minPrice"
-                    // labelId="search-minPrice"
-                    label="MinPrice"
-                  ></Field>
-                </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <FormControl fullWidth variant="outlined">
-                  <InputLabel id="search-maxPrice">
-                    <em>Maksymalna cena</em>
-                  </InputLabel>
-                  <Field
-                    as={Input}
-                    name="maxPrice"
-                    labelid="search-maxPrice"
-                    // labelId="search-maxPrice"
-                    label="MaxPrice"
-                  ></Field>
-                </FormControl>
-              </Grid>
-              <Grid item xs={12}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  fullWidth
-                  onClick={queryFilter}
-                >
-                  Search
-                </Button>
-                {/* <Button type="submit" variant="contained" fullWidth>
-                  Submit fields
-                </Button> */}
-              </Grid>
-            </Grid>
-          </Paper>
-          {/* <MyAutoSavingComponent /> */}
-          <AutoSave />
-        </Form>
-      )}
-    </Formik>
+    <>
+      {hasMounted === true ? (
+        <Formik
+          enableReinitialize // Pass this to re-render on initialValues change
+          initialValues={initialValues}
+          onSubmit={(values) => {
+            router.replace(
+              {
+                pathname: "/product_gallery",
+                query: { ...values },
+              },
+              undefined,
+              { shallow: true }
+            );
+          }}
+        >
+          {() => (
+            <Form>
+              <Paper
+                css={css`
+                  max-width: 500px;
+                  margin: auto;
+                  padding: 3vh;
+                  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+                `}
+                elevation={5}
+              >
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={6}>
+                    <FormControl fullWidth variant="outlined">
+                      <InputLabel id="search-style">Styl</InputLabel>
+                      <Field
+                        name="style"
+                        as={Select}
+                        labelid="search-style"
+                        label="Style"
+                      >
+                        <MenuItem value="all">
+                          <em>Wszystkie style</em>
+                        </MenuItem>
+                        {filteredTypes.map((item, index) => (
+                          <MenuItem key={index} value={item}>
+                            {`${item}  (${getTypeCount(products, item)})`}
+                          </MenuItem>
+                        ))}
+                      </Field>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <FormControl fullWidth variant="outlined">
+                      <InputLabel id="search-color">Kolor</InputLabel>
+                      <Field
+                        name="color"
+                        as={Select}
+                        labelid="search-color"
+                        // labelId="search-color"
+                        label="Color"
+                      >
+                        <MenuItem value="all">
+                          <em>Wszystkie Kolory</em>
+                        </MenuItem>
+                        {filteredColors.map((item, index) => (
+                          <MenuItem key={index} value={item}>
+                            {`${item}  (${getColorCount(products, item)})`}
+                          </MenuItem>
+                        ))}
+                      </Field>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <FormControl fullWidth variant="outlined">
+                      <InputLabel id="search-minPrice">
+                        <em>Minimalna cena</em>
+                      </InputLabel>
+                      <Field
+                        as={Input}
+                        name="minPrice"
+                        labelid="search-minPrice"
+                        // labelId="search-minPrice"
+                        label="MinPrice"
+                      ></Field>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <FormControl fullWidth variant="outlined">
+                      <InputLabel id="search-maxPrice">
+                        <em>Maksymalna cena</em>
+                      </InputLabel>
+                      <Field
+                        as={Input}
+                        name="maxPrice"
+                        labelid="search-maxPrice"
+                        // labelId="search-maxPrice"
+                        label="MaxPrice"
+                      ></Field>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      fullWidth
+                      onClick={queryFilter}
+                    >
+                      Search
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Paper>
+              {/* <MyAutoSavingComponent /> */}
+              <AutoSave />
+            </Form>
+          )}
+        </Formik>
+      ) : null}
+    </>
   );
 }
 Formik_Filtering.propTypes = {

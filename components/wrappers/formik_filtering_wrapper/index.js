@@ -1,62 +1,5 @@
 // /** @jsxImportSource @emotion/react */
 
-// //React components
-// import { css } from "@emotion/react";
-// import React from "react";
-// import PropTypes from "prop-types";
-// import Formik_Filtering from "../../formik_filtering";
-// import { tabletBreakPoint, desktopBreakPoint } from "../../width_check/values";
-// import { useState } from "react";
-
-// export default function Formik_Filtering_Wrapper({
-//   galleryItems,
-//   dressColors,
-//   products,
-//   queryFilter,
-// }) {
-//   const [isOpen, setIsOpen] = useState(true);
-
-//   return (
-//     <>
-//       <div
-//         css={css`
-//           @media (max-width: ${desktopBreakPoint}px) {
-//             display: none;
-//           }
-//         `}
-//       >
-//         <Formik_Filtering
-//           products={products}
-//           galleryItems={galleryItems}
-//           dressColors={dressColors}
-//           queryFilter={queryFilter}
-//         />
-//       </div>
-//       <div
-//         css={css`
-//           @media (min-width: ${desktopBreakPoint}px) {
-//             display: none;
-//           }
-//         `}
-//       >
-//         <Formik_Filtering
-//           products={products}
-//           galleryItems={galleryItems}
-//           dressColors={dressColors}
-//           queryFilter={queryFilter}
-//         />
-//       </div>
-//     </>
-//   );
-// }
-
-// Formik_Filtering_Wrapper.propTypes = {
-//   galleryItems: PropTypes.array,
-//   dressColors: PropTypes.array,
-//   products: PropTypes.array,
-//   queryFilter: PropTypes.func,
-// };
-
 //React components
 import React from "react";
 import { css } from "@emotion/react";
@@ -110,59 +53,47 @@ export default function Formik_Filtering_Wrapper({
           queryFilter={queryFilter}
         />
       </RegularMenu>
-      <div
-        // when i put a background here it works but it's able to be scrolled down
-        // i need to find a way to put a global background with 100vw 100vh and position absolute so that it can't be scrolled through
-        // the background should have a gradient similar to the one that is on hamburger menu but horizontal instead of a vertical one
-        css={css`
-          // background: green;
-          // top: -30px;
-          // height: 100vh;
-          // width: 100vw;
-        `}
-      >
-        {isOpen ? (
-          <></>
-        ) : (
-          <HamMenu>
-            <div>
-              {" "}
-              <div
-                css={css`
-                  position: fixed;
-                  top: 55px;
-                  z-index: 2;
-                `}
-              >
-                <Formik_Filtering
-                  products={products}
-                  galleryItems={galleryItems}
-                  dressColors={dressColors}
-                  queryFilter={queryFilter}
-                />
-              </div>
-              <div
-                css={css`
-                  position: fixed;
-                  display: inline-block;
-                  z-index: 1;
-                  top: 0px;
-                  height: 115%;
-                  width: 100%;
-                  transparency: 50%;
-                  background: linear-gradient(
-                    180deg,
-                    rgba(255, 255, 255, 1) 15%,
-                    rgba(232, 176, 190, 1) 50%,
-                    rgba(239, 207, 212, 0.75) 70%,
-                    rgba(245, 220, 224, 0.5) 100%
-                  );
-                `}
-              ></div>
+      {isOpen ? (
+        <></>
+      ) : (
+        <HamMenu>
+          <div>
+            {" "}
+            <div
+              css={css`
+                position: fixed;
+                top: 55px;
+                z-index: 2;
+              `}
+            >
+              <Formik_Filtering
+                products={products}
+                galleryItems={galleryItems}
+                dressColors={dressColors}
+                queryFilter={queryFilter}
+              />
             </div>
-          </HamMenu>
-        )}
-      </div>
+            <div
+              css={css`
+                position: fixed;
+                display: inline-block;
+                z-index: 1;
+                top: 0px;
+                height: 115%;
+                width: 100%;
+                transparency: 50%;
+                background: linear-gradient(
+                  180deg,
+                  rgba(255, 255, 255, 1) 15%,
+                  rgba(232, 176, 190, 1) 50%,
+                  rgba(239, 207, 212, 0.75) 70%,
+                  rgba(245, 220, 224, 0.5) 100%
+                );
+              `}
+            ></div>
+          </div>
+        </HamMenu>
+      )}
       <div
         onClick={() => setIsOpen(!isOpen)}
         css={css`
