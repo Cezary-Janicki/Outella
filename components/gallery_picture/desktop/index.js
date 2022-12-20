@@ -31,14 +31,8 @@ export default function Gallery_Picture_Desktop(item) {
     <>
       {hasMounted === true ? (
         <>
-          {/* <button onClick={() => setIsSmall(true)}>small</button>
-          <button onClick={() => setIsSmall(false)}>large</button>
-          <button onClick={() => setIsGallery(!isGallery)}>gallery</button> */}
-
           <BsGrid3X3 onClick={() => setIsSmall(true)} size="2em" />
-
           <BsGrid onClick={() => setIsBig(true)} size="2em" />
-
           <BsListUl onClick={() => setIsGallery(!isGallery)} size="2em" />
         </>
       ) : null}
