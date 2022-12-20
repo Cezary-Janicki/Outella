@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { css } from "@emotion/react";
 import Image_Wrapper from "../wrappers/image_wrapper";
@@ -30,44 +30,44 @@ export default function Bestsellers() {
         >
           <div css={gridBox}>
             <Link href="/posts/products/sukienka8">
-              <a>
-                <Image_Wrapper>
-                  <Image
-                    alt="Sukienka8"
-                    src={"/products/sukienka8/1/sukienka.jpeg"}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </Image_Wrapper>
-              </a>
+
+              <Image_Wrapper>
+                <Image
+                  alt="Sukienka8"
+                  src={"/products/sukienka8/1/sukienka.jpeg"}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </Image_Wrapper>
+
             </Link>
           </div>
           <div css={gridBox}>
             <Link href="/posts/products/sukienka25">
-              <a>
-                <Image_Wrapper>
-                  <Image
-                    alt="sukienka 25"
-                    src={"/products/sukienka25/1/sukienka.jpeg"}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </Image_Wrapper>
-              </a>
+
+              <Image_Wrapper>
+                <Image
+                  alt="sukienka 25"
+                  src={"/products/sukienka25/1/sukienka.jpeg"}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </Image_Wrapper>
+
             </Link>
           </div>
           <div css={gridBox}>
             <Link href="/posts/products/sukienka33/">
-              <a>
-                <Image_Wrapper>
-                  <Image
-                    alt="Sukienka 33"
-                    src={"/products/sukienka33/1/sukienka.jpeg"}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </Image_Wrapper>
-              </a>
+
+              <Image_Wrapper>
+                <Image
+                  alt="Sukienka 33"
+                  src={"/products/sukienka33/1/sukienka.jpeg"}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </Image_Wrapper>
+
             </Link>
           </div>
         </div>

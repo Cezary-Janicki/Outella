@@ -38,12 +38,13 @@ export default function Home() {
     <>
       <Body_Wrapper_No_main>
         <Main>
-          <Link href="./product_gallery?style=all&color=all&minPrice=&maxPrice=">
-            <a>
-              <p>
-                <div css={description}>Galeria produtków</div>
-              </p>
-            </a>
+          <Link
+            href="./product_gallery?style=all&color=all&minPrice=&maxPrice="
+            passHref
+          >
+            <div css={description}>
+              <p>Galeria produtków</p>
+            </div>
           </Link>
           <Dresses_Types />
           <p css={description}>Bestsellery</p>

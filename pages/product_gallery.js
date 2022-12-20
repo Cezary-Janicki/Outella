@@ -1,16 +1,16 @@
 /** @jsxImportSource @emotion/react */
 
 //React components
-import { css } from "@emotion/react";
 import { useState } from "react";
 import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
 import React from "react";
 //Page components
 import Product_Gallery_Wrapper from "../components/wrappers/product_gallery_wrapper";
-import Gallery_Picture from "../components/gallery_picture";
+import Gallery_Picture_Desktop from "../components/gallery_picture/desktop";
+import Gallery_Picture_Mobile from "../components/gallery_picture/mobile";
 import Formik_Filtering_Wrapper from "../components/wrappers/formik_filtering_wrapper";
-
+import { isDesktop } from "../components/width_check/values";
 function ProductGallery() {
   //DATA FETCHING FROM A SERVER
   const products = GetSortedProductsData();
@@ -49,24 +49,11 @@ function ProductGallery() {
         dressColors={dressColors}
         queryFilter={queryFilter}
       />
-      <div
-        css={css`
-          display: flex;
-        `}
-      >
-        <div
-          css={css`
-            width: 75%;
-            margin: 3vw;
-            display: flex;
-            flex: 3;
-            flex-wrap: wrap;
-            justify-content: space-around;
-          `}
-        >
-          <Gallery_Picture item={item} />
-        </div>
-      </div>
+      {isDesktop() === "false" ? (
+        <Gallery_Picture_Mobile item={item} />
+      ) : (
+        <Gallery_Picture_Desktop item={item} />
+      )}
     </Product_Gallery_Wrapper>
   );
 }

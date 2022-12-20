@@ -42,7 +42,7 @@ export default function NavBarHorziontal() {
             <Link
               href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
               passHref
-            >
+              legacyBehavior>
               <p>
                 <a>Sukienki {item} </a>
               </p>
@@ -56,7 +56,7 @@ export default function NavBarHorziontal() {
           <Link
             href={`/product_gallery?style=all&color=all&minPrice=&maxPrice=`}
             passHref
-          >
+            legacyBehavior>
             <p>
               <a> Wszystkie sukienki</a>
             </p>
