@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
+import { css } from "@emotion/react";
 import React from "react";
 //Page components
 import Product_Gallery_Wrapper from "../components/wrappers/product_gallery_wrapper";
@@ -33,17 +34,6 @@ function ProductGallery() {
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
   const dressColors = [...new Set(products.map((Val) => Val.tags.color))];
 
-  // const queryFilter = () => {
-  //   const newItem = products.filter((product) => {
-  //     return (
-  //       (queryDataStyle === product.tags.style || queryDataStyle === "all") &&
-  //       (queryDataColor === product.tags.color || queryDataColor === "all") &&
-  //       (product.price < queryDataMaxPrice || queryDataMaxPrice === "") &&
-  //       (product.price > queryDataMinPrice || queryDataMinPrice === "")
-  //     );
-  //   });
-  //   setItem(newItem);
-  // };
   function queryFilter() {
     const newItem = products.filter((product) => {
       return (
@@ -56,36 +46,54 @@ function ProductGallery() {
     setItem(newItem);
   }
 
+  // hydration error only happens on desktop on refresh
+  // the isDesktop bool is showing up correctly from the start maybe the console logs will help with this issue
+  // not an issue with the boolean, when swapping it seems to crash the same
+  // when i change isDesktop to a const value the hydration issue doesn't happen i need to make a fallback value when isDesktop throws undefied?
+  // isDesktop never throws undefined, why isnt it working on refresh
+  let widthCheck = () => {
+    // {"isDeskopt is defined"?"then value is isdeskotp":"otherwise it defaults to true"}
+    {
+      isDesktop() === "true" || isDesktop() === "false" ? isDesktop() : "true";
+    }
+  };
+
   return (
-    <Product_Gallery_Wrapper>
+    <>
+      {console.log("isDesktop value: ", isDesktop())}
+
       {hasMounted === true ? (
         <>
           {queryFilter()}
           {setHasMounted(false)}
         </>
       ) : null}
-      {isDesktop() === "false" ? (
+      {widthCheck() === "false" ? (
         <>
-          <Gallery_Picture_Mobile item={item} />{" "}
-          <Formik_Filtering_Wrapper
-            products={products}
-            galleryItems={galleryItems}
-            dressColors={dressColors}
-            queryFilter={queryFilter}
-          />
+          <Product_Gallery_Wrapper>
+            <Gallery_Picture_Mobile item={item} />
+            <Formik_Filtering_Wrapper
+              products={products}
+              galleryItems={galleryItems}
+              dressColors={dressColors}
+              queryFilter={queryFilter}
+            />
+          </Product_Gallery_Wrapper>
         </>
       ) : (
         <>
-          <Formik_Filtering_Wrapper
-            products={products}
-            galleryItems={galleryItems}
-            dressColors={dressColors}
-            queryFilter={queryFilter}
-          />
-          <Gallery_Picture_Desktop item={item} />
+          <Product_Gallery_Wrapper>
+            <Formik_Filtering_Wrapper
+              products={products}
+              galleryItems={galleryItems}
+              dressColors={dressColors}
+              queryFilter={queryFilter}
+            />
+            <Gallery_Picture_Desktop item={item} />
+          </Product_Gallery_Wrapper>
         </>
       )}
-    </Product_Gallery_Wrapper>
+    </>
   );
 }
 export default ProductGallery;
