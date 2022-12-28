@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
 import React from "react";
+
 //Page components
 import Product_Gallery_Wrapper from "../components/wrappers/product_gallery_wrapper";
 import Gallery_Picture_Desktop from "../components/gallery_picture/desktop";
@@ -33,17 +34,6 @@ function ProductGallery() {
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
   const dressColors = [...new Set(products.map((Val) => Val.tags.color))];
 
-  // const queryFilter = () => {
-  //   const newItem = products.filter((product) => {
-  //     return (
-  //       (queryDataStyle === product.tags.style || queryDataStyle === "all") &&
-  //       (queryDataColor === product.tags.color || queryDataColor === "all") &&
-  //       (product.price < queryDataMaxPrice || queryDataMaxPrice === "") &&
-  //       (product.price > queryDataMinPrice || queryDataMinPrice === "")
-  //     );
-  //   });
-  //   setItem(newItem);
-  // };
   function queryFilter() {
     const newItem = products.filter((product) => {
       return (
@@ -58,6 +48,11 @@ function ProductGallery() {
 
   return (
     <Product_Gallery_Wrapper>
+      {/* ternary below should only be triggered on mobile i need to write a ternary to wrap the has mount ternary into so that it wont get triggered on mobile
+      as is this also auto reloads everytime you change a query, i need to find another way to reload the page :/ 
+      maybe i could pass an optional argument when entering via hyperlink and if that argument is present i could trigger the reload via useEffect
+      i could pass props via Link state
+      */}
       {hasMounted === true ? (
         <>
           {queryFilter()}
