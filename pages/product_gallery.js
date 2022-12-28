@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
+import ClientOnly from "../components/clientOnly";
 import React from "react";
 
 //Page components
@@ -12,6 +13,7 @@ import Gallery_Picture_Desktop from "../components/gallery_picture/desktop";
 import Gallery_Picture_Mobile from "../components/gallery_picture/mobile";
 import Formik_Filtering_Wrapper from "../components/wrappers/formik_filtering_wrapper";
 import { isDesktop } from "../components/width_check/values";
+
 function ProductGallery() {
   //DATA FETCHING FROM A SERVER
   const products = GetSortedProductsData();
@@ -47,40 +49,41 @@ function ProductGallery() {
   }
 
   return (
-    <Product_Gallery_Wrapper>
-      {/* ternary below should only be triggered on mobile i need to write a ternary to wrap the has mount ternary into so that it wont get triggered on mobile
-      as is this also auto reloads everytime you change a query, i need to find another way to reload the page :/ 
-      maybe i could pass an optional argument when entering via hyperlink and if that argument is present i could trigger the reload via useEffect
-      i could pass props via Link state
-      */}
-      {hasMounted === true ? (
-        <>
-          {queryFilter()}
-          {setHasMounted(false)}
-        </>
-      ) : null}
-      {isDesktop() === "false" ? (
-        <>
-          <Gallery_Picture_Mobile item={item} />{" "}
-          <Formik_Filtering_Wrapper
-            products={products}
-            galleryItems={galleryItems}
-            dressColors={dressColors}
-            queryFilter={queryFilter}
-          />
-        </>
-      ) : (
-        <>
-          <Formik_Filtering_Wrapper
-            products={products}
-            galleryItems={galleryItems}
-            dressColors={dressColors}
-            queryFilter={queryFilter}
-          />
-          <Gallery_Picture_Desktop item={item} />
-        </>
-      )}
-    </Product_Gallery_Wrapper>
+    <ClientOnly>
+      <>
+        {hasMounted === true ? (
+          <>
+            {queryFilter()}
+            {setHasMounted(false)}
+          </>
+        ) : null}
+        {isDesktop() === "false" ? (
+          <>
+            <Product_Gallery_Wrapper>
+              <Gallery_Picture_Mobile item={item} />
+              <Formik_Filtering_Wrapper
+                products={products}
+                galleryItems={galleryItems}
+                dressColors={dressColors}
+                queryFilter={queryFilter}
+              />
+            </Product_Gallery_Wrapper>
+          </>
+        ) : (
+          <>
+            <Product_Gallery_Wrapper>
+              <Formik_Filtering_Wrapper
+                products={products}
+                galleryItems={galleryItems}
+                dressColors={dressColors}
+                queryFilter={queryFilter}
+              />
+              <Gallery_Picture_Desktop item={item} />
+            </Product_Gallery_Wrapper>
+          </>
+        )}
+      </>
+    </ClientOnly>
   );
 }
 export default ProductGallery;
