@@ -5,14 +5,15 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import { useState } from "react";
-// import { css } from "@emotion/react";
+import { css } from "@emotion/react";
 import Gallery_Wrapper from "../../../wrappers/gallery_wrapper";
 const Gallery_Picture_Wrapper_Mobile = (item) => {
   const [isOpen, setIsOpen] = useState("");
 
   return (
-    <>
-      {/* <button onClick={() => setIsOpen("")}>Toggle here!</button>; */}
+    // <div onClick={() => setIsOpen("")}> if i do this then i cant click on images i would need to write maybe some kind of terany that would select
+    // everything apart from the active image
+    <div>
       {item.item.map((d, index) => {
         let title = d.title;
         let price = d.price;
@@ -23,13 +24,14 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
           on that overlay there will be a link that clicked on will take us to the product page */
         // is open need to be somehow tied to which picture was clicked on, instead of true/false i could just put which item is being clicked on right now
         // i could utilize title to toggle this
+        // gallery wrapper isnt suited for what i am trying to acomplish, I'llneed a mobile wrapper i think
         return (
           <Gallery_Wrapper
             title={title}
             price={price}
             style={style}
             key={index}
-            onClick={() => setIsOpen("")}
+            isOpen={isOpen}
           >
             {isOpen === title ? (
               <Link href={`posts/products/${d.pictureName}${d.id}`}>
@@ -54,7 +56,7 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
         );
         // </div>
       })}
-    </>
+    </div>
   );
 };
 
