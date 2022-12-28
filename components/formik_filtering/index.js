@@ -90,6 +90,7 @@ function Formik_Filtering({
   const AutoSave = () => {
     let debounceMs = 500; // time it takes for the request to be sent
     const formik = useFormikContext();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedSubmit = React.useCallback(
       //use callback caches the debounce function between re-renders
       debounce(() => formik.submitForm(), debounceMs),
