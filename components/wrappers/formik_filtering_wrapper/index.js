@@ -51,6 +51,7 @@ export default function Formik_Filtering_Wrapper({
           galleryItems={galleryItems}
           dressColors={dressColors}
           queryFilter={queryFilter}
+          setIsOpen={setIsOpen}
         />
       </RegularMenu>
       {isOpen ? (
