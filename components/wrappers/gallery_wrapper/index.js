@@ -74,8 +74,8 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
           <TextWrapper>
             <Text>
               <>{title}</>
-              <> {style}</>
-              <> {price}</>
+              <> styl:{style}</>
+              <> cena:{price}</>
             </Text>
           </TextWrapper>
           <Image alt="dress">{children}</Image>
@@ -88,12 +88,6 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
           <Image alt="dress">{children}</Image>
         </ImageWrapper>
       )}
-      {/* <ImageWrapper>
-        <TextWrapper>
-          <Text>{title}</Text>
-        </TextWrapper>
-        <Image alt="dress">{children}</Image>
-      </ImageWrapper> */}
     </div>
   );
 }

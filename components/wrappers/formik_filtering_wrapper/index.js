@@ -71,6 +71,7 @@ export default function Formik_Filtering_Wrapper({
                 galleryItems={galleryItems}
                 dressColors={dressColors}
                 queryFilter={queryFilter}
+                setIsOpen={setIsOpen}
               />
             </div>
             <div
@@ -118,12 +119,6 @@ export default function Formik_Filtering_Wrapper({
             : ``}
         `}
       >
-        {/* <div
-          css={css`
-            background: green;
-            background-size: cover;
-          `}
-        ></div> */}
         <Hamburger toggled={!isOpen} toggle={setIsOpen} />
       </div>
     </div>

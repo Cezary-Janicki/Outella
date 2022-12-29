@@ -23,6 +23,7 @@ function Formik_Filtering({
   galleryItems,
   dressColors,
   queryFilter,
+  setIsOpen,
 }) {
   function getTypeCount(items, type) {
     let count = 0;
@@ -109,6 +110,7 @@ function Formik_Filtering({
   useEffect(() => {
     setHasMounted(true);
   }, []);
+
   return (
     <>
       {hasMounted === true ? (
@@ -212,7 +214,10 @@ function Formik_Filtering({
                       type="submit"
                       variant="contained"
                       fullWidth
-                      onClick={queryFilter}
+                      onClick={() => {
+                        queryFilter();
+                        setIsOpen("false");
+                      }}
                     >
                       Search
                     </Button>
@@ -233,6 +238,7 @@ Formik_Filtering.propTypes = {
   dressColors: PropTypes.array,
   products: PropTypes.array,
   queryFilter: PropTypes.func,
+  setIsOpen: PropTypes.func,
 };
 
 export default Formik_Filtering;
