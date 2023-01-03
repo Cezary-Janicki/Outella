@@ -54,13 +54,23 @@ const EmblaCarousel = ({ slides, id }) => {
     embla.on("select", onSelect);
   }, [embla, onSelect]);
 
+  const onSlideClick = useCallback(
+    (index) => {
+      if (embla && embla.clickAllowed()) console.log(index);
+    },
+    [embla]
+  );
   return (
     <>
       <div className={styles.embla}>
         <div className={styles.embla_viewport} ref={mainViewportRef}>
           <div className={styles.embla_container}>
             {slides.map((d, index) => (
-              <div className={styles.embla_slide} key={index}>
+              <div
+                className={styles.embla_slide}
+                key={index}
+                onClick={() => onSlideClick(index)} // added this on Click action now need to make a whole screen zoom component
+              >
                 <Image
                   className={styles.embla_slide_img}
                   alt="dress"

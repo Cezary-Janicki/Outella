@@ -5,12 +5,14 @@ import React from "react";
 import css from "@emotion/css";
 import axios from "axios";
 import PropTypes from "prop-types";
+import { useState } from "react";
 //Page components
 import Body_Wrapper_No_main from "../../../components/wrappers/body_wrapper_no_main";
 import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 import { getPhotoCount } from "../../../lib/products";
 import { desktopBreakPoint } from "../../../components/width_check/values";
 import Size_Selector from "../../../components/size_selector";
+import PopUp_Image_Carousel from "../../../components/mobile_embla_overlay/image_carousel";
 
 // See https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
 export async function getStaticPaths() {
@@ -53,14 +55,18 @@ function ProductPage({ photoNumber, id, ...dress }) {
 
   // This is provided to the page props at build time via getStaticProps;
   // Fetching again at run-time is unnecessary for statically-generated sites -ae
-
-  //RADIO BUTTONS SELECT CODE
-
+  const [isOpen, setIsOpen] = useState(true);
   //EMBLA CAROUSEL SLIDE CODE
   const slides = Array.from(Array(photoNumber).keys());
 
   return (
     <Body_Wrapper_No_main>
+      <button onClick={() => setIsOpen(!isOpen)}>click to open</button>
+      {isOpen === true ? (
+        <>
+          <PopUp_Image_Carousel />
+        </>
+      ) : null}
       <div
         css={css`
           @media (min-width: ${desktopBreakPoint}px) {
