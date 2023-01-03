@@ -10,7 +10,7 @@ import { useRef } from "react";
 import Gallery_Wrapper from "../../../wrappers/gallery_wrapper";
 
 const Gallery_Picture_Wrapper_Mobile = (item) => {
-  const [isOpen, setIsOpen] = useState("");
+  const [isOpen, setIsOpen] = useState(""); // could rewrite this to use useContext and export the setIsOpen to outside_alerter
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
@@ -33,16 +33,12 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
       };
     }, [ref]);
   }
-  function OutsideAlerter(props, callback) {
+  function OutsideAlerter(props) {
     const wrapperRef = useRef(null);
-    useOutsideAlerter(wrapperRef, callback);
-    console.log("cb", callback);
+    useOutsideAlerter(wrapperRef);
     return <div ref={wrapperRef}>{props.children}</div>;
   }
   return (
-    // <div onClick={() => setIsOpen("")}> if i do this then i cant click on images i would need to write maybe some kind of terany that would select
-    // everything apart from the active image
-
     <OutsideAlerter>
       <div>
         {item.item.map((d, index) => {
