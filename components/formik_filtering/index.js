@@ -23,6 +23,7 @@ function Formik_Filtering({
   galleryItems,
   dressColors,
   queryFilter,
+  setIsOpen,
 }) {
   function getTypeCount(items, type) {
     let count = 0;
@@ -90,6 +91,7 @@ function Formik_Filtering({
   const AutoSave = () => {
     let debounceMs = 500; // time it takes for the request to be sent
     const formik = useFormikContext();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedSubmit = React.useCallback(
       //use callback caches the debounce function between re-renders
       debounce(() => formik.submitForm(), debounceMs),
@@ -108,6 +110,7 @@ function Formik_Filtering({
   useEffect(() => {
     setHasMounted(true);
   }, []);
+
   return (
     <>
       {hasMounted === true ? (
@@ -211,7 +214,10 @@ function Formik_Filtering({
                       type="submit"
                       variant="contained"
                       fullWidth
-                      onClick={queryFilter}
+                      onClick={() => {
+                        queryFilter();
+                        setIsOpen("false");
+                      }}
                     >
                       Search
                     </Button>
@@ -232,6 +238,7 @@ Formik_Filtering.propTypes = {
   dressColors: PropTypes.array,
   products: PropTypes.array,
   queryFilter: PropTypes.func,
+  setIsOpen: PropTypes.func,
 };
 
 export default Formik_Filtering;

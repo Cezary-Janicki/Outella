@@ -6,6 +6,7 @@ import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
 import ClientOnly from "../components/clientOnly";
 import React from "react";
+
 //Page components
 import Product_Gallery_Wrapper from "../components/wrappers/product_gallery_wrapper";
 import Gallery_Picture_Desktop from "../components/gallery_picture/desktop";

@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import PropTypes from "prop-types";
 
-function Gallery_Wrapper({ children, title }) {
+function Gallery_Wrapper({ children, title, price, style, isOpen }) {
   const Image = styled.div`
      {
       opacity: 1;
@@ -49,20 +49,53 @@ function Gallery_Wrapper({ children, title }) {
       opacity: 1;
     }
   `;
-
+  const IsOpenImageWrapper = styled.div`
+     {
+      transition: 0.5s ease;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+    }
+    ${Image} {
+      transition: all 0.5s ease;
+      opacity: 0.6;
+      filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
+        saturate(150%) contrast(1);
+    }
+    ${TextWrapper} {
+      opacity: 1;
+    }
+  `;
   return (
     <div>
-      <ImageWrapper>
-        <TextWrapper>
-          <Text>{title}</Text>
-        </TextWrapper>
-        <Image alt="dress">{children}</Image>
-      </ImageWrapper>
+      {isOpen === title ? (
+        <IsOpenImageWrapper>
+          <TextWrapper>
+            <Text>
+              <>{title}</>
+              <> styl:{style}</>
+              <> cena:{price}</>
+            </Text>
+          </TextWrapper>
+          <Image alt="dress">{children}</Image>
+        </IsOpenImageWrapper>
+      ) : (
+        <ImageWrapper>
+          <TextWrapper>
+            <Text>{title}</Text>
+          </TextWrapper>
+          <Image alt="dress">{children}</Image>
+        </ImageWrapper>
+      )}
     </div>
   );
 }
 Gallery_Wrapper.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string,
+  price: PropTypes.string,
+  style: PropTypes.string,
+  isOpen: PropTypes.string,
 };
 export default Gallery_Wrapper;
