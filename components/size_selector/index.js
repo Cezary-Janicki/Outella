@@ -10,7 +10,6 @@ export default function Size_Selector(props) {
   function handleChange(e) {
     return setRadio(e.target.value);
   }
-  console.log("dress", dress.title);
   return (
     <>
       <h3>Wymiary sukienki:</h3>

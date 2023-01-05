@@ -4,10 +4,11 @@
 import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import PropTypes from "prop-types";
+import { css } from "@emotion/react";
 // import Autoplay from "embla-carousel-autoplay"
 // import { Thumbnails } from "../thumbnails";
 import Thumbnails from "../thumbnails";
-
+import PopUp_Image_Carousel from "../../mobile_embla_overlay/image_carousel";
 import Image from "next/legacy/image";
 import { useCallback, useState } from "react";
 import styles from "./image_carousel.module.css";
@@ -15,7 +16,7 @@ import axios from "axios";
 
 const EmblaCarousel = ({ slides, id }) => {
   //DATA FETCHING FROM A SERVER
-
+  let [isOpen, setIsOpen] = useState();
   let [dress, setDress] = useState();
   useEffect(() => {
     axios
@@ -56,10 +57,11 @@ const EmblaCarousel = ({ slides, id }) => {
 
   const onSlideClick = useCallback(
     (index) => {
-      if (embla && embla.clickAllowed()) console.log(index);
-    },
+      if (embla && embla.clickAllowed()) setIsOpen("true"); // if there is a need i can write a custom function that does more than open the overlay
+    }, // such as opening at a given index
     [embla]
   );
+
   return (
     <>
       <div className={styles.embla}>
@@ -106,6 +108,29 @@ const EmblaCarousel = ({ slides, id }) => {
           </div>
         </div>
       </div>
+
+      {isOpen === "true" ? (
+        <div
+          css={css`
+            background-color: red;
+            opacity: 0.5;
+            height: 120vh;
+            width: 100vw;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            overflow: hidden;
+          `}
+        >
+          <PopUp_Image_Carousel slides={slides} id={id} />
+          <button onClick={() => setIsOpen("false")}>
+            {" "}
+            close it! {isOpen}
+          </button>
+        </div>
+      ) : (
+        <p>not open</p>
+      )}
     </>
   );
 };
