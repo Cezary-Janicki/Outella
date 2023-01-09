@@ -15,4 +15,4 @@ The site can be accessed at https://outella.vercel.app/
 - Product gallery has a query string based filtering system 
 - Product page has a natual and swipeable image gallery
 - Vastly improved mobile layout
--
+
