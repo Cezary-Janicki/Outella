@@ -9,6 +9,7 @@ h1 {
   font-weight: bold;
 }
 html {
+  overflow-x: hidden;
   background-color: rgb(250, 249, 246);
 }
 main {

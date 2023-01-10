@@ -8,6 +8,8 @@ import Link from "next/link";
 import { GetSortedPostsData } from "../../lib/posts";
 import Footer_Column_Wrapper from "./Footer_Column_Wrapper";
 import { desktopBreakPoint } from "../width_check/values";
+import { SocialIcon } from "react-social-icons";
+
 export async function getStaticProps() {
   // const allPostsData = GetSortedProductsData();
   const allPostsData = GetSortedPostsData();
@@ -18,14 +20,16 @@ export async function getStaticProps() {
   };
 }
 
-var foo = [
-  { id: "informacje", title: "O firmie", date: "1" },
-  { id: "regulamin", title: "Regulamin sklepu internetowego", date: "2" },
-  { id: "polityka", title: "Polityka Prywatności", date: "3" },
+var column1 = [
   { id: "dostawa", title: "Dostawa", date: "4" },
   { id: "platnosci", title: "Płatności", date: "5" },
-  { id: "kontakt", title: "Kontakt", date: "6" },
   { id: "zwroty", title: "Zwroty", date: "7" },
+];
+var column2 = [
+  { id: "wspolpraca", title: "Współpraca", date: "1" },
+  { id: "regulamin", title: "Regulamin sklepu internetowego", date: "2" },
+  { id: "polityka", title: "Polityka Prywatności", date: "3" },
+  { id: "kontakt", title: "Kontakt", date: "6" },
 ];
 const row = css`
   flex-direction: column;
@@ -78,31 +82,54 @@ export default function Footer() {
           <Footer_Wrapper>
             <Footer_Column_Wrapper>
               <h2>Informacje</h2>
-              {foo.map((d, index) => (
+              {column1.map((d, index) => (
                 <div key={index}>
                   <Link href={`/posts/${d.id}`} css={row}>
-
                     <p>{d.title}</p>
-
                   </Link>
                 </div>
               ))}
               <Link href={`/faq`} css={row}>
-
-                <p>Często zadwane pytania</p>
-
+                <p>Najczęściej zadawane pytania</p>
               </Link>
             </Footer_Column_Wrapper>
 
             <Footer_Column_Wrapper>
-              <h2>Dane firmy</h2>
+              <h2>O firmie</h2>
+              {column2.map((d, index) => (
+                <div key={index}>
+                  <Link href={`/posts/${d.id}`} css={row}>
+                    <p>{d.title}</p>
+                  </Link>
+                </div>
+              ))}
+              {/* <h2>Dane firmy</h2>
               <p>Cezary Janicki</p>
               <p>Outella</p>
               <p>Email: Cezary.D.Janicki@gmail.com</p>
               <p>NIP:7792517402</p>
-              <p>REGON:386684150</p>
+              <p>REGON:386684150</p> */}
             </Footer_Column_Wrapper>
           </Footer_Wrapper>
+          <div
+            css={css`
+              text-align: center;
+            `}
+          >
+            <p>
+              Znajdziesz nas na:{" "}
+              <SocialIcon
+                network="facebook"
+                url="https://www.facebook.com/Outella-111964767352112"
+                style={{ height: 35, width: 35 }}
+              />{" "}
+              <SocialIcon
+                network="instagram"
+                url="https://www.instagram.com/outella_sukienki/"
+                style={{ height: 35, width: 35 }}
+              />
+            </p>
+          </div>
         </div>
       </Gradient>
     </div>

@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 //React components
+import { css } from "@emotion/react";
 import { useState, useEffect } from "react";
 import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
@@ -13,6 +14,7 @@ import Gallery_Picture_Desktop from "../components/gallery_picture/desktop";
 import Gallery_Picture_Mobile from "../components/gallery_picture/mobile";
 import Formik_Filtering_Wrapper from "../components/wrappers/formik_filtering_wrapper";
 import { isDesktop } from "../components/width_check/values";
+import Scroll_Up_Button from "../components/scroll_up_button";
 
 function ProductGallery() {
   //DATA FETCHING FROM A SERVER
@@ -50,6 +52,7 @@ function ProductGallery() {
 
   return (
     <ClientOnly>
+      <Scroll_Up_Button />
       <>
         {hasMounted === true ? (
           <>
