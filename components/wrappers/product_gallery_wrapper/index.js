@@ -29,6 +29,7 @@ function Product_Gallery_Wrapper({ children }) {
       <div
         css={css`
           margin-top: 2rem;
+          transition: all 13s ease-in-out;
         `}
       >
         {children}

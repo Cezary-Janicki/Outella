@@ -1,10 +1,15 @@
 * {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.836);
+  color: rgb(40, 40, 40);
+  /* color: black; */
+  /* background-color: rgb(250, 249, 246); */
 }
 h1 {
   font-weight: bold;
+}
+html {
+  background-color: rgb(250, 249, 246);
 }
 main {
   font-size: 15px;

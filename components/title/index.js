@@ -5,7 +5,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import Link from "next/link";
 import Image from "next/legacy/image";
-import outella_logo from "../../public/outella.jpg";
+import outella_logo from "../../public/outella-transparent.png";
 export default function Title() {
   return (
     <h1
@@ -15,7 +15,6 @@ export default function Title() {
       `}
     >
       <Link href="/" passHref>
-
         <Image
           css={css`
             cursor: pointer;
@@ -25,7 +24,6 @@ export default function Title() {
           height={125}
           width={125}
         ></Image>
-
       </Link>
     </h1>
   );

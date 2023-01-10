@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 export default function PopUp_Image_Carousel(slides, id) {
   return (
     <div>
+      {(slides, id)}
       <p>SEEEEEEEEEEEEEESERASDFS</p>
     </div>
   );

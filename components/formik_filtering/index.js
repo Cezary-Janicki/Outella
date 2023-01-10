@@ -75,19 +75,6 @@ function Formik_Filtering({
     (item) => getColorCount(products, item) > 0
   );
 
-  // const MyAutoSavingComponent = () => {
-  //   const formik = useFormikContext();
-
-  //   useEffect(() => {
-  //     // use your own equality test or react-fast-compare because they are probably different objects
-  //     if (formik.values !== formik.initialValues) {
-  //       formik.submitForm(); // or onSubmit if you want to do validations before submitting
-  //     }
-  //   }, [formik, formik.values]);
-  //   // not listening for initialValues, because even if they are updated you probably don't want to autosave.
-  //   return null;
-  // };
-
   const AutoSave = () => {
     let debounceMs = 500; // time it takes for the request to be sent
     const formik = useFormikContext();

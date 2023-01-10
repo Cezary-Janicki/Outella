@@ -13,34 +13,38 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
       display: block;
       width: 100%;
       height: auto;
-      transition: 0.5s ease;
-      backface-visibility: hidden;
+      transition: all 0.5s ease-in-out;
     }
   `;
   const TextWrapper = styled.div`
-    transition: 0.5s ease;
+    transition: all 0.5s ease-in-out;
     opacity: 0;
     position: relative;
     transform: translate(0%, 1350%);
+    display: flex;
   `;
   const Text = styled.div`
     color: rgb(0, 0, 0);
     font-size: 16px;
     text-align: center;
     width: 100%;
-    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
   `;
 
   const ImageWrapper = styled.div`
      {
-      transition: 0.5s ease;
+      transition: all 0.5s ease-in-out;
       width: 100%;
       height: 100%;
       position: relative;
       cursor: pointer;
     }
     :hover ${Image} {
-      transition: all 0.5s ease;
+      transition: all 0.5s ease-in-out;
+      -moz-filter: blur(4px);
+      -webkit-filter: blur(4px);
       opacity: 0.6;
       filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
         saturate(150%) contrast(1);
@@ -51,7 +55,7 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
   `;
   const IsOpenImageWrapper = styled.div`
      {
-      transition: 0.5s ease;
+      transition: all 0.5s ease-in-out;
       width: 100%;
       height: 100%;
       position: relative;
@@ -67,6 +71,7 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
       opacity: 1;
     }
   `;
+  // maybe the fadeout doesnt work b/c the wrapper isnt 100%width?
   return (
     <div>
       {isOpen === title ? (
@@ -74,8 +79,8 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
           <TextWrapper>
             <Text>
               <>{title}</>
-              <> styl:{style}</>
-              <> cena:{price}</>
+              <> {style}</>
+              <> {price} zł</>
             </Text>
           </TextWrapper>
           <Image alt="dress">{children}</Image>

@@ -42,6 +42,7 @@ export default function Gallery_Picture_Desktop(item) {
         <div
           css={css`
             display: flex;
+            transition: all 0.5s ease-in-out;
           `}
         >
           <div
@@ -52,6 +53,7 @@ export default function Gallery_Picture_Desktop(item) {
               flex: 3;
               flex-wrap: wrap;
               justify-content: space-around;
+              transition: all 0.5s ease-in-out;
             `}
           >
             {isSmall === true ? (

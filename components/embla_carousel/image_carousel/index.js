@@ -56,7 +56,8 @@ const EmblaCarousel = ({ slides, id }) => {
   }, [embla, onSelect]);
 
   const onSlideClick = useCallback(
-    (index) => {
+    () => {
+      // you can put index in bracket
       if (embla && embla.clickAllowed()) setIsOpen("true"); // if there is a need i can write a custom function that does more than open the overlay
     }, // such as opening at a given index
     [embla]
