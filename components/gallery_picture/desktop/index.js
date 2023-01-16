@@ -27,6 +27,13 @@ export default function Gallery_Picture_Desktop(item) {
   useEffect(() => {
     setIsBig(false);
   }, [isGallery, isSmall]);
+  const container = css`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-auto-rows: min-content;
+    grid-gap: 10px;
+    margin: 3vh;
+  `;
   return (
     <>
       {hasMounted === true ? (
@@ -37,9 +44,9 @@ export default function Gallery_Picture_Desktop(item) {
             padding: 0vh 0vh 0vh 3vh;
           `}
         >
-          <BsGrid3X3 onClick={() => setIsSmall(true)} size="2em" />
-          <BsGrid onClick={() => setIsBig(true)} size="2em" />
-          <BsListUl onClick={() => setIsGallery(!isGallery)} size="2em" />
+          {/* <BsGrid3X3 onClick={() => setIsSmall(true)} size="2em" /> */}
+          {/* <BsGrid onClick={() => setIsBig(true)} size="2em" /> */}
+          {/* <BsListUl onClick={() => setIsGallery(!isGallery)} size="2em" /> */}
         </div>
       ) : null}
       {isGallery === true ? (
@@ -47,25 +54,31 @@ export default function Gallery_Picture_Desktop(item) {
       ) : (
         <div
           css={css`
-            display: flex;
-            transition: all 0.5s ease-in-out;
+            // display: flex;
+            // transition: all 0.5s ease-in-out;
+
+            }
           `}
         >
           <div
             css={css`
-              margin: 3vh;
-              display: flex;
-              flex: 3;
-              flex-direction: row;
-              flex-wrap: wrap;
-              justify-content: space-between;
-              transition: all 0.5s ease-in-out;
+              // margin: 3vh;
+              // display: flex;
+              // flex: 3;
+              // flex-direction: row;
+              // flex-wrap: wrap;
+              // justify-content: space-between;
+              // transition: all 0.5s ease-in-out;
             `}
           >
             {isSmall === true ? (
-              <Gallery_Picture_Small item={item.item} />
+              <div css={container}>
+                <Gallery_Picture_Small item={item.item} />
+              </div>
             ) : (
-              <Gallery_Picture_Large item={item.item} />
+              <div css={container}>
+                <Gallery_Picture_Large item={item.item} />
+              </div>
             )}
           </div>
         </div>

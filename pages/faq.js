@@ -16,6 +16,20 @@ import {
 } from "../components/width_check/values";
 
 export default function Faq() {
+  const container = css`
+    display: grid;
+    grid-auto-columns: minmax(15rem, auto);
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-gap: 1rem;
+  `;
+  const item = css`
+    background: #f1e9f7;
+    border: 3px solid #a579cc;
+    color: #a579cc;
+    padding: 2rem;
+    font-size: 2rem;
+    text-align: center;
+  `;
   const desktop = css`
     color: ${isDesktop() === "true" ? "green" : ""};
   `;
@@ -54,7 +68,19 @@ export default function Faq() {
   ];
   return (
     <Body_Wrapper>
-      {/* <button onClick={setTimeout}>click me!</button> */}
+      <div css={container}>
+        <div css={item}>
+          long content long content long content long content long content
+        </div>
+        <div css={item}>1</div>
+        <div css={item}>2</div>
+        <div css={item}>3</div>
+        <div css={item}>4</div>
+        <div css={item}>5</div>
+        <div css={item}>6</div>
+        <div css={item}>7</div>
+        <div css={item}>8</div>
+      </div>
       <div css={desktop}>isDesktop: {isDesktop()},</div>
       <div css={tablet}>isTablet: {isTablet()},</div>{" "}
       <div css={mobile}>isMobile:{isMobile()}</div>
