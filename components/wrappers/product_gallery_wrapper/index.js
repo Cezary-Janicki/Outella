@@ -10,13 +10,14 @@ import Head from "../../head";
 import Title from "../../title";
 import NavBar from "../../navbar";
 import Footer from "../../footer";
+import Scroll_Up_Button from "../../scroll_up_button";
 
 function Product_Gallery_Wrapper({ children }) {
   return (
     <div>
       <Head />
       <Title />
-
+      <Scroll_Up_Button />
       <div
         css={css`
           @media (max-width: ${desktopBreakPoint}px) {

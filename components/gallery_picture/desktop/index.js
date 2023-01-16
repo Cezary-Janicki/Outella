@@ -30,11 +30,17 @@ export default function Gallery_Picture_Desktop(item) {
   return (
     <>
       {hasMounted === true ? (
-        <>
+        <div
+          css={css`
+            postion: relative;
+            margin-top: -7vh;
+            padding: 0vh 0vh 0vh 3vh;
+          `}
+        >
           <BsGrid3X3 onClick={() => setIsSmall(true)} size="2em" />
           <BsGrid onClick={() => setIsBig(true)} size="2em" />
           <BsListUl onClick={() => setIsGallery(!isGallery)} size="2em" />
-        </>
+        </div>
       ) : null}
       {isGallery === true ? (
         <Gallery_Picture_Description item={item.item} />

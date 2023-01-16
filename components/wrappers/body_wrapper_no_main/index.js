@@ -8,6 +8,7 @@ import Head from "../../head";
 import Title from "../../title";
 import NavBar from "../../navbar";
 import Footer from "../../footer";
+import Scroll_Up_Button from "../../scroll_up_button";
 
 function Body_Wrapper_No_Main({ children }) {
   return (
@@ -15,6 +16,7 @@ function Body_Wrapper_No_Main({ children }) {
       <Head />
       <Title />
       <NavBar />
+      <Scroll_Up_Button />
       {children}
       <Footer />
     </div>
