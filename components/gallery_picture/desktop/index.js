@@ -53,12 +53,12 @@ export default function Gallery_Picture_Desktop(item) {
         >
           <div
             css={css`
-              width: 75%;
-              margin: 3vw;
+              margin: 3vh;
               display: flex;
               flex: 3;
+              flex-direction: row;
               flex-wrap: wrap;
-              justify-content: space-around;
+              justify-content: space-between;
               transition: all 0.5s ease-in-out;
             `}
           >

@@ -15,21 +15,23 @@ const Gallery_Picture_Large = (item) => {
         let style = d.tags.style;
 
         return (
-          <Gallery_Wrapper
-            title={title}
-            price={price}
-            style={style}
-            key={index}
-          >
-            <Link href={`posts/products/${d.pictureName}${d.id}`}>
-              <Image
-                alt="Dress"
-                src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
-                width={380}
-                height={510}
-              />
-            </Link>
-          </Gallery_Wrapper>
+          <>
+            <Gallery_Wrapper
+              title={title}
+              price={price}
+              style={style}
+              key={index}
+            >
+              <Link href={`posts/products/${d.pictureName}${d.id}`}>
+                <Image
+                  alt="Dress"
+                  src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
+                  width={380}
+                  height={510}
+                />
+              </Link>
+            </Gallery_Wrapper>
+          </>
         );
         // </div>
       })}

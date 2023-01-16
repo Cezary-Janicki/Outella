@@ -59,15 +59,13 @@ function Formik_Filtering({
   const { query } = useRouter();
   const prices = [
     "100",
-    "120",
-    "140",
-    "160",
-    "180",
+    "125",
+    "150",
+    "175",
     "200",
-    "220",
-    "240",
-    "260",
-    "280",
+    "225",
+    "250",
+    "275",
     "300",
   ];
   const initialValues = {
@@ -128,13 +126,11 @@ function Formik_Filtering({
         >
           {() => (
             <Form>
-              {/* <Paper */}
               <div
                 css={css`
                   display: flex;
                   margin: auto;
                   padding: 3vh;
-                  // box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
                 `}
                 elevation={0}
               >
@@ -188,11 +184,6 @@ function Formik_Filtering({
                   <Grid item xs={12} sm={2}>
                     <FormControl fullWidth variant="outlined">
                       <InputLabel id="search-minPrice">Cena od</InputLabel>
-
-                      {/* <OutlinedInput
-                        id="outlined-adornment-amount"
-                        label="Amount"
-                      /> */}
                       <Field
                         as={Select}
                         name="minPrice"
@@ -259,7 +250,6 @@ function Formik_Filtering({
                           justify-content: flex-end;
                           margin-left: auto;
                         `}
-                        // type="reset"
                         onClick={() =>
                           router.replace({
                             query: {
@@ -277,7 +267,6 @@ function Formik_Filtering({
                   </Grid>
                 </Grid>
               </div>
-              {/* </Paper> */}
               {/* <MyAutoSavingComponent /> */}
               <AutoSave />
             </Form>
