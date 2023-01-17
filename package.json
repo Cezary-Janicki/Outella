@@ -24,6 +24,7 @@
     "embla-carousel-react": "^7.0.5",
     "formik": "^2.2.9",
     "fs": "0.0.1-security",
+    "fslightbox-react": "^1.6.3",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.0",
     "just-debounce-it": "^3.1.1",

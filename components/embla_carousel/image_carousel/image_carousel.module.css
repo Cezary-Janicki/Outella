@@ -16,6 +16,9 @@
     height: 22vmin;
   }
 }
+.lightbox {
+  color: white !important;
+}
 .embla {
   position: relative;
   background-color: #f7f7f7;
