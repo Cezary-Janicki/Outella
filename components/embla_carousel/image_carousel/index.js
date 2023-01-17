@@ -4,7 +4,7 @@
 import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import PropTypes from "prop-types";
-import { css } from "@emotion/react";
+// import { css } from "@emotion/react";
 // import Autoplay from "embla-carousel-autoplay"
 // import { Thumbnails } from "../thumbnails";
 import Thumbnails from "../thumbnails";
@@ -67,7 +67,7 @@ const EmblaCarousel = ({ slides, id }) => {
     toggler: false,
     slide: 1,
   });
-  let currentIndex = embla?.selectedScrollSnap() + 1;
+  // let currentIndex = embla?.selectedScrollSnap() + 1;
 
   // useEffect(() => {
   //   // this useEffect updates the lightbox controler source index
@@ -86,7 +86,7 @@ const EmblaCarousel = ({ slides, id }) => {
 
   let pictureSources = () => {
     let values = slides.map(
-      (d, index) =>
+      (d) =>
         `/products/${dress?.pictureName}${id}/${d + 1}/${
           dress?.pictureName
         }.jpeg`

@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import FsLightbox from "fslightbox-react";
 
 export default function PopUp_Image_Carousel(props) {
-  let slideNumber = props.slides.length;
-  let dressID = props.id;
-  let currentIndex = props.currentIndex;
+  // let slideNumber = props.slides.length;
+  // let dressID = props.id;
+  // let currentIndex = props.currentIndex;
   let toggler = props.toggler;
   return (
     <div>

@@ -13,7 +13,7 @@ import {
   MenuItem,
   FormControl,
   Select,
-  Input,
+  // Input,
   Button,
 } from "@mui/material";
 import debounce from "just-debounce-it";
@@ -22,8 +22,8 @@ function Formik_Filtering({
   products,
   galleryItems,
   dressColors,
-  queryFilter,
-  setIsOpen,
+  // queryFilter,
+  // setIsOpen,
 }) {
   function getTypeCount(items, type) {
     let count = 0;

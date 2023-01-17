@@ -6,7 +6,7 @@ import Gallery_Picture_Large from "../image_wrappers/large";
 import Gallery_Picture_Description from "../image_wrappers/description";
 import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
-import { BsGrid3X3, BsGrid, BsListUl } from "react-icons/bs";
+// import { BsGrid3X3, BsGrid, BsListUl } from "react-icons/bs";
 
 export default function Gallery_Picture_Desktop(item) {
   const [hasMounted, setHasMounted] = useState(false);
