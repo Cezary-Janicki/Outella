@@ -8,7 +8,6 @@ import { css } from "@emotion/react";
 // import Autoplay from "embla-carousel-autoplay"
 // import { Thumbnails } from "../thumbnails";
 import Thumbnails from "../thumbnails";
-import PopUp_Image_Carousel from "../../mobile_embla_overlay/image_carousel";
 import Image from "next/legacy/image";
 import { useCallback, useState } from "react";
 import styles from "./image_carousel.module.css";
@@ -17,7 +16,6 @@ import FsLightbox from "fslightbox-react";
 
 const EmblaCarousel = ({ slides, id }) => {
   //DATA FETCHING FROM A SERVER
-  let [isOpen, setIsOpen] = useState();
   let [dress, setDress] = useState();
   useEffect(() => {
     axios
@@ -67,17 +65,22 @@ const EmblaCarousel = ({ slides, id }) => {
   // Lightbox popup
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
-    sourceIndex: currentIndex,
+    slide: 1,
   });
   let currentIndex = embla?.selectedScrollSnap() + 1;
-  function toggleLightbox(props) {
-    openLightboxOnSlide(props);
-  }
+
+  // useEffect(() => {
+  //   // this useEffect updates the lightbox controler source index
+  //   setLightboxController({
+  //     toggler: false,
+  //     sourceIndex: currentIndex,
+  //   });
+  // }, [currentIndex]);
 
   function openLightboxOnSlide(number) {
     setLightboxController({
       toggler: !lightboxController.toggler,
-      sourceIndex: number,
+      slide: number,
     });
   }
 
@@ -92,6 +95,12 @@ const EmblaCarousel = ({ slides, id }) => {
   };
   return (
     <>
+      <FsLightbox
+        toggler={lightboxController.toggler}
+        sources={pictureSources()}
+        // sourceIndex={lightboxController.slide} // this slide number is "fixed "on first slide we enter
+        // sourceIndex={currentIndex}
+      />
       <div className={styles.embla}>
         <div className={styles.embla_viewport} ref={mainViewportRef}>
           <div className={styles.embla_container}>
@@ -100,7 +109,7 @@ const EmblaCarousel = ({ slides, id }) => {
                 className={styles.embla_slide}
                 key={index}
                 // onClick={() => onSlideClick(index)} // added this on Click action now need to make a whole screen zoom component
-                onClick={() => toggleLightbox(currentIndex)}
+                // onClick={() => openLightboxOnSlide(index)}
               >
                 <Image
                   className={styles.embla_slide_img}
@@ -110,6 +119,7 @@ const EmblaCarousel = ({ slides, id }) => {
                   }.jpeg`}
                   layout="fill"
                   objectFit="cover"
+                  onClick={() => openLightboxOnSlide(index)}
                 />
               </div>
             ))}
@@ -136,18 +146,6 @@ const EmblaCarousel = ({ slides, id }) => {
             ))}
           </div>
         </div>
-      </div>
-      <div
-        css={css`
-          color: white;
-        `}
-      >
-        <FsLightbox
-          className={styles.lightbox}
-          toggler={lightboxController.toggler}
-          sources={pictureSources()}
-          sourceIndex={lightboxController.slide} // this slide number is "fixed "on first slide we enter
-        />
       </div>
     </>
   );
