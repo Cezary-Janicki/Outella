@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 //React components
+// import { css } from "@emotion/react";
 import { useState, useEffect } from "react";
 import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
@@ -22,7 +23,7 @@ function ProductGallery() {
   // this gallery filtering makes the product gallery brake on site refresh
 
   const router = useRouter();
-  const queryData = router.query;
+  let queryData = router.query;
   let queryDataStyle = queryData.style;
   let queryDataColor = queryData.color;
   let queryDataMaxPrice = queryData.maxPrice;
@@ -32,7 +33,7 @@ function ProductGallery() {
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => {
     setHasMounted(true);
-  }, []);
+  }, [queryData]);
   const galleryItems = [...new Set(products.map((Val) => Val.tags.style))];
   const dressColors = [...new Set(products.map((Val) => Val.tags.color))];
 

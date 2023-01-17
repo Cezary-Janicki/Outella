@@ -59,7 +59,6 @@ export default function NavBarVer() {
           height: auto;
           width: 100%;
           /* General CSS */
-          // border-width: 3mm 0 3mm 0;
           font-family: "Playfair Display", serif;
           padding: 2vw 2vw 2vw 4vw;
         `}
@@ -70,7 +69,8 @@ export default function NavBarVer() {
               <Link
                 href={`/product_gallery?style=${item}&color=all&minPrice=&maxPrice=`}
                 passHref
-                legacyBehavior>
+                legacyBehavior
+              >
                 <p>
                   <a>Sukienki {item} </a>
                 </p>
@@ -80,7 +80,8 @@ export default function NavBarVer() {
           <Link
             href={`/product_gallery?style=all&color=all&minPrice=&maxPrice=`}
             passHref
-            legacyBehavior>
+            legacyBehavior
+          >
             <p>
               <a> Wszystkie sukienki</a>
             </p>
@@ -89,7 +90,12 @@ export default function NavBarVer() {
         <div css={navbarColumn}>
           {foo.map((d, index) => (
             <div key={index}>
-              <Link href={`/posts/${d.id}`} css={navbarRow} passHref legacyBehavior>
+              <Link
+                href={`/posts/${d.id}`}
+                css={navbarRow}
+                passHref
+                legacyBehavior
+              >
                 <p>
                   <a>{d.title}</a>
                 </p>
@@ -97,9 +103,7 @@ export default function NavBarVer() {
             </div>
           ))}
           <Link href={`/faq`} css={navbarRow}>
-
             <p>Często zadwane pytania</p>
-
           </Link>
         </div>
       </div>

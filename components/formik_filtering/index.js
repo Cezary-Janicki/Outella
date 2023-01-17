@@ -7,7 +7,7 @@ import router, { useRouter } from "next/router";
 import PropTypes from "prop-types";
 //Formik and mui
 import { Formik, Form, Field, useFormikContext } from "formik";
-import { Paper, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import {
   InputLabel,
   MenuItem,
@@ -55,10 +55,19 @@ function Formik_Filtering({
     }
     return count;
   }
-
   //ROUTER
   const { query } = useRouter();
-
+  const prices = [
+    "100",
+    "125",
+    "150",
+    "175",
+    "200",
+    "225",
+    "250",
+    "275",
+    "300",
+  ];
   const initialValues = {
     style: query.style || "all",
     color: query.color || "all",
@@ -75,22 +84,9 @@ function Formik_Filtering({
     (item) => getColorCount(products, item) > 0
   );
 
-  // const MyAutoSavingComponent = () => {
-  //   const formik = useFormikContext();
-
-  //   useEffect(() => {
-  //     // use your own equality test or react-fast-compare because they are probably different objects
-  //     if (formik.values !== formik.initialValues) {
-  //       formik.submitForm(); // or onSubmit if you want to do validations before submitting
-  //     }
-  //   }, [formik, formik.values]);
-  //   // not listening for initialValues, because even if they are updated you probably don't want to autosave.
-  //   return null;
-  // };
-
   const AutoSave = () => {
-    let debounceMs = 500; // time it takes for the request to be sent
     const formik = useFormikContext();
+    let debounceMs = 500; // time it takes for the request to be sent
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedSubmit = React.useCallback(
       //use callback caches the debounce function between re-renders
@@ -130,17 +126,16 @@ function Formik_Filtering({
         >
           {() => (
             <Form>
-              <Paper
+              <div
                 css={css`
-                  max-width: 500px;
+                  display: flex;
                   margin: auto;
                   padding: 3vh;
-                  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
                 `}
-                elevation={5}
+                elevation={0}
               >
                 <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={3}>
                     <FormControl fullWidth variant="outlined">
                       <InputLabel id="search-style">Styl</InputLabel>
                       <Field
@@ -148,6 +143,9 @@ function Formik_Filtering({
                         as={Select}
                         labelid="search-style"
                         label="Style"
+                        css={css`
+                          background-color: white;
+                        `}
                       >
                         <MenuItem value="all">
                           <em>Wszystkie style</em>
@@ -160,15 +158,17 @@ function Formik_Filtering({
                       </Field>
                     </FormControl>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={3}>
                     <FormControl fullWidth variant="outlined">
                       <InputLabel id="search-color">Kolor</InputLabel>
                       <Field
                         name="color"
                         as={Select}
                         labelid="search-color"
-                        // labelId="search-color"
                         label="Color"
+                        css={css`
+                          background-color: white;
+                        `}
                       >
                         <MenuItem value="all">
                           <em>Wszystkie Kolory</em>
@@ -181,36 +181,55 @@ function Formik_Filtering({
                       </Field>
                     </FormControl>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={2}>
                     <FormControl fullWidth variant="outlined">
-                      <InputLabel id="search-minPrice">
-                        <em>Minimalna cena</em>
-                      </InputLabel>
+                      <InputLabel id="search-minPrice">Cena od</InputLabel>
                       <Field
-                        as={Input}
+                        as={Select}
                         name="minPrice"
+                        size="Large"
                         labelid="search-minPrice"
-                        // labelId="search-minPrice"
                         label="MinPrice"
-                      ></Field>
+                        css={css`
+                          background-color: white;
+                        `}
+                      >
+                        <MenuItem value="">
+                          <em>Wszystkie ceny</em>
+                        </MenuItem>
+                        {prices.map((item, index) => (
+                          <MenuItem key={index} value={item}>
+                            {`${item}`}
+                          </MenuItem>
+                        ))}
+                      </Field>
                     </FormControl>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={2}>
                     <FormControl fullWidth variant="outlined">
-                      <InputLabel id="search-maxPrice">
-                        <em>Maksymalna cena</em>
-                      </InputLabel>
+                      <InputLabel id="search-maxPrice">Cena do</InputLabel>
                       <Field
-                        as={Input}
+                        as={Select}
                         name="maxPrice"
                         labelid="search-maxPrice"
-                        // labelId="search-maxPrice"
                         label="MaxPrice"
-                      ></Field>
+                        css={css`
+                          background-color: white;
+                        `}
+                      >
+                        <MenuItem value="">
+                          <em>Wszystkie ceny</em>
+                        </MenuItem>
+                        {prices.map((item, index) => (
+                          <MenuItem key={index} value={item}>
+                            {`${item}`}
+                          </MenuItem>
+                        ))}
+                      </Field>
                     </FormControl>
                   </Grid>
                   <Grid item xs={12}>
-                    <Button
+                    {/* <Button
                       type="submit"
                       variant="contained"
                       fullWidth
@@ -220,10 +239,34 @@ function Formik_Filtering({
                       }}
                     >
                       Search
-                    </Button>
+                    </Button> */}
+                    <div
+                      css={css`
+                        display: flex;
+                      `}
+                    >
+                      <Button
+                        css={css`
+                          justify-content: flex-end;
+                          margin-left: auto;
+                        `}
+                        onClick={() =>
+                          router.replace({
+                            query: {
+                              style: "all",
+                              color: "all",
+                              minPrice: "",
+                              maxPrice: "",
+                            },
+                          })
+                        }
+                      >
+                        Wyczyść filtry
+                      </Button>
+                    </div>
                   </Grid>
                 </Grid>
-              </Paper>
+              </div>
               {/* <MyAutoSavingComponent /> */}
               <AutoSave />
             </Form>

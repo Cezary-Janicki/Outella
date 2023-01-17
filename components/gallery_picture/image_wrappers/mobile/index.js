@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 import { useState } from "react";
 import { useRef } from "react";
-// import { css } from "@emotion/react";
+import { css } from "@emotion/react";
 import Gallery_Wrapper from "../../../wrappers/gallery_wrapper";
 
 const Gallery_Picture_Wrapper_Mobile = (item) => {
@@ -19,8 +19,6 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
        */
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
-          // alert("You clicked outside of me!"); // i could rewrite this line to return true maybe?
-          console.log("click!");
           setIsOpen("false");
         }
       }
@@ -40,7 +38,11 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
   }
   return (
     <OutsideAlerter>
-      <div>
+      <div
+        css={css`
+          transition: all 0.5s ease;
+        `}
+      >
         {item.item.map((d, index) => {
           let title = d.title;
           let price = d.price;
