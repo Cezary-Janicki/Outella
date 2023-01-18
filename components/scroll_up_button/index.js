@@ -27,6 +27,7 @@ export default function Scroll_Up_Button() {
     <>
       <div
         css={css`
+          color: rgb(40, 40, 40);
           position: fixed;
           bottom: 30px;
           right: 30px;

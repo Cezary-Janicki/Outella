@@ -116,3 +116,36 @@
 .embla_slide_thumb.is_selected .embla_slide_thumbnail {
   opacity: 1;
 }
+.embla_prev {
+  position: relative;
+  bottom: 41vh;
+  z-index: 3;
+  display: inline;
+  margin-left: 10px;
+}
+.embla_next {
+  position: relative;
+  bottom: 41vh;
+  float: right;
+  float: middle;
+  display: inline;
+  margin-right: 10px;
+}
+.embla_button_active {
+  color: rgb(40, 40, 40);
+  background-color: rgba(250, 249, 246, 0.6);
+  border-radius: 5px;
+}
+.embla_button_disabled {
+  color: rgb(104, 104, 104);
+  background-color: rgba(250, 249, 246, 0.3);
+  border-radius: 5px;
+}
+.embla_slide_count {
+  position: relative;
+  bottom: 79vh;
+  padding: 5px;
+  float: right;
+  margin-right: -20px;
+  width: min-content;
+}

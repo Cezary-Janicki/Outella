@@ -2,19 +2,17 @@
 
 //React components
 import React, { useEffect } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useState } from "react";
+import Image from "next/legacy/image";
+import axios from "axios";
 import PropTypes from "prop-types";
 // import { css } from "@emotion/react";
-// import Autoplay from "embla-carousel-autoplay"
-// import { Thumbnails } from "../thumbnails";
 import Thumbnails from "../thumbnails";
-import Image from "next/legacy/image";
-import { useCallback, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import styles from "./image_carousel.module.css";
-import axios from "axios";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 const EmblaCarousel = ({ slides, id }) => {
   //DATA FETCHING FROM A SERVER
   let [dress, setDress] = useState();
@@ -60,8 +58,6 @@ const EmblaCarousel = ({ slides, id }) => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   let currentIndex = embla?.selectedScrollSnap();
-
-  // This useEffect takes the index data from lightbox
   useEffect(() => {
     setLightboxIndex(currentIndex);
   }, [currentIndex]);
@@ -81,19 +77,27 @@ const EmblaCarousel = ({ slides, id }) => {
       };
     });
   };
+  const scrollPrev = useCallback(() => {
+    if (embla) embla.scrollPrev();
+  }, [embla]);
+  const scrollNext = useCallback(() => {
+    if (embla) embla.scrollNext();
+  }, [embla]);
+
   return (
     <>
-      {/* <button onClick={() => embla.scrollTo(2)}>scroll to pic 2</button>  this button scrolls to picture 2 on embla*/}
+      {/* {console.log("index is now", lightboxIndex)}  */}
       <Lightbox
         open={open}
         close={() => setOpen(false)}
         slides={pictureSources()}
+        index={lightboxIndex}
         styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
         on={{
           view: (index) => {
-            setLightboxIndex(index), console.log("view", lightboxIndex);
+            setLightboxIndex(index);
           },
-        }} // this line of code throws the index of carousel now i need to link it to embla index
+        }}
       />
       <div className={styles.embla}>
         <div className={styles.embla_viewport} ref={mainViewportRef}>
@@ -113,6 +117,30 @@ const EmblaCarousel = ({ slides, id }) => {
               </div>
             ))}
           </div>
+        </div>
+        <AiOutlineLeft
+          className={
+            currentIndex === 0
+              ? `${styles.embla_prev} ${styles.embla_button_disabled}`
+              : `${styles.embla_prev} ${styles.embla_button_active}`
+          }
+          onClick={scrollPrev}
+          size="1.75em"
+        />
+        <AiOutlineRight
+          className={
+            currentIndex + 1 === slides.length
+              ? `${styles.embla_next} ${styles.embla_button_disabled}`
+              : `${styles.embla_next} ${styles.embla_button_active}`
+          }
+          // className={`${styles.embla_next} ${styles.embla_button_active}`}
+          onClick={scrollNext}
+          size="1.75em"
+        />
+        <div
+          className={`${styles.embla_slide_count} ${styles.embla_button_active}`}
+        >
+          {currentIndex + 1}/{slides.length}
         </div>
       </div>
 

@@ -2,9 +2,6 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   /* color: rgb(40, 40, 40); */
-  /* color: red; */
-  /* color: black; */
-  /* background-color: rgb(250, 249, 246); */
 }
 
 h1 {
@@ -59,7 +56,6 @@ img {
   line-height: 1.2rem;
   word-spacing: 0.4rem;
   letter-spacing: 0.06rem;
-  color: rgb(40, 40, 40);
 }
 
 body {
