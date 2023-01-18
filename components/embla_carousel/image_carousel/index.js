@@ -57,15 +57,20 @@ const EmblaCarousel = ({ slides, id }) => {
 
   // Lightbox popup
   const [open, setOpen] = useState(false);
-  // let currentIndex = embla?.selectedScrollSnap() + 1;
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // useEffect(() => {
-  //   // this useEffect updates the lightbox controler source index
-  //   setLightboxController({
-  //     toggler: false,
-  //     sourceIndex: currentIndex,
-  //   });
-  // }, [currentIndex]);
+  let currentIndex = embla?.selectedScrollSnap();
+
+  // This useEffect takes the index data from lightbox
+  useEffect(() => {
+    setLightboxIndex(currentIndex);
+  }, [currentIndex]);
+  // This useEffect updates the lightbox
+
+  useEffect(() => {
+    if (!embla || open === false) return;
+    if (open === true) embla.scrollTo(lightboxIndex);
+  }, [lightboxIndex]);
 
   let pictureSources = () => {
     return slides.map((pictureName, d) => {
@@ -78,12 +83,17 @@ const EmblaCarousel = ({ slides, id }) => {
   };
   return (
     <>
+      {/* <button onClick={() => embla.scrollTo(2)}>scroll to pic 2</button>  this button scrolls to picture 2 on embla*/}
       <Lightbox
         open={open}
         close={() => setOpen(false)}
         slides={pictureSources()}
         styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
-        // styles={{ container: { color: "red" } }}
+        on={{
+          view: (index) => {
+            setLightboxIndex(index), console.log("view", lightboxIndex);
+          },
+        }} // this line of code throws the index of carousel now i need to link it to embla index
       />
       <div className={styles.embla}>
         <div className={styles.embla_viewport} ref={mainViewportRef}>
