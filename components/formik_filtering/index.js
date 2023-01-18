@@ -131,6 +131,7 @@ function Formik_Filtering({
                   display: flex;
                   margin: auto;
                   padding: 3vh;
+                  color: rgb(40, 40, 40);
                 `}
                 elevation={0}
               >

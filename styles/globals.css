@@ -1,15 +1,30 @@
 * {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  color: rgb(40, 40, 40);
+  /* color: rgb(40, 40, 40); */
+  /* color: red; */
   /* color: black; */
   /* background-color: rgb(250, 249, 246); */
 }
-.lightbox {
-  color: bisque;
-}
+
 h1 {
   font-weight: bold;
+  color: rgb(40, 40, 40);
+}
+h2,
+h3 {
+  color: rgb(40, 40, 40);
+}
+ul,
+ol,
+li {
+  color: rgb(40, 40, 40);
+}
+em {
+  color: rgb(40, 40, 40);
+}
+label {
+  color: rgb(40, 40, 40);
 }
 html {
   overflow-x: hidden;
@@ -29,6 +44,7 @@ p {
   line-height: 1.4rem;
   word-spacing: 0.4rem;
   letter-spacing: 0.1rem;
+  color: rgb(40, 40, 40);
 }
 html,
 body.div,
@@ -43,14 +59,7 @@ img {
   line-height: 1.2rem;
   word-spacing: 0.4rem;
   letter-spacing: 0.06rem;
-}
-.container {
-  /* General CSS */
-  margin: 0px -8px -8px -8px;
-  /* Flexbox */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  color: rgb(40, 40, 40);
 }
 
 body {
@@ -60,6 +69,8 @@ body {
 a {
   outline: none;
   text-decoration: none;
+  color: rgb(40, 40, 40);
+
   /* padding: 2px 1px 0px; */
 }
 
