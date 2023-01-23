@@ -63,10 +63,13 @@ const EmblaCarousel = ({ slides, id }) => {
   }, [currentIndex]);
   // This useEffect updates the lightbox
 
-  useEffect(() => {
-    if (!embla || open === false) return;
-    if (open === true) embla.scrollTo(lightboxIndex);
-  }, [lightboxIndex]);
+  useEffect(
+    (embla, open) => {
+      if (!embla || open === false) return;
+      if (open === true) embla.scrollTo(lightboxIndex);
+    },
+    [lightboxIndex]
+  );
 
   let pictureSources = () => {
     return slides.map((pictureName, d) => {
