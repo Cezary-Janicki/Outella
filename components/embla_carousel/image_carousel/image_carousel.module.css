@@ -6,6 +6,15 @@
     width: 9.75vmax;
     height: 13vmax;
   }
+  .embla_prev {
+    bottom: 33vh;
+  }
+  .embla_next {
+    bottom: 33vh;
+  }
+  .embla_slide_count {
+    bottom: 64vh;
+  }
 }
 @media (min-width: 501px) {
   .embla_slide {
@@ -14,6 +23,15 @@
   .embla_slide_thumbnail {
     width: 15vmin;
     height: 22vmin;
+  }
+  .embla_prev {
+    bottom: 41vh;
+  }
+  .embla_next {
+    bottom: 41vh;
+  }
+  .embla_slide_count {
+    bottom: 79vh;
   }
 }
 .lightbox {
@@ -118,14 +136,12 @@
 }
 .embla_prev {
   position: relative;
-  bottom: 41vh;
   z-index: 3;
   display: inline;
   margin-left: 10px;
 }
 .embla_next {
   position: relative;
-  bottom: 41vh;
   float: right;
   float: middle;
   display: inline;
@@ -143,7 +159,7 @@
 }
 .embla_slide_count {
   position: relative;
-  bottom: 79vh;
+  /* bottom: 79vh; */
   padding: 5px;
   float: right;
   margin-right: -20px;
