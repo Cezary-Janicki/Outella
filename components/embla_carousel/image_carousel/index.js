@@ -12,6 +12,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import styles from "./image_carousel.module.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 const EmblaCarousel = ({ slides, id }) => {
   //DATA FETCHING FROM A SERVER
@@ -24,7 +26,7 @@ const EmblaCarousel = ({ slides, id }) => {
       });
   });
 
-  //MAIN EMBLA CODE
+  //M A I N   E M B L A   C O D E
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [mainViewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
   const [thumbViewportRef, emblaThumbs] = useEmblaCarousel({
@@ -53,7 +55,7 @@ const EmblaCarousel = ({ slides, id }) => {
     embla.on("select", onSelect);
   }, [embla, onSelect]);
 
-  // Lightbox popup
+  // L I G H T B O X    P O P U P
   const [open, setOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
@@ -84,7 +86,6 @@ const EmblaCarousel = ({ slides, id }) => {
   const scrollNext = useCallback(() => {
     if (embla) embla.scrollNext();
   }, [embla]);
-
   return (
     <>
       {/* {console.log("index is now", lightboxIndex)}  */}
@@ -98,6 +99,19 @@ const EmblaCarousel = ({ slides, id }) => {
           view: (index) => {
             setLightboxIndex(index);
           },
+        }}
+        plugins={[Zoom]}
+        animation={{ zoom: 500 }}
+        zoom={{
+          maxZoomPixelRatio: 1,
+          zoomInMultiplier: 2,
+          doubleTapDelay: 300,
+          doubleClickDelay: 300,
+          doubleClickMaxStops: 2,
+          keyboardMoveDistance: 50,
+          wheelZoomDistanceFactor: 100,
+          pinchZoomDistanceFactor: 100,
+          scrollToZoom: false,
         }}
       />
       <div className={styles.embla}>
