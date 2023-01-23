@@ -2,18 +2,17 @@
 
 //React components
 import React, { useEffect } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useState } from "react";
+import Image from "next/legacy/image";
+import axios from "axios";
 import PropTypes from "prop-types";
 // import { css } from "@emotion/react";
-// import Autoplay from "embla-carousel-autoplay"
-// import { Thumbnails } from "../thumbnails";
 import Thumbnails from "../thumbnails";
-import Image from "next/legacy/image";
-import { useCallback, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import styles from "./image_carousel.module.css";
-import axios from "axios";
-import FsLightbox from "fslightbox-react";
-
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 const EmblaCarousel = ({ slides, id }) => {
   //DATA FETCHING FROM A SERVER
   let [dress, setDress] = useState();
@@ -54,63 +53,60 @@ const EmblaCarousel = ({ slides, id }) => {
     embla.on("select", onSelect);
   }, [embla, onSelect]);
 
-  // const onSlideClick = useCallback(
-  //   () => {
-  //     // you can put index in bracket
-  //     if (embla && embla.clickAllowed()) setToggler(true); // if there is a need i can write a custom function that does more than open the overlay
-  //   }, // such as opening at a given index
-  //   [embla]
-  // );
-
   // Lightbox popup
-  const [lightboxController, setLightboxController] = useState({
-    toggler: false,
-    slide: 1,
-  });
-  // let currentIndex = embla?.selectedScrollSnap() + 1;
+  const [open, setOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // useEffect(() => {
-  //   // this useEffect updates the lightbox controler source index
-  //   setLightboxController({
-  //     toggler: false,
-  //     sourceIndex: currentIndex,
-  //   });
-  // }, [currentIndex]);
+  let currentIndex = embla?.selectedScrollSnap();
+  useEffect(() => {
+    setLightboxIndex(currentIndex);
+  }, [currentIndex]);
+  // This useEffect updates the lightbox
 
-  function openLightboxOnSlide(number) {
-    setLightboxController({
-      toggler: !lightboxController.toggler,
-      slide: number,
-    });
-  }
+  useEffect(
+    (embla, open) => {
+      if (!embla || open === false) return;
+      if (open === true) embla.scrollTo(lightboxIndex);
+    },
+    [lightboxIndex]
+  );
 
   let pictureSources = () => {
-    let values = slides.map(
-      (d) =>
-        `/products/${dress?.pictureName}${id}/${d + 1}/${
+    return slides.map((pictureName, d) => {
+      return {
+        src: `/products/${dress?.pictureName}${id}/${d + 1}/${
           dress?.pictureName
-        }.jpeg`
-    );
-    return values;
+        }.jpeg`,
+      };
+    });
   };
+  const scrollPrev = useCallback(() => {
+    if (embla) embla.scrollPrev();
+  }, [embla]);
+  const scrollNext = useCallback(() => {
+    if (embla) embla.scrollNext();
+  }, [embla]);
+
   return (
     <>
-      <FsLightbox
-        toggler={lightboxController.toggler}
-        sources={pictureSources()}
-        // sourceIndex={lightboxController.slide} // this slide number is "fixed "on first slide we enter
-        // sourceIndex={currentIndex}
+      {/* {console.log("index is now", lightboxIndex)}  */}
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={pictureSources()}
+        index={lightboxIndex}
+        styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
+        on={{
+          view: (index) => {
+            setLightboxIndex(index);
+          },
+        }}
       />
       <div className={styles.embla}>
         <div className={styles.embla_viewport} ref={mainViewportRef}>
           <div className={styles.embla_container}>
             {slides.map((d, index) => (
-              <div
-                className={styles.embla_slide}
-                key={index}
-                // onClick={() => onSlideClick(index)} // added this on Click action now need to make a whole screen zoom component
-                // onClick={() => openLightboxOnSlide(index)}
-              >
+              <div className={styles.embla_slide} key={index}>
                 <Image
                   className={styles.embla_slide_img}
                   alt="dress"
@@ -119,11 +115,35 @@ const EmblaCarousel = ({ slides, id }) => {
                   }.jpeg`}
                   layout="fill"
                   objectFit="cover"
-                  onClick={() => openLightboxOnSlide(index)}
+                  onClick={() => setOpen(true)}
                 />
               </div>
             ))}
           </div>
+        </div>
+        <AiOutlineLeft
+          className={
+            currentIndex === 0
+              ? `${styles.embla_prev} ${styles.embla_button_disabled}`
+              : `${styles.embla_prev} ${styles.embla_button_active}`
+          }
+          onClick={scrollPrev}
+          size="1.75em"
+        />
+        <AiOutlineRight
+          className={
+            currentIndex + 1 === slides.length
+              ? `${styles.embla_next} ${styles.embla_button_disabled}`
+              : `${styles.embla_next} ${styles.embla_button_active}`
+          }
+          // className={`${styles.embla_next} ${styles.embla_button_active}`}
+          onClick={scrollNext}
+          size="1.75em"
+        />
+        <div
+          className={`${styles.embla_slide_count} ${styles.embla_button_active}`}
+        >
+          {currentIndex + 1}/{slides.length}
         </div>
       </div>
 
