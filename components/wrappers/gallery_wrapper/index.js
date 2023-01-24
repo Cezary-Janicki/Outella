@@ -9,19 +9,29 @@ import PropTypes from "prop-types";
 function Gallery_Wrapper({ children, title, price, style, isOpen }) {
   const ImageTransition = styled.div`
      {
-      -webkit-transition: all 0.9s ease;
+      // z-index: 10;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
+        saturate(150%) contrast(1);
+      -webkit-transition: all 0.3s ease;
     }
   `;
+
   const TextWrapper = styled.div`
-    // transition: all 0.25s ease-in-out;
-    opacity: 0;
+    height: 100%;
+    width: 380px;
     position: relative;
     transform: translate(0%, 1350%);
     display: flex;
+    -webkit-transition: all 0.3s ease;
   `;
+
   const Text = styled.div`
     color: rgb(0, 0, 0);
     font-size: 16px;
+    font-weight: 500;
     text-align: center;
     width: 100%;
     flex-direction: column;
@@ -29,18 +39,13 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
     justify-content: space-between;
   `;
 
-  // const ImageWrapper = styled.div` maybe change this to  div css={ImageWrapper} const ImageWrapper=css``
-
   const ImageWrapper = styled.div`
-     {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      cursor: pointer;
-      -webkit-transition: -webkit-filter 0.9s ease;
-    }
-    :hover ${ImageTransition} {
-      -webkit-transition: all 0.9s ease;
+    width: 380px;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: -webkit-filter 0.3s ease;
+    :hover {
       opacity: 0.6;
       -webkit-filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
         saturate(150%) contrast(1);
@@ -65,10 +70,9 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
         saturate(150%) contrast(1);
     }
     ${TextWrapper} {
-      opacity: 1;
+      opacity: 0;
     }
   `;
-  // maybe the fadeout doesnt work b/c the wrapper isnt 100%width?
   return (
     <div>
       {isOpen === title ? (
@@ -81,19 +85,21 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
                 <> {price} zł</>
               </Text>
             </TextWrapper>
-            <ImageTransition>{children}</ImageTransition>
+            {children}
           </IsOpenImageWrapper>
         </div>
       ) : (
         <div>
-          <ImageWrapper>
-            <TextWrapper>
-              <Text>
-                <>{title}</>
-              </Text>
-            </TextWrapper>
-            <ImageTransition>{children}</ImageTransition>
-          </ImageWrapper>
+          {/* <ImageTransition> */}
+          <TextWrapper>
+            <Text>
+              <>{title}</>
+              <> {style}</>
+              <> {price} zł</>
+            </Text>
+          </TextWrapper>
+          <ImageWrapper>{children}</ImageWrapper>
+          {/* </ImageTransition> */}
         </div>
       )}
     </div>
