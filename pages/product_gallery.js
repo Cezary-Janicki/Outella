@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 //React components
-// import { css } from "@emotion/react";
+import { css } from "@emotion/react";
 import { useState, useEffect } from "react";
 import { GetSortedProductsData } from "../lib/products";
 import { useRouter } from "next/router";
@@ -73,12 +73,23 @@ function ProductGallery() {
         ) : (
           <>
             <Product_Gallery_Wrapper>
-              <Formik_Filtering_Wrapper
-                products={products}
-                galleryItems={galleryItems}
-                dressColors={dressColors}
-                queryFilter={queryFilter}
-              />
+              <div
+                css={css`
+                  position: -webkit-sticky;
+                  position: sticky;
+                  top: 0;
+                  z-index: 3;
+                  background-color: #faf9f6;
+                  height: 155px;
+                `}
+              >
+                <Formik_Filtering_Wrapper
+                  products={products}
+                  galleryItems={galleryItems}
+                  dressColors={dressColors}
+                  queryFilter={queryFilter}
+                />
+              </div>
               <Gallery_Picture_Desktop item={item} />
             </Product_Gallery_Wrapper>
           </>
