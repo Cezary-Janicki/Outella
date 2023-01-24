@@ -51,12 +51,7 @@ export default function Gallery_Picture_Desktop(item) {
       {isGallery === true ? (
         <Gallery_Picture_Description item={item.item} />
       ) : (
-        <div
-          css={css`
-            // transition: all 0.5s ease-in-out;
-            background: BlanchedAlmond;
-          `}
-        >
+        <div>
           {isSmall === true ? (
             <div css={container}>
               <Gallery_Picture_Small item={item.item} />

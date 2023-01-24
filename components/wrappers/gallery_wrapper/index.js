@@ -9,7 +9,6 @@ import PropTypes from "prop-types";
 function Gallery_Wrapper({ children, title, price, style, isOpen }) {
   const ImageTransition = styled.div`
      {
-      // z-index: 10;
       position: relative;
       height: 100%;
       width: 100%;
@@ -71,6 +70,7 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
     }
     ${TextWrapper} {
       opacity: 0;
+      z-index: 3;
     }
   `;
   return (
@@ -85,12 +85,11 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
                 <> {price} zł</>
               </Text>
             </TextWrapper>
-            {children}
+            <ImageTransition>{children}</ImageTransition>
           </IsOpenImageWrapper>
         </div>
       ) : (
         <div>
-          {/* <ImageTransition> */}
           <TextWrapper>
             <Text>
               <>{title}</>
@@ -99,7 +98,6 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
             </Text>
           </TextWrapper>
           <ImageWrapper>{children}</ImageWrapper>
-          {/* </ImageTransition> */}
         </div>
       )}
     </div>
