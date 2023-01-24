@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Body_Wrapper from "../components/wrappers/body_wrapper";
 import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import {
   isMobile,
   isTablet,
@@ -16,22 +17,11 @@ import {
 } from "../components/width_check/values";
 
 export default function Faq() {
-  const container = css`
-    display: grid;
-    grid-auto-columns: minmax(15rem, auto);
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    grid-gap: 1rem;
-  `;
-  const item = css`
-    background: #f1e9f7;
-    border: 3px solid #a579cc;
-    color: #a579cc;
-    padding: 2rem;
-    font-size: 2rem;
-    text-align: center;
-  `;
   const desktop = css`
     color: ${isDesktop() === "true" ? "green" : ""};
+    :hover {
+      color: purple;
+    }
   `;
   const tablet = css`
     color: ${isTablet() === "true" ? "purple" : ""};
@@ -39,11 +29,7 @@ export default function Faq() {
   const mobile = css`
     color: ${isMobile() === "true" ? "red" : ""};
   `;
-  // const przykladowyCss = css`
-  // <częśc dla telefonu>;
-  // <część dla tabletu>;
-  // <część dla kompa>;
-  // częśc uniwersalna dla wszystkich`
+
   const database = [
     {
       id: 0,
@@ -68,22 +54,23 @@ export default function Faq() {
   ];
   return (
     <Body_Wrapper>
-      <div css={container}>
-        <div css={item}>
-          long content long content long content long content long content
-        </div>
-        <div css={item}>1</div>
-        <div css={item}>2</div>
-        <div css={item}>3</div>
-        <div css={item}>4</div>
-        <div css={item}>5</div>
-        <div css={item}>6</div>
-        <div css={item}>7</div>
-        <div css={item}>8</div>
-      </div>
       <div css={desktop}>isDesktop: {isDesktop()},</div>
       <div css={tablet}>isTablet: {isTablet()},</div>{" "}
       <div css={mobile}>isMobile:{isMobile()}</div>
+      <p>It works with transition-property: all; but that's not ideal.</p>
+      <div
+        css={css`
+          width: 100%;
+          height: 250px;
+          margin: 100px auto;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          position: relative;
+          transition: all 1s ease;
+          :hover {
+            border-radius: 0;
+          }
+        `}
+      />
       <p>Często zadawane pytania</p>
       {database.map((faqEntry, index) => (
         <Accordion key={index}>

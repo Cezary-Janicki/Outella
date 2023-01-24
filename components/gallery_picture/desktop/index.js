@@ -54,7 +54,7 @@ export default function Gallery_Picture_Desktop(item) {
         <div
           css={css`
             // transition: all 0.5s ease-in-out;
-            // background: BlanchedAlmond;
+            background: BlanchedAlmond;
           `}
         >
           {isSmall === true ? (
