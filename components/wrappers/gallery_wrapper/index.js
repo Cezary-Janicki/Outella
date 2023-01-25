@@ -7,17 +7,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Gallery_Wrapper({ children, title, price, style, isOpen }) {
-  const ImageTransition = styled.div`
-     {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
-        saturate(150%) contrast(1);
-      -webkit-transition: all 0.3s ease;
-    }
-  `;
-
   const TextWrapper = styled.div`
     height: 100%;
     width: 380px;
@@ -46,50 +35,68 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
     -webkit-transition: -webkit-filter 0.3s ease;
     :hover {
       opacity: 0.6;
-      -webkit-filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
-        saturate(150%) contrast(1);
+      -webkit-filter: blur(7px) saturate(110%) contrast(110%);
     }
-    :hover ${TextWrapper} {
-      opacity: 1;
-    }
+    // :hover ${TextWrapper} {
+    //   opacity: 1;
+    // }
   `;
   const IsOpenImageWrapper = styled.div`
-     {
-      opacity: 1;
-      // transition: all 0.25s ease-in-out;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      cursor: pointer;
-    }
-    ${ImageTransition} {
-      // transition: all 0.25s ease;
-      opacity: 0.6;
-      filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
-        saturate(150%) contrast(1);
-    }
-    ${TextWrapper} {
-      opacity: 0;
-      z-index: 3;
-    }
+      {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        -webkit-transition: -webkit-filter 0.3s ease;
+      }
+      // ${isOpen === title}${ImageTransition} {
+        
+        // opacity: 0.6;
+        // filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
+        //   saturate(150%) contrast(1);
+      }
+      // ${TextWrapper} {
+        //   opacity: 0;
+        //   z-index: 3;
+        // }
+        `;
+  const ImageTransition = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    -webkit-filter: blur(7px) saturate(125%) opacity(50%) contrast(110%);
   `;
   return (
-    <div>
+    <div
+      css={css`
+        transition: opacity 300ms ease-in;
+      `}
+    >
       {isOpen === title ? (
-        <div>
+        <div
+          css={css`
+            transition: opacity 300ms ease-in;
+          `}
+        >
+          <TextWrapper>
+            <Text>
+              <>{title}</>
+              <> {style}</>
+              <> {price} zł</>
+            </Text>
+          </TextWrapper>
           <IsOpenImageWrapper>
-            <TextWrapper>
-              <Text>
-                <>{title}</>
-                <> {style}</>
-                <> {price} zł</>
-              </Text>
-            </TextWrapper>
             <ImageTransition>{children}</ImageTransition>
           </IsOpenImageWrapper>
         </div>
       ) : (
-        <div>
+        <div
+          css={css`
+            transition: opacity 300ms ease-in;
+          `}
+        >
           <TextWrapper>
             <Text>
               <>{title}</>
