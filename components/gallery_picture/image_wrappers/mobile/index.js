@@ -95,8 +95,6 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
                       src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
                       width={380}
                       height={510}
-                      placeholder="blur"
-                      blurDataURL={`/products_compressed/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
                     />
                   </div>
                 )}

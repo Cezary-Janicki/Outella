@@ -30,44 +30,48 @@ export default function Bestsellers() {
         >
           <div css={gridBox}>
             <Link href="/posts/products/sukienka8">
-
               <Image_Wrapper>
                 <Image
                   alt="Sukienka8"
                   src={"/products/sukienka8/1/sukienka.jpeg"}
                   layout="fill"
                   objectFit="cover"
+                  placeholder="blur"
+                  blurDataURL={"/products_compressed/sukienka8/1/sukienka.jpeg"}
                 />
               </Image_Wrapper>
-
             </Link>
           </div>
           <div css={gridBox}>
             <Link href="/posts/products/sukienka25">
-
               <Image_Wrapper>
                 <Image
                   alt="sukienka 25"
                   src={"/products/sukienka25/1/sukienka.jpeg"}
                   layout="fill"
                   objectFit="cover"
+                  placeholder="blur"
+                  blurDataURL={
+                    "/products_compressed/sukienka25/1/sukienka.jpeg"
+                  }
                 />
               </Image_Wrapper>
-
             </Link>
           </div>
           <div css={gridBox}>
             <Link href="/posts/products/sukienka33/">
-
               <Image_Wrapper>
                 <Image
                   alt="Sukienka 33"
                   src={"/products/sukienka33/1/sukienka.jpeg"}
                   layout="fill"
                   objectFit="cover"
+                  placeholder="blur"
+                  blurDataURL={
+                    "/products_compressed/sukienka33/1/sukienka.jpeg"
+                  }
                 />
               </Image_Wrapper>
-
             </Link>
           </div>
         </div>
