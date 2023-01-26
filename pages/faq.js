@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Body_Wrapper from "../components/wrappers/body_wrapper";
 import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
 import {
   isMobile,
   isTablet,
@@ -55,22 +55,9 @@ export default function Faq() {
   return (
     <Body_Wrapper>
       <div css={desktop}>isDesktop: {isDesktop()},</div>
-      <div css={tablet}>isTablet: {isTablet()},</div>{" "}
+      <div css={tablet}>isTablet: {isTablet()},</div>
       <div css={mobile}>isMobile:{isMobile()}</div>
-      <p>It works with transition-property: all; but that's not ideal.</p>
-      <div
-        css={css`
-          width: 100%;
-          height: 250px;
-          margin: 100px auto;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          position: relative;
-          transition: all 1s ease;
-          :hover {
-            border-radius: 0;
-          }
-        `}
-      />
+
       <p>Często zadawane pytania</p>
       {database.map((faqEntry, index) => (
         <Accordion key={index}>
