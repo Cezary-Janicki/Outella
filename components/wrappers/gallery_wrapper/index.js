@@ -37,30 +37,17 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
       opacity: 0.6;
       -webkit-filter: blur(7px) saturate(110%) contrast(110%);
     }
-    // :hover ${TextWrapper} {
-    //   opacity: 1;
-    // }
   `;
   const IsOpenImageWrapper = styled.div`
-      {
-        opacity: 1;
-        width: 100%;
-        height: 100%;
-        position: relative;
-        cursor: pointer;
-        -webkit-transition: -webkit-filter 0.3s ease;
-      }
-      // ${isOpen === title}${ImageTransition} {
-        
-        // opacity: 0.6;
-        // filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
-        //   saturate(150%) contrast(1);
-      }
-      // ${TextWrapper} {
-        //   opacity: 0;
-        //   z-index: 3;
-        // }
-        `;
+     {
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+      -webkit-transition: -webkit-filter 0.3s ease;
+    }
+  `;
   const ImageTransition = styled.div`
     position: relative;
     height: 100%;
