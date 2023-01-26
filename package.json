@@ -27,6 +27,7 @@
     "fslightbox-react": "^1.6.3",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.0",
+    "js-base64": "^3.7.4",
     "just-debounce-it": "^3.2.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
