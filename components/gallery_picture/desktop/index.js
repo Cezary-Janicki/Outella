@@ -40,8 +40,7 @@ export default function Gallery_Picture_Desktop(item) {
         <div
           css={css`
             postion: relative;
-            margin-top: -7vh;
-            padding: 0vh 0vh 0vh 3vh;
+            margin-top: -30px;
           `}
         >
           {/* <BsGrid3X3 onClick={() => setIsSmall(true)} size="2em" /> */}
@@ -52,35 +51,16 @@ export default function Gallery_Picture_Desktop(item) {
       {isGallery === true ? (
         <Gallery_Picture_Description item={item.item} />
       ) : (
-        <div
-          css={css`
-            // display: flex;
-            // transition: all 0.5s ease-in-out;
-
-            }
-          `}
-        >
-          <div
-            css={css`
-              // margin: 3vh;
-              // display: flex;
-              // flex: 3;
-              // flex-direction: row;
-              // flex-wrap: wrap;
-              // justify-content: space-between;
-              // transition: all 0.5s ease-in-out;
-            `}
-          >
-            {isSmall === true ? (
-              <div css={container}>
-                <Gallery_Picture_Small item={item.item} />
-              </div>
-            ) : (
-              <div css={container}>
-                <Gallery_Picture_Large item={item.item} />
-              </div>
-            )}
-          </div>
+        <div>
+          {isSmall === true ? (
+            <div css={container}>
+              <Gallery_Picture_Small item={item.item} />
+            </div>
+          ) : (
+            <div css={container}>
+              <Gallery_Picture_Large item={item.item} />
+            </div>
+          )}
         </div>
       )}
     </>

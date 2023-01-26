@@ -6,7 +6,6 @@ import { useCallback, useState } from "react";
 import Image from "next/legacy/image";
 import axios from "axios";
 import PropTypes from "prop-types";
-// import { css } from "@emotion/react";
 import Thumbnails from "../thumbnails";
 import useEmblaCarousel from "embla-carousel-react";
 import styles from "./image_carousel.module.css";

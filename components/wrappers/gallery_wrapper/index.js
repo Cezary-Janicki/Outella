@@ -1,31 +1,25 @@
 /** @jsxImportSource @emotion/react */
 
 //React components
-// import { css } from "@emotion/react";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import PropTypes from "prop-types";
 
 function Gallery_Wrapper({ children, title, price, style, isOpen }) {
-  const Image = styled.div`
-     {
-      opacity: 1;
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: all 0.5s ease-in-out;
-    }
-  `;
   const TextWrapper = styled.div`
-    transition: all 0.5s ease-in-out;
-    opacity: 0;
+    height: 100%;
+    width: 380px;
     position: relative;
     transform: translate(0%, 1350%);
     display: flex;
+    -webkit-transition: all 0.3s ease;
   `;
+
   const Text = styled.div`
     color: rgb(0, 0, 0);
     font-size: 16px;
+    font-weight: 500;
     text-align: center;
     width: 100%;
     flex-direction: column;
@@ -34,48 +28,45 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
   `;
 
   const ImageWrapper = styled.div`
-     {
-      transition: all 0.5s ease-in-out;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      cursor: pointer;
-    }
-    :hover ${Image} {
-      transition: all 0.5s ease-in-out;
-      -moz-filter: blur(4px);
-      -webkit-filter: blur(4px);
+    width: 380px;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: -webkit-filter 0.3s ease;
+    :hover {
       opacity: 0.6;
-      filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
-        saturate(150%) contrast(1);
-    }
-    :hover ${TextWrapper} {
-      opacity: 1;
+      -webkit-filter: blur(7px) saturate(110%) contrast(110%);
     }
   `;
   const IsOpenImageWrapper = styled.div`
      {
-      transition: all 0.5s ease-in-out;
+      opacity: 1;
       width: 100%;
       height: 100%;
       position: relative;
       cursor: pointer;
-    }
-    ${Image} {
-      transition: all 0.5s ease;
-      opacity: 0.6;
-      filter: blur(7px) brightness(80%) sepia(30%) hue-rotate(-70deg)
-        saturate(150%) contrast(1);
-    }
-    ${TextWrapper} {
-      opacity: 1;
+      -webkit-transition: -webkit-filter 0.3s ease;
     }
   `;
-  // maybe the fadeout doesnt work b/c the wrapper isnt 100%width?
+  const ImageTransition = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    -webkit-filter: blur(7px) saturate(125%) opacity(50%) contrast(110%);
+  `;
   return (
-    <div>
+    <div
+      css={css`
+        transition: opacity 300ms ease-in;
+      `}
+    >
       {isOpen === title ? (
-        <IsOpenImageWrapper>
+        <div
+          css={css`
+            transition: opacity 300ms ease-in;
+          `}
+        >
           <TextWrapper>
             <Text>
               <>{title}</>
@@ -83,15 +74,25 @@ function Gallery_Wrapper({ children, title, price, style, isOpen }) {
               <> {price} zł</>
             </Text>
           </TextWrapper>
-          <Image alt="dress">{children}</Image>
-        </IsOpenImageWrapper>
+          <IsOpenImageWrapper>
+            <ImageTransition>{children}</ImageTransition>
+          </IsOpenImageWrapper>
+        </div>
       ) : (
-        <ImageWrapper>
+        <div
+          css={css`
+            transition: opacity 300ms ease-in;
+          `}
+        >
           <TextWrapper>
-            <Text>{title}</Text>
+            <Text>
+              <>{title}</>
+              <> {style}</>
+              <> {price} zł</>
+            </Text>
           </TextWrapper>
-          <Image alt="dress">{children}</Image>
-        </ImageWrapper>
+          <ImageWrapper>{children}</ImageWrapper>
+        </div>
       )}
     </div>
   );

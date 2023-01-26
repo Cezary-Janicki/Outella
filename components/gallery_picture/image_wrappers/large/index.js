@@ -4,7 +4,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
-// import { css } from "@emotion/react";
 import Gallery_Wrapper from "../../../wrappers/gallery_wrapper";
 const Gallery_Picture_Large = (item) => {
   return (

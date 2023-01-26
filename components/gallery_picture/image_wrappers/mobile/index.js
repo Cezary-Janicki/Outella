@@ -10,8 +10,24 @@ import { css } from "@emotion/react";
 import Gallery_Wrapper from "../../../wrappers/gallery_wrapper";
 
 const Gallery_Picture_Wrapper_Mobile = (item) => {
-  const [isOpen, setIsOpen] = useState(""); // could rewrite this to use useContext and export the setIsOpen to outside_alerter
+  const [isOpen, setIsOpen] = useState("");
+  const [timer, setTimer] = useState(0);
 
+  function UseTimer() {
+    // this updates the timer and makes it tick
+    useEffect(() => {
+      if (!timer) return;
+      const intervalId = setTimeout(() => setTimer(timer - 1), 1000);
+      return () => clearInterval(intervalId); // clear interval on re-render to avoid memory leaks
+    });
+    // this useEffect re-sets the isOpen useState when the timer reaches zero and useOpen is used
+    useEffect(() => {
+      if ((isOpen != "") & (timer === 0)) {
+        return setIsOpen("");
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [timer]);
+  }
   function useOutsideAlerter(ref) {
     useEffect(() => {
       /**
@@ -19,7 +35,7 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
        */
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
-          setIsOpen("false");
+          setIsOpen("false"), setTimer(0);
         }
       }
 
@@ -38,6 +54,8 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
   }
   return (
     <OutsideAlerter>
+      <UseTimer />
+      {console.log("useTimer", timer)}
       <div
         css={css`
           transition: all 0.5s ease;
@@ -56,25 +74,33 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
               key={index}
               isOpen={isOpen}
             >
-              {isOpen === title ? (
-                <Link href={`posts/products/${d.pictureName}${d.id}`}>
-                  <Image
-                    alt="Dress"
-                    src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
-                    width={380}
-                    height={510}
-                  />
-                </Link>
-              ) : (
-                <div onClick={() => setIsOpen(`${title}`)}>
-                  <Image
-                    alt="Dress"
-                    src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
-                    width={380}
-                    height={510}
-                  />
-                </div>
-              )}
+              <div
+                css={css`
+                  -webkit-transition: -webkit-filter 0.3s ease; // this prolly does nothing but wont hurt to try ey?
+                `}
+              >
+                {isOpen === title ? (
+                  <Link href={`posts/products/${d.pictureName}${d.id}`}>
+                    <Image
+                      alt="Dress"
+                      src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
+                      width={380}
+                      height={510}
+                    />
+                  </Link>
+                ) : (
+                  <div onClick={() => (setIsOpen(`${title}`), setTimer(3))}>
+                    <Image
+                      alt="Dress"
+                      src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
+                      width={380}
+                      height={510}
+                      placeholder="blur"
+                      blurDataURL={`/products_compressed/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
+                    />
+                  </div>
+                )}
+              </div>
             </Gallery_Wrapper>
           );
           // </div>
