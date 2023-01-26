@@ -25,6 +25,7 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
       if ((isOpen != "") & (timer === 0)) {
         return setIsOpen("");
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timer]);
   }
   function useOutsideAlerter(ref) {
@@ -94,6 +95,8 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
                       src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
                       width={380}
                       height={510}
+                      placeholder="blur"
+                      blurDataURL={`/products_compressed/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
                     />
                   </div>
                 )}
