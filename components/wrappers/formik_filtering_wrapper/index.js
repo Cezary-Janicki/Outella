@@ -37,6 +37,19 @@ export default function Formik_Filtering_Wrapper({
   `;
 
   const RegularMenu = styled.div`
+    position: "-webkit-sticky";
+    position: "sticky";
+    top: 0px;
+    // ${window.scrollY > 200} {
+    //   position: fixed;
+    //   top: 0px;
+    //   width: 100%;
+    //   margin-top: -185px;
+    // }
+    // ${window.scrollY < 199} {
+    //   margin-top: -185px;
+    // }
+
     @media (max-width: ${desktopBreakPoint}px) {
       display: none;
     }
