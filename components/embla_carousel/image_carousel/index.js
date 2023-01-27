@@ -127,6 +127,10 @@ const EmblaCarousel = ({ slides, id }) => {
                   layout="fill"
                   objectFit="cover"
                   onClick={() => setOpen(true)}
+                  placeholder="blur"
+                  blurDataURL={`/products_compressed/${
+                    dress?.pictureName
+                  }${id}/${d + 1}/${dress?.pictureName}.jpeg`}
                 />
               </div>
             ))}
@@ -172,6 +176,10 @@ const EmblaCarousel = ({ slides, id }) => {
                     dress?.pictureName
                   }.jpeg`}
                   key={index}
+                  placeholder="blur"
+                  blurDataURL={`/products_compressed/${
+                    dress?.pictureName
+                  }${id}/${d + 1}/${dress?.pictureName}.jpeg`}
                 />{" "}
               </div>
             ))}

@@ -75,10 +75,10 @@ function ProductGallery() {
             <Product_Gallery_Wrapper>
               <div
                 css={css`
-                  position: -webkit-sticky;
-                  position: sticky;
-                  top: 0;
-                  z-index: 3;
+                  // position: -webkit-sticky;
+                  // position: sticky;
+                  // top: 0;
+                  // z-index: 3;
                   background-color: #faf9f6;
                   height: 155px;
                 `}
