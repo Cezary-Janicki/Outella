@@ -77,9 +77,22 @@ function ProductGallery() {
                 css={css`
                   position: -webkit-sticky;
                   position: sticky;
-                  top: 0;
+                  top: 0px;
                   z-index: 3;
+
+                  height: 155px;
                   background-color: #faf9f6;
+                  filter: blur(5px);
+                  opacity: 0.85;
+                `}
+              />
+              <div
+                css={css`
+                  position: -webkit-sticky;
+                  position: sticky;
+                  top: 0px;
+                  margin-top: -155px;
+                  z-index: 3;
                   height: 155px;
                 `}
               >
