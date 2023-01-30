@@ -9,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Body_Wrapper from "../components/wrappers/body_wrapper";
 import { css } from "@emotion/react";
-import styled from "@emotion/styled";
 import {
   isMobile,
   isTablet,
@@ -57,7 +56,6 @@ export default function Faq() {
       <div css={desktop}>isDesktop: {isDesktop()},</div>
       <div css={tablet}>isTablet: {isTablet()},</div>{" "}
       <div css={mobile}>isMobile:{isMobile()}</div>
-      <p>It works with transition-property: all; but that's not ideal.</p>
       <div
         css={css`
           width: 100%;
