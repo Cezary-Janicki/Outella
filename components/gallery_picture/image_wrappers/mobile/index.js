@@ -12,13 +12,13 @@ import Gallery_Wrapper from "../../../wrappers/gallery_wrapper";
 const Gallery_Picture_Wrapper_Mobile = (item) => {
   const [isOpen, setIsOpen] = useState("");
   const [timer, setTimer] = useState(0);
-
+  // the error is caused everytime i switch the isOpen prop
   function UseTimer() {
     // this updates the timer and makes it tick
     useEffect(() => {
       if (!timer) return;
-      const intervalId = setTimeout(() => setTimer(timer - 1), 1000);
-      return () => clearInterval(intervalId); // clear interval on re-render to avoid memory leaks
+      const intervalId = setTimeout(() => setTimer(timer - 3), 3000);
+      return () => clearInterval(intervalId); // clear interval on re-render to avoid memory leaks this line doesnt cause the error!!
     });
     // this useEffect re-sets the isOpen useState when the timer reaches zero and useOpen is used
     useEffect(() => {
@@ -55,7 +55,6 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
   return (
     <OutsideAlerter>
       <UseTimer />
-      {console.log("useTimer", timer)}
       <div
         css={css`
           transition: all 0.5s ease;
@@ -86,6 +85,8 @@ const Gallery_Picture_Wrapper_Mobile = (item) => {
                       src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
                       width={380}
                       height={510}
+                      placeholder="blur"
+                      blurDataURL={`/products_compressed/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
                     />
                   </Link>
                 ) : (
