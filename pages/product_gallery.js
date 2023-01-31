@@ -19,9 +19,6 @@ function ProductGallery() {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      {
-        console.log("scroll height", window.scrollY);
-      }
       if (window.scrollY > 260) {
         setScroll(true);
       } else {
