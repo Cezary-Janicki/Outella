@@ -8,7 +8,6 @@ import PropTypes from "prop-types";
 //Formik and mui
 import { Formik, Form, Field, useFormikContext } from "formik";
 import { Grid } from "@material-ui/core";
-// import Backdrop from "@material-ui/core";
 import {
   InputLabel,
   MenuItem,
@@ -134,29 +133,10 @@ function Formik_Filtering({
                       display: flex;
                       margin: auto;
                       padding: 3vh;
-                      color: rgb(40, 40, 40);
                     `}
-                    // elevation={0}
                   >
-                    <Grid
-                      container
-                      spacing={3}
-                      css={css`
-                        // position: "-webkit-sticky";
-                        // position: "sticky";
-                        // top: 0px;
-                      `}
-                    >
-                      <Grid
-                        item
-                        xs={12}
-                        sm={3}
-                        css={css`
-                          position: "-webkit-sticky";
-                          position: "sticky";
-                          top: 0px;
-                        `}
-                      >
+                    <Grid container spacing={3}>
+                      <Grid item xs={12} sm={3}>
                         <FormControl fullWidth variant="outlined">
                           <InputLabel id="search-style">Styl</InputLabel>
                           <Field
@@ -171,7 +151,6 @@ function Formik_Filtering({
                             <MenuItem value="all">
                               <em>Wszystkie style</em>
                             </MenuItem>
-
                             {filteredTypes.map((item, index) => (
                               <MenuItem key={index} value={item}>
                                 {`${item}  (${getTypeCount(products, item)})`}
