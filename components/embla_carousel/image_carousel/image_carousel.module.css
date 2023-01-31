@@ -153,9 +153,10 @@
   border-radius: 5px;
 }
 .embla_button_disabled {
-  color: rgb(104, 104, 104);
+  /* color: rgb(104, 104, 104);
   background-color: rgba(250, 249, 246, 0.3);
-  border-radius: 5px;
+  border-radius: 5px; */
+  display: none;
 }
 .embla_slide_count {
   position: relative;
