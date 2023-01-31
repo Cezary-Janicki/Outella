@@ -16,6 +16,20 @@ import Formik_Filtering_Wrapper from "../components/wrappers/formik_filtering_wr
 import { isDesktop } from "../components/width_check/values";
 
 function ProductGallery() {
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      {
+        console.log("scroll height", window.scrollY);
+      }
+      if (window.scrollY > 260) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    });
+  }, []);
+
   //DATA FETCHING FROM A SERVER
   const products = GetSortedProductsData();
 
@@ -75,12 +89,47 @@ function ProductGallery() {
             <Product_Gallery_Wrapper>
               <div
                 css={css`
-                  // position: -webkit-sticky;
-                  // position: sticky;
-                  // top: 0;
-                  // z-index: 3;
-                  background-color: #faf9f6;
+                  top: 0px;
+                  z-index: 3;
+                  width: 100%;
                   height: 155px;
+                  background-color: #faf9f6;
+                  filter: blur(5px);
+                  opacity: 0.85;
+
+                  ${scroll === true
+                    ? `position: fixed;`
+                    : ` position: -webkit-sticky;
+                     position: sticky;
+                     `}
+                `}
+              />
+              <div
+                css={css`
+                  ${scroll === true
+                    ? `
+                  
+                  z-index: 3;
+                  width: 100%;
+                  height: 155px;
+                  background-color: #faf9f6;
+                  filter: blur(5px);
+                  opacity: 0.85;`
+                    : `display:none`}
+                `}
+              />
+              <div
+                css={css`
+                  // position: fixed;
+                  top: 0px;
+                  z-index: 3;
+                  height: 155px;
+                  width: 100%;
+                  ${scroll === true
+                    ? `position: fixed;`
+                    : ` position: -webkit-sticky;
+                     position: sticky;
+                     margin-top: -155px;`}
                 `}
               >
                 <Formik_Filtering_Wrapper

@@ -23,7 +23,6 @@ export default function Dresses_Types() {
       {/*==================== D R E S S E S _ T Y P E S ====================>*/}
       <div css={gridBox}>
         <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
-
           <Image_Wrapper>
             <Image
               className={styles.image}
@@ -31,65 +30,66 @@ export default function Dresses_Types() {
               src={`/products/sukienka18/3/sukienka.jpeg`}
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
+              blurDataURL={`/products_compressed/sukienka18/3/sukienka.jpeg`}
             />
           </Image_Wrapper>
-
         </Link>
       </div>
       <div css={gridBox}>
         <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
-
           <Image_Wrapper>
             <Image
               alt="Dress"
               src={"/products/sukienka10/1/sukienka.jpeg"}
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
+              blurDataURL={"/products_compressed/sukienka10/1/sukienka.jpeg"}
             />
           </Image_Wrapper>
-
         </Link>
       </div>
       <div css={gridBox}>
         <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
-
           <Image_Wrapper>
             <Image
               alt="Dress"
               src={"/products/sukienka4/1/sukienka.jpeg"}
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
+              blurDataURL={"/products_compressed/sukienka4/1/sukienka.jpeg"}
             />
           </Image_Wrapper>
-
         </Link>
       </div>
       <div css={gridBox}>
         <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
-
           <Image_Wrapper>
             <Image
               alt="Dress"
               src={"/products/sukienka33/6/sukienka.jpeg"}
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
+              blurDataURL={"/products_compressed/sukienka33/6/sukienka.jpeg"}
             />
           </Image_Wrapper>
-
         </Link>
       </div>
       <div css={gridBox}>
         <Link href="product_gallery?style=all&color=all&minPrice=&maxPrice=">
-
           <Image_Wrapper>
             <Image
               alt="Dress"
               src={"/products/sukienka7/1/sukienka.jpeg"}
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
+              blurDataURL={"/products_compressed/sukienka7/1/sukienka.jpeg"}
             />
           </Image_Wrapper>
-
         </Link>
       </div>
     </div>

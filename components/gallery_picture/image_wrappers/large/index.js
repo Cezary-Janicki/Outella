@@ -27,8 +27,11 @@ const Gallery_Picture_Large = (item) => {
                   src={`/products/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
                   width={380}
                   height={510}
-                  placeholder="blur"
-                  blurDataURL={`/products_compressed/${d.pictureName}${d.id}/1/${d.pictureName}.jpeg`}
+                  // placeholder="blur"
+                  // blurDataURL={`/products_compressed/sukienka1/1/sukienka.jpeg`}
+                  // i can give dynamic paths to blur data url which is umm
+                  // i prodoably need to use the PLAICEHOLDER >:(
+                  // maybe this guide will help? https://ironeko.com/posts/how-to-blurred-images-on-load-in-next-js
                 />
               </Link>
             </Gallery_Wrapper>
