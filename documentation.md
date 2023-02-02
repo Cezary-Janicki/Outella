@@ -72,8 +72,9 @@ Wrapper for the body of a page it consists of a head, navbar, footer, scroll up 
 
 This is formik filtering wrapper it allows responsive desing for the Formik Filtering Component Sticky on desktop and in sidebar on mobile.
 Wrapper utilizes breakpoint from WidthCheck component to check whick version to display(mobile or desktop). Mobile version utilized useState to open and close the hamburger menu.
--isOpen - value of the useState either true(menu open) or false (menu closed)
--setIsOpen- function utilized to set the value of useState
+
+- isOpen - value of the useState either true(menu open) or false (menu closed)
+- setIsOpen- function utilized to set the value of useState
 
 ### ImageWrapper
 
