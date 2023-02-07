@@ -1,22 +1,22 @@
-# Components
+# 1 Components
 
-## Bestsellers
+## 1.1 Bestsellers
 
 Components that displays the 3 "bestseller" dresses on the main page
 
-## ClientOnly
+## 1.2 ClientOnly
 
 Component used to check if the site has mounted properly to avoid hydration errors
 
-## DressesTypes
+## 1.3 DressesTypes
 
 Component that displays 5 images that all directly link to the product gallery
 
-## EmblaCarousel
+## 1.4 EmblaCarousel
 
 Embla carousel is the image carousel that is displayed in the page, it utilizes a 3rd party repository to display the lightbox
 
-### Image Carousel
+### 1.4.1 Image Carousel
 
 Component imports
 
@@ -24,38 +24,38 @@ Component imports
 
 #### Embla Stuff
 
-##### Props:
+##### 1.4.1.1 Props:
 
 - slides => number of slides (number of photos that embla should display)
 - id => ID of a current page for embla to know which pictures to take from the database
 
-##### Functions ( and consts with arrow functions):
+##### 1.4.1.2 Functions ( and consts with arrow functions):
 
 - onThumbClick => this triggers on clicking a thumbnail, if the click is allowed it scrolls main viewport to the clicked thumbnail
 - onSelect => this function makes the thumbnails scroll and it lights up the active one
 
-##### Consts:
+##### 1.4.1.3 Consts:
 
 - [dress, setDress] => useState that is utilized to store and rewrite current displayed product data
 - [selctedIndex, setSelectedIndex] => use state that saves current selected index, utilized to properly sync/link embla with the lightbox
 - [mainViewportRef, embla] => reference for embla main viewport, (not sure what it does it's an embla thing)
 - [thumbViewportRef, emblaThumbs] => again some embla thing that is needed for the carousel to work, it's a thumbnail ref this time
 
-#### Lightbox Stuff
+#### 1.4.2 Lightbox Stuff
 
-##### Functions (and consts with arrow functions):
+##### 1.4.2.1 Functions (and consts with arrow functions):
 
 - currentIndex => this is a basic useEffect function. embla?.selectedScrollSnap is a function that returns current index from embla. Every time this index is changed useEffect updates the lightbox index accordingly
 - lightboxIndex useEffect => this useEffect checks for changes in lightboxIndex and updates the embla index accordingly
 - pictureSources => this is a function that generates an array of all picture sources that are avilable for embla carousel to be passed as a prop in lightbox
 - scrollPrev/scrollNext => hook based solution for scrolling buttons with embla\
 
-##### Consts:
+##### 1.4.2.2 Consts:
 
 - [open, setOpen] => useState that manages the open/closed state of the lightbox
 - [lightboxIndex, setLightboxIndex] => useState that keeps track of index that lightbox should display the picture of. This also is later linked with embla selectedIndex using useEffect
 
-##### Lightbox component Props:
+##### 1.4.2.3 Lightbox component Props:
 
 - close => action that is triggered upon closing the component
 - slides => array of all paths that components needs to display
@@ -65,9 +65,9 @@ Component imports
 - plugins => any additional plugins used with the component
 - zoom => setting for the zoom plugin
 
-#### Image Component
+#### 1.4.3 Image Component
 
-Props:
+##### 1.4.3.1 Props:
 
 - src => dymanic image path so that all images can be displayed via a loop
 - placeholder => type of a placeholder effect utilized for the image
@@ -76,21 +76,23 @@ Props:
 
 ### Thumbnails
 
-## Footer
+Component that displays thumbnails as buttons with images, nothing special here
+
+## 1.5 Footer
 
 Component responsible for displaying the footer
 
-## FormikFiltering
+## 1.6 FormikFiltering
 
 Component that utilizies query strings along with formik to fitler the results according to users needs <br />
 
-##### Props:
+### 1.6.1 Props:
 
 - products => Array with all of the products/dresses information
 - galleryItems => Array with all of the dresses types
 - dressColors => Array with all of the dresses colors
 
-##### Functions / consts:
+### 1.6.2 Functions / consts:
 
 - getTypeCount => takes all items as an input and a dress type, counts how many items there are of a selected type
 - getColorCount => takes all items as an input and a dress color, counts how many items there are of a selected color
@@ -101,51 +103,58 @@ Component that utilizies query strings along with formik to fitler the results a
 - prices => array of prices that is fed into the formik filterring price field
 - initialValues => array of initial values for formik Filtering
 
-## GalleryPicture
+## 1.7 GalleryPicture
 
-## GradientUnderline
+Now mostly defunct component that used to display a set of 3 buttons that changed the image gallery picture size and/or formatting
+The component consists of 3 wrappers, buttons and logic to track their open/closed state
+
+- small => it displayed images of smaller size than curently
+- large => the wrapper used currently
+- description => displayed a product to the left and information about it to the right, like on allegro/ebay
+
+## 1.8 GradientUnderline
 
 The Pink gradient underline utilized to devide content from footer
 
-## Head
+## 1.9 Head
 
 It's a head
 
-## Navbar
+## 1.11 Navbar
 
 Displays the proper navbar component according tot he device width
 
-## OutsideAlerter
+## 1.12 OutsideAlerter
 
 Detects clicks outside the div for the mobile onClick overlay in product page dress pictures to work
 
-## ScrollUpButton
+## 1.13 ScrollUpButton
 
 A small button that always scrolls user to the top of the page
 
-## Size Selector
+## 1.14 Size Selector
 
 Now not utilized component that allowed for changing product page image size on toggle
 
-## Title
+## 1.15 Title
 
 The logo utilized on the top of the page
 
-## WidthCheck
+## 1.16 WidthCheck
 
 Basic component that checks the width of the screen and creates booleans that can be used to create responsive desing with emotion
 
-## Wrappers
+## 1.17 Wrappers
 
-### BodyWrapper
+### 1.17.1 BodyWrapper
 
 Wrapper for the body of a page it consists of a head, navbar, footer, scroll up button and it's children are wrapped in <main> component which has a fixed width
 
-### BodyWrapperNoMain
+### 1.17.2 BodyWrapperNoMain
 
 Wrapper for the body of a page it consists of a head, navbar, footer, scroll up button and it's children are not wrapped in <main> component and do not have a fixed width
 
-### FormikFilteringWrapper
+### 1.17.3 FormikFilteringWrapper
 
 This is formik filtering wrapper it allows responsive desing for the Formik Filtering Component Sticky on desktop and in sidebar on mobile.
 Wrapper utilizes breakpoint from WidthCheck component to check whick version to display(mobile or desktop). Mobile version utilized useState to open and close the hamburger menu.
@@ -153,10 +162,35 @@ Wrapper utilizes breakpoint from WidthCheck component to check whick version to 
 - isOpen - value of the useState either true(menu open) or false (menu closed)
 - setIsOpen- function utilized to set the value of useState
 
-### ImageWrapper
+### 1.17.4 ImageWrapper
 
 Basic wrapper used for all of the images
 
-### ProductGalleryWrapper
+### 1.17.5 ProductGalleryWrapper
 
 Wrapper for the whole product gallery that hides the navbar button so that hamburger menu can be used with formik
+
+# 2 Content
+
+Footer content is stored here. Can't store it on a sever due to file formatting. Server is Json only and non compatible with any formating such as one used in markdown files
+
+# 3 Libraries
+
+## 3.1 posts
+
+Used for generating and managment/processing for the footer
+
+## 3.2 products
+
+Used for data managment/processing for the products/dresses
+
+### Functions
+
+- GetSortedProductsData => fetch product data via global context
+- getPhotoCount => get the number of photos in a folder for a selected product
+- getAllProductIds => fetches all of the product ids from a server
+- getProductCount => returns a number of products with a selected type
+
+# 4 Pages
+
+# 5 Misc files
