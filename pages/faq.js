@@ -8,27 +8,8 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Body_Wrapper from "../components/wrappers/body_wrapper";
-// import { css } from "@emotion/react";
-// import styled from "@emotion/styled";
-// import  isMobile,
-// isTablet,
-// isDesktop,
-// "../components/width_check/values";
 
 export default function Faq() {
-  // const desktop = css`
-  //   color: ${isDesktop() === "true" ? "green" : ""};
-  //   :hover {
-  //     color: purple;
-  //   }
-  // `;
-  // const tablet = css`
-  //   color: ${isTablet() === "true" ? "purple" : ""};
-  // `;
-  // const mobile = css`
-  //   color: ${isMobile() === "true" ? "red" : ""};
-  // `;
-
   const database = [
     {
       id: 0,
@@ -53,10 +34,6 @@ export default function Faq() {
   ];
   return (
     <Body_Wrapper>
-      {/* <div css={desktop}>isDesktop: {isDesktop()},</div>
-      <div css={tablet}>isTablet: {isTablet()},</div>
-      <div css={mobile}>isMobile:{isMobile()}</div> */}
-
       <p>Często zadawane pytania</p>
       {database.map((faqEntry, index) => (
         <Accordion key={index}>

@@ -193,4 +193,43 @@ Used for data managment/processing for the products/dresses
 
 # 4 Pages
 
+## 4.1 Index
+
+The main/index page nothing special
+
+## 4.2 Faq
+
+Faq page with a few test accordion questions
+
+## 4.3 Product gallery
+
+### 4.3.1 Functions
+
+- queryFilter => filters and updates(using setItem) item (products/dresses) data according to the filters stored in query params with router
+
+### 4.3.1 Consts
+
+- [scroll, setScroll] => useState utilized for the Product Gallery Wrapper to change enable sticky positioning with mui ( when it isn't done this way there are bugs/glitches)
+- [item, setItem] => useState utilized for storing and updating the product/dresses information
+- galleryItems => creates and array of all dress styles/types
+- dressColors => creates an array of all dress colors
+- router => used to initialize router
+
+## 4.4 posts/[id]
+
+This is a template for generating footer pages
+
+## 4.5 posts/products/[id]
+
+This is a template for generating dress/product pages
+
+### 4.5.1 Functions
+
+- getStaticPaths =>
+- getStaticProps =>
+
+### 4.5.2 Consts
+
+- slides => this is generating the number of slides that embla carousel needs to display
+
 # 5 Misc files

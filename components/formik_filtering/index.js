@@ -106,7 +106,6 @@ function Formik_Filtering({
   useEffect(() => {
     setHasMounted(true);
   }, []);
-  // mui doesnt play nice with scrolling and sticky i prodoably will need to write my own grid and filter components
   return (
     <>
       {hasMounted === true ? (

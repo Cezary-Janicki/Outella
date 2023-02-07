@@ -29,5 +29,3 @@ Thumbnails.propTypes = {
   imgSrc: PropTypes.string,
 };
 export default Thumbnails;
-//the thumbnail images dont overflow but all consolidate into a single line
-//If i change theimage margins ect they all autocompress to fit all in a single

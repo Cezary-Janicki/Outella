@@ -12,8 +12,8 @@ import styles from "./image_carousel.module.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
-
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+
 const EmblaCarousel = ({ slides, id }) => {
   //DATA FETCHING FROM A SERVER
   let [dress, setDress] = useState();
@@ -87,7 +87,6 @@ const EmblaCarousel = ({ slides, id }) => {
   }, [embla]);
   return (
     <>
-      {/* {console.log("index is now", lightboxIndex)}  */}
       <Lightbox
         open={open}
         close={() => setOpen(false)}
@@ -127,7 +126,6 @@ const EmblaCarousel = ({ slides, id }) => {
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
-                  // blurDataURL={`/products_compressed/sukienka1/1/sukienka.jpeg`}
                   blurDataURL={`/products_compressed/${
                     dress?.pictureName
                   }${id}/${d + 1}/${dress?.pictureName}.jpeg`}
