@@ -2,7 +2,7 @@
 
 //React components
 import React from "react";
-import css from "@emotion/css";
+import { css } from "@emotion/react";
 import axios from "axios";
 import PropTypes from "prop-types";
 //Page components
@@ -11,14 +11,15 @@ import EmblaCarousel from "../../../components/embla_carousel/image_carousel";
 import { getPhotoCount } from "../../../lib/products";
 import { desktopBreakPoint } from "../../../components/width_check/values";
 import Size_Selector from "../../../components/size_selector";
+// import { GetSortedProductsData } from "../../../lib/products";
 
 // See https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
 export async function getStaticPaths() {
   // Fetch paths from endpoint at build-time, generate static pages
+
   const {
     data: [paths],
   } = await axios.get(`https://outella-database.vercel.app/productIds`);
-
   return {
     paths, // Array<{params: {id: number} }>
     fallback: false,
@@ -30,8 +31,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const photoNumber = await getPhotoCount(params.id);
   const id = params.id.replace(/sukienka/, "");
-
   // Fetch product from database, provide as props
+
   const { data } = await axios(
     `https://outella-database.vercel.app/products/${id}`
   );
