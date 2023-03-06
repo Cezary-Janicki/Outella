@@ -116,19 +116,17 @@ export default function Footer() {
               text-align: center;
             `}
           >
-            <p>
-              Znajdziesz nas na:{" "}
-              <SocialIcon
-                network="facebook"
-                url="https://www.facebook.com/Outella-111964767352112"
-                style={{ height: 35, width: 35 }}
-              />{" "}
-              <SocialIcon
-                network="instagram"
-                url="https://www.instagram.com/outella_sukienki/"
-                style={{ height: 35, width: 35 }}
-              />
-            </p>
+            <p>Znajdziesz nas na: </p>
+            <SocialIcon
+              network="facebook"
+              url="https://www.facebook.com/Outella-111964767352112"
+              style={{ height: 35, width: 35 }}
+            />{" "}
+            <SocialIcon
+              network="instagram"
+              url="https://www.instagram.com/outella_sukienki/"
+              style={{ height: 35, width: 35 }}
+            />
           </div>
         </div>
       </Gradient>
