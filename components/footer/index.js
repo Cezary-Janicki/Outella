@@ -5,14 +5,14 @@ import React from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { GetSortedPostsData } from "../../lib/posts";
+import { getSortedPostsData } from "../../lib/posts";
 import Footer_Column_Wrapper from "./Footer_Column_Wrapper";
 import { desktopBreakPoint } from "../width_check/values";
 import { SocialIcon } from "react-social-icons";
 
 export async function getStaticProps() {
   // const allPostsData = GetSortedProductsData();
-  const allPostsData = GetSortedPostsData();
+  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,

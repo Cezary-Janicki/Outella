@@ -7,7 +7,7 @@ import router, { useRouter } from "next/router";
 import PropTypes from "prop-types";
 //Formik and mui
 import { Formik, Form, Field, useFormikContext } from "formik";
-import { Grid } from "@material-ui/core";
+import Grid from "@mui/material/Grid";
 import {
   InputLabel,
   MenuItem,

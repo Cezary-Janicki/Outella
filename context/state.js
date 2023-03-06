@@ -1,11 +1,11 @@
-import { Divide } from "hamburger-react";
+// import { Divide } from "hamburger-react";
 import { React, createContext, useContext, useState, useEffect } from "react";
-import { getAllProductsIds, getProductsData } from "../lib/products";
-import allProductsData from "../pages/posts/products/[id]";
+import { GetSortedProductsData } from "../lib/products";
+// import allProductsData from "../pages/posts/products/[id]";
 import axios from "axios";
 
 const AppContext = createContext();
-const ProductContext = createContext();
+// const ProductContext = createContext();
 
 export function useAppContext() {
   const data = useContext(AppContext)[0];
@@ -19,7 +19,7 @@ export function useAppContext() {
 // }
 export async function getStaticProps({ params }) {
   // todo put following in try/catch
-  const products = params.id ? [await getProductsData(params.id)] : [];
+  const products = params.id ? [await GetSortedProductsData(params.id)] : [];
   return {
     props: {
       products,
