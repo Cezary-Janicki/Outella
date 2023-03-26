@@ -23,7 +23,7 @@ The site can be accessed at https://outella.vercel.app/
 ### Responsive Desing
 ![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/responsive-desing.gif)
 ### Easy to use mobile interface
-![alt text|404|843](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/gallery-filtering-mobile.gif)
+![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/gallery-filtering-mobile.gif){:width="404 px" height="843 px"}
 ![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/hamburger-navbar.gif)
 ### Query String based filtering system
 ![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/gallery-filtering.gif)
