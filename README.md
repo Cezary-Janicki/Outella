@@ -21,9 +21,16 @@ The site can be accessed at https://outella.vercel.app/
 ## Features on Outella
 
 ### Responsive Desing
+![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/responsive-desing.gif)
 ### Easy to use mobile interface
+![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/gallery-filtering-mobile.gif) 
+![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/hamburger-navbar.gif) 
+
 ### Query String based filtering system
+![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/gallery-filtering.gif) 
 ### Natural and responsive image gallery
+![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/gallery-swiping.gif) 
+![alt text](https://github.com/Cezary-Janicki/Outella/blob/main/public/github%20gifs/lightbox.gif) 
 ### Static page generation with dynamic routes
 
 
