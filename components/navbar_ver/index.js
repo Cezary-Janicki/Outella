@@ -8,7 +8,7 @@ import Link from "next/link";
 import { GetSortedProductsData } from "../../lib/products";
 
 var foo = [
-  { id: "informacje", title: "O firmie", date: "1" },
+  // { id: "informacje", title: "O firmie", date: "1" },
   { id: "regulamin", title: "Regulamin sklepu internetowego", date: "2" },
   { id: "polityka", title: "Polityka Prywatności", date: "3" },
   { id: "dostawa", title: "Dostawa", date: "4" },
@@ -88,6 +88,7 @@ export default function NavBarVer() {
           </Link>
         </div>
         <div css={navbarColumn}>
+          <p></p>
           {foo.map((d, index) => (
             <div key={index}>
               <Link
