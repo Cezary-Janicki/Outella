@@ -43,7 +43,7 @@ export default function Home() {
             passHref
           >
             <div css={description}>
-              <p>Galeria produtków</p>
+              <p>Galeria Produktów</p>
             </div>
           </Link>
           <Dresses_Types />
