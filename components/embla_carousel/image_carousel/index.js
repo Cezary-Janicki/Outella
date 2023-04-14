@@ -135,6 +135,7 @@ const EmblaCarousel = ({ slides, id }) => {
             ))}
           </div>
         </div>
+        {console.log("pic src", pictureSources())}
         <AiOutlineLeft
           className={
             currentIndex === 0
