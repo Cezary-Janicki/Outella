@@ -3,7 +3,7 @@
 //Page components
 import Body_Wrapper from "../../components/wrappers/body_wrapper";
 import React from "react";
-import PropTypes from "prop-types";
+
 import Image_Wrapper from "../../components/wrappers/image_wrapper";
 import Image from "next/legacy/image";
 import { css } from "@emotion/react";
@@ -12,7 +12,7 @@ import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import { useState } from "react";
 
-function Post() {
+export default function Zwroty() {
   const [open, setOpen] = useState(false);
   let pictureSources = () => {
     return {
@@ -107,8 +107,3 @@ function Post() {
     </Body_Wrapper>
   );
 }
-Post.propTypes = {
-  postData: PropTypes.object,
-};
-export default Post;
-//this page generates the footer

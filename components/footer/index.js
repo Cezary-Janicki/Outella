@@ -5,32 +5,10 @@ import React from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { getSortedPostsData } from "../../lib/posts";
 import Footer_Column_Wrapper from "./Footer_Column_Wrapper";
 import { desktopBreakPoint } from "../width_check/values";
 import { SocialIcon } from "react-social-icons";
 
-export async function getStaticProps() {
-  // const allPostsData = GetSortedProductsData();
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
-
-var column1 = [
-  { id: "dostawa", title: "Dostawa", date: "4" },
-  { id: "platnosci", title: "Płatności", date: "5" },
-  { id: "zwroty", title: "Zwroty", date: "7" },
-];
-var column2 = [
-  { id: "wspolpraca", title: "Współpraca", date: "1" },
-  { id: "regulamin", title: "Regulamin sklepu internetowego", date: "2" },
-  { id: "polityka", title: "Polityka Prywatności", date: "3" },
-  { id: "kontakt", title: "Kontakt", date: "6" },
-];
 const row = css`
   flex-direction: column;
   align-content: space-between;
@@ -82,13 +60,15 @@ export default function Footer() {
           <Footer_Wrapper>
             <Footer_Column_Wrapper>
               <h2>Informacje</h2>
-              {column1.map((d, index) => (
-                <div key={index}>
-                  <Link href={`/posts/${d.id}`} css={row}>
-                    <p>{d.title}</p>
-                  </Link>
-                </div>
-              ))}
+              <Link href={`/footer/dostawa`}>
+                <p>Dostawa</p>
+              </Link>
+              <Link href={`/footer/platnosci`}>
+                <p>Płatności</p>
+              </Link>
+              <Link href={`/footer/zwroty`}>
+                <p>Zwroty</p>
+              </Link>
               <Link href={`/faq`} css={row}>
                 <p>Najczęściej zadawane pytania</p>
               </Link>
@@ -96,13 +76,21 @@ export default function Footer() {
 
             <Footer_Column_Wrapper>
               <h2>O firmie</h2>
-              {column2.map((d, index) => (
-                <div key={index}>
-                  <Link href={`/posts/${d.id}`} css={row}>
-                    <p>{d.title}</p>
-                  </Link>
-                </div>
-              ))}
+              <Link href={`/footer/wspolpraca`}>
+                <p>Współpraca</p>
+              </Link>
+              <Link href={`/footer/regulamin`}>
+                <p>Regulamin Sklepu</p>
+              </Link>
+
+              <Link href={`/footer/polityka`}>
+                <p>Polityka Prywatności</p>
+              </Link>
+
+              <Link href={`/footer/kontakt`}>
+                <p>Kontakt</p>
+              </Link>
+
               {/* <h2>Dane firmy</h2>
               <p>Cezary Janicki</p>
               <p>Outella</p>

@@ -4,19 +4,7 @@
 import React from "react";
 import { css } from "@emotion/react";
 import Link from "next/link";
-// import Hamburger_Menu from "../hamburger";
 import { GetSortedProductsData } from "../../lib/products";
-
-var foo = [
-  // { id: "informacje", title: "O firmie", date: "1" },
-  { id: "regulamin", title: "Regulamin sklepu internetowego", date: "2" },
-  { id: "polityka", title: "Polityka Prywatności", date: "3" },
-  { id: "dostawa", title: "Dostawa", date: "4" },
-  { id: "platnosci", title: "Płatności", date: "5" },
-  { id: "kontakt", title: "Kontakt", date: "6" },
-  { id: "zwroty", title: "Zwroty", date: "7" },
-];
-
 export default function NavBarVer() {
   const navbarColumn = css`
     /* Flexbox */
@@ -89,20 +77,24 @@ export default function NavBarVer() {
         </div>
         <div css={navbarColumn}>
           <p></p>
-          {foo.map((d, index) => (
-            <div key={index}>
-              <Link
-                href={`/posts/${d.id}`}
-                css={navbarRow}
-                passHref
-                legacyBehavior
-              >
-                <p>
-                  <a>{d.title}</a>
-                </p>
-              </Link>
-            </div>
-          ))}
+          <Link href={`/footer/regulamin`}>
+            <p>Regulamin Sklepu</p>
+          </Link>
+          <Link href={`/footer/polityka`}>
+            <p>Polityka Prywatności</p>
+          </Link>
+          <Link href={`/footer/dostawa`}>
+            <p>Dostawa</p>
+          </Link>
+          <Link href={`/footer/platnosci`}>
+            <p>Płatności</p>
+          </Link>
+          <Link href={`/footer/kontakt`}>
+            <p>Kontakt</p>
+          </Link>
+          <Link href={`/footer/zwroty`}>
+            <p>Zwroty</p>
+          </Link>
           <Link href={`/faq`} css={navbarRow}>
             <p>Często zadwane pytania</p>
           </Link>

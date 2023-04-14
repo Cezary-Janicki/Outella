@@ -3,7 +3,7 @@ import Body_Wrapper from "../../components/wrappers/body_wrapper";
 import React from "react";
 import Link from "next/link";
 
-function Post() {
+export default function Kontakt() {
   return (
     <Body_Wrapper>
       <>
@@ -28,5 +28,4 @@ function Post() {
     </Body_Wrapper>
   );
 }
-export default Post;
 //this page generates the footer
