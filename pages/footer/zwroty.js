@@ -75,8 +75,6 @@ function Post() {
         `}
         onClick={() => setOpen(true)}
       >
-        {" "}
-        {console.log("pic src", pictureSources())}
         <Lightbox
           open={open}
           close={() => setOpen(false)}
